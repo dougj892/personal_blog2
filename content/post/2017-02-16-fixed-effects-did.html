@@ -1,0 +1,40 @@
+---
+title: Fixed Effects vs Difference-in-Differences
+author: Doug
+date: 2017-02-15
+slug: FE-DiD
+categories: []
+tags:
+  - Statistics
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><em>TL;DR: When you have longitudinal data, you should use fixed effects or ANCOVA rather than difference-in-differences since a difference-in-difference specification will spit out incorrect variance estimates. If the data is from a randomized trial, ANCOVA is probably a better bet.</em></p>
+<p>Trying to understand when to use fixed effects and when to use difference-in-differences (DiD), in the past, always made me feel like an idiot. It seemed like I was missing something really obvious that everyone else was getting.</p>
+<p>After trying, and failing, to find a clear description of the difference between the two in textbooks and online, I finally decided to test out the differences by creating some mock data and applying DiD and fixed effects to the mock data and deriving the variance estimates for the two specifications. I have included a summary of those results below (the full details are <a href="https://github.com/dougj892/Jupyter-notebooks/blob/master/Fixed%20Effects%20vs%20Diffs%20in%20Diffs.ipynb">here</a>) but first, if the distinction between fixed effects and DiD has you feeling stupid, take heart in knowing that a lot of other people get this confused as well. A lot of the candidates I interviewed for the tech team got this wrong. I have even seen it come up in published articles. (e.g. this <a href="http://www.sciencedirect.com/science/article/pii/S030438781200003X">paper</a> published in the Journal of Development Economics which focused on the variance of DiD versus ANCOVA. Equation one in the article incorrectly suggests a DiD specification.)</p>
+<div id="review-of-diffs-in-diffs-and-fixed-effects-specifications" class="section level3">
+<h3>Review of Diffs-in-diffs and Fixed Effects Specifications</h3>
+<p>To jog everyone’s memory, if you have one baseline and one end line observation for a set of units, the standard DiD specification is:</p>
+<p><span class="math display">\[Y_{i,t}=\alpha+\beta*EVERTREAT_i + \gamma*POST_t + \tau*TREAT_{i,t} + \varepsilon_{i,t}\]</span></p>
+<p>Where i indexes units, t indexes time, EVERTREAT is a binary variable for whether the unit was ever exposed to treatment, POST is a binary variable for whether the observation is from end line, and TREAT is a binary variable equal to 1 if the observation is from the end line and is for a treated unit.</p>
+<p>For the case of one baseline and one end line, the fixed effects specification is equivalent to:</p>
+<p><span class="math display">\[\Delta Y_i=\alpha+ \delta*TREAT_{i} + \varepsilon_{i}\]</span></p>
+<p>Where<span class="math inline">\(\Delta Y_i\)</span>is the change from baseline to end line for unit i. This is also known at the “first differences” estimator.</p>
+</div>
+<div id="why-you-should-never-use-did-with-longitudinal-data" class="section level3">
+<h3>Why you should never use DiD with longitudinal data</h3>
+<p>In the simple case with no covariates, both of the above specifications will give you the same point estimates which is equal to:</p>
+<p><span class="math display">\[\hat{\delta} = (\bar{Y}^T_{post}-\bar{Y}^T_{pre})-(\bar{Y}^C_{post}-\bar{Y}^C_{pre})\]</span></p>
+<p>Where T indicates the subgroup of units that ever received treatment and C indicates those that never received treatment. The fact that the point estimates are the same in this case is probably the source of much of the confusion around these two specifications. My hunch is that people often call the fixed effects specificiation a “difference-in-difference” estimator since the point estimate can be obtained from this twiced difference equation.</p>
+<p><em>The problem with the DiD specification is that, while it will give you the correct point estimates, the variance estimates will be way off.</em> The reason for this is that the variance estimates treat the baseline and end line as independent observations and thus don’t take into account autocorrelation between baseline and end line. If we assume that each observation has the same variance <span class="math inline">\(\sigma^2\)</span>, that the correlation between baseline and endline is <span class="math inline">\(\rho\)</span>, and that there are n treatment and n control units, the true variance of both estimators is:</p>
+<p><span class="math display">\[Var(\hat{\delta}) = \frac{4\sigma^2}{n}(1-\rho)\]</span></p>
+<p>To arrive at this result, note that the fixed effects estimator with one baseline and one end line can be written as</p>
+<p><span class="math display">\[\hat{\delta} = \bar{\Delta Y^T} - \bar{\Delta Y^C}\]</span></p>
+<p>And note that the variance of each of these components is:</p>
+<p><span class="math display">\[Var(\bar{\Delta Y^K}) = Var \left \{ \frac{1}{n}\sum{(Y_{i,post}-Y_{i,pre})} \right \} = \frac{1}{n^2}  \sum{(\sigma^2+\sigma^2-2cov(Y_{i,post},Y_{i,pre}))}  = \frac{1}{n^2} \sum{(2\sigma^2-2\rho\sigma^2)} = \frac{2\sigma^2}{n}(1-\rho)\]</span></p>
+<p>To follow the derivation above, recall that <span class="math inline">\(var(a+b)=var(a)+var(b)+2cov(a,b)\)</span> and that <span class="math inline">\(\rho_{i,j}=\sigma_{i,j}/(\sigma_i*\sigma_j)\)</span>. Note that this is the true variance of both the FE estimator and the DiD. (Since they always produce the same point estimates, their true variance must be equal).</p>
+<p>If you run the FE specification above, the estimate of the variance of <span class="math inline">\(\hat{\delta}\)</span> will be similar to the formula above. If you run the DiD specification, the estimate of the variance will be <span class="math inline">\(\frac{4\sigma^2}{n}\)</span> though. Thus, that means that if the correlation between baseline and end line is .5, your estimated variance will be about twice as large as the true variance!</p>
+<p>One way to see that the DiD variance estimator is <span class="math inline">\(\frac{4\sigma^2}{n}\)</span> is just to see that the DiD estimate is computed by adding or subtracting four terms each of which have variance <span class="math inline">\(\frac{\sigma^2}{n}\)</span>. Alternatively, if you have too much free time on your hands you can derive the full variance estimate from the DiD regression. To derive this yourself, first note that the variance estimator for OLS (assuming homoskedasticity) is <span class="math inline">\((X&#39;X)^{-1}\hat{\sigma^2}\)</span> where X is your matrix of variables (including a column of 1s for the constant) and <span class="math inline">\(\hat{\sigma^2}\)</span> is the sum of squared residuals divided by n-k where k is the number of regressors. In most cases, deriving <span class="math inline">\((X&#39;X)^{-1}\)</span> is really tricky but in the case of DiD with no covariates it’s relatively straightforward since all of the variables are columns of 1s and 0s.</p>
+</div>

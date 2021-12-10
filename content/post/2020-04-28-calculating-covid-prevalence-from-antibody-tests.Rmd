@@ -1,0 +1,111 @@
+---
+title: Calculating Covid Prevalence from Antibody Tests
+author: ''
+date: '2020-04-28'
+slug: calculating-covid-prevalence-from-antibody-tests
+categories: []
+draft: true
+tags:
+  - Bayesian analysis
+  - Statistics
+---
+
+A group of Stanford researchers recently published [two](https://www.medrxiv.org/content/10.1101/2020.04.14.20062463v1) [studies](http://publichealth.lacounty.gov/phcommon/public/media/mediapubhpdetail.cfm?prid=2328) which estimated the prevalence of covid in two counties of California using antibody tests.  The studies faced a [lot](https://statmodeling.stat.columbia.edu/2020/04/19/fatal-flaws-in-stanford-study-of-coronavirus-prevalence/) of [criticism](https://twitter.com/wfithian/status/1252692357788479488) by stats folks around the web.  
+
+The criticism appears well deserved but in all of the criticism, I didn’t come across much in the way of clear advice on how they could account for potential diagnostic test errors better. (The post by Andrew Gelman linked to above has a lot of useful advice on other aspects of the study but was a little quiet on this subject.) Further, I couldn’t find any academic studies which provided better guidance out there. (I made a decent effort to search for stuff, but the only thing I could find was [this article](https://www.cambridge.org/core/journals/epidemiology-and-infection/article/exact-confidence-limits-for-prevalence-of-a-disease-with-an-imperfect-diagnostic-test/0644C396D4364B292419FB0BA1A30BA2/core-reader) and it seems to only consider data from simple random sampling and perfect knowledge about test accuracy. That said, this is a bit outside my area of expertise and so I probably missed a lot in my search. If any of you know better resources, please do email me and I will update this page.)
+
+Since it seems like a lot more of these studies [are planned](https://www.nytimes.com/2020/04/26/health/can-antibody-tests-help-end-the-coronavirus-pandemic.html) and the tests are still far from [perfect](https://www.nytimes.com/2020/04/19/us/coronavirus-antibody-tests.html), I thought I would put together a few thoughts on how to adjust inference from a survey to take account of test errors.
+
+# A Really Simple Approach using Simulation and a lot of Assumptions
+If you are used to doing a lot of surveys and doing basic analysis on survey data, you probably want an approach that takes the outputs you get from a typical survey analysis, modifies them slightly to account for test imperfections, and spits out revised analytical output.  The approach described below meets that criteria -- it only requires about 10 lines of additional code.  The downside is that it makes a lot of simplifying assumption so it only makes sense to use if the prevalence is unlikely to be very close to 0 or 1, your sample size is decent, you are not estimating prevalence for subgroups, and your weights don’t vary a huge amount.  Still, from what I can tell of the Stanford studies, it is a big improvement over the approach used in those studies and, even if you end up doing something more complicated, probably a good starting point. 
+
+## Step 1: Get posteriors for sensitivity and specificity
+To evaluate antibody tests, researchers administer the test to people who are known to have / not have covid.  For example, for the test you are using researchers may have conducted the test on 200 positive samples and 100 negative controls and found that, of the positive samples, 190 came back positive and of the negative controls 90 came back negative.  As with any sample, there is some uncertainty in your estimates so you shouldn’t assume that the sensitivity (the probability of a positive test result given the patient has covid) is 95% and that the specificity (the probability of a negative test result given the patient doesn’t have covid) is 90%.  Instead, you should account for the uncertainty in your estimates. 
+
+We will perform a simple Bayesian analysis of our test evaluation data.  (Don’t worry if you are not too familiar with Bayesian analysis, you can easily plug in your own test evaluation numbers without fully understanding this step.) 
+We assume beta(1, 1) priors for both sensitivity and specificity and a binomial likelihood so that our posteriors are:
+
+$$ p(p_{sens}| eval) \sim beta(n_a+1, n_b+1); p(p_{spec}|eval) \sim beta(n_c+1, n_d+1) $$
+
+Where $n_a, n_b, n_c, n_d$ are the number of correct diagnoses from the positive samples, the number of incorrect diagnoses from the positive samples, the number of correct diagnoses from the negative controls, and the number of incorrect diagnoses from the evaluation respectively. 
+
+## Step 2: Use R / Stata to generate point estimates and variance of prevalance assuming a perfect  
+If you often conduct and analyze survey data, you should be familiar with this step. In R, you would use the survey package and in Stata you would use the svyset and svy command prefix to generate estimates of prevalence. I won't elaborate on these steps, but if you are looking for more info on this step the book "Complex Surveys: A Guide to Analysis in R" by Thomas Lumley (author of the R package) and the Stata [svy manual](https://www.stata.com/manuals13/svy.pdf) are good places to start. 
+
+## Step 3: Simulate posterior
+
+With an imperfect test and prevalence $ \theta $ the proportion of people who would test positive in an entire population is:
+
+$$ p_{pos}=p_{sens}*\theta + (1-p_{spec})*(1-\theta) $$
+Thus:
+
+$$ \theta = \frac {p_{pos}+p_{spec}-1}{p_{sens}+p_{sens}-1} $$ 
+If we assume 
+$$ p_{pos} \sim N(\widehat{p_{pos}}, \widehat{\sigma_{ppos}^2}) $$
+Where the mean and variance of $ p_{pos} $ are your outputs from step 2, then you can estimate $ p(\theta|y) $ by simulation. That is, you simply draw from our posteriors for $ p_{spec}, p_{sens}, p_{pos} $ and calculate $\theta$ for each draw.  
+
+```{r}
+# Evaluation data
+na <- 190
+nb <- 10
+nc <- 90
+nd <- 10
+
+# Output from step 2 - analysis of survey data assuming test is 100% accurate
+ppos_hat <- .2
+ppos_se <- .01
+
+# Number of simulations
+num_sims <- 10000
+
+# Simulate draws from each posterior
+sens_sims <- rbeta(num_sims, na+1, nb+1)
+spec_sims <- rbeta(num_sims, nc+1, nd+1)
+ppos_sims <- rnorm(num_sims, mean=ppos_hat, sd = ppos_se)
+
+# Combine them using formula above
+theta <- (ppos_sims+spec_sims-1)/(sens_sims+spec_sims-1)
+
+# Generate 95% credible interval by extracting the quantiles from the simulations
+ci <- quantile(theta, c(.05,.95))
+```
+
+
+# Problems with the simple approach
+We made a couple of major simplifying assumptions to generate the above estimates.  First, we assumed the output from the survey analysis can be treated as a posterior and that ppos is distributed normally.  Second, because we corrected for test error after generating estimates for ppos we implicitly assumed that test error does not vary much by probability of inclusion in the sample. To see why this assumption may be a problem, suppose that used stratified sampling to select people for the antibody test and that probability of selection was much lower for one strata than for the others and thus the weights for observations from this stratum are really large. Using the method above, if we happen to get a lot of false positives and not many false negatives in that stratum our estimates of the true prevalence will be way too high and our credible interval too small. 
+
+Based on the antibody surveys I am seeing in the news, assumption number two is a big concern.  A lot of these surveys rely on convenience samples and use post-stratification to try to generate inference for the population at large.  With convenience sampling, you are bound to have large variance in your post-strat weights. 
+
+
+# A slightly more complicated approach 
+An only slightly more complicated approach that more or less preserves the typical survey data analysis workflow is to use multiple imputation to account for the uncertainty in test results. 
+
+## Step 1 - Generate posterior predictive for individual test results
+The posterior predictive is the probability of obtaining a positive test result given an existing test result -- e.g. what is the probability of testing positive again given you have already tested positive once? To calculate this probability we assume that the true prevalence is known, that we have no reason to believe that this varies by individual, and that test results are independent conditional on covid status. Let t2, t1, and covid be binary variables equal to 1 if the second test is positive, the first test is positive, and the individual has covid and 0 otherwise. Then the probability of getting a second positive result (t2=1) if the first test result is positive (t1=1) is
+
+$$ p(t2 =1 | t1 =1 )=\frac{A^2\theta + B^2(1-\theta)}{A\theta+B(1-\theta)} $$
+Similarly, the positive of a positive second test given a negative first test is
+$$ p(t2 =1 | t1 =0 )=\frac{A\theta(1-A)+B(1-\theta)(1-B)}{(1-A)\theta+(1-B)(1-\theta)} $$
+Where, by Laplace's rule of succession
+$$ A = p(t2 = 1 | covid =1) = \frac{n_a + 1}{n_a+n_b+2} $$
+
+$$ B = p(t2 = 1 | covid =0) = 1-\frac{n_c + 1}{n_c+n_d+2} $$
+Lastly, we need an estimate of $\theta$. For this, we can use our initial simple approach described above.
+
+
+## Step 2 - Generate multiple imputations using the posterior predictive distribution
+Next, we use the posterior predictive probability to generate M new datasets where in each the M new datasets, the actual test result is replaced with a random draw from the posterior predictive distribution.  
+
+## Step 3 -- Analyze each imputed dataset and combine the results
+Lastly, we analyze each of the M+1 (the M datasets and the original one) using our standard survey tool and combine our estimates for $\theta$ using the multiple imputation formula:
+
+$$ \hat{\theta}=\frac{1}{M+1}\sum_{j=1}^{M+1}{\hat{\theta_j}} $$ 
+$$\widehat{\sigma^2}=\frac{1}{M+1}\sum_{j=1}^{M+1}{\hat{\sigma_j^2}} +\frac{M+2}{M(M+1)}\sum_{j=1}^{M+1}{(\hat{\theta_j}-\bar{\hat{\theta_j}})^2$$
+
+Finally, we assume normality to generate confidence intervals.
+
+
+# A much more complicated approach
+
+
+

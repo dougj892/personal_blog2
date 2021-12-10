@@ -1,0 +1,66 @@
+---
+title: Estimating seroprevalence with data from an imperfect test on a convenience
+  sample
+author: ''
+date: '2020-05-06'
+slug: estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample
+categories: []
+tags:
+  - Bayesian analysis
+  - Statistics
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself.</p>
+<p>Addressing either of these challenges on their own is relatively straightforward to do using existing tools. The R package “epiR” allows users to estimate true prevalence and confidence intervals for prevalence using the method developed by Rogan and Gladen (1978) and Reiczigel et al (2010). (See the function “epi.prev” in this package.) Similarly, the R page “survey” (and the Stata “svy:” commands) allow users to generate inference from convenience samples using post-stratification. Addressing both at the same time is kind of tricky though.</p>
+<p>In this blog post, I look at two different ways of taking into account both test imperfections and the non-random nature of the sample: a simple approach which combines poststratification with a Rogan-Gladen adjustment and a Bayesian approach based on multi-level regression and poststratification. I also report results from a quick Monte Carlo expirement I used to assess both approaches. A companion git <a href="https://github.com/dougj892/sero_prevalence2">repo</a> includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.</p>
+<div id="the-naive-approach-simple-poststratification-and-adjustment" class="section level2">
+<h2>The naive approach: simple poststratification and adjustment</h2>
+<p>One option is to combine these approaches. In other words, we first calculate <span class="math inline">\(\hat{pa}\)</span>, our estimate of the overall “apparent” seroprevalence rate (i.e. the rate not taking into account test imperfection) using the typical poststratification formula and then calculate our estimate of the true seroprevalence, <span class="math inline">\(\hat{pt}\)</span> by using the adjustment from Rogan and Gladen approach.</p>
+<p><span class="math display">\[ \widehat{pa} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]</span>
+Where h indexes strata, <span class="math inline">\(N_h\)</span> is the number of people in the total population in stratum h, N is the total number of people in the population and <span class="math inline">\(\bar{y_h}\)</span> is the sample mean within stratum h.</p>
+<p>We then calculate true seroprevalence by adjusting this figure using the formula below:</p>
+<p><span class="math display">\[ \widehat{pt} = \frac{\widehat{pa}+sp-1}{se+sp-1} \]</span>
+Where se and sp are our estimates for the sensitivity and specificity of the test respectively.</p>
+<p>There are several options for calculating standard errors, but the simplest approach is to use a quick formula for the standard error of a proportion</p>
+<p><span class="math display">\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]</span>
+If you want to be more exact and take into account the uncertainty in the estimates of se and sp, you can use the more complicated formula from Rogan and Gladen which uses the Taylor Linearization approach.</p>
+</div>
+<div id="issues-with-the-naive-approach" class="section level2">
+<h2>Issues with the naive approach</h2>
+<p>In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the poulation than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)</p>
+</div>
+<div id="a-bayesian-approach-using-modified-mrp" class="section level2">
+<h2>A Bayesian Approach using Modified MRP</h2>
+<p>Theoretically, we should be able to improve on this approach by more carefully taking into account potential test imperfections. To use the example from above, if we saw that there was one positive test in the highly weighted stratum and 0 positive tests in the other stratum, we should adjust downward our overall estimate of the prevalence.</p>
+<div id="quick-overview-of-mrp" class="section level3">
+<h3>Quick overview of MRP</h3>
+<p>One way to do this is using a fully Bayesian approach built on multi-level regression and post-stratification (MRP). (For another Bayesian approach to this problem which doesn’t use MRP, see <a href="https://www.medrxiv.org/content/10.1101/2020.04.15.20067066v1">Larremore et al (2020)</a>.)</p>
+<p>MRP is an approach to small area estimation in which the analyst first estimates the mean of each strata using a multi-level model and then weights up these estimates using the poststratification weights. For example, to estimate the overall proportion <span class="math inline">\(\theta\)</span> in a population using data <span class="math inline">\(y_i\)</span> for each individual, you might use a simple model as follows to first estimate, <span class="math inline">\(\theta_j\)</span>, the proportion in each stratum j using stratum variables <span class="math inline">\(X_j\)</span>.</p>
+<p><span class="math display">\[ \theta_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I); y_i \sim bernoulli(\theta_{j[i]}) \]</span>
+To derive your estimates of the total population, you just weight up. i.e. you calculate</p>
+<p><span class="math display">\[ \widehat{\theta} = \sum_{h=1}^H{\frac{N_h*\widehat{\theta_j}}{N}} \]</span></p>
+<p>MRP is especially useful when you have a lot of different strata (which is often the case) since it allows you to more effectively “borrow strength” between strata compared to the approach where you simply model a different intercept for each stratum. (If you are simply modeling a separate intercept for each stratum, then there is no way for the model to know, for example, that a stratum for white men between 41 and 45 in Georgia and a stratum for white men between 46 and 50 are likely to be similar.) It is also, believe it or not, relatively straightforward compared to other approaches to small area estimate. For a more thorough overview of MRP, I highly recommend this <a href="https://mc-stan.org/rstanarm/articles/mrp.html">vignette</a>.</p>
+</div>
+<div id="modified-mrp-to-account-for-test-imperfections" class="section level3">
+<h3>Modified MRP to account for test imperfections</h3>
+<p>If implementing MRP using a Bayesian approach, it is fairly straightforward to modify the MRP model to take into account test error. As before, we use a multilevel model for the likelihood of the true prevalence. But in our likelihood of the test data, we use the apparent prevalence rate, which is the probability of a test being positive taking into account both prevalence and test imperfections, rather than the true prevalence. Lastly, we also model uncertainty in our estimates of the sensitivity and specificity using data on the number of true positives (tp), true negatives (tn), false positives (fp), and false negatives (fn) from a validation study of the antibody test.</p>
+<p><span class="math display">\[ pt_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I)\]</span>
+<span class="math display">\[ pa_j = se*pt_j+(1-sp)*(1-pt_j) \]</span>
+<span class="math display">\[ se \sim binom(tp, tp+fn); sp \sim binom(tn, tn+fp)\]</span>
+<span class="math display">\[ y_i \sim bern(pa_{j[i]}) \]</span>
+For a complete Bayesian model, we also need to add priors for sensitivity and specificity.</p>
+</div>
+</div>
+<div id="results-from-a-monte-carlo-simulation" class="section level2">
+<h2>Results from a Monte Carlo Simulation</h2>
+<p>Theory is all well and good, but how do the two approaches compare when using data? To test this, I ran a simple Monte Carlo simulation using code borrowed from Kennedy and Gabry’s <a href="https://cran.r-project.org/web/packages/rstanarm/vignettes/mrp.html">MRP tutorial</a>. (And big thanks to them for letting me copy their code!)</p>
+<p>Surprisingly, the naive approach actually did slightly better (in terms of average absolute deviation from the true seroprevalence) when it came to estimating overall seroprevalence. This is especially surprising since the data generating process used for the simulations is almost identical to my MRP model. The modified MRP process does much better when estimating subgroups (the Rogan and Gladen estimates for subgruops are often negative, which happens sometimes) but clearly, given the additional hassle of generating the code, the modified MRP approach is only worth it if you really want to estimate subgroup effects.</p>
+</div>
+<div id="for-people-interested-in-using-this-code" class="section level2">
+<h2>For people interested in using this code</h2>
+<p>All code for this analysis can be found <a href="https://github.com/dougj892/sero_prevalence2">here</a>.
+If you looking to copy and adapt the code, start with the R notebook “Estimate seroprevalence” in the above repo. In that notebook, I fit the modified MRP approach in two different ways: using raw Stan code and using the brms package (with some custom code to extend the package). If you would like to use the more complicated modified MRP approach, I strongly recommend you use the brms package. If you use the brms package, you should be able to copy and paste the code I created to define a “custom family” for the brms package and then modify the code in the main call to brm to suite your data. Since brms uses the lme4 syntax for defining multi-level models, customizing this code hopefully shouldn’t be too hard. By contrast, I find that modifying raw Stan code always takes quite a bit of time.</p>
+</div>

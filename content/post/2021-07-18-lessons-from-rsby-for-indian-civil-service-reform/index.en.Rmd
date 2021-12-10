@@ -1,0 +1,51 @@
+---
+title: Lessons from RSBY for Indian Civil Service Reform
+author: ''
+date: '2021-07-18'
+slug: []
+categories: []
+tags: []
+lastmod: '2021-07-18T10:52:09+07:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+*TLDR; The experience of RSBY, a government subsidized health insurance program, shows why India desperately needs civil service reform. RSBY showed early promise but ultimately failed because state RSBY teams were unable to perform basic monitoring tasks that even a small, reasonably competent team could have accomplished.*
+
+About ten years ago, I spent a summer working as a World Bank consultant on RSBY, a (then) new centrally government subsidized health insurance program for in-patient care. RSBY was a radical departure from traditional Indian government health programs. Rather than seek to improve the existing government-run healthcare system, RSBY bypassed the government healthcare system entirely. Under RSBY, the government paid insurance companies a fixed annual premium for each beneficiary and beneficiaries could (in theory) access in-patient care from any hospital, government-run or private, enrolled in the scheme. The hope was that RSBY would tap into the thriving (though fraud-plagued) private health insurance and healthcare markets rather than the woefully underperforming government-run hospitals to provide quality and affordable in-patient care.
+
+I spent the summer criss-crossing Jharkhand attending enrolment drives, talking to households enrolled in RSBY, and visiting hospitals participating in RSBY. My primary responsibility that summer was to oversee an RCT looking at the effect of "health camps" on RSBY enrolment and usage but I ended up spending most of my time just talking to various people about RSBY – talking to households about what they understood about the scheme, talking to doctors and administrators at hospitals participating in the scheme (as well as those not participating in the scheme), talking to the various insurance staff responsible for implementing the scheme on the ground, and, less frequently, talking to district collectors and state-level officials responsible for overseeing the scheme. 
+
+Ten years on, it’s clear that RSBY (and its successor PMJAY) failed. There is some suggestive evidence based on large datasets like the NSSO rounds that RSBY led to modest reductions in out-of-payment expenditures on in-patient care. Yet the fact that we have to rely on these analyses in the first place is damning evidence of RSBY’s inconsequence. If RSBY had been successful we wouldn’t need to rely on sophisticated statistical analysis of large datasets – it would be obvious.
+
+I have thought back on this experience a lot because I think that RSBY was very, very close, much closer than most people realize, to being successful – not in the sense of solving all of India’s health care issues, but at least in the sense of significantly increasing access to in-patient care. I believe that all it would have taken was a small team of reasonably competent well-managed people in each state overseeing the scheme. Unfortunately, RSBY was administered just like nearly all other government programs: in each state, all responsibility for managing RSBY was vested in a single senior IAS officer managing a trillion other programs at the same time and with limited time in the post; most of the day-to-day responsibilities for running the program fell to low-level staff with minimal capacity. 
+
+RSBY had a lot of things going for it. India has large markets for private healthcare and private health insurance. Of course, they markets are dysfunctional in all the ways that private health markets are often dysfunctional (e.g. private provides provide a huge amount of unnecessary or even harmful care and insurance companies seem to spend more effort denying claims than other aspects of their business) but they are certainly very, very competitive. The initial prices set for in-patient procedures (i.e. the amount the insurance companies were required to reimburse hospitals for care) were reasonable. The scheme was launched within the labour ministry which meant it was somewhat insulated from intra-government attacks. And it was helmed, in the early days, by Anil Swarup, the rare IAS officer capable of rallying people to his side and tirelessly wearing down internal bureaucratic resistance to new schemes. 
+
+In the very early days of RSBY it seemed to show a lot of promise. Some high-quality companies like FINO + ICICI Lombard did extremely good work under the scheme. There were certainly teething problems (e.g. with the smartcards and the backend flow of data) but it seemed like those would be ironed out eventually. At the time that I came on, which was about a year after the scheme’s launch, the mood was optimistic. In the first month or so in Jharkhand, I started noticing more serious problems with the scheme. Insurance companies blatantly disregarded the enrolment rules (they just handed out smartcards without providing any information on how to use the card). Worse, they took forever to pay the hospitals (they did this on the sly by staffing the claims department with a single fresher). As a result, many hospitals gave up on the scheme. Hospital managers wouldn’t admit to this, but it was obvious from the data and when we visited the hospitals in person. (In the insurance companies defence, they were often paid extremely late.)
+
+Staff at the World Bank and in government were receptive when I raised alarm bells about these issues. One district collector, when I pointed out the shoddy work done by the local insurance company, asked if he should throw the local insurance rep in jail. Yet little changed. State and district officials simply didn’t have the capacity to monitor the work of the insurance companies and so the scheme settled into a bad equilibrium: insurance companies would bid extremely low amounts to administer the scheme under the expectation that they would have to do very little.
+
+The frustrating aspect of this was that, in my opinion, the government didn’t need to do much to make the scheme work. Directly providing services like health and education is extremely hard. In the case of RSBY, all the government had to do was monitor the insurance companies’ work and impose reasonable and realistic penalties when the insurance companies failed to comply. The monitoring task was not arduous – really all the government had to do was make sure that the insurance companies signed up hospitals, handed out cards to beneficiaries, told the beneficiaries what the cards were for, and paid hospitals on time.  If these essentials were in place the private hospitals would take care of the rest. It only took me a few days to determine whether this was happening in a district. And officials had plenty of ways in which they can penalize insurance companies. (The most straightforward being delaying payment.)
+
+Unfortunately, these basic tasks were far beyond the capacity of most state RSBY teams. In most cases, the official overseeing RSBY was an IAS officer tasked with overseeing numerous other programs. (In UP, the officer responsible for RSBY was also responsible for NREGA. It boggles the mind to think of the responsibility entrusted this one person. When we met with him, he spent the entire meeting telling us about his plan to set up a high-tech call centre for NREGA complaints.) Most of the other staff working on RSBY were low-paid junior officials with little authority or opportunities for advancement. As a result, the team did little until the IAS officer held some sort of meeting then there was a few days’ flurry of well-intentioned but ultimately fruitless activity which was followed yet more inactivity. 
+
+# Lessons for Civil Service Reform
+The fundamental lesson I took away from my experience on RSBY is that the Indian civil service model, in which everything revolves around and flows from a small number of IAS officers, simply doesn’t work for project implementation. This model likely worked great for colonial administration when the goal was to steal as much as possible with as few as possible. It can also work Ok for policy design. While IAS officers are typically not subject matter experts, they are often able to get up to speed quickly (though it appears that is less and less the case – more on this in a future post). It works horribly for running projects though. As anyone who has worked at a reasonably well-run organization knows, implementing projects well requires reasonably competent staff who are given clear direction and entrusted with the authority to accomplish their tasks.  In India, government teams have one leader with high capacity but insufficient time to do anything more than shout orders and a large staff of subordinates with little capacity who are tasked with menial tasks.

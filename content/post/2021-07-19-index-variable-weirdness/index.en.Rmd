@@ -1,0 +1,74 @@
+---
+title: Index Variable Weirdness
+author: ''
+date: '2021-07-19'
+slug: []
+categories: []
+lastmod: '2021-07-19T12:37:21+07:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+tags:
+  - Statistics
+---
+
+
+There are many instances where you have a bunch of variables and you need to boil them down to one or just a few. For example, you may be testing the effect of an education program on students' confidence, self-efficacy, and learning levels. You will likely have at least one measure (likely more) for each of those core outcome variables and want to combine them into one to avoid having to do any multiple hypothesis corrections. 
+
+Within economics, people tend to use a few different approaches to constructing such "index" variables. The simplest method, which I've seen attributed to Katz, is to standardize each variable, add them all up, and then standardize again. Another common approach is to apply principal components analysis and use the first component. Lastly, people often use the approach by [Anderson](https://www.tandfonline.com/doi/abs/10.1198/016214508000000841) which assigns weights based on the variance-covariance of the variables.
+
+The weird thing about these methods is that the PCA and Anderson methods are, in some ways, almost complete opposites, with the Katz method somewhere in between the two. With PCA, highly correlated variables tend to be assigned higher weights. With the Anderson method, highly correlated variables tend to be assigned lower weights. Both of these approaches have a certain logic to them and seem appropriate in certain circumstances. The code below demonstrates this for the case where you have have three vars: x1 which is independent of others and z1 and z2 which are highly correlated. All have mean 0 and variance of 1. The Katz method weights each var equally. PCA assigns 0 weight to x1 and half weight to z1 and z2. And the Anderson method assigns higher weight to x1 and lower weights to z1 and z2.
+
+Each of these approaches make sense in the appropriate context. If you are trying to measure some latent, unmeasurable quantity such as intelligence then it probably makes sense to take a bunch of measures and weight those which are highly correlated more highly (i.e. use PCA). On the other hand, if you have a bunch of variables and some subset may of variables may be more or less measuring the same thing you should probably weight those variables lower than the others so that you don't double count the thing you are measuring. If you are just aggregating a bunch of different measures, then the Katz method seems pretty reasonable. 
+
+The odd thing is that people rarely justify their choice in constructing an index. 
+
+
+```{r}
+library(tidyverse); library(MASS)
+
+# generate random variable
+n <- 100000
+x1 <- rnorm(n)
+
+# Generate two correlated random variables
+rho <- .6
+Sigma <- matrix(data = c(1,rho,rho, 1), nrow = 2)
+z <- mvrnorm(n, mu = c(0,0), Sigma = Sigma)
+z1 <- z[,1]
+z2 <- z[,2]
+
+# Create a dataframe from the three variables
+df <- tibble(x1 = x1, z1 = z1, z2 = z2)
+
+# Test that all means are 0, variances are 1, and covariance of z1 and z2 is roughly equal to rho
+vars <- list(x1, z1, z2)
+map_dbl(vars, mean)
+map_dbl(vars, var)
+cov(z1, z2)
+
+# Weights from PCA
+pca_weights <- prcomp(~ x1 + z1 + z2, data = df, rank = 1)
+pca_weights
+
+# Weights from Anderson method
+Sigma_inv <- solve(cov(df))
+anderson_weights <- colSums(Sigma_inv)
+anderson_weights
+```

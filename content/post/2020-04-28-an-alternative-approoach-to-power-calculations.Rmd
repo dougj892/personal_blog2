@@ -1,0 +1,49 @@
+---
+title: An Alternative Approach to Power Calculations
+author: ''
+date: '2020-04-28'
+slug: an-alternative-approach-to-power-calculations
+categories: []
+tags:
+  - Bayesian analysis
+  - Statistics
+---
+
+
+The typical approach to power calculations goes something like this: first, the evaluator estimates the smallest MDE for which the intervention would be cost-effective. Second, the evaluator calculates the sample required to detect that MDE. Third, the evaluator throws out the calculations from step two after realizing the evaluation would be way too expensive and instead estimates the MDE she can detect given her budget constraints.
+The problem with this approach is that it doesn’t take into account the cost of the evaluation itself. In this blog post, I’ll show one way to design evaluations which takes into account the cost of the evaluation itself through the use of a simple toy example
+
+# Simple example with a perfectly accurate study
+Suppose a funder has USD 1 million to spend and two options for how it can spend the money: it can either invest in a tried and true intervention which it knows will save 1,000 lives or it can invest in a new intervention.  The funder believes that there is a 10% chance that the new intervention is significantly more effective than the tried and true intervention and that USD 1 million invested in the new intervention would save 5,000 lives. Unfortunately, they also believe that there is a 90% probability that the new intervention is less effective than the tried and true intervention and would only save 500 lives.
+If the funder seeks to maximize expected lives saved, they would invest the entire USD 1 million in the tried in true intervention since the expected number of lives saved by investing in the new intervention is only $ .1*5000+.9*500=950 $  
+
+Now suppose the funder has the option of first funding a study which would reveal, with perfect accuracy, whether the new intervention is a block-bluster or a dud.  To calculate the value of the study, we may estimate the “value of information” for the study defined as:
+
+$$ VOI(I)=\sum_i P(i)EU(i)-EU $$ 
+
+
+Where I is the new information which we may obtain and EU(i) is the expected utility when I=i, P(i) is probability I=I, and EU is the expected utility without I (Kochenderfer, 2015).  In other words, the value of information for a variable I is the increase in expected utility if that variable is observed. 
+In our case:
+
+$$ VOI(study)=.1*5000+.9*1000-1000 = 400 $$ lives
+
+If we additionally assume that the cost per life saved is constant for the two interventions (i.e. if you spent Y on the first intervention you would save Y/1,000,000*1000 lives), we may calculate the exact amount the funder would be willing to spend on the study. Assuming constant cost per life saved, the funder would be willing to spend up to $285,714 on this study. Note that up until this point we have not used Bayes’ theorem at all – just some simple algebra.
+
+# Removing the Assumption of Perfect Accuracy
+Unfortunately, studies are never perfectly accurate.  Suppose that if the intervention is a blockbuster there is a 95% probability that the study will say that it is a block buster. But if the intervention is a dud, there is still a 5% probability that the study will say that it is a blockbuster.  
+To calculate VOI for this new noisy study, we first calculate the probability that the study result is “blockbuster”.  This probability is .9*.05+.1*.95=.14.  Next, we need to calculate the expected utility if the study result is positive and the expected utility if the result is negative. Here’s where things get a little trickier and where Bayes’ rule comes in handy. If we get a “blockbuster” result, our post-facto estimate of the probability that the intervention is really a blockbuster would be:
+
+$$ P(bb|bb result)=(P(bb result |bb)*P(bb))/(P(bb result |bb)P(bb)+P(bb result|dud)P(dud))=.68 $$
+
+Therefore, if the funder gets a “blockbuster” result from the study it would invest in the new intervention since the expected lives saved would be $.68*5000+.32*500=3560$. 
+I won’t calculate p(bb | dud result) since intuitively it seems fairly obvious that the funder would not invest in the new intervention if the study gave a “dud” result and all we care about for the VOI formula is the expected utility for each study result.
+The value of information (in terms of lives saved) is:
+
+$$ VOI(noisy study)=P(bb result)*EU(bb result)+P(dud result)*EU(dud result)-1000=1358.4 $$ 
+Thus, the noise in the study results reduces the value of the study information by 41.6 lives.
+
+# More Complicated Effects and Studies
+In the real world things are rarely binary: intervention effects and study estimates are typically continuous.  For example, suppose we are investigating an intervention which seeks to reduce infant mortality.  The funder probably doesn’t believe that the intervention is either a blockbuster or a dud. Rather, they probably believe that there is a small chance the intervention works great, a small chance is works well but not great, etc. Similarly, any potential study we perform on the intervention will spit out an estimated effect size and standard error rather than a simple up/down result.  To calculate the value of information with continuous effect sizes / study results, we still apply the same formula as above but the calculations will get complicated very quickly so we will no longer be able to calculate things by hand.  More on this later.
+
+[1]Kochenderfer, Mykel J. Decision making under uncertainty: theory and application. MIT press, 2015.
+

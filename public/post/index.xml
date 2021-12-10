@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/post/</link>
+      <atom:link href="https://academic-demo.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 06 Dec 2021 21:21:37 +1300</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>Posts</title>
+      <link>https://academic-demo.netlify.app/post/</link>
+    </image>
+    
+    <item>
+      <title>2021 12 06 Test Post With Latex</title>
+      <link>https://academic-demo.netlify.app/post/2021-12-06-test-post-with-latex/</link>
+      <pubDate>Mon, 06 Dec 2021 21:21:37 +1300</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-12-06-test-post-with-latex/</guid>
+      <description>&lt;p&gt;This is a test post.&lt;/p&gt;
+&lt;p&gt;This is a simple equation:&lt;/p&gt;
+&lt;p&gt;$$ E = MC^2 $$&lt;/p&gt;
+&lt;p&gt;$$\gamma_{n} = \frac{ \left | \left (\mathbf x_{n} - \mathbf x_{n-1} \right )^T \left [\nabla F (\mathbf x_{n}) - \nabla F (\mathbf x_{n-1}) \right ] \right |}{\left |\nabla F(\mathbf{x}{n}) - \nabla F(\mathbf{x}{n-1}) \right |^2}$$&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

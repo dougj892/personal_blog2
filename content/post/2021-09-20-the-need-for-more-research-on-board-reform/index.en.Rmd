@@ -1,0 +1,44 @@
+---
+title: The Need for More Research on Board Reform
+author: ''
+date: '2021-09-20'
+slug: []
+categories: ["education"]
+tags:
+  - Education
+lastmod: '2021-09-20T20:51:43+07:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+bibliography: ../references.bib
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+For as long as high stakes exams have existed, people have hated them. The system of imperial examinations used to select the mandarins of ancient Chinese dynasties (and the first high-stakes exams) is credited with building an empire. It was also nearly universally hated in their specifics which, critics claimed, caused rote learning, teaching to the test, and severe anxiety [@kellaghanPublicExaminationsExamined2020].
+
+Given the near universal hate of high-stakes exams, it’s no surprise that people don’t like the Indian boards. Still, by any standard, Indian boards are particularly bad. Burdett [-@burdettReviewHighStakes2017] compares several high-stakes exams including the CBSE and boards in Uganda, Nigeria, Pakistan, and Canada. The high-stakes exams in Uganda, Nigeria, and Canada, while not perfect, at least test some conceptual understanding. Burdett reserves harshest criticism for the CBSE and boards in Pakistan. According to Burdett, “overall the CBSE examination papers are heavily biased to rote-learning, do not test higher-order skills, and actively discourage students who try and display them.” India’s low quality boards cast a massive shadow on its education system, forcing students to memorize entire textbooks rather than spending time on more rewarding, useful, and fun intellectual pursuits. 
+
+There have been no shortage of official recommendations to reform the boards. NCERT’s National Focus Group on Examination Reforms was no less harsh than Burdett in its assessment of Indian boards and included a bunch of reasonable suggestions for what types of questions should be included in the boards. Similarly, the NEP calls for the boards to be “redesigned to encourage holistic development” and that they should “test primarily core capacities/competencies rather than months of coaching and memorization” [@mhrdNationalEducationPolicy2020].
+
+If there is such widespread and long held consensus on the need for change, why hasn’t it already happened? A report by EI report on the Gujarat boards provides a clue. (Unfortunately, the link I used to download the report is broken and I can’t find a live link but will update this post once I find one.)  The report contains a multitude of rich findings but I found one in particular interesting. EI found that a major impediment to board reform has to do with security. Paper setters (i.e. the people who write the actual exams) are extremely concerned about question errors since any such errors cause massive confusion, institutional embarrassment, and a lot of extra work. Paper setters are also extremely concerned about question leakage since this too can create a lot of confusion and extra work. As a result, paper setters opt for a low-risk strategy of creating questions directly from textbook passages as this almost guarantees that the question won’t contain any errors without the need for additional review (which raises the risk that questions will be leaked). 
+
+I don’t know enough about the internal processes and politics of boards to say how great an impediment security is to improving the boards is but it seems plausible that it could be a major one. If so, more research on how to solve these security challenges would be vastly more useful than repeating the mantra that the boards must improve their questions. This is also a tractable question. Researchers could look to the paper-setting security practices from other boards around the world or even to security practices more generally. 
+
+# References
+
+

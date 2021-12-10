@@ -1,0 +1,61 @@
+---
+title: Did same language subtitling increase reading levels in Maharashtra?
+author: ''
+date: '2020-06-02'
+slug: same-language-subtitling
+categories: []
+draft: true
+tags:
+  - Education
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>TLDR: Maybe, but we can’t say much from the data. In my next blog post, I argue that we should fund SLS anyway.</p>
+<div id="summary" class="section level1">
+<h1>Summary</h1>
+<p>Between 2013 and 2015, Zee Talkies, with the support of PlanetRead and USAID, added subtitles to all of the songs of many of the Marathi movies it broadcast. The organizers of the project hoped that by adding the subtitles, a strategy known as “same language subtitling,” they would get children to read along as they listened to the songs and thus improve their reading skills.</p>
+<p>A quick analysis of ASER scores from Maharashtra during that period of time suggests that the strategy may have been successful. In 2014, 53.5% of rural children in grade 5 could read a standard 2 level text. In 2016, 62.6% could. There was a similar (though smaller) improvement in grade 3 reading scores. (There was no improvement in grade 8 reading scores.) In The Huffington Post, Brij Kothari, founder of Planet Read <a href="https://www.huffpost.com/entry/what-caused-maharashtras-leap-in-reading_b_589d1277e4b0e172783a9a8f">argues</a> argues that this jump in reading scores was likely caused by the SLS.</p>
+<p>In this blog post, I use a larger dataset of ASER data going back to 2007 (a year after ASER started) and the synthetic control approach to more rigorously test this claim. Unfortunately, the larger dataset and more sophisticated methods show that there is little evidence to either support or reject this claim.</p>
+<p>All code for this post is here. The ASER dataset is <a href="%22https://raw.githubusercontent.com/dougj892/public-datasets/master/ASER%20trends%20over%20time.csv%22">here</a>.</p>
+</div>
+<div id="same-language-subtitling" class="section level1">
+<h1>Same Language Subtitling</h1>
+<p>The idea behind SLS is pretty simple: kids naturally follow the subtitles as they listen to a video and thus pick up on spelling. For an example of SLS, check out <a href="https://www.youtube.com/watch?v=MHGSG1QmbgQ">this video</a> from Planet Read.</p>
+<p>The beauty of SLS is that the number of learners reached per dollar spent is, potentially, phenomenally high. In India, TV ownership is relatively high even among low income households. And the costs of adding subtitles, while not negligible, are pretty modest. (See the graph in my recent <a href="https://scroll.in/article/961937/small-screen-big-impact-educational-tv-could-be-indias-next-frontier-in-remote-learning">Scroll article</a> with Rob for more data on TV ownership by socio-economic status.) Kothari estimates that adding SLS to all programming in India would cost approximately XXX. In addition, these costs would likely come down over time as TV channels could simply demand scripts for new content.</p>
+<p>Despite the high potential of SLS, there isn’t a lot of evidence on its impact. Several studies which track subject’s eye movements as they watch SLS videos (including one by PlanetRead of children in Rajasthan) have found that viewers pay attention to the subtitles in SLS videos. But few studies have looked at the impact of SLS on reading ability. According to a <a href="https://turnonthesubtitles.org/research/">review</a> of the evidence by turnonthesubtitles (a group dedicated to SLS), the evidence from Maharashtra provides the most conclusive evidence in favour of SLS’s impact on reading.</p>
+</div>
+<div id="basic-analysis-of-aser-data" class="section level1">
+<h1>Basic analysis of ASER Data</h1>
+<p>Before performing more sophisticated analyses, it’s useful to first explore our data. In this, and the rest of the analyses on this page, I focus on the 4 foundational literacy and numeracy scores included in the ASER trends over time report: portion of grade 3 children who can read a grade 1 text, portion of grade 5 children who can read a grade 2 text, portion of grade 3 children who can perform subtraction, and the portion of grade 5 children who can perform division. While individual ASER reports from each year include other indicators, I have data for these indicators going back in time.</p>
+<p>First, let’s look at Maharashtra’s grade 5 reading scores over time. (The graph for grade 3 reading looks very similar.)</p>
+<p><img src="/post/2020-06-02-same-language-subtitling_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+Now, let’s look at the changes in Maharashtra between 2013 and 2016 on all of the ASER indicators and compare these changes to changes in other states so we can get a sense of whether the changes in Maharashtra are relatively large.</p>
+<pre><code>## Warning: Removed 9 rows containing missing values (position_stack).</code></pre>
+<pre><code>## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+## use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="/post/2020-06-02-same-language-subtitling_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The figures reveal a few things. First, the jump in grade 5 reading levels in Maharashtra between 2014 and 2016 was large compared to other states. In fact, Maharashtra experienced the largest gain in grade 5 literacy of any state. In addition, the gain in grade 5 math was much more modest. Both of these facts suggest that something caused an increase in Maharashtra’s literacy levels. On the other hand, gains in grade 3 reading were much more modest and were similar to gains in grade 3 math. In addition, looking at reading scores over time it seems like Maharashtra may just be bouncing back from one particularly bad year.</p>
+<p>My takeaway from these figures is that Kothari’s argument is plausible but by no means certain. The reading gains are large but, on the other hand, the data are noisy.</p>
+</div>
+<div id="the-synthetic-control-method-scm" class="section level1">
+<h1>The Synthetic Control Method (SCM)</h1>
+<p>The synthetic control method offers a more rigorous approach to the classic single unit case study. Traditionally, when attempting to estimate the impact of a policy implemented in only one state or region, researchers would pick one other state or region to use as the control This is in fact what Kothari does in his article in The Huffington Post. (He uses Gujarat as the control.) This approach is obviously fraught. States may vary significantly in their policies and trends over time and thus it is questionable whether any one state would serve as a good control for another state.</p>
+<p>The synthetic control method seeks to create a better control for the state in which the policy or intervention has been implemented by using a weighted average of the outcomes for several other states which display similar trends in the outcome prior to the intervention and have similar covariate values. <a href="https://www.tandfonline.com/doi/pdf/10.1198/jasa.2009.ap08746">Abadie, Diamond, and Hainmuller (2011)</a> show that the if this “synthetic control” matches the intervention state in terms of pre-intervention outcomes and covariates, and outcomes are determined by a factor model (see article for more details), the synthetic control will likely do a good job of predicting the outcome in the intervention state after the implementation of the intervention.</p>
+<p>A second advantage of the synthetic control approach is that it provides a natural way to test the reliability of our estimate through the use of placebo tests. For example, we may conduct a set of placebo test by dropping the intervention state from our sample and then calculating the “effect” for each of the other states. By comparing the size of the effect for the actual intervention state with the size of the placebo effects for the other states, we may get a sense of how robust our estimate is.</p>
+<p><a href="https://economics.mit.edu/files/17847">Abadie (2019)</a> provides an excellent overview of the method.</p>
+</div>
+<div id="applying-scm-to-the-case-of-sls-in-maharashtra" class="section level1">
+<h1>Applying SCM to the case of SLS in Maharashtra</h1>
+<p>I use SCM to estimate the impact of SLS on grade 5 reading levels in Maharashtra between 2014 and 2016. I start with grade 5 reading levels for two reasons. First, based on the figures above, it seems like I am much more likely to see an impact on grade 5 reading than grade 3 reading. Thus, if I don’t find a clear effect on grade 5 reading (which I don’t) it is safe to give up. Second, if I use grade 5 reading levels as the outcome I can use grade 3 reading levels from the previous round as a covariate which should increase my precision substantially.</p>
+<p>There is now a cottage industry of synthetic control approaches. I use the original synthetic control approach as described in Abadie, Diamond, and Hainmuller due to the availability of the R Synth package to apply this approach.</p>
+<p>To apply the synthetic control approach, we must specify a set of predictors and a set of linear combinations of the pre-intervention outcomes variables to generate the synthetic control match. For predictors, I use grade 3 reading scores in 2014 and grade 5 math scores in 2016. (It is Ok to use “predictors” measured after the intervention as long as the intervention doesn’t effect those predictors.) For linear combinations of the pre-intervention outcome variables, I use the mean from 2007 to 2014 and the mean in 2013 and 2014.</p>
+<p>I also specify a vector which controls how much weight to assign each of these predictors in the matching process. (In most contexts, you can let the Synth package do this by figuring out which predictors best predict the outcome variable prior to the intervention. In our case, this wouldn’t work since, for example, 2016 grade 5 math scores would not do a good job of predicting 2008 grade 5 reading.) See the code for details of this vector.</p>
+<p>Create a graph showing the effects.</p>
+<pre class="r"><code>results &lt;- aser %&gt;% count(state_abbr, id) %&gt;% 
+  arrange(id) %&gt;% select(-n) %&gt;% 
+  cbind(effects) %&gt;% rename(&quot;effect&quot; =...3 )</code></pre>
+<pre><code>## New names:
+## * NA -&gt; ...3</code></pre>
+</div>

@@ -1,0 +1,150 @@
+---
+title: IHDS Quick Start Guide
+author: ''
+date: '2020-08-07'
+slug: getting-started-with-ihds-data
+categories: []
+tags:
+  - R
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>I recently used data from the India Human Development Survey (IHDS) for a paper on learning outcomes data in India. IHDS is a panel survey led by Sonalde Desai and others at NCAER/UofMd which collected on a wide range of topics from ~42,000 households across India. The survey includes two rounds of data collection, the first round in 2004/5 and the second round in 2011/12. (According to the website, a third round is in the works.)
+For those of you working on India-related research, I would highly recommend checking out the IHDS data. Unlike data from the NSSO, IHDS is free, quick and easy to access, and requires little up-front cleaning. In addition, IHDS covers a much wider range of topics than the NFHS such as income, consumption, agriculture, education, and participation in government programmes.</p>
+<p>While the IHDS documentation is excellent, it still takes a bit of time to go through it all. I wrote this blog post to serve as a “quick start” guide to help others (and my future self) quickly get up to speed and working on the data.</p>
+<div id="accessing-the-data" class="section level1">
+<h1>Accessing the data</h1>
+<p>Accessing IHDS data is pretty straightforward. You can go to the IHDS webpage <a href="https://ihds.umd.edu/">here</a>, click on “Download Data”, and follow the appropriate links or you can just click on the links below. Note that you will have to create a login ID. For more information on which specific files to download, see the next section below.</p>
+<ul>
+<li>Click <a href="https://www.icpsr.umich.edu/web/ICPSR/studies/22626">here</a> for just the first round of data</li>
+<li>Click <a href="https://www.icpsr.umich.edu/web/DSDR/studies/36151">here</a> for just the second round of data</li>
+<li>Click <a href="https://www.icpsr.umich.edu/web/ICPSR/studies/37382/datadocumentation">here</a> for both rounds combined</li>
+</ul>
+</div>
+<div id="data-files" class="section level1">
+<h1>Data files</h1>
+<p>After arriving at the data download page, you will see a bunch of different files to download. First, there are separate files for each <strong>unit of observation</strong>. In addition to the individual-level and household-level datasets, there are also files for medical facility-level data, school-level data, village-level data, and a few others.</p>
+<p>If you are downloading the panel data, there are also three different types of datasets corresponding to different ways of combining the two rounds of data. Datasets with <strong>appended</strong> in the name contain all households surveyed in either round, including households in round 1 that couldn’t be found in round 2 and vice versa. Datasets with <strong>long</strong> in the name only include households surveyed in both rounds. Similarly, datasets with <strong>wide</strong> in the name also only include households surveyed in both rounds. The only difference between these two datasets is that long datasets contain two rows for each household (corresponding to each round of the survey) while the wide datasets contain only one row and twice the number of variables. (Note that the variables with the “X” prefix are for the first round.)</p>
+<p>You may also choose the format you would like to download the data in (SAS/SPSS/Stata/R/etc).</p>
+</div>
+<div id="documentation" class="section level1">
+<h1>Documentation</h1>
+<p>Your download should include both a data guide and a user guide. (You can also find an online version of the data guide <a href="https://www.icpsr.umich.edu/web/pages/DSDR/idhs-II-data-guide.html">here</a>.) The data guide provides a pretty high-level overview of the data while the user guide provides a bit more detail on the data, including a description of various constructed variables.</p>
+<p>If you are looking for more information about how IHDS was conducted, including the nitty gritty of the sampling strategy, check out <a href="https://ihds.umd.edu/sites/default/files/publications/papers/technical%20paper%201.pdf">this technical paper.</a></p>
+<p>In addition, your download should also contain questionnaires and codebooks. (These will be in the sub-folders for each different dataset that you downloaded.)</p>
+</div>
+<div id="quick-tip-on-finding-variables-in-the-datasets" class="section level1">
+<h1>Quick tip on finding variables in the datasets</h1>
+<p>The IHDS datasets have a ton of variables and thus it can be a bit challenging to link dataset variables back to questions and vice versa.</p>
+<p>I find that a relatively quick way to find relevant variables in the dataset is to first search for keywords in the questionnaire, jot down the relevant question number, and then search for the question number in the codebook. Note that the variables in the codebooks are organized by subject rather than ordered by question number so they don’t follow the same sequence as the questionnaires.</p>
+<p>Also note that codebook section <strong>“ED5: HQ19 11.5 Education: Enrolled now”</strong> refers to variable <strong>ED5</strong> in the dataset which comes from <strong>question 11.5</strong> which is on <strong>page 19</strong> of the household questionnaire.</p>
+</div>
+<div id="sample-r-code" class="section level1">
+<h1>Sample R code</h1>
+<p>I have included some basic R code for importing and analyzing the individual-level round 2 dataset. Note that while I use R, I actually prefer to download the data in Stata format to preserve all the variable labels.</p>
+<div id="set-paths" class="section level2">
+<h2>Set paths</h2>
+<pre class="r"><code>library(tidyverse); library(haven); library(survey)
+ihds_ind_dir &lt;- &quot;C:/Users/dougj/Documents/Data/IHDS/IHDS 2012/DS0001&quot;
+ind_file &lt;- file.path(ihds_ind_dir, &quot;36151-0001-Data.dta&quot;)</code></pre>
+</div>
+<div id="import-a-single-row-and-create-a-dataframe-of-variable-labels" class="section level2">
+<h2>Import a single row and create a dataframe of variable labels</h2>
+<p>With a large dataset like IHDS, I find it useful to first import just one row and create a separate dataframe of variable names and variable labels. This allows me to determine which variables to import later.</p>
+<pre class="r"><code>ihds_one_row &lt;- read_dta(ind_file, n_max = 1)
+labels &lt;- map_chr(ihds_one_row, function(x) as.character(attributes(x)$label)[1])
+ihds_labels &lt;- tibble(variable = names(ihds_one_row), label = labels)</code></pre>
+</div>
+<div id="import-the-data" class="section level2">
+<h2>Import the data</h2>
+<p>I import just the variables I need. This saves a lot of time.</p>
+<pre class="r"><code>ihds &lt;- read_dta(ind_file, col_select = c(STATEID, DISTID, PSUID, HHID, HHSPLITID, PERSONID, IDPSU, WT,  TA8B))
+
+# Create a variables for PSU ID and HH ID which are unique for each PSU and household. This is required for the survey package.
+ihds &lt;- ihds %&gt;% mutate(psu_expanded = paste(STATEID, DISTID, PSUID, sep =&quot;-&quot;), hh_expanded = paste(STATEID, DISTID, PSUID, HHID, HHSPLITID, sep =&quot;-&quot;))
+
+# drop the one row with missing values for weights
+ihds &lt;- ihds %&gt;% filter(!is.na(WT))
+
+# Create variable for whether the respondent has achieved ASER at level 4. 
+# This variable is only non-empty for children aged 8-11, but the functions below
+# automatically drop all other respondents.
+ihds &lt;- ihds %&gt;% mutate(ASER4 = (TA8B ==4)) %&gt;% mutate(State = as_factor(STATEID))</code></pre>
+</div>
+<div id="use-the-survey-package-to-generate-point-estimates-and-confidence-intervals" class="section level2">
+<h2>Use the survey package to generate point estimates and confidence intervals</h2>
+<p>With survey data you have to use a package like “survey” to generate appropriately weighted estimates and confidence intervals which take into account the sampling design.</p>
+<pre class="r"><code>ihds_svy &lt;- svydesign(id =~ psu_expanded + hh_expanded, weights =~ WT, data = ihds)
+svyby(~ASER4, ~State, ihds_svy, svymean, na.rm=TRUE)</code></pre>
+<pre><code>##                                       State ASER4FALSE  ASER4TRUE se.ASER4FALSE
+## Jammu &amp; Kashmir 01       Jammu &amp; Kashmir 01  0.6649857 0.33501432   0.057370909
+## Himachal Pradesh 02     Himachal Pradesh 02  0.4636462 0.53635381   0.040067689
+## Punjab 03                         Punjab 03  0.4914748 0.50852518   0.045751591
+## Chandigarh 04                 Chandigarh 04  0.3333333 0.66666667   0.103956042
+## Uttarakhand 05               Uttarakhand 05  0.6122111 0.38778891   0.058721966
+## Haryana 06                       Haryana 06  0.5118283 0.48817166   0.034518693
+## Delhi 07                           Delhi 07  0.5037828 0.49621720   0.035436865
+## Rajasthan 08                   Rajasthan 08  0.5149545 0.48504550   0.024720180
+## Uttar Pradesh 09           Uttar Pradesh 09  0.6352682 0.36473182   0.023031360
+## Bihar 10                           Bihar 10  0.7707418 0.22925818   0.029092679
+## Sikkim 11                         Sikkim 11  0.7155111 0.28448886   0.170475931
+## Arunachal Pradesh 12   Arunachal Pradesh 12  0.9455938 0.05440624   0.050433681
+## Nagaland 13                     Nagaland 13  0.3227401 0.67725993   0.077900610
+## Manipur 14                       Manipur 14  0.7527021 0.24729787   0.076100018
+## Mizoram 15                       Mizoram 15  0.9191691 0.08083088   0.071232322
+## Tripura 16                       Tripura 16  0.8808848 0.11911524   0.047025077
+## Meghalaya 17                   Meghalaya 17  0.7933213 0.20667873   0.066727738
+## Assam 18                           Assam 18  0.7657789 0.23422108   0.047118227
+## West Bengal 19               West Bengal 19  0.5973793 0.40262072   0.029233110
+## Jharkhand 20                   Jharkhand 20  0.8318841 0.16811590   0.035089495
+## Orissa 21                         Orissa 21  0.5999981 0.40000187   0.038012039
+## Chhattisgarh 22             Chhattisgarh 22  0.5912968 0.40870317   0.042296244
+## Madhya Pradesh 23         Madhya Pradesh 23  0.5807230 0.41927698   0.023250220
+## Gujarat 24                       Gujarat 24  0.6728603 0.32713971   0.028936535
+## Daman &amp; Diu 25               Daman &amp; Diu 25  0.9282248 0.07177522   0.070587256
+## Dadra+Nagar Haveli 26 Dadra+Nagar Haveli 26  0.7246527 0.27534729   0.016599128
+## Maharashtra 27               Maharashtra 27  0.7771043 0.22289574   0.020304687
+## Andhra Pradesh 28         Andhra Pradesh 28  0.8606345 0.13936554   0.021150722
+## Karnataka 29                   Karnataka 29  0.7988545 0.20114546   0.019617888
+## Goa 30                               Goa 30  0.5036842 0.49631581   0.003972885
+## Kerala 32                         Kerala 32  0.5759793 0.42402074   0.031908531
+## Tamil Nadu 33                 Tamil Nadu 33  0.8095212 0.19047883   0.032289616
+## Pondicherry 34               Pondicherry 34  0.4237541 0.57624586   0.126186670
+##                       se.ASER4TRUE
+## Jammu &amp; Kashmir 01     0.057370909
+## Himachal Pradesh 02    0.040067689
+## Punjab 03              0.045751591
+## Chandigarh 04          0.103956042
+## Uttarakhand 05         0.058721966
+## Haryana 06             0.034518693
+## Delhi 07               0.035436865
+## Rajasthan 08           0.024720180
+## Uttar Pradesh 09       0.023031360
+## Bihar 10               0.029092679
+## Sikkim 11              0.170475931
+## Arunachal Pradesh 12   0.050433681
+## Nagaland 13            0.077900610
+## Manipur 14             0.076100018
+## Mizoram 15             0.071232322
+## Tripura 16             0.047025077
+## Meghalaya 17           0.066727738
+## Assam 18               0.047118227
+## West Bengal 19         0.029233110
+## Jharkhand 20           0.035089495
+## Orissa 21              0.038012039
+## Chhattisgarh 22        0.042296244
+## Madhya Pradesh 23      0.023250220
+## Gujarat 24             0.028936535
+## Daman &amp; Diu 25         0.070587256
+## Dadra+Nagar Haveli 26  0.016599128
+## Maharashtra 27         0.020304687
+## Andhra Pradesh 28      0.021150722
+## Karnataka 29           0.019617888
+## Goa 30                 0.003972885
+## Kerala 32              0.031908531
+## Tamil Nadu 33          0.032289616
+## Pondicherry 34         0.126186670</code></pre>
+</div>
+</div>

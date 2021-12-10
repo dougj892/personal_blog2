@@ -1,0 +1,74 @@
+---
+title: Is GiveWell Right that Health Interventions Should Prioritized over Education Interventions?
+author: ''
+date: '2021-10-16'
+slug: []
+categories: []
+tags:
+  - Education
+lastmod: '2021-10-16T12:08:41+13:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+bibliography: ../references.bib
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Most articles on international education start out with a well-worn two-part lede: first, developing countries are facing a “learning crisis;” second, there is a mountain of evidence demonstrating the long-term effects of education on everything from personal (and country-level) incomes to health. Yet, in their [analysis](https://www.givewell.org/international/technical/programs/education) of the philanthropic potential of international education interventions, GiveWell states that “there are a limited number of experimental studies providing direct evidence that education interventions improve the outcomes that we consider most important, such as earnings, health, and rates of marriage and fertility among teenage girls” and concludes that “the existing evidence for positive effects on earnings is too thin to draw general conclusions.”
+
+So which is it? Is there a mountain of evidence (presumably some of which is experimental) for the primary of education or is the evidence limited? I was curious about this and don’t entirely trust either GiveWell’s analysis (since their threshold for rigor is too high for my tastes) or reports like the World Bank’s World Development report on education (since one of the goals of these reports is to advocate for a cause) so I dug into the evidence a bit. From what I can tell, GiveWell is wrong about the link between education and income: there is a lot of research showing that more education leads to more income. Yet GiveWell's larger point holds. The effect of education on income may be due to signalling in which case the social returns to education are low and there is very little evidence of the long-term effects of the type of early grade education interventions that the ed sector is most excited about.  This is not to say that governments and donors should stop funding education programs, but it does suggest that additional evidence of the long-term effect educational interventions would be really, really helpful.
+
+# The Card Consensus – More Education Does Lead to More Income
+
+When it comes to education and income, the GiveWell analysis is pretty far off the mark. There is quite a bit of evidence, some of it reasonably rigorous, that more years of school increase personal income. First, there is a high and consistent (across both study and context) correlation between years of school and income. For an exhaustive review of the literature check out @patrinosReturnsEducationDeveloping2020. Of course, if harder working, smarter people tend to get more education this correlation could just be due to an unobserved ability bias. (In fact, unobserved ability bias in a regression of wages on schooling is just about the textbook example of a potential unobserved variable bias.) Yet estimates of the causal effect of years of schooling on income from a variety of other more sophisticated methods all point in a similar direction. There are studies which use distance to college, quarter of birth, a school construction program, and differences in education between identical twins as sources of exogenous variation in years of schooling. There are studies which take great pains to measure intelligence and ability somewhat reliably. (See @caplanCaseEducationWhy2019 for a review of these.) And, finally, there are the RCTs of secondary school scholarship programs in Ghana and Colombia that the GiveWell review looks at. Nearly all these studies yield more or less similar results.
+
+Estimates of the returns to schooling are so consistent across estimation approaches that, after years of endless back and forth over how best to account for ability bias, measurement error, and other technical issues, many (perhaps most) labor economists have come full circle and believe that a simple regression of log wages on years of schooling and a few other variables provides a pretty good estimate of the returns to education, a phenomenon Bryan Caplan labels the “Card consensus” after a famous economist who wrote a much-cited review article on the subject [@cardEstimatingReturnSchooling2001].
+
+# But This Could be Signaling
+
+While more years of schooling does appear to lead to personal increases in income it may not be because school makes people more productive. It could be that school serves as a signaling device – i.e. more years of school demonstrate conscientiousness, intelligence, and conformity, attributes that employers highly value.
+
+In his book *The Case against Education: Why the Education System is a Waste of Time and Money*, Bryan Caplan makes a strong case for the role of signaling in the wage returns to years of schooling. Caplan puts forth many arguments in favor of the signaling hypothesis but I found arguments particularly strong, at least when it comes to education in low- and middle-income countries. First, there is a large divergence between the personal return and the national returns to schooling. There has been a massive increase in educational attainment throughout the world over the past 50 years yet many countries which saw large increases in educational attainment saw only modest increases in GDP. (See, for example, @pritchettWhereHasAll2001 though there are many other articles with similar findings.) If education caused large increases in productivity, we would expect that national incomes would rise as countries increased educational attainment. Second, anyone who has spent any amount of time in the workforce can attest that the typical curriculum does not prepare one well for a job. This is true in the US but doubly true in many low- and middle-income countries. 
+
+The recent WDR makes a half-hearted attempt to counter the signaling argument but I wasn’t at all convinced [@worldbankWorldDevelopmentReport2018]. (See box 1.1 for their argument.) They claim that “the returns to an additional year of schooling for those who drop out without a high school or university diploma are as large as for those who complete the degree” yet, from what I can tell, this is outright false – there is plenty of evidence documenting a so-called “sheepskin effect” in low- and middle-income countries. 
+
+They also claim that “if education worked only as a screening device, individuals with the same years of schooling should have similar outcomes regardless of the skills they acquired, which is not the case.” The best evidence I could find on this comes from a study by @perez-alvarezReturnsCognitiveSkills who shows that, conditional on education, people with higher learning levels do earn more but the premium is very small. She finds that “on average, an increase in one standard deviation of literacy scores increases net hourly wages by 8.5%, conditioning on years of schooling.” To put that in perspective, that is equivalent to the return from about one additional year of school in most countries. 
+
+# More Education Also Likely Improves Health Somewhat
+
+There is an incredibly strong correlation between one’s educational attainment and one’s health and, for women, the health of one’s children. This correlation is particularly well documented in the US and Europe but there is ample evidence supporting this correlation in many other countries as well. (See @cutlerEducationHealthInsights2012 and @voglEducationHealthDeveloping2014 for reviews. See @oyeGirlsSchoolingGood2016 and @caseGreatDivideEducation2021 for more recent evidence from LICs/LMICs and the US respectively.)
+
+To what extent this reflects a causal relationship between educational attainment and health is less clear. Indeed, we know that increased health can cause increased educational attainment. (For example, the famous worms study by Kremer and Miguel showed that deworming increased schooling.) There is some evidence from RCTs and a few natural experiments (e.g. changes in compulsory schooling laws and a school construction program) which suggests that increases in education cause increases in health but the estimated effects vary. 
+
+# Improvements in Education Quality Are Much More Promising but Lack Long-Term Evidence
+
+Asking whether more education leads to more income, health, or whatever kind of misses the point. The goal of most education interventions is not to increase access to education but rather to increase the quality of education. In most countries around the world, nearly all children receive at least a primary school education. Put in historical context, the expansion of access to education is staggering: in 2010, the average Liberian had more years of school than the average Spaniard in 1950 (and only a tiny bit less than the average Frenchman or Italian in 1950). Yet, in many developing countries, children exit school without basic literacy or numeracy schools.  For example, [in Mali in 2016](http://img.asercentre.org/docs/Impact/ASER%20Abroad/PalNetworkMay2017.pdf), 10.3% of grade 5 students were able to read a grade 2 text and 12.3% were able to perform grade 2 arithmetic. 
+
+With reasonably high access and very low quality the focus of most education interventions is to increase quality rather than further increase quantity. And there have some spectacular successes in improving the quality of education. For example, several RCTs of Pratham’s Teaching at the Right Level methodology (subsequently renamed the CAMaL approach) across many different contexts shows that the approach causes large increases in learning levels for very low cost [@banerjeeProofConceptScalable2017]. 
+
+Yet very, very few of these studies look at the long-term impacts of increases in the quality of early grade education on income or health. This is unsurprising given the time required to measure these impacts: a prospective study of the impact an early grade learning intervention on income would require decades of follow-up. To my knowledge, the only two reasonably rigorous studies which look at the impact of increases in the quality of early grade (but not preschool) education are those by Chetty and co-authors in the US. In one study, Chetty et al looked at the impact of having a good early grade (kindergarten to 3rd grade) classroom on adult income and other outcomes where the quality of the classroom was defined by peer scores [@chettyHowDoesYour2011]. (Students were randomly assigned to different classrooms so variation in peer scores was random.)  In another study, Chetty et al looked at the effect of having a good primary school (grades 3-8) teacher on adult outcomes where the authors use fancy statistics to estimate teacher quality and to show that their estimates are likely exogenous to student characteristics [@chettyMeasuringImpactsTeachers2014a]. In both cases, Chetty et al find surprisingly large impact. While great it is unclear whether these results extrapolate to other interventions and contexts. 
+
+At the macro level, there is a very strong correlation between learning levels and subsequent growth [@hanushekEducationEconomicGrowth2010]. In fact, learning levels are far more predictive of later national economic growth than any other variable that has been tested. Personally, I find this evidence somewhat convincing but as with all cross-country regressions, there is the high risk of bias due to reverse causality and/or unobserved variables.
+
+# The Need for Long-Term Follow-Up of Effective Early Grade Interventions
+
+TBH, I’m perfectly happy taking the effect of increases in learning on reasoning and faith alone. Basic literacy and numeracy are so useful in so many contexts that it’s hard to imagine that improvements in basic literacy and numeracy **wouldn’t** increase adult income and other outcomes even for people who don’t rely on these skills for their jobs (e.g. farmers and housewives). I don’t think I’m alone in accepting this on faith. In fact, I would venture to say that the vast majority of people, including those in development, feel this way. Having said that, more precise estimates of the impact of education interventions, particularly promising early grade interventions which increase foundational literacy and numeracy, on long-term outcomes like income and health would be really helpful. At a minimum, such evidence could potentially (if it showed big positive effects) convince GiveWell and other similar funders. This is not a trivial amount of money – GiveWell allocates something like 100 million USD and the size of that bucket is growing rapidly. More broadly, this evidence could increase (again, assuming positive effects) education budgets or lead to shifts in ed money from secondary to primary (or vice versa). And, of course, I could be wrong. Perhaps early grade learning doesn’t matter that much. 
+
+# References
+
+

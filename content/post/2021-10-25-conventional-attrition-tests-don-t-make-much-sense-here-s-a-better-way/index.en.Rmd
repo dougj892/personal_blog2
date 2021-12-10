@@ -1,0 +1,55 @@
+---
+title: Conventional Attrition Tests Don't Make Much Sense - Here's a Better Way
+author: ''
+date: '2021-10-25'
+slug: []
+categories: []
+tags:
+  - Statistics
+lastmod: '2021-10-25T12:04:45+13:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: yes
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+A while back, I was involved in an education RCT that had pretty high (40% or so) attrition. What’s worse, the remaining treatment and control students appeared to be quite different from each other. We ended taking a series of steps which seems quite common for researchers in this situation:
+
+1. First, we explored whether it would be feasible to track down a random sample of attritors. In our case (as in most cases I think), this would have been really hard and expensive to do so we gave up on that.
+2. Next, we tried Lee bounds. Unfortunately, these were really wide so we gave up on this idea as well.
+3. Without any better option, we argued that attrition was no big deal since we performed three standard tests attrition tests and the results were more or less Ok.
+
+I don’t think any of us really believed in the attrition tests we performed but, without any clear way to adjust our estimates to account for attrition, we were kind of backed into a corner. In this blog post, I explain why we didn’t believe in those tests and what (I think) would be a more reasonable way to test for attrition. In a future blog post, I will describe what I think is a more reasonable way to adjust for attrition if your Lee bounds are too wide.
+
+# Typical Tests for Attrition Don't Make Sense
+
+We performed three different standard tests for attrition. First, we compared the overall attrition rates (i.e. the share of the sample which had dropped out between baseline and end line) between treatment and control. Second, we tested the covariate balance between treatment and control for the remaining students. Third, we tested the covariate balance between the attritors and remaining students. These seemed to be the standard tests at the time. (I confess that I haven’t paid enough attention to know if the situation has changed.)
+
+There are a few issues with these tests. First, comparing attritors and those who remain in the sample usually serves little purpose. If attritors are different from those who remain in the sample this limits the extent to which we can generalize results from the RCT but the initial sample of schools was already somewhat unrepresentative. Second, it is inefficient to test for differences in covariates by just looking at the remaining students. 
+
+# A Better Test for Attrition
+
+It would make more sense to test whether attrition caused an imbalance in your sample by also looking at attritors, i.e for a individual RCT with a single covariate you would regress
+
+
+$$ D_i=α+X_i\beta_1+X_iT_i\beta_2+\varepsilon_i $$ 
+
+Where D is inclusion in sample, X is the baseline variable, and T is your treatment variable. You would then look at parameter $\beta_2$. (With a grouped RCT, you should cluster your standard errors and with more than one variable you would look at an overall F test of all the interaction terms or use something like [this]( https://www.jstor.org/stable/27645895).) You might argue that it doesn’t make sense to look at the attritors because all you care about is whether there is balance between the remaining observations but I think this argument misses the point of why we do balance tests. The reason we perform balance test is not because we particularly care about balance along the particular covariates included in the test (we can always adjust for these) but rather because we want to know if there was anything fishy in the randomization (or the attrition process). 
+
+Lastly, it doesn’t really make sense to say that everything is Ok as long as your p-value is greater than .05 or so. This means that you are saying that unless there is really strong proof that attrition is affecting your results you are going to ignore it. Instead, it would make a lot more sense to use some sort of equivalence test (e.g. a TOST) or at least set a very, very high threshold for your p-value.
+

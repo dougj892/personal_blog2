@@ -1,0 +1,45 @@
+---
+title: The Need for More Research on Teacher Management
+author: ''
+date: '2021-09-21'
+slug: []
+tags:
+  - Education
+lastmod: '2021-09-21T05:56:34+07:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+bibliography: ../references.bib
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Educationists and economists agree that teachers are extremely important. Studies from around the world show that there is huge variance in teacher effectiveness [@hanushekTeacherQuality2006].  (Unfortunately, that same research shows that there are few observable differences between effective and ineffective teachers which means that improving the teacher workforce is not just a matter of screening for the right candidates.) Educationists seem to interpret this evidence to mean that we should spend more time conducting (and improving) teacher training.  Economists on the other hand typically interpret the evidence to mean that we should do a better job measuring performance and rewarding good teachers while punishing (or at least not rewarding) the bad ones. 
+
+There's some truth (and some wishful thinking) in both of these positions but what they both ignore is that there is a crucial first step of getting the teacher into the school in the first place. As Ramachandran and her co-authors show in their report “Getting the Right Teachers into the Right Schools” there is a *lot* of room for improvement in this area: in many states, initial assignments for new teachers are often opaque and involve politics; similarly, in many states, transfers are paper-based, opaque, and political [@ramachandranGettingRightTeachers2018].  As the authors show, these arbitrary and opaque rules waste a huge amount of everyone’s time. Teachers spend an inordinate amount of time working their networks for transfers and ed officials spend a ton of time in court fighting transfer disputes. 
+In addition, they also have a corrosive effect as teachers perceive the system as unfair. 
+“Getting the Right Teachers into the Right Schools” is a fantastic report but only scratches the surface of these issues. For example, it doesn’t look at the quality of the Teacher Eligibility Test, a test which all candidates for teaching positions must pass and which, by most accounts, is about as bad as the boards at testing for relevant knowledge. Similarly, it doesn’t look at recent teacher transfer reforms in Haryana and HP which, at least from what I’ve heard, seem to be on track to be successful.
+
+There are a lot of potential policy reforms in this space that probably wouldn’t be all that contentious. For example, changes to the TET probably wouldn’t encounter significant resistance from unions or Teacher Education Institutions, the institutions which train would be teachers. Unions don't seem to care much about the hurdles candidates have to jump through to become teachers and TEIs wouldn't lose any revenue from a change in the TET. (By contrast, policymakers have been trying to clean up the mess that is the TEIs for a long time. For a great inside account of Santosh Matthew’s failed crusade against the TEIs check out Anil Swarup’s book “Not Just a Civil Servant” [@NotJustCivil2019]) Changes to teacher assignment and transfer rules would, on the other hand, be contentious but recent reforms in Haryana and HP show that everyone is so sick of the current system that there is room for a carefully negotiated reform. 
+
+These reforms probably wouldn’t have large direct effects on learning outcomes. For example, 
+
+but could serve as a base for other reforms by freeing up ed officials’ time and improving teacher morale and trust in the system.
+
+# References
+
+

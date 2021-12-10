@@ -1,0 +1,68 @@
+---
+title: Interactive Maps in R with sf and ggiraph
+author: ''
+date: '2021-10-25'
+slug: []
+categories: []
+tags: []
+lastmod: '2021-10-25T15:53:24+13:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+draft: true
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+Up until recently, geospatial analysis was kind of a pain to do in R. A few years ago, I spent about a few hours trying to create a simple chloropleth in R. In order to create the chloropleth, I had to merge a dataframe with one row per state with a dataframe with one row for each element of each polygon defining the boundaries of the states. I eventually gave up and used QGIS.
+
+I just came across the wonderful [sf](https://r-spatial.github.io/sf/) package which makes geospatial analysis in R so much easier. Instead of having to learn new methods for dealing with dataframes of polygon features, the sf package crams all of the information about each geographic unit's spatial features into a single geometry column. That way you can continue to analyze your data as you normally would and map the data at the end of the analysis (or use the spatial information for the analysis itself). The geopandas package for python has long been able to do this so it's awesome to see R catching up.
+
+In this blog post, I show how to create a really simply interactive chloropleth map using the sf and ggiraph packages. 
+
+```{r, warning = FALSE, message=FALSE}
+library(tidyverse); library(sf); library(ggiraph)
+
+# Import state shapefile obtained from http://projects.datameet.org/maps/states/
+states <- st_read("C:/Users/dougj/Documents/Data/GIS/India shapefiles/maps-master/maps-master/States/Admin2.shp")
+
+# Download ASER 2018 state data
+aser <- read_csv("https://raw.githubusercontent.com/dougj892/public-datasets/master/ASER%202018%20and%20NAS%202017%20govt%20school%20grade%203%20reading.csv") %>% 
+  select(State, ASER_2018) %>% 
+  mutate(State = case_when(
+    State == "Arunachal Pradesh" ~ "Arunanchal Pradesh",
+    State == "Jammu and Kashmir" ~ "Jammu & Kashmir",
+    TRUE ~ State
+  ))
+
+# Merge the two dataframes
+merged <- states %>% left_join(aser, by = c("ST_NM" = "State"))
+
+p <- ggplot(merged) + 
+  geom_sf_interactive(aes(fill = ASER_2018, data_id = ST_NM, tooltip = ASER_2018)) +
+  labs(fill = "% Children", title = "Share Grade 3 Students Who Can Read Std 2 Text (ASER 2018)") +
+  scale_fill_gradient(low = "red", high = "yellow", na.value = NA) + 
+  theme_void()
+
+girafe(
+  ggobj = p
+#  width_svg = 6,
+ # height_svg = 6*0.618
+)
+```
+
+

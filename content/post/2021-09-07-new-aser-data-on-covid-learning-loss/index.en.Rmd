@@ -1,0 +1,71 @@
+---
+title: New ASER Data on COVID Learning Loss
+author: ''
+date: '2021-09-07'
+slug: []
+categories: []
+tags: []
+lastmod: '2021-09-07T09:25:46+07:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+ASER Centre recently released [results](http://img.asercentre.org/docs/aserkn3-pager_06.09.211.pdf) from a survey of learning levels in Karnataka conducted earlier this year. To my knowledge this is the first rigorous, sample-based survey of learning levels in India during COVID which is representative of a larger population. (Earlier surveys like this [one](https://archive.azimpremjiuniversity.edu.in/SitePages/pdf/Field_Studies_Loss_of_Learning_during_the_Pandemic.pdf) and this [one](https://roadscholarz.net/wp-content/uploads/2021/09/English.pdf) were not representative of larger populations and used teacher or parent recall to assess changes in learning levels.) The results are shocking, especially for the earlier grades. The figure below shows the share of standard 3, 5, and 8 students in Karnataka able to read a standard 2 level text for several previous ASER rounds and the current survey. The results for the math assessment show similar declines.
+
+```{r echo=FALSE, message = FALSE, message=FALSE}
+library(tidyverse)
+covid_aser <- tribble(
+~Year,	~`3`,	~`5`, ~`8`,
+2014,	0.183,	0.472,	0.706,
+2016,	0.198,	0.421,	0.7,
+2018,	0.192,	0.46,	0.703,
+2020,	0.098,	0.336,	0.664
+)
+
+df <- covid_aser %>% pivot_longer(!Year, names_to = "Grade", values_to = "Share")
+
+ggplot(df, aes(Year, Share, colour = Grade)) + geom_line() +
+  labs(y = "Share can read std 2 text")
+
+```
+
+To put these declines in perspective, prior to COVID Karnataka ranked right in the middle of Indian states in terms of the share of std 5 students who could read a std 2 text. By contrast, Karnataka std 5 students now do about as poorly as std 5 students in MP, one of the worst performing states, prior to COVID. 
+
+Unfortunately, the situation is likely even worse in other states. [ASER 2020 wave 1](http://www.asercentre.org/Keywords/p/371.html) assessed access to remote learning devices and remote learning study habits in each Indian state. According to that survey, Karnataka students had higher access to, and use of, remote learning across the board but were particularly more likely to have received learning materials in the previous week. (See table below with selected comparison metrics.)
+
+```{r echo=FALSE, message = FALSE, message=FALSE}
+library(gt)
+df2 <- tribble(
+  ~Figure, ~Karnataka, ~India, ~Difference,
+  "% enrolled children in hh with smartphone",68.6,61.8,6.8,
+  "% enrolled children in hh with TV",82.8,60.8,22.0,
+  "% std 3-5 students with textbooks at home",92.3,81.4,10.9,
+  "% std 3-5 students who receive study help from family members",75.0,77.3,-2.3,
+  "% std 3-5 who received learning materials in previous week",75.0,35.8,39.2,
+  "% std 3-5 who watched TV classes in previous week",26.7,19.7,7.0,
+  "% std 3-5 who watched video classes in previous week",29.3,19.7,9.6,
+  "% std 3-5 who read textbook in previous week",69.2,60.2,9.0,
+  "% std 3-5 who used worksheet in previous week",48.7,35.5,13.2,
+  
+)
+
+df2 %>% gt()
+```
+

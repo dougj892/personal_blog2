@@ -1,0 +1,39 @@
+---
+title: India Ed Stuff I Wish Their Was More Research On
+author: ''
+date: '2021-09-19'
+slug: []
+categories: []
+tags: ["India Education Research"]
+lastmod: '2021-09-19T06:11:15+07:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+bibliography: ../references.bib
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+I've spent the past year or so reading a *lot* of research on education in India. There is obviously a lot of amazing research out there, but there are also a lot of areas where there is far less evidence than I originally expected. For example, there seems to be a long-held consensus that the Indian curriculum is overloaded. The PROBE [-@probeteamPublicReportBasic1998] reports states that "children are burdened by an overloaded curriculum," economists like Lant Pritchett [-@pritchettSlowYouRe2015] talk about the problem of "over-ambitious curricula" and the official Yashpal report addresses "the problem of curriculum load" [@mhrdYashpalCommitteeReport1993].
+
+Given that, I expected to find a lot of evidence, or at least some arm-chair theorizing, on how best to lighten the curriculum load. Yet, apart from the few recommendations in the Yashpal report (which were pretty limited and obviously didn't fix the problem), there is almost nothing. Ditto with board reform. Everyone hates the boards. Yet while there is consensus on what better boards would look like (more testing of conceptual understanding and less testing of rote memorization), there is little evidence on how to make these changes. Part of the reason for these gaps may be that these questions are really difficult to answer -- setting a curriculum is an intensely political affair after all -- but I don't think that's the whole story. As I argue in later posts, I think that with some well targeted research we likely could make a lot of progress in answering how to slow down the curriculum and reform the boards. Rather, I think that a big part of the reason for these research gaps is that current education researchers don't have the tools, professional incentives, or connections to answer these questions.
+
+From what I can tell, there seem to be two research "tribes" in international education: the economists and the educationists. Economists are agnostic with regard the type of question they answer but prefer to use quantitative methods. Educationists are agnostic between quantitative and qualitative methods but tend to focus on questions related to interactions between teachers and students (e.g. pedagogy) or, less frequently, between teachers and headmasters, other officials, and parents. Both tribes describe stuff outside of their typical domain as politics or culture. For example, Michael Kremer, Nobel winning economist who has argued forcefully that curricula in many countries are overloaded, states that "there are institutional reasons for [curriculum overload]. There are political economy reasons for [curriculum overload]. [@ogdenExperimentalConversationsPerspectives2016a]" (When an economist describes something as "political economy" she typically means you might as well give up.) Similarly, the Yashpal report states that the root of the problem is not curriculum designers, teachers, or administrators, but "a deeper malaise in our society...we continue to value a few elite qualifications far more than real competence for doing useful things in life" and recommends a change to the "culture of writing textbooks."
+
+This is a shame because there are tons of really important questions that don't involve teacher interactions and can't be answered quantitatively but can be answered (or least some progress can be made) using qual methods. Over the next few blog posts, I attempt to list of few of these questions and also highlight a few of my favorite papers or reports which look at these topics. In a final blog post, I'll present some ideas on what can be done to encourage more research on these topics.
+
+# References
