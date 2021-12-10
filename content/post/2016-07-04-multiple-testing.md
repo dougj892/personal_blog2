@@ -6,7 +6,7 @@ slug: Mult-hypothesis
 categories: []
 tags:
   - Statistics
-  - Econometrics
+  
 ---
 
 This week, I volunteered to read and summarize one of the articles for IDinsigh's tech team's book club. The topic for this week is multiple hypothesis testing and the article I volunteered to summarize is "Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the Abecedarian, Perry Preschool, and Early Training Projects" by Michael Anderson.  You can find an ungated version of the article [here](http://ist-socrates.berkeley.edu/~raphael/IGERT/Workshop/Anderson%20Preschool.pdf).  

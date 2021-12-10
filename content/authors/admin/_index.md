@@ -73,7 +73,7 @@ email: ""
 highlight_name: true
 ---
 
-I am an independent consultant and researcher specializing in impact evaluations, primarily of education and public health programs. In my free time I like climbing things.
+I am an independent consultant specializing in impact evaluations of development programs. In my free time I like climbing things.
 
 This blog is maintained in R and RStudio using the blogdown package. If you would like to access the source code for any post (without cutting and pasting from the html output), you can find the raw code at the [github repo](https://github.com/dougj892/personal_blog2) for this blog.
 
