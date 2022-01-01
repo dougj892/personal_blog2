@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sampling | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/tag/sampling/</link>
+      <atom:link href="https://academic-demo.netlify.app/tag/sampling/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sampling</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 12 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>Sampling</title>
+      <link>https://academic-demo.netlify.app/tag/sampling/</link>
+    </image>
+    
+    <item>
+      <title>An Introduction to Two-Phase Sampling and How it Could be Used to Collect Learning Outcomes Data</title>
+      <link>https://academic-demo.netlify.app/post/school-versus-household-based-surveys-for-collecting-learning-outcomes-data/</link>
+      <pubDate>Sun, 12 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/school-versus-household-based-surveys-for-collecting-learning-outcomes-data/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Andres Parrado and I recently wrote an &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0738059321000626&#34;&gt;article&lt;/a&gt; in which we look at the reliability of learning outcomes data in India. The main findings of the paper are a) the government-run survey of learning outcomes (called the NAS) likely contains a lot of noise and b) the main independent survey of learning outcomes (ASER) is a tad bit noisier than the survey’s sample size would lead one to believe.&lt;/p&gt;
+&lt;p&gt;In the process of working on the paper, I spent a bit of time looking at learning outcomes surveys across the world. Something that somewhat surprised me is that most learning outcomes surveys, in both rich countries (e.g. PISA) and developing countries (e.g. SACMEQ), are school-based. That is, the surveyors randomly select a bunch of schools, then randomly select a bunch of students in each selected school, and finally administer the assessment to each student.&lt;/p&gt;
+&lt;p&gt;This makes sense in rich countries where you have a) high enrollment, b) accurate and up to date lists of schools, c) high attendance, d) high rates of basic literacy (and thus high capacity to take a paper and pencil test), and e) low incentives for teachers or other administrators to cheat (in the sense that their potential financial gains are a small fraction of what they stand to lose if they are caught).&lt;/p&gt;
+&lt;p&gt;In developing countries, you often only have (a) – high enrollment. Typically, there is no comprehensive roster of all schools due to the proliferation of low-cost, informal private schools. Attendance on exam day cannot be guaranteed. And a large share of students don’t have sufficient reading skills to take a paper and pencil test.&lt;/p&gt;
+&lt;p&gt;An alternative to the school-based approach which I think makes more sense in developing countries is to instead randomly select households. That is, you would randomly select villages, then randomly select households within each village, and finally administer the assessment to each child in each randomly selected household. This is the approach that ASER uses and seems to work really well.&lt;/p&gt;
+&lt;div id=&#34;using-existing-household-surveys-to-collect-learning-outcomes-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Using existing household surveys to collect learning outcomes data&lt;/h1&gt;
+&lt;p&gt;I think that the ideal way of collecting learning outcomes data in most developing countries would be to add a short, basic learning outcomes module to an existing large household survey like the DHS or LSMS. ASER has proved that you can get a good measure of a child’s basic literacy and numeracy in very little time so it wouldn’t add much to the total survey time or cost.&lt;/p&gt;
+&lt;p&gt;Of course, getting the org running an existing large household survey to add a module to their survey is never an easy task. Out of curiosity, I decided to look at whether it would be possible to get reasonably precise estimates of learning outcomes by administering a learning outcomes assessment to just a sub-sample of children included in a larger household survey. My motivation was that, at least in theory, administering a learning module to a sub-sample of respondents rather than the full sample is lower cost and hassle and thus it might be easier to convince someone to do this than to administer the module to the full sample. (With tools like SurveyCTO it is pretty easy to randomly select a sub-sample on the spot these days.) In practice, the procedures for adding modules / questions to existing major surveys like the DHS or NSSO rounds are extremely bureaucratic so this might just be wishful thinking on my part.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;estimating-precision-from-estimating-learning-levels-using-a-sub-sample-from-a-larger-survey&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Estimating precision from estimating learning levels using a sub-sample from a larger survey&lt;/h1&gt;
+&lt;p&gt;In theory, you can get reasonably high precision using only a sub-sample of a larger survey because a) you can draw a random sub-sample (i.e. without having to cluster) from the larger sample and b) a household survey like the DHS includes a lot of additional variables which are predictive of learning outcomes. To understand the first reason, suppose that sample size of the the existing household survey is so large that you can effectively consider it the whole population. If you draw a simple random sub-sample of size &lt;span class=&#34;math inline&#34;&gt;\(N_{sub}\)&lt;/span&gt; from the larger sample then your standard errors will be about as large as they would be if you drew a simple random sample from the entire population and much smaller than they would be under the typically sampling approach of two-stage clustering (e.g. selecting villages then hamlets). To understand the second reason, suppose that there is a variable in the larger sample (such as household wealth) that is extremely highly predictive of learning outcomes. You could then use this variable as an auxiliary variable when generating your estimates (or when selecting your sub-sample as a strata variable).&lt;/p&gt;
+&lt;p&gt;This approach, in which you collect some information for a large sample and then collect additional information for a second sub-sample is called &lt;strong&gt;two-phase sampling&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;With a bit of math and data from the IHDS we can provide more formal estimates of the sample size requirements. The description below is a bit informal. For a more formal description, check out chapter 12 in Lohr &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-lohr2019sampling&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; or chapter 9 in Sarndal et al &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-sarndal2003model&#34; role=&#34;doc-biblioref&#34;&gt;Särndal, Swensson, and Wretman 2003&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_f}}\)&lt;/span&gt; be the estimate of average learning outcomes that we would obtain if we administered the learning outcome assessment to all children in the sample (f stands for “full”). Let &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_2}}\)&lt;/span&gt; be the estimate of average learning outcome if we only administer the assessment to a subsample of children (2 = “two phase”). Recall from intro stats that &lt;span class=&#34;math inline&#34;&gt;\(Var(y)=Var(E[y|x])+E[Var(y|x)]\)&lt;/span&gt;. If Z is the vector indicating household inclusion in the full sample (also called the first phase sample) then…&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Var(\widehat{\bar{y_2}})=Var(E[\widehat{\bar{y_2}}|Z])+E[Var(\widehat{\bar{y_2}}|Z)]\approx Var(\widehat{\bar{y_f}})+E[Var(\widehat{\bar{y_2}}|Z)] \]&lt;/span&gt;
+Where the second approximate equality holds as long as the &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_2}}\)&lt;/span&gt; is approximately an unbiased estimator of &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_f}}\)&lt;/span&gt;. The second term in the equation is variance of estimator treating the full sample (i.e. the first phase sample) as the full population. Since we have a lot of auxiliary information with which to create that estimator, it’s variance is likely to be quite small.&lt;/p&gt;
+&lt;p&gt;We can estimate both of these terms using IHDS data. We first estimate &lt;span class=&#34;math inline&#34;&gt;\(Var(\widehat{\bar{y_f}})\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt; is the proportion of children 8-11 who are able to read a standard 2 level text in 2011-12. (IHDS only administered the ASER tool to 8-11 year olds.)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load required pacakges
+library(tidyverse); library(survey); library(haven); library(tidymodels)
+
+# Load the Stata version of the individual level IHDS file
+# To get this file go to https://www.icpsr.umich.edu/web/DSDR/studies/36151
+# Then click &amp;quot;download&amp;quot; and &amp;quot;stata&amp;quot;. You will need to create a login and you will get a bunch of other files in addition to this one.
+ihds_ind_dir &amp;lt;- &amp;quot;C:/Users/dougj/Documents/Data/IHDS/IHDS 2012/DS0001&amp;quot;
+ind_file &amp;lt;- file.path(ihds_ind_dir, &amp;quot;36151-0001-Data.dta&amp;quot;)
+ihds &amp;lt;- read_dta(ind_file, col_select = c(STATEID, DISTID, PSUID, URBAN2011, HHID, HHSPLITID, PERSONID, IDPSU, WT, RO3, RO7, RO5, COPC, ASSETS, GROUPS, HHEDUC, HHEDUCM, HHEDUCF, INCOME, NPERSONS,starts_with(&amp;quot;CS&amp;quot;), starts_with(&amp;quot;TA&amp;quot;), starts_with(&amp;quot;ED&amp;quot;)))
+
+# Create variables for full PSU ID, HH ID, ASER score, and state
+ihds &amp;lt;- ihds %&amp;gt;% 
+  mutate(psu_expanded = paste(STATEID, DISTID, PSUID, sep =&amp;quot;-&amp;quot;), 
+         hh_expanded = paste(STATEID, DISTID, PSUID, HHID, HHSPLITID, sep =&amp;quot;-&amp;quot;),
+         ASER4 = (TA8B ==4),
+         State = as_factor(STATEID)) %&amp;gt;% 
+  filter(!is.na(WT))
+
+
+# Specify the survey design
+# note that this and the line after can take a minute or two
+ihds_svy &amp;lt;- svydesign(id =~ psu_expanded + hh_expanded, weights =~ WT, data = ihds)
+
+# Estimate the mean of ASER4 for the full country and get the standard error
+svymean(~ASER4, ihds_svy, na.rm =TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##               mean     SE
+## ASER4FALSE 0.67279 0.0084
+## ASER4TRUE  0.32721 0.0084&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Our standard error for our estimate is a little under one percentage point. This makes sense since our sample size is over 10,000 children so this implies a design effect of around 2.&lt;/p&gt;
+&lt;p&gt;In the following code, I estimate the second term in the equation above – the additional variance due to the two-phase sampling design – assuming the random sub-sample is 1/20th the size or about 590 kids. If we just use the simple mean of our sub-sample as our estimator, the RMSE is about .021. (Just as we would expect for a SRS). If we use some of the other variables as auxiliary information, or RMSE is .0196. So, unfortunately, the auxiliary information didn’t buy us much in the way of improved precision here. (Though I should also point out that I pretty much just ran a regression with the first variables I could think of. A more sophisticated approach could potentially generate far better predictions.)&lt;/p&gt;
+&lt;p&gt;Still, our estimated RMSE for the overall estimator &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{.0084^2+.0196^2} = .0213\)&lt;/span&gt;. Not bad for a total sample size of 590 kids.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a new dataframe with only children 8-11 and all the variables we want to use in our analysis
+kids &amp;lt;- ihds %&amp;gt;% 
+  filter(!is.na(TA8B)) %&amp;gt;% 
+  transmute(ASER4, TA4, RO3, URBAN2011, ASSETS, log_inc = log(INCOME+1), group = as_factor(GROUPS), RO5, HHEDUC, NPERSONS, log_pcc = log(COPC), private = ifelse((CS4 ==4), 1, 0))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in log(INCOME + 1): NaNs produced&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a formula that we will use in our probit regression later
+rx &amp;lt;- as.formula(&amp;quot;ASER4 ~ TA4 + log_pcc + RO3 + RO5 + HHEDUC + private + NPERSONS + URBAN2011 + log_inc + group&amp;quot;)
+
+# 1/rho is the proportion of the main sample that we assume will be sub-sampled
+rho &amp;lt;- 20
+
+# set the seed so this is reproducible
+set.seed(123456789)
+
+# Create a 20-fold split. Note that ideally, I would randomly select households to be included/excluded in each split, but this is a pain and wouldn&amp;#39;t likely make much of a difference. (Since IHDS only surveyed kids 8-11 there are typically max 1 per hh.)
+split_obj &amp;lt;- vfold_cv(kids, v = rho, repeats = 10)
+
+# Calculate the true overall mean
+true &amp;lt;- mean(kids$ASER4)
+
+# Create a function which will take one of the splits from the split_obj and calculate 
+# the error assuming we don&amp;#39;t use an auxiliary info and using auxiliary information.
+# See here for more info https://rsample.tidymodels.org/articles/Working_with_rsets.html
+ggreg_error &amp;lt;- function(splits){
+  # Please note that I use the assessment data as the training data and the analysis test 
+  # as the holdout data.  This is the exact opposite of what a normal ML work flow looks like.
+  # In a normal workflow, you fit your model on the 1-1/rho of the data and 
+  #then test it on the 1/rho portion of the data.  I want to do the exact opposite. 
+  sample &amp;lt;- assessment(splits)
+  other &amp;lt;- analysis(splits)
+  
+  # Fit the model  
+  mod &amp;lt;- glm(rx, data = sample, family = binomial(link = &amp;quot;probit&amp;quot;))
+  
+  # Generate model predictions for both datasets
+  preds_other &amp;lt;- augment(mod, newdata = other, type.predict = &amp;quot;response&amp;quot;)
+  preds_sample &amp;lt;- augment(mod, newdata = sample, type.predict = &amp;quot;response&amp;quot;)
+
+  # Calculate the generalized GREG (see Pfefferman eq 4.8 for details)
+  ggreg &amp;lt;- mean(preds_other$.fitted, na.rm = TRUE)*((rho-1)/rho) + mean(sample$ASER4, na.rm = TRUE)/rho 
+
+  # Return   
+  return(list(true-ggreg, true- mean(sample$ASER4, na.rm=TRUE)))
+}
+
+# Map this function to the split object
+split_obj$error &amp;lt;- map(split_obj$splits, ggreg_error)
+
+# Get the root mean squared error for both the simple mean and the generalized GREG estimator
+ggreg_error_vec &amp;lt;- map_dbl(split_obj$error, 1)
+simple_error_vec &amp;lt;- map_dbl(split_obj$error, 2)
+
+sqrt_mse_ggreg &amp;lt;- (mean(ggreg_error_vec^2))^.5
+sqrt_mse_ggreg&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.01969&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sqrt_mse_simple &amp;lt;- (mean(simple_error_vec^2))^.5
+sqrt_mse_simple&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.02088427&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-lohr2019sampling&#34; class=&#34;csl-entry&#34;&gt;
+Lohr, Sharon L. 2019. &lt;em&gt;Sampling: Design and Analysis: Design and Analysis&lt;/em&gt;. CRC Press.
+&lt;/div&gt;
+&lt;div id=&#34;ref-sarndal2003model&#34; class=&#34;csl-entry&#34;&gt;
+Särndal, Carl-Erik, Bengt Swensson, and Jan Wretman. 2003. &lt;em&gt;Model Assisted Survey Sampling&lt;/em&gt;. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple Random Sampling vs. PPS Sampling</title>
+      <link>https://academic-demo.netlify.app/post/srs-v-pps/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/srs-v-pps/</guid>
+      <description>&lt;p&gt;A question came up on one of our evaluations on whether we should use simple random sampling (SRS) or probability proportional to size (PPS) sampling when selecting villages (our primary sampling units) for a matching study.  Under SRS, you randomly select primary sampling units (PSUs) until you reach your desired sample size.  With PPS sampling, you select your PSUs using some measure of size.  PPS is often used in a first stage of a two-stage sampling design because if you use PPS to select PSUs and then select a fixed number of units (households in our case) per PSU in the second stage of sampling, the probability of selection will be identical for all units.  (To see this, note that  the probability of selecting each PSU is \( n_1*w_i\)) where \( n_1\) is the number of PSUs you select and the probability of selecting a household in a village conditional on selecting the village in the first stage is \(\frac{n_2}{w_i}\) where \(n_2\) is the number of households sampled per village.  Note that this depends on your estimate of size being 100% accurate.  More details &lt;a href=&#34;https://en.wikipedia.org/wiki/Sampling_%28statistics%29#Probability-proportional-to-size_sampling&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.  Code to perform PPS without replacement &lt;a href=&#34;https://ideas.repec.org/c/boc/bocode/s454101.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A quick way to answer this question is to use something called the &amp;ldquo;design effect.&amp;rdquo;  The design effect is defined as the ratio of the variance of your estimate under a given sampling scheme to the variance of your estimate under SRS of final units.  (Note that performing SRS on your final units, here households, is not the same as performing SRS of PSUs and then selecting a fixed number of units per PSU.) Design effects are typically used to estimate sample size requirements for population-based surveys that don&amp;rsquo;t use SRS.  For example, you may know that for a household survey in India looking at consumption expenditure and using a certain sampling strategy, the design effect is likely to be around 2. To estimate the required sample size for this survey, you first estimate the sample size required under SRS and then double it. (Remember that the variance of a mean of a sample drawn using SRS is \(\frac{\sigma^2}{N}\) so if you multiple the variance by X you also need to multiply the sample size by X to get the same variance.)&lt;/p&gt;
+&lt;p&gt;If we used SRS to select villages and then selected a fixed number of households per village, we might want to weight each household by the number of households in the village, or \( \frac{w_i}{\sum{w_i}}  \), when performing our final analysis so that our estimates are representative of the entire population.  (I say &amp;ldquo;might&amp;rdquo; because there are differing opinions on this.  Stay tuned for a book club discussion on this topic.)  If we do use weights in our analysis, and  if we assume constant variance \( \sigma_y^2 \) per village and do a little hand waving, the variance of our estimate of the mean of a variable in the treatment group would be roughly:&lt;/p&gt;
+&lt;p&gt;$$Var(\bar{y}_{w})=Var\left(\sum{\frac{w_iy_i}{\sum{w_i}}}\right)=\frac{\sum{w_i^2}}{\left(\sum{w_i}\right)^2}\sigma_y^2$$&lt;/p&gt;
+&lt;p&gt;Where \( w_i \) is the size of village i.&lt;/p&gt;
+&lt;p&gt;If we sample using PPS, our variance would be roughly the variance for an estimate under SRS of final units (which, again, is different from SRS of PSUs) which would just be \( \frac{\sigma_y^2}{N} \).  Thus, our design effect is&amp;hellip;&lt;/p&gt;
+&lt;p&gt;$$\frac{\sum{w_i^2}}{\left(\sum{w_i}\right)^2}N$$&lt;/p&gt;
+&lt;p&gt;To estimate the final sample size required if using weights, we first calculate the sample size required using standard power calculations and then multiply this by our estimate of the design effect. Note that this is a pretty rough calculation (for example, I&amp;rsquo;m not taking into account the fact that both sampling schemes involve two stages), but it gives you an approximate idea of how the sampling scheme will affect power.&lt;/p&gt;
+&lt;p&gt;Another consideration in choosing between the two sampling schemes for this evaluation is that we have to do a full household listing in each village.  On average, the villages selected using PPS will be significantly larger than under simple random sampling (where the expected value of the village sizes would be equal to the average village size).  The formula for the expected size of the PSU under PPS (assuming we are just selecting one PSU or selecting with replacement) is&amp;hellip;&lt;/p&gt;
+&lt;p&gt;$$E[w_i]=\frac{\sum{w_i^2}}{\sum{w_i}}$$&lt;/p&gt;
+&lt;p&gt;To derive this, note that the expected value of a variable is the sum of the probability of selecting each value of the variable times the value.  Under PPS, the probability of selecting each village is \(\frac{w_i}{\sum{w_i}} \).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

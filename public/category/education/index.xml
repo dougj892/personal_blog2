@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>education | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/category/education/</link>
+      <atom:link href="https://academic-demo.netlify.app/category/education/index.xml" rel="self" type="application/rss+xml" />
+    <description>education</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 20 Sep 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>education</title>
+      <link>https://academic-demo.netlify.app/category/education/</link>
+    </image>
+    
+    <item>
+      <title>The Need for More Research on Board Reform</title>
+      <link>https://academic-demo.netlify.app/post/2021-09-20-the-need-for-more-research-on-board-reform/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-09-20-the-need-for-more-research-on-board-reform/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-09-20-the-need-for-more-research-on-board-reform/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;For as long as high stakes exams have existed, people have hated them. The system of imperial examinations used to select the mandarins of ancient Chinese dynasties (and the first high-stakes exams) is credited with building an empire. It was also nearly universally hated in their specifics which, critics claimed, caused rote learning, teaching to the test, and severe anxiety &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-kellaghanPublicExaminationsExamined2020&#34; role=&#34;doc-biblioref&#34;&gt;Kellaghan and Greaney 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Given the near universal hate of high-stakes exams, it’s no surprise that people don’t like the Indian boards. Still, by any standard, Indian boards are particularly bad. Burdett &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-burdettReviewHighStakes2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt; compares several high-stakes exams including the CBSE and boards in Uganda, Nigeria, Pakistan, and Canada. The high-stakes exams in Uganda, Nigeria, and Canada, while not perfect, at least test some conceptual understanding. Burdett reserves harshest criticism for the CBSE and boards in Pakistan. According to Burdett, “overall the CBSE examination papers are heavily biased to rote-learning, do not test higher-order skills, and actively discourage students who try and display them.” India’s low quality boards cast a massive shadow on its education system, forcing students to memorize entire textbooks rather than spending time on more rewarding, useful, and fun intellectual pursuits.&lt;/p&gt;
+&lt;p&gt;There have been no shortage of official recommendations to reform the boards. NCERT’s National Focus Group on Examination Reforms was no less harsh than Burdett in its assessment of Indian boards and included a bunch of reasonable suggestions for what types of questions should be included in the boards. Similarly, the NEP calls for the boards to be “redesigned to encourage holistic development” and that they should “test primarily core capacities/competencies rather than months of coaching and memorization” &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-mhrdNationalEducationPolicy2020&#34; role=&#34;doc-biblioref&#34;&gt;MHRD 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;If there is such widespread and long held consensus on the need for change, why hasn’t it already happened? A report by EI report on the Gujarat boards provides a clue. (Unfortunately, the link I used to download the report is broken and I can’t find a live link but will update this post once I find one.) The report contains a multitude of rich findings but I found one in particular interesting. EI found that a major impediment to board reform has to do with security. Paper setters (i.e. the people who write the actual exams) are extremely concerned about question errors since any such errors cause massive confusion, institutional embarrassment, and a lot of extra work. Paper setters are also extremely concerned about question leakage since this too can create a lot of confusion and extra work. As a result, paper setters opt for a low-risk strategy of creating questions directly from textbook passages as this almost guarantees that the question won’t contain any errors without the need for additional review (which raises the risk that questions will be leaked).&lt;/p&gt;
+&lt;p&gt;I don’t know enough about the internal processes and politics of boards to say how great an impediment security is to improving the boards is but it seems plausible that it could be a major one. If so, more research on how to solve these security challenges would be vastly more useful than repeating the mantra that the boards must improve their questions. This is also a tractable question. Researchers could look to the paper-setting security practices from other boards around the world or even to security practices more generally.&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-burdettReviewHighStakes2017&#34; class=&#34;csl-entry&#34;&gt;
+Burdett, Newman. 2017. &lt;span&gt;“Review of &lt;span&gt;High Stakes Examination Instruments&lt;/span&gt; in &lt;span&gt;Primary&lt;/span&gt; and &lt;span&gt;Secondary School&lt;/span&gt; in &lt;span&gt;Developing Countries&lt;/span&gt;.”&lt;/span&gt; &lt;span&gt;Research on Improving Systems of Education (RISE)&lt;/span&gt;. &lt;a href=&#34;https://doi.org/10.35489/BSG-RISE-WP_2017/018&#34;&gt;https://doi.org/10.35489/BSG-RISE-WP_2017/018&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-kellaghanPublicExaminationsExamined2020&#34; class=&#34;csl-entry&#34;&gt;
+Kellaghan, Thomas, and Vincent Greaney. 2020. &lt;span&gt;“Public &lt;span&gt;Examinations Examined&lt;/span&gt;.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-mhrdNationalEducationPolicy2020&#34; class=&#34;csl-entry&#34;&gt;
+MHRD. 2020. &lt;span&gt;“National &lt;span&gt;Education Policy&lt;/span&gt; 2020.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why India Should Focus on Educational TV rather than EdTech</title>
+      <link>https://academic-demo.netlify.app/post/why-india-should-focus-on-educational-tv-rather-than-edtech/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/why-india-should-focus-on-educational-tv-rather-than-edtech/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;A couple of weeks ago, &lt;a href=&#34;https://www.linkedin.com/in/rob-sampson/?originalSubdomain=in&#34;&gt;Rob Sampson&lt;/a&gt; and I published an op-ed in Quartz India arguing that the central and state governments in India should use Educational TV rather than smartphone-based EdTech to reach students out of school due to the covid crisis. We use survey data to show that smartphone penetration in India is much lower than sales figures would lead you to believe. By contrast, TV ownership is relatively high even among the poor.&lt;/p&gt;
+&lt;p&gt;The full article is &lt;a href=&#34;https://scroll.in/article/961937/small-screen-big-impact-educational-tv-could-be-indias-next-frontier-in-remote-learning&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As always with an op-ed, we ended up cutting several points due to space constraints. The great thing about a blog is that space constraints are not really an issue, so in this post I’ll flesh out some of those points that got cut.&lt;/p&gt;
+&lt;p&gt;First, even if parents own a smartphone they often are reluctant to let their children use it for extended periods of time.&lt;/p&gt;
+&lt;p&gt;Second, we believe TV is a better channel for instruction than radio due to relatively low radio ownership. During the Charcha2020 conference, Ashish Dhawan, founder of CSF, pointed out that the evidence for interactive radio is stronger than the evidence for educational TV. This is true, but, according to the most recent NFHS survey, only about 8% of Indian households own a radio. In addition, I think that the stronger evidence for interactive radio is most likely due to its longer history. Interactive radio has been around (and studied) since the mid-1970s. By contrast, if you exclude “edutainment” programs like Sesame Street, there are relatively few studies of ETV in developing countries. In terms of format, ETV can mimic interactive radio by including pauses for students to digest and react to content.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

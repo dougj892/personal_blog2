@@ -1,0 +1,1249 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Doug Johnson" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I recently used data from the India Human Development Survey (IHDS) for a paper on learning outcomes data in India. IHDS is a panel survey led by Sonalde Desai and others at NCAER/UofMd which collected on a wide range of topics from ~42,000 households across India." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/post/getting-started-with-ihds-data/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.4d3fddba2b325f129185bb42290fa344.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://academic-demo.netlify.app/post/getting-started-with-ihds-data/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Doug Johnson" />
+  <meta property="og:url" content="https://academic-demo.netlify.app/post/getting-started-with-ihds-data/" />
+  <meta property="og:title" content="IHDS Quick Start Guide | Doug Johnson" />
+  <meta property="og:description" content="I recently used data from the India Human Development Survey (IHDS) for a paper on learning outcomes data in India. IHDS is a panel survey led by Sonalde Desai and others at NCAER/UofMd which collected on a wide range of topics from ~42,000 households across India." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-08-07T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-08-07T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://academic-demo.netlify.app/post/getting-started-with-ihds-data/"
+  },
+  "headline": "IHDS Quick Start Guide",
+  
+  "datePublished": "2020-08-07T00:00:00Z",
+  "dateModified": "2020-08-07T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Doug Johnson"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doug Johnson",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "I recently used data from the India Human Development Survey (IHDS) for a paper on learning outcomes data in India. IHDS is a panel survey led by Sonalde Desai and others at NCAER/UofMd which collected on a wide range of topics from ~42,000 households across India."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>IHDS Quick Start Guide | Doug Johnson</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="23e314124bb51ca607d6f08d10d18eb6" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Publications</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/#journal_articles"><span>Journal articles</span></a>
+            
+              <a class="dropdown-item" href="/#working_papers"><span>Working papers</span></a>
+            
+              <a class="dropdown-item" href="/#op_eds"><span>Op-eds</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/dougj8921" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>IHDS Quick Start Guide</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Aug 7, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>I recently used data from the India Human Development Survey (IHDS) for a paper on learning outcomes data in India. IHDS is a panel survey led by Sonalde Desai and others at NCAER/UofMd which collected on a wide range of topics from ~42,000 households across India. The survey includes two rounds of data collection, the first round in 2004/5 and the second round in 2011/12. (According to the website, a third round is in the works.)
+For those of you working on India-related research, I would highly recommend checking out the IHDS data. Unlike data from the NSSO, IHDS is free, quick and easy to access, and requires little up-front cleaning. In addition, IHDS covers a much wider range of topics than the NFHS such as income, consumption, agriculture, education, and participation in government programmes.</p>
+<p>While the IHDS documentation is excellent, it still takes a bit of time to go through it all. I wrote this blog post to serve as a “quick start” guide to help others (and my future self) quickly get up to speed and working on the data.</p>
+<div id="accessing-the-data" class="section level1">
+<h1>Accessing the data</h1>
+<p>Accessing IHDS data is pretty straightforward. You can go to the IHDS webpage <a href="https://ihds.umd.edu/">here</a>, click on “Download Data”, and follow the appropriate links or you can just click on the links below. Note that you will have to create a login ID. For more information on which specific files to download, see the next section below.</p>
+<ul>
+<li>Click <a href="https://www.icpsr.umich.edu/web/ICPSR/studies/22626">here</a> for just the first round of data</li>
+<li>Click <a href="https://www.icpsr.umich.edu/web/DSDR/studies/36151">here</a> for just the second round of data</li>
+<li>Click <a href="https://www.icpsr.umich.edu/web/ICPSR/studies/37382/datadocumentation">here</a> for both rounds combined</li>
+</ul>
+</div>
+<div id="data-files" class="section level1">
+<h1>Data files</h1>
+<p>After arriving at the data download page, you will see a bunch of different files to download. First, there are separate files for each <strong>unit of observation</strong>. In addition to the individual-level and household-level datasets, there are also files for medical facility-level data, school-level data, village-level data, and a few others.</p>
+<p>If you are downloading the panel data, there are also three different types of datasets corresponding to different ways of combining the two rounds of data. Datasets with <strong>appended</strong> in the name contain all households surveyed in either round, including households in round 1 that couldn’t be found in round 2 and vice versa. Datasets with <strong>long</strong> in the name only include households surveyed in both rounds. Similarly, datasets with <strong>wide</strong> in the name also only include households surveyed in both rounds. The only difference between these two datasets is that long datasets contain two rows for each household (corresponding to each round of the survey) while the wide datasets contain only one row and twice the number of variables. (Note that the variables with the “X” prefix are for the first round.)</p>
+<p>You may also choose the format you would like to download the data in (SAS/SPSS/Stata/R/etc).</p>
+</div>
+<div id="documentation" class="section level1">
+<h1>Documentation</h1>
+<p>Your download should include both a data guide and a user guide. (You can also find an online version of the data guide <a href="https://www.icpsr.umich.edu/web/pages/DSDR/idhs-II-data-guide.html">here</a>.) The data guide provides a pretty high-level overview of the data while the user guide provides a bit more detail on the data, including a description of various constructed variables.</p>
+<p>If you are looking for more information about how IHDS was conducted, including the nitty gritty of the sampling strategy, check out <a href="https://ihds.umd.edu/sites/default/files/publications/papers/technical%20paper%201.pdf">this technical paper.</a></p>
+<p>In addition, your download should also contain questionnaires and codebooks. (These will be in the sub-folders for each different dataset that you downloaded.)</p>
+</div>
+<div id="quick-tip-on-finding-variables-in-the-datasets" class="section level1">
+<h1>Quick tip on finding variables in the datasets</h1>
+<p>The IHDS datasets have a ton of variables and thus it can be a bit challenging to link dataset variables back to questions and vice versa.</p>
+<p>I find that a relatively quick way to find relevant variables in the dataset is to first search for keywords in the questionnaire, jot down the relevant question number, and then search for the question number in the codebook. Note that the variables in the codebooks are organized by subject rather than ordered by question number so they don’t follow the same sequence as the questionnaires.</p>
+<p>Also note that codebook section <strong>“ED5: HQ19 11.5 Education: Enrolled now”</strong> refers to variable <strong>ED5</strong> in the dataset which comes from <strong>question 11.5</strong> which is on <strong>page 19</strong> of the household questionnaire.</p>
+</div>
+<div id="sample-r-code" class="section level1">
+<h1>Sample R code</h1>
+<p>I have included some basic R code for importing and analyzing the individual-level round 2 dataset. Note that while I use R, I actually prefer to download the data in Stata format to preserve all the variable labels.</p>
+<div id="set-paths" class="section level2">
+<h2>Set paths</h2>
+<pre class="r"><code>library(tidyverse); library(haven); library(survey)
+ihds_ind_dir &lt;- &quot;C:/Users/dougj/Documents/Data/IHDS/IHDS 2012/DS0001&quot;
+ind_file &lt;- file.path(ihds_ind_dir, &quot;36151-0001-Data.dta&quot;)</code></pre>
+</div>
+<div id="import-a-single-row-and-create-a-dataframe-of-variable-labels" class="section level2">
+<h2>Import a single row and create a dataframe of variable labels</h2>
+<p>With a large dataset like IHDS, I find it useful to first import just one row and create a separate dataframe of variable names and variable labels. This allows me to determine which variables to import later.</p>
+<pre class="r"><code>ihds_one_row &lt;- read_dta(ind_file, n_max = 1)
+labels &lt;- map_chr(ihds_one_row, function(x) as.character(attributes(x)$label)[1])
+ihds_labels &lt;- tibble(variable = names(ihds_one_row), label = labels)</code></pre>
+</div>
+<div id="import-the-data" class="section level2">
+<h2>Import the data</h2>
+<p>I import just the variables I need. This saves a lot of time.</p>
+<pre class="r"><code>ihds &lt;- read_dta(ind_file, col_select = c(STATEID, DISTID, PSUID, HHID, HHSPLITID, PERSONID, IDPSU, WT,  TA8B))
+
+# Create a variables for PSU ID and HH ID which are unique for each PSU and household. This is required for the survey package.
+ihds &lt;- ihds %&gt;% mutate(psu_expanded = paste(STATEID, DISTID, PSUID, sep =&quot;-&quot;), hh_expanded = paste(STATEID, DISTID, PSUID, HHID, HHSPLITID, sep =&quot;-&quot;))
+
+# drop the one row with missing values for weights
+ihds &lt;- ihds %&gt;% filter(!is.na(WT))
+
+# Create variable for whether the respondent has achieved ASER at level 4. 
+# This variable is only non-empty for children aged 8-11, but the functions below
+# automatically drop all other respondents.
+ihds &lt;- ihds %&gt;% mutate(ASER4 = (TA8B ==4)) %&gt;% mutate(State = as_factor(STATEID))</code></pre>
+</div>
+<div id="use-the-survey-package-to-generate-point-estimates-and-confidence-intervals" class="section level2">
+<h2>Use the survey package to generate point estimates and confidence intervals</h2>
+<p>With survey data you have to use a package like “survey” to generate appropriately weighted estimates and confidence intervals which take into account the sampling design.</p>
+<pre class="r"><code>ihds_svy &lt;- svydesign(id =~ psu_expanded + hh_expanded, weights =~ WT, data = ihds)
+svyby(~ASER4, ~State, ihds_svy, svymean, na.rm=TRUE)</code></pre>
+<pre><code>##                                       State ASER4FALSE  ASER4TRUE se.ASER4FALSE
+## Jammu &amp; Kashmir 01       Jammu &amp; Kashmir 01  0.6649857 0.33501432   0.057370909
+## Himachal Pradesh 02     Himachal Pradesh 02  0.4636462 0.53635381   0.040067689
+## Punjab 03                         Punjab 03  0.4914748 0.50852518   0.045751591
+## Chandigarh 04                 Chandigarh 04  0.3333333 0.66666667   0.103956042
+## Uttarakhand 05               Uttarakhand 05  0.6122111 0.38778891   0.058721966
+## Haryana 06                       Haryana 06  0.5118283 0.48817166   0.034518693
+## Delhi 07                           Delhi 07  0.5037828 0.49621720   0.035436865
+## Rajasthan 08                   Rajasthan 08  0.5149545 0.48504550   0.024720180
+## Uttar Pradesh 09           Uttar Pradesh 09  0.6352682 0.36473182   0.023031360
+## Bihar 10                           Bihar 10  0.7707418 0.22925818   0.029092679
+## Sikkim 11                         Sikkim 11  0.7155111 0.28448886   0.170475931
+## Arunachal Pradesh 12   Arunachal Pradesh 12  0.9455938 0.05440624   0.050433681
+## Nagaland 13                     Nagaland 13  0.3227401 0.67725993   0.077900610
+## Manipur 14                       Manipur 14  0.7527021 0.24729787   0.076100018
+## Mizoram 15                       Mizoram 15  0.9191691 0.08083088   0.071232322
+## Tripura 16                       Tripura 16  0.8808848 0.11911524   0.047025077
+## Meghalaya 17                   Meghalaya 17  0.7933213 0.20667873   0.066727738
+## Assam 18                           Assam 18  0.7657789 0.23422108   0.047118227
+## West Bengal 19               West Bengal 19  0.5973793 0.40262072   0.029233110
+## Jharkhand 20                   Jharkhand 20  0.8318841 0.16811590   0.035089495
+## Orissa 21                         Orissa 21  0.5999981 0.40000187   0.038012039
+## Chhattisgarh 22             Chhattisgarh 22  0.5912968 0.40870317   0.042296244
+## Madhya Pradesh 23         Madhya Pradesh 23  0.5807230 0.41927698   0.023250220
+## Gujarat 24                       Gujarat 24  0.6728603 0.32713971   0.028936535
+## Daman &amp; Diu 25               Daman &amp; Diu 25  0.9282248 0.07177522   0.070587256
+## Dadra+Nagar Haveli 26 Dadra+Nagar Haveli 26  0.7246527 0.27534729   0.016599128
+## Maharashtra 27               Maharashtra 27  0.7771043 0.22289574   0.020304687
+## Andhra Pradesh 28         Andhra Pradesh 28  0.8606345 0.13936554   0.021150722
+## Karnataka 29                   Karnataka 29  0.7988545 0.20114546   0.019617888
+## Goa 30                               Goa 30  0.5036842 0.49631581   0.003972885
+## Kerala 32                         Kerala 32  0.5759793 0.42402074   0.031908531
+## Tamil Nadu 33                 Tamil Nadu 33  0.8095212 0.19047883   0.032289616
+## Pondicherry 34               Pondicherry 34  0.4237541 0.57624586   0.126186670
+##                       se.ASER4TRUE
+## Jammu &amp; Kashmir 01     0.057370909
+## Himachal Pradesh 02    0.040067689
+## Punjab 03              0.045751591
+## Chandigarh 04          0.103956042
+## Uttarakhand 05         0.058721966
+## Haryana 06             0.034518693
+## Delhi 07               0.035436865
+## Rajasthan 08           0.024720180
+## Uttar Pradesh 09       0.023031360
+## Bihar 10               0.029092679
+## Sikkim 11              0.170475931
+## Arunachal Pradesh 12   0.050433681
+## Nagaland 13            0.077900610
+## Manipur 14             0.076100018
+## Mizoram 15             0.071232322
+## Tripura 16             0.047025077
+## Meghalaya 17           0.066727738
+## Assam 18               0.047118227
+## West Bengal 19         0.029233110
+## Jharkhand 20           0.035089495
+## Orissa 21              0.038012039
+## Chhattisgarh 22        0.042296244
+## Madhya Pradesh 23      0.023250220
+## Gujarat 24             0.028936535
+## Daman &amp; Diu 25         0.070587256
+## Dadra+Nagar Haveli 26  0.016599128
+## Maharashtra 27         0.020304687
+## Andhra Pradesh 28      0.021150722
+## Karnataka 29           0.019617888
+## Goa 30                 0.003972885
+## Kerala 32              0.031908531
+## Tamil Nadu 33          0.032289616
+## Pondicherry 34         0.126186670</code></pre>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/r/">R</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/post/getting-started-with-ihds-data/&amp;text=IHDS%20Quick%20Start%20Guide" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/post/getting-started-with-ihds-data/&amp;t=IHDS%20Quick%20Start%20Guide" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=IHDS%20Quick%20Start%20Guide&amp;body=https://academic-demo.netlify.app/post/getting-started-with-ihds-data/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/post/getting-started-with-ihds-data/&amp;title=IHDS%20Quick%20Start%20Guide" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=IHDS%20Quick%20Start%20Guide%20https://academic-demo.netlify.app/post/getting-started-with-ihds-data/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/post/getting-started-with-ihds-data/&amp;title=IHDS%20Quick%20Start%20Guide" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_huf6f6babe4aabc1aacfaac28a06cdfd3a_456366_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://academic-demo.netlify.app/">Doug Johnson</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:dougj892@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/dougj8921" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=WuJ6zh8AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.7cd6ec29d281a73c92a2958a1584aadc.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

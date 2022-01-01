@@ -1,0 +1,1175 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Doug Johnson" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This week, I volunteered to read and summarize one of the articles for IDinsigh&rsquo;s tech team&rsquo;s book club. The topic for this week is multiple hypothesis testing and the article I volunteered to summarize is &ldquo;Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the Abecedarian, Perry Preschool, and Early Training Projects&rdquo; by Michael Anderson." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/post/mult-hypothesis/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.4d3fddba2b325f129185bb42290fa344.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://academic-demo.netlify.app/post/mult-hypothesis/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Doug Johnson" />
+  <meta property="og:url" content="https://academic-demo.netlify.app/post/mult-hypothesis/" />
+  <meta property="og:title" content="Multiple Hypothesis Testing | Doug Johnson" />
+  <meta property="og:description" content="This week, I volunteered to read and summarize one of the articles for IDinsigh&rsquo;s tech team&rsquo;s book club. The topic for this week is multiple hypothesis testing and the article I volunteered to summarize is &ldquo;Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the Abecedarian, Perry Preschool, and Early Training Projects&rdquo; by Michael Anderson." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2016-07-04T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2016-07-04T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://academic-demo.netlify.app/post/mult-hypothesis/"
+  },
+  "headline": "Multiple Hypothesis Testing",
+  
+  "datePublished": "2016-07-04T00:00:00Z",
+  "dateModified": "2016-07-04T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Doug Johnson"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doug Johnson",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "This week, I volunteered to read and summarize one of the articles for IDinsigh\u0026rsquo;s tech team\u0026rsquo;s book club. The topic for this week is multiple hypothesis testing and the article I volunteered to summarize is \u0026ldquo;Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the Abecedarian, Perry Preschool, and Early Training Projects\u0026rdquo; by Michael Anderson."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Multiple Hypothesis Testing | Doug Johnson</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="4553de6d62d919fdc787beab44e284d7" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Publications</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/#journal_articles"><span>Journal articles</span></a>
+            
+              <a class="dropdown-item" href="/#working_papers"><span>Working papers</span></a>
+            
+              <a class="dropdown-item" href="/#op_eds"><span>Op-eds</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/dougj8921" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Multiple Hypothesis Testing</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 4, 2016
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>This week, I volunteered to read and summarize one of the articles for IDinsigh&rsquo;s tech team&rsquo;s book club. The topic for this week is multiple hypothesis testing and the article I volunteered to summarize is &ldquo;Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the Abecedarian, Perry Preschool, and Early Training Projects&rdquo; by Michael Anderson.  You can find an ungated version of the article <a href="http://ist-socrates.berkeley.edu/~raphael/IGERT/Workshop/Anderson%20Preschool.pdf" target="_blank" rel="noopener">here</a>.</p>
+<p>Since not everyone at IDinsight has time to participate in these calls and I tend to forget anything that I don&rsquo;t write down I thought I&rsquo;d do a blog post on the article.  I&rsquo;m not going to summarize the article itself, but rather just the key takeaways.</p>
+<h1 id="the-problem-with-multiple-hypothesis-testing">The problem with multiple hypothesis testing</h1>
+<p>The problem with conducting multiple hypothesis tests is simple: if you test conduct 100 hypothesis tests at the 5% level, even if all of the null hypotheses are true you would expect to reject around 5 hypotheses. This isn&rsquo;t necessarily an issue if you keep in mind that you <em>should</em> expect to see around 5 rejections, but it definitely is a problem if you go cherry picking for results like this&hellip;</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="http://imgs.xkcd.com/comics/significant.png" alt="XKCD on p hacking" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</p>
+<p>There are two main approaches to dealing with this problem.  I&rsquo;ll first talk about the most obvious way to deal with it which is to reduce the number of tests by aggregating your outcome variables.  Next, I&rsquo;ll talk about an alternate approach which instead adjusts the p-values of each test to account for the multiple testing.  In addition to these two main approaches to the problem, I&rsquo;ll also talk about my favorite approach: ignoring the problem.  (But we warned, you can only get away with this under certain conditions! Read below for more.)</p>
+<h1 id="approach-1---reduce-the-number-of-tests">Approach 1 - Reduce the number of tests</h1>
+<p>The most straightforward approach to dealing with the problem of multiple hypothesis tests is to reduce the number of tests by aggregating your outcome variables into an index.  In principle, you could aggregate your outcome variables into a single index however you wanted but some ways make more sense than others.  For example, it probably isn&rsquo;t a good idea to take a simple average of different outcomes because the relative weighting of each variable would depend greatly on the scale on which each variable is measured.</p>
+<p>The approach Anderson uses is as follows:</p>
+<ol>
+<li>Normalize each outcome variable by subtracting the mean and dividing by the standard deviation of the control group. In symbols, calculate:</li>
+</ol>
+<p>$$\tilde{y}<em>{ik}=\frac{y</em>{ik}-\bar{y}<em>k}{\sigma</em>{k,c}}$$</p>
+<p>Where i indexes observations and k indexes outcomes.</p>
+<ol start="2">
+<li>Calculate \( \hat{\Sigma} \), the sample variance covariance matrix for this vector of transformed outcomes</li>
+<li>Calculate \( \mathbf{s_i}=\hat{\Sigma}^{-1}\cdot \mathbf{\tilde{y_i}} \) the dot product of the inverse of the sample variance covariance matrix and the vector of outcomes for each observation</li>
+<li>Add up the elements of  \( \mathbf{s_i} \) to get your final index</li>
+</ol>
+<p>Unfortunately, I am unable to find code in Stata to do this. <a href="http://nbviewer.jupyter.org/github/dougj892/Jupyter-notebooks/blob/master/Anderson%20summary%20index.ipynb" target="_blank" rel="noopener">Here</a> is some sample code showing how to do this in Python.  If anyone finds / writes code to do this, please let the rest of us know.</p>
+<p>Anderson&rsquo;s approach seems like a good approach if there is no alternative principled way to aggregate the outcome variables.  As Anderson points out, this approach increases power by weighting those outcome variables that are not highly correlated with other outcome variables more. In some cases there might be a more natural theory based way of aggregating the outcome variables.  For example, if you think the various outcome variables all measure some latent variable you might use item response theory or something else to estimate the latent variable.</p>
+<p>As a sidenote, as great way to test for balance at baseline in an RCT is to use randomization inference on a single index constructed using basically the same approach.  See <a href="http://projecteuclid.org/download/pdfview_1/euclid.ss/1219339114" target="_blank" rel="noopener">here</a> for more info.</p>
+<h1 id="approach-2---adjust-your-p-values">Approach 2 - Adjust your p-values</h1>
+<p>A second approach to dealing with multiple tests is to adjust your p-values to take into account the fact that you are conducting multiple tests at the same time.  The typical way to do this is to control the Family-Wise Error Rate (FWER), defined as the probability of making a single type 1 error (i.e. rejecting the null when the null is true).  (This isn&rsquo;t the only thing you could control for though.  See <a href="https://normaldeviate.wordpress.com/2012/10/04/testing-millions-of-hypotheses-fdr/" target="_blank" rel="noopener">here</a> for an alternative.) The easiest, but most conservative, way to control the FWER is to simply multiply your p-values by the number of tests you are conducting.  This method, called the Bonferroni method, works because the probability of making any type 1 error can&rsquo;t be larger than the sum of the probabilities of making a type 1 error when all the nulls are true.  Due to its simplicity, the Bonferonni method is useful for performing power calculations.</p>
+<p>The Bonferroni method works, but, as I mentioned, it&rsquo;s <em>really</em> conservative.  There a couple of ways we can do better: by using a step-down method and by taking into account the correlation between test statistics.  Step down is a nifty trick in which you first order p-values smallest to largest and then sequentially reject null hypotheses using the smallest p-value first until you encounter a p-value that is too large after which you fail to reject all further hypotheses.  This <a href="https://en.m.wikipedia.org/wiki/Holm%e2%80%93Bonferroni_method" target="_blank" rel="noopener">page</a> has a good explanation of why this works for the step down equivalent of the Bonferroni method, the Holm-Bonferroni.</p>
+<p>The other way you can get more power is by taking into account the correlation between test statistics.  The basic idea here is that if your test statistics are all perfectly correlated you shouldn&rsquo;t be adjusting your p-values at all because you should either reject all of the hypotheses or fail to reject all of them.</p>
+<p>Anderson uses a combination of these two tools to increase the power.  If you want more details of the intuition behind this technique, I found this <a href="http://statistics.berkeley.edu/sites/default/files/tech-reports/633.pdf" target="_blank" rel="noopener">article</a> helpful.</p>
+<p>Again, we were unable to find code in Stata to do this. If anyone has any suggestions, please let us know.</p>
+<h1 id="approach-3---ignore-the-problem-see-disclaimer-below">Approach 3 - Ignore the problem (see disclaimer below)</h1>
+<p>Now we come to my personal favorite approach &ndash; ignoring the problem. But first, I should offer a strong disclaimer: this is only a reasonable option in certain circumstances.  To see why you sometimes might want to ignore the multiple hypothesis testing problem, consider a situation in which you happen to run 10 completely independent RCTs for a single client at the same time which eack look at completely different interventions targeting different outcomes. In this case, you almost certainly wouldn&rsquo;t want to correct the p-value for one RCT to take into account the fact that you happen to be running another RCT at the same time.  Often the decision of whether one should correct for multiple hypothesis testing or not is subtle and depends on your perspective.  I don&rsquo;t want to go into the full debate here, but I think that a useful approach for determining whether ignoring the problem is to first answer the following two questions.  First, are each of the hypothesis tests informing a separate independent decision or are they informing a single decision?  For example, is the purpose of the hypothesis tests to determine whether to individually continue each of ten programs or is the purpose to determine whether any of the ten programs?  Second, will the results from the evaluation be shared with the outside world or just with the client?  If the answer to the first question is &ldquo;independent decisions&rdquo; and the answer to the second is &ldquo;just the client,&rdquo; you might consider ignoring the problem.  (But make sure to run this by your TT point person first!)</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/statistics/">Statistics</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/post/mult-hypothesis/&amp;text=Multiple%20Hypothesis%20Testing" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/post/mult-hypothesis/&amp;t=Multiple%20Hypothesis%20Testing" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Multiple%20Hypothesis%20Testing&amp;body=https://academic-demo.netlify.app/post/mult-hypothesis/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/post/mult-hypothesis/&amp;title=Multiple%20Hypothesis%20Testing" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Multiple%20Hypothesis%20Testing%20https://academic-demo.netlify.app/post/mult-hypothesis/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/post/mult-hypothesis/&amp;title=Multiple%20Hypothesis%20Testing" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_huf6f6babe4aabc1aacfaac28a06cdfd3a_456366_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://academic-demo.netlify.app/">Doug Johnson</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:dougj892@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/dougj8921" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=WuJ6zh8AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/">Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</a></li>
+      
+      <li><a href="/post/2021-07-19-index-variable-weirdness/">Index Variable Weirdness</a></li>
+      
+      <li><a href="/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/">Estimating seroprevalence with data from an imperfect test on a convenience sample</a></li>
+      
+      <li><a href="/post/an-alternative-approach-to-power-calculations/">An Alternative Approach to Power Calculations</a></li>
+      
+      <li><a href="/post/3-stage/">Three Stage Sampling</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.7cd6ec29d281a73c92a2958a1584aadc.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

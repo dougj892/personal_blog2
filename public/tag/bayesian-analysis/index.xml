@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bayesian analysis | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/tag/bayesian-analysis/</link>
+      <atom:link href="https://academic-demo.netlify.app/tag/bayesian-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <description>Bayesian analysis</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>Bayesian analysis</title>
+      <link>https://academic-demo.netlify.app/tag/bayesian-analysis/</link>
+    </image>
+    
+    <item>
+      <title>Estimating seroprevalence with data from an imperfect test on a convenience sample</title>
+      <link>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself.&lt;/p&gt;
+&lt;p&gt;Addressing either of these challenges on their own is relatively straightforward to do using existing tools. The R package “epiR” allows users to estimate true prevalence and confidence intervals for prevalence using the method developed by Rogan and Gladen (1978) and Reiczigel et al (2010). (See the function “epi.prev” in this package.) Similarly, the R page “survey” (and the Stata “svy:” commands) allow users to generate inference from convenience samples using post-stratification. Addressing both at the same time is kind of tricky though.&lt;/p&gt;
+&lt;p&gt;In this blog post, I look at two different ways of taking into account both test imperfections and the non-random nature of the sample: a simple approach which combines poststratification with a Rogan-Gladen adjustment and a Bayesian approach based on multi-level regression and poststratification. I also report results from a quick Monte Carlo expirement I used to assess both approaches. A companion git &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;repo&lt;/a&gt; includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.&lt;/p&gt;
+&lt;div id=&#34;the-naive-approach-simple-poststratification-and-adjustment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The naive approach: simple poststratification and adjustment&lt;/h2&gt;
+&lt;p&gt;One option is to combine these approaches. In other words, we first calculate &lt;span class=&#34;math inline&#34;&gt;\(\hat{pa}\)&lt;/span&gt;, our estimate of the overall “apparent” seroprevalence rate (i.e. the rate not taking into account test imperfection) using the typical poststratification formula and then calculate our estimate of the true seroprevalence, &lt;span class=&#34;math inline&#34;&gt;\(\hat{pt}\)&lt;/span&gt; by using the adjustment from Rogan and Gladen approach.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pa} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]&lt;/span&gt;
+Where h indexes strata, &lt;span class=&#34;math inline&#34;&gt;\(N_h\)&lt;/span&gt; is the number of people in the total population in stratum h, N is the total number of people in the population and &lt;span class=&#34;math inline&#34;&gt;\(\bar{y_h}\)&lt;/span&gt; is the sample mean within stratum h.&lt;/p&gt;
+&lt;p&gt;We then calculate true seroprevalence by adjusting this figure using the formula below:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pt} = \frac{\widehat{pa}+sp-1}{se+sp-1} \]&lt;/span&gt;
+Where se and sp are our estimates for the sensitivity and specificity of the test respectively.&lt;/p&gt;
+&lt;p&gt;There are several options for calculating standard errors, but the simplest approach is to use a quick formula for the standard error of a proportion&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]&lt;/span&gt;
+If you want to be more exact and take into account the uncertainty in the estimates of se and sp, you can use the more complicated formula from Rogan and Gladen which uses the Taylor Linearization approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;issues-with-the-naive-approach&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Issues with the naive approach&lt;/h2&gt;
+&lt;p&gt;In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the poulation than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-bayesian-approach-using-modified-mrp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A Bayesian Approach using Modified MRP&lt;/h2&gt;
+&lt;p&gt;Theoretically, we should be able to improve on this approach by more carefully taking into account potential test imperfections. To use the example from above, if we saw that there was one positive test in the highly weighted stratum and 0 positive tests in the other stratum, we should adjust downward our overall estimate of the prevalence.&lt;/p&gt;
+&lt;div id=&#34;quick-overview-of-mrp&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Quick overview of MRP&lt;/h3&gt;
+&lt;p&gt;One way to do this is using a fully Bayesian approach built on multi-level regression and post-stratification (MRP). (For another Bayesian approach to this problem which doesn’t use MRP, see &lt;a href=&#34;https://www.medrxiv.org/content/10.1101/2020.04.15.20067066v1&#34;&gt;Larremore et al (2020)&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;MRP is an approach to small area estimation in which the analyst first estimates the mean of each strata using a multi-level model and then weights up these estimates using the poststratification weights. For example, to estimate the overall proportion &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; in a population using data &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; for each individual, you might use a simple model as follows to first estimate, &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt;, the proportion in each stratum j using stratum variables &lt;span class=&#34;math inline&#34;&gt;\(X_j\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \theta_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I); y_i \sim bernoulli(\theta_{j[i]}) \]&lt;/span&gt;
+To derive your estimates of the total population, you just weight up. i.e. you calculate&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{\theta} = \sum_{h=1}^H{\frac{N_h*\widehat{\theta_j}}{N}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;MRP is especially useful when you have a lot of different strata (which is often the case) since it allows you to more effectively “borrow strength” between strata compared to the approach where you simply model a different intercept for each stratum. (If you are simply modeling a separate intercept for each stratum, then there is no way for the model to know, for example, that a stratum for white men between 41 and 45 in Georgia and a stratum for white men between 46 and 50 are likely to be similar.) It is also, believe it or not, relatively straightforward compared to other approaches to small area estimate. For a more thorough overview of MRP, I highly recommend this &lt;a href=&#34;https://mc-stan.org/rstanarm/articles/mrp.html&#34;&gt;vignette&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;modified-mrp-to-account-for-test-imperfections&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Modified MRP to account for test imperfections&lt;/h3&gt;
+&lt;p&gt;If implementing MRP using a Bayesian approach, it is fairly straightforward to modify the MRP model to take into account test error. As before, we use a multilevel model for the likelihood of the true prevalence. But in our likelihood of the test data, we use the apparent prevalence rate, which is the probability of a test being positive taking into account both prevalence and test imperfections, rather than the true prevalence. Lastly, we also model uncertainty in our estimates of the sensitivity and specificity using data on the number of true positives (tp), true negatives (tn), false positives (fp), and false negatives (fn) from a validation study of the antibody test.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ pt_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ pa_j = se*pt_j+(1-sp)*(1-pt_j) \]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ se \sim binom(tp, tp+fn); sp \sim binom(tn, tn+fp)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ y_i \sim bern(pa_{j[i]}) \]&lt;/span&gt;
+For a complete Bayesian model, we also need to add priors for sensitivity and specificity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results-from-a-monte-carlo-simulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results from a Monte Carlo Simulation&lt;/h2&gt;
+&lt;p&gt;Theory is all well and good, but how do the two approaches compare when using data? To test this, I ran a simple Monte Carlo simulation using code borrowed from Kennedy and Gabry’s &lt;a href=&#34;https://cran.r-project.org/web/packages/rstanarm/vignettes/mrp.html&#34;&gt;MRP tutorial&lt;/a&gt;. (And big thanks to them for letting me copy their code!)&lt;/p&gt;
+&lt;p&gt;Surprisingly, the naive approach actually did slightly better (in terms of average absolute deviation from the true seroprevalence) when it came to estimating overall seroprevalence. This is especially surprising since the data generating process used for the simulations is almost identical to my MRP model. The modified MRP process does much better when estimating subgroups (the Rogan and Gladen estimates for subgruops are often negative, which happens sometimes) but clearly, given the additional hassle of generating the code, the modified MRP approach is only worth it if you really want to estimate subgroup effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;for-people-interested-in-using-this-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;For people interested in using this code&lt;/h2&gt;
+&lt;p&gt;All code for this analysis can be found &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;here&lt;/a&gt;.
+If you looking to copy and adapt the code, start with the R notebook “Estimate seroprevalence” in the above repo. In that notebook, I fit the modified MRP approach in two different ways: using raw Stan code and using the brms package (with some custom code to extend the package). If you would like to use the more complicated modified MRP approach, I strongly recommend you use the brms package. If you use the brms package, you should be able to copy and paste the code I created to define a “custom family” for the brms package and then modify the code in the main call to brm to suite your data. Since brms uses the lme4 syntax for defining multi-level models, customizing this code hopefully shouldn’t be too hard. By contrast, I find that modifying raw Stan code always takes quite a bit of time.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Alternative Approach to Power Calculations</title>
+      <link>https://academic-demo.netlify.app/post/an-alternative-approach-to-power-calculations/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/an-alternative-approach-to-power-calculations/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The typical approach to power calculations goes something like this: first, the evaluator estimates the smallest MDE for which the intervention would be cost-effective. Second, the evaluator calculates the sample required to detect that MDE. Third, the evaluator throws out the calculations from step two after realizing the evaluation would be way too expensive and instead estimates the MDE she can detect given her budget constraints.
+The problem with this approach is that it doesn’t take into account the cost of the evaluation itself. In this blog post, I’ll show one way to design evaluations which takes into account the cost of the evaluation itself through the use of a simple toy example&lt;/p&gt;
+&lt;div id=&#34;simple-example-with-a-perfectly-accurate-study&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Simple example with a perfectly accurate study&lt;/h1&gt;
+&lt;p&gt;Suppose a funder has USD 1 million to spend and two options for how it can spend the money: it can either invest in a tried and true intervention which it knows will save 1,000 lives or it can invest in a new intervention. The funder believes that there is a 10% chance that the new intervention is significantly more effective than the tried and true intervention and that USD 1 million invested in the new intervention would save 5,000 lives. Unfortunately, they also believe that there is a 90% probability that the new intervention is less effective than the tried and true intervention and would only save 500 lives.
+If the funder seeks to maximize expected lives saved, they would invest the entire USD 1 million in the tried in true intervention since the expected number of lives saved by investing in the new intervention is only $ .1&lt;em&gt;5000+.9&lt;/em&gt;500=950 $&lt;/p&gt;
+&lt;p&gt;Now suppose the funder has the option of first funding a study which would reveal, with perfect accuracy, whether the new intervention is a block-bluster or a dud. To calculate the value of the study, we may estimate the “value of information” for the study defined as:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ VOI(I)=\sum_i P(i)EU(i)-EU \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where I is the new information which we may obtain and EU(i) is the expected utility when I=i, P(i) is probability I=I, and EU is the expected utility without I (Kochenderfer, 2015). In other words, the value of information for a variable I is the increase in expected utility if that variable is observed.
+In our case:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ VOI(study)=.1*5000+.9*1000-1000 = 400 \]&lt;/span&gt; lives&lt;/p&gt;
+&lt;p&gt;If we additionally assume that the cost per life saved is constant for the two interventions (i.e. if you spent Y on the first intervention you would save Y/1,000,000*1000 lives), we may calculate the exact amount the funder would be willing to spend on the study. Assuming constant cost per life saved, the funder would be willing to spend up to $285,714 on this study. Note that up until this point we have not used Bayes’ theorem at all – just some simple algebra.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;removing-the-assumption-of-perfect-accuracy&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Removing the Assumption of Perfect Accuracy&lt;/h1&gt;
+&lt;p&gt;Unfortunately, studies are never perfectly accurate. Suppose that if the intervention is a blockbuster there is a 95% probability that the study will say that it is a block buster. But if the intervention is a dud, there is still a 5% probability that the study will say that it is a blockbuster.&lt;br /&gt;
+To calculate VOI for this new noisy study, we first calculate the probability that the study result is “blockbuster”. This probability is .9&lt;em&gt;.05+.1&lt;/em&gt;.95=.14. Next, we need to calculate the expected utility if the study result is positive and the expected utility if the result is negative. Here’s where things get a little trickier and where Bayes’ rule comes in handy. If we get a “blockbuster” result, our post-facto estimate of the probability that the intervention is really a blockbuster would be:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ P(bb|bb result)=(P(bb result |bb)*P(bb))/(P(bb result |bb)P(bb)+P(bb result|dud)P(dud))=.68 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Therefore, if the funder gets a “blockbuster” result from the study it would invest in the new intervention since the expected lives saved would be &lt;span class=&#34;math inline&#34;&gt;\(.68*5000+.32*500=3560\)&lt;/span&gt;.
+I won’t calculate p(bb | dud result) since intuitively it seems fairly obvious that the funder would not invest in the new intervention if the study gave a “dud” result and all we care about for the VOI formula is the expected utility for each study result.
+The value of information (in terms of lives saved) is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ VOI(noisy study)=P(bb result)*EU(bb result)+P(dud result)*EU(dud result)-1000=1358.4 \]&lt;/span&gt;
+Thus, the noise in the study results reduces the value of the study information by 41.6 lives.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-complicated-effects-and-studies&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;More Complicated Effects and Studies&lt;/h1&gt;
+&lt;p&gt;In the real world things are rarely binary: intervention effects and study estimates are typically continuous. For example, suppose we are investigating an intervention which seeks to reduce infant mortality. The funder probably doesn’t believe that the intervention is either a blockbuster or a dud. Rather, they probably believe that there is a small chance the intervention works great, a small chance is works well but not great, etc. Similarly, any potential study we perform on the intervention will spit out an estimated effect size and standard error rather than a simple up/down result. To calculate the value of information with continuous effect sizes / study results, we still apply the same formula as above but the calculations will get complicated very quickly so we will no longer be able to calculate things by hand. More on this later.&lt;/p&gt;
+&lt;p&gt;[1]Kochenderfer, Mykel J. Decision making under uncertainty: theory and application. MIT press, 2015.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

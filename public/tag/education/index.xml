@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Education | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/tag/education/</link>
+      <atom:link href="https://academic-demo.netlify.app/tag/education/index.xml" rel="self" type="application/rss+xml" />
+    <description>Education</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 16 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>Education</title>
+      <link>https://academic-demo.netlify.app/tag/education/</link>
+    </image>
+    
+    <item>
+      <title>Is GiveWell Right that Health Interventions Should Prioritized over Education Interventions?</title>
+      <link>https://academic-demo.netlify.app/post/2021-10-16-the-effective-altruism-case-for-education/</link>
+      <pubDate>Sat, 16 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-10-16-the-effective-altruism-case-for-education/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-10-16-the-effective-altruism-case-for-education/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Most articles on international education start out with a well-worn two-part lede: first, developing countries are facing a “learning crisis;” second, there is a mountain of evidence demonstrating the long-term effects of education on everything from personal (and country-level) incomes to health. Yet, in their &lt;a href=&#34;https://www.givewell.org/international/technical/programs/education&#34;&gt;analysis&lt;/a&gt; of the philanthropic potential of international education interventions, GiveWell states that “there are a limited number of experimental studies providing direct evidence that education interventions improve the outcomes that we consider most important, such as earnings, health, and rates of marriage and fertility among teenage girls” and concludes that “the existing evidence for positive effects on earnings is too thin to draw general conclusions.”&lt;/p&gt;
+&lt;p&gt;So which is it? Is there a mountain of evidence (presumably some of which is experimental) for the primary of education or is the evidence limited? I was curious about this and don’t entirely trust either GiveWell’s analysis (since their threshold for rigor is too high for my tastes) or reports like the World Bank’s World Development report on education (since one of the goals of these reports is to advocate for a cause) so I dug into the evidence a bit. From what I can tell, GiveWell is wrong about the link between education and income: there is a lot of research showing that more education leads to more income. Yet GiveWell’s larger point holds. The effect of education on income may be due to signalling in which case the social returns to education are low and there is very little evidence of the long-term effects of the type of early grade education interventions that the ed sector is most excited about. This is not to say that governments and donors should stop funding education programs, but it does suggest that additional evidence of the long-term effect educational interventions would be really, really helpful.&lt;/p&gt;
+&lt;div id=&#34;the-card-consensus-more-education-does-lead-to-more-income&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Card Consensus – More Education Does Lead to More Income&lt;/h1&gt;
+&lt;p&gt;When it comes to education and income, the GiveWell analysis is pretty far off the mark. There is quite a bit of evidence, some of it reasonably rigorous, that more years of school increase personal income. First, there is a high and consistent (across both study and context) correlation between years of school and income. For an exhaustive review of the literature check out &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-patrinosReturnsEducationDeveloping2020&#34; role=&#34;doc-biblioref&#34;&gt;Patrinos and Psacharopoulos&lt;/a&gt; (&lt;a href=&#34;#ref-patrinosReturnsEducationDeveloping2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;. Of course, if harder working, smarter people tend to get more education this correlation could just be due to an unobserved ability bias. (In fact, unobserved ability bias in a regression of wages on schooling is just about the textbook example of a potential unobserved variable bias.) Yet estimates of the causal effect of years of schooling on income from a variety of other more sophisticated methods all point in a similar direction. There are studies which use distance to college, quarter of birth, a school construction program, and differences in education between identical twins as sources of exogenous variation in years of schooling. There are studies which take great pains to measure intelligence and ability somewhat reliably. (See &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-caplanCaseEducationWhy2019&#34; role=&#34;doc-biblioref&#34;&gt;Caplan&lt;/a&gt; (&lt;a href=&#34;#ref-caplanCaseEducationWhy2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; for a review of these.) And, finally, there are the RCTs of secondary school scholarship programs in Ghana and Colombia that the GiveWell review looks at. Nearly all these studies yield more or less similar results.&lt;/p&gt;
+&lt;p&gt;Estimates of the returns to schooling are so consistent across estimation approaches that, after years of endless back and forth over how best to account for ability bias, measurement error, and other technical issues, many (perhaps most) labor economists have come full circle and believe that a simple regression of log wages on years of schooling and a few other variables provides a pretty good estimate of the returns to education, a phenomenon Bryan Caplan labels the “Card consensus” after a famous economist who wrote a much-cited review article on the subject &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-cardEstimatingReturnSchooling2001&#34; role=&#34;doc-biblioref&#34;&gt;Card 2001&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;but-this-could-be-signaling&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;But This Could be Signaling&lt;/h1&gt;
+&lt;p&gt;While more years of schooling does appear to lead to personal increases in income it may not be because school makes people more productive. It could be that school serves as a signaling device – i.e. more years of school demonstrate conscientiousness, intelligence, and conformity, attributes that employers highly value.&lt;/p&gt;
+&lt;p&gt;In his book &lt;em&gt;The Case against Education: Why the Education System is a Waste of Time and Money&lt;/em&gt;, Bryan Caplan makes a strong case for the role of signaling in the wage returns to years of schooling. Caplan puts forth many arguments in favor of the signaling hypothesis but I found arguments particularly strong, at least when it comes to education in low- and middle-income countries. First, there is a large divergence between the personal return and the national returns to schooling. There has been a massive increase in educational attainment throughout the world over the past 50 years yet many countries which saw large increases in educational attainment saw only modest increases in GDP. (See, for example, &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-pritchettWhereHasAll2001&#34; role=&#34;doc-biblioref&#34;&gt;Pritchett&lt;/a&gt; (&lt;a href=&#34;#ref-pritchettWhereHasAll2001&#34; role=&#34;doc-biblioref&#34;&gt;2001&lt;/a&gt;)&lt;/span&gt; though there are many other articles with similar findings.) If education caused large increases in productivity, we would expect that national incomes would rise as countries increased educational attainment. Second, anyone who has spent any amount of time in the workforce can attest that the typical curriculum does not prepare one well for a job. This is true in the US but doubly true in many low- and middle-income countries.&lt;/p&gt;
+&lt;p&gt;The recent WDR makes a half-hearted attempt to counter the signaling argument but I wasn’t at all convinced &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-worldbankWorldDevelopmentReport2018&#34; role=&#34;doc-biblioref&#34;&gt;Bank 2018&lt;/a&gt;)&lt;/span&gt;. (See box 1.1 for their argument.) They claim that “the returns to an additional year of schooling for those who drop out without a high school or university diploma are as large as for those who complete the degree” yet, from what I can tell, this is outright false – there is plenty of evidence documenting a so-called “sheepskin effect” in low- and middle-income countries.&lt;/p&gt;
+&lt;p&gt;They also claim that “if education worked only as a screening device, individuals with the same years of schooling should have similar outcomes regardless of the skills they acquired, which is not the case.” The best evidence I could find on this comes from a study by &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-perez-alvarezReturnsCognitiveSkills&#34; role=&#34;doc-biblioref&#34;&gt;Perez-Alvarez&lt;/a&gt; (&lt;a href=&#34;#ref-perez-alvarezReturnsCognitiveSkills&#34; role=&#34;doc-biblioref&#34;&gt;n.d.&lt;/a&gt;)&lt;/span&gt; who shows that, conditional on education, people with higher learning levels do earn more but the premium is very small. She finds that “on average, an increase in one standard deviation of literacy scores increases net hourly wages by 8.5%, conditioning on years of schooling.” To put that in perspective, that is equivalent to the return from about one additional year of school in most countries.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-education-also-likely-improves-health-somewhat&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;More Education Also Likely Improves Health Somewhat&lt;/h1&gt;
+&lt;p&gt;There is an incredibly strong correlation between one’s educational attainment and one’s health and, for women, the health of one’s children. This correlation is particularly well documented in the US and Europe but there is ample evidence supporting this correlation in many other countries as well. (See &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-cutlerEducationHealthInsights2012&#34; role=&#34;doc-biblioref&#34;&gt;Cutler and Lleras-Muney&lt;/a&gt; (&lt;a href=&#34;#ref-cutlerEducationHealthInsights2012&#34; role=&#34;doc-biblioref&#34;&gt;2012&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-voglEducationHealthDeveloping2014&#34; role=&#34;doc-biblioref&#34;&gt;Vogl&lt;/a&gt; (&lt;a href=&#34;#ref-voglEducationHealthDeveloping2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt; for reviews. See &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-oyeGirlsSchoolingGood2016&#34; role=&#34;doc-biblioref&#34;&gt;Oye, Pritchett, and Sandefur&lt;/a&gt; (&lt;a href=&#34;#ref-oyeGirlsSchoolingGood2016&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-caseGreatDivideEducation2021&#34; role=&#34;doc-biblioref&#34;&gt;Case and Deaton&lt;/a&gt; (&lt;a href=&#34;#ref-caseGreatDivideEducation2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; for more recent evidence from LICs/LMICs and the US respectively.)&lt;/p&gt;
+&lt;p&gt;To what extent this reflects a causal relationship between educational attainment and health is less clear. Indeed, we know that increased health can cause increased educational attainment. (For example, the famous worms study by Kremer and Miguel showed that deworming increased schooling.) There is some evidence from RCTs and a few natural experiments (e.g. changes in compulsory schooling laws and a school construction program) which suggests that increases in education cause increases in health but the estimated effects vary.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;improvements-in-education-quality-are-much-more-promising-but-lack-long-term-evidence&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Improvements in Education Quality Are Much More Promising but Lack Long-Term Evidence&lt;/h1&gt;
+&lt;p&gt;Asking whether more education leads to more income, health, or whatever kind of misses the point. The goal of most education interventions is not to increase access to education but rather to increase the quality of education. In most countries around the world, nearly all children receive at least a primary school education. Put in historical context, the expansion of access to education is staggering: in 2010, the average Liberian had more years of school than the average Spaniard in 1950 (and only a tiny bit less than the average Frenchman or Italian in 1950). Yet, in many developing countries, children exit school without basic literacy or numeracy schools. For example, &lt;a href=&#34;http://img.asercentre.org/docs/Impact/ASER%20Abroad/PalNetworkMay2017.pdf&#34;&gt;in Mali in 2016&lt;/a&gt;, 10.3% of grade 5 students were able to read a grade 2 text and 12.3% were able to perform grade 2 arithmetic.&lt;/p&gt;
+&lt;p&gt;With reasonably high access and very low quality the focus of most education interventions is to increase quality rather than further increase quantity. And there have some spectacular successes in improving the quality of education. For example, several RCTs of Pratham’s Teaching at the Right Level methodology (subsequently renamed the CAMaL approach) across many different contexts shows that the approach causes large increases in learning levels for very low cost &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-banerjeeProofConceptScalable2017&#34; role=&#34;doc-biblioref&#34;&gt;Banerjee et al. 2017&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Yet very, very few of these studies look at the long-term impacts of increases in the quality of early grade education on income or health. This is unsurprising given the time required to measure these impacts: a prospective study of the impact an early grade learning intervention on income would require decades of follow-up. To my knowledge, the only two reasonably rigorous studies which look at the impact of increases in the quality of early grade (but not preschool) education are those by Chetty and co-authors in the US. In one study, Chetty et al looked at the impact of having a good early grade (kindergarten to 3rd grade) classroom on adult income and other outcomes where the quality of the classroom was defined by peer scores &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-chettyHowDoesYour2011&#34; role=&#34;doc-biblioref&#34;&gt;R. Chetty et al. 2011&lt;/a&gt;)&lt;/span&gt;. (Students were randomly assigned to different classrooms so variation in peer scores was random.) In another study, Chetty et al looked at the effect of having a good primary school (grades 3-8) teacher on adult outcomes where the authors use fancy statistics to estimate teacher quality and to show that their estimates are likely exogenous to student characteristics &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-chettyMeasuringImpactsTeachers2014a&#34; role=&#34;doc-biblioref&#34;&gt;Raj Chetty, Friedman, and Rockoff 2014&lt;/a&gt;)&lt;/span&gt;. In both cases, Chetty et al find surprisingly large impact. While great it is unclear whether these results extrapolate to other interventions and contexts.&lt;/p&gt;
+&lt;p&gt;At the macro level, there is a very strong correlation between learning levels and subsequent growth &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hanushekEducationEconomicGrowth2010&#34; role=&#34;doc-biblioref&#34;&gt;Hanushek and Woessmann 2010&lt;/a&gt;)&lt;/span&gt;. In fact, learning levels are far more predictive of later national economic growth than any other variable that has been tested. Personally, I find this evidence somewhat convincing but as with all cross-country regressions, there is the high risk of bias due to reverse causality and/or unobserved variables.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-need-for-long-term-follow-up-of-effective-early-grade-interventions&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Need for Long-Term Follow-Up of Effective Early Grade Interventions&lt;/h1&gt;
+&lt;p&gt;TBH, I’m perfectly happy taking the effect of increases in learning on reasoning and faith alone. Basic literacy and numeracy are so useful in so many contexts that it’s hard to imagine that improvements in basic literacy and numeracy &lt;strong&gt;wouldn’t&lt;/strong&gt; increase adult income and other outcomes even for people who don’t rely on these skills for their jobs (e.g. farmers and housewives). I don’t think I’m alone in accepting this on faith. In fact, I would venture to say that the vast majority of people, including those in development, feel this way. Having said that, more precise estimates of the impact of education interventions, particularly promising early grade interventions which increase foundational literacy and numeracy, on long-term outcomes like income and health would be really helpful. At a minimum, such evidence could potentially (if it showed big positive effects) convince GiveWell and other similar funders. This is not a trivial amount of money – GiveWell allocates something like 100 million USD and the size of that bucket is growing rapidly. More broadly, this evidence could increase (again, assuming positive effects) education budgets or lead to shifts in ed money from secondary to primary (or vice versa). And, of course, I could be wrong. Perhaps early grade learning doesn’t matter that much.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-banerjeeProofConceptScalable2017&#34; class=&#34;csl-entry&#34;&gt;
+Banerjee, Abhijit, Rukmini Banerji, James Berry, Esther Duflo, Harini Kannan, Shobhini Mukerji, Marc Shotland, and Michael Walton. 2017. &lt;span&gt;“From &lt;span&gt;Proof&lt;/span&gt; of &lt;span&gt;Concept&lt;/span&gt; to &lt;span&gt;Scalable Policies&lt;/span&gt;: Challenges and &lt;span&gt;Solutions&lt;/span&gt;, with an &lt;span&gt;Application&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Journal of Economic Perspectives&lt;/em&gt; 31 (4): 73–102. &lt;a href=&#34;https://doi.org/10.1257/jep.31.4.73&#34;&gt;https://doi.org/10.1257/jep.31.4.73&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-worldbankWorldDevelopmentReport2018&#34; class=&#34;csl-entry&#34;&gt;
+Bank, World. 2018. &lt;span&gt;“World &lt;span&gt;Development Report&lt;/span&gt; 2018: Learning to &lt;span&gt;Realize Education&lt;/span&gt;’s &lt;span&gt;Promise&lt;/span&gt;.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-caplanCaseEducationWhy2019&#34; class=&#34;csl-entry&#34;&gt;
+Caplan, Bryan Douglas. 2019. &lt;em&gt;The Case Against Education: Why the Education System Is a Waste of Time and Money&lt;/em&gt;. First Paperback Edition. &lt;span&gt;Princeton ; Oxford&lt;/span&gt;: &lt;span&gt;Princeton University Press&lt;/span&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-cardEstimatingReturnSchooling2001&#34; class=&#34;csl-entry&#34;&gt;
+Card, David. 2001. &lt;span&gt;“Estimating the &lt;span&gt;Return&lt;/span&gt; to &lt;span&gt;Schooling&lt;/span&gt;: Progress on &lt;span&gt;Some Persistent Econometric Problems&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Econometrica&lt;/em&gt; 69 (5): 1127–60. &lt;a href=&#34;https://doi.org/10.1111/1468-0262.00237&#34;&gt;https://doi.org/10.1111/1468-0262.00237&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-caseGreatDivideEducation2021&#34; class=&#34;csl-entry&#34;&gt;
+Case, Anne, and Angus Deaton. 2021. &lt;span&gt;“The &lt;span&gt;Great Divide&lt;/span&gt;: Education, &lt;span&gt;Despair&lt;/span&gt; and &lt;span&gt;Death&lt;/span&gt;.”&lt;/span&gt; w29241. &lt;span&gt;Cambridge, MA&lt;/span&gt;: &lt;span&gt;National Bureau of Economic Research&lt;/span&gt;. &lt;a href=&#34;https://doi.org/10.3386/w29241&#34;&gt;https://doi.org/10.3386/w29241&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-chettyHowDoesYour2011&#34; class=&#34;csl-entry&#34;&gt;
+Chetty, R., J. N. Friedman, N. Hilger, E. Saez, D. W. Schanzenbach, and D. Yagan. 2011. &lt;span&gt;“How &lt;span&gt;Does Your Kindergarten Classroom Affect Your Earnings&lt;/span&gt;? Evidence from &lt;span&gt;Project Star&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;The Quarterly Journal of Economics&lt;/em&gt; 126 (4): 1593–1660. &lt;a href=&#34;https://doi.org/10.1093/qje/qjr041&#34;&gt;https://doi.org/10.1093/qje/qjr041&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-chettyMeasuringImpactsTeachers2014a&#34; class=&#34;csl-entry&#34;&gt;
+Chetty, Raj, John N. Friedman, and Jonah E. Rockoff. 2014. &lt;span&gt;“Measuring the &lt;span&gt;Impacts&lt;/span&gt; of &lt;span&gt;Teachers II&lt;/span&gt;: Teacher &lt;span&gt;Value&lt;/span&gt;-&lt;span&gt;Added&lt;/span&gt; and &lt;span&gt;Student Outcomes&lt;/span&gt; in &lt;span&gt;Adulthood&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;American Economic Review&lt;/em&gt; 104 (9): 2633–79. &lt;a href=&#34;https://doi.org/10.1257/aer.104.9.2633&#34;&gt;https://doi.org/10.1257/aer.104.9.2633&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-cutlerEducationHealthInsights2012&#34; class=&#34;csl-entry&#34;&gt;
+Cutler, David, and Adriana Lleras-Muney. 2012. &lt;span&gt;“Education and &lt;span&gt;Health&lt;/span&gt;: Insights from &lt;span&gt;International Comparisons&lt;/span&gt;.”&lt;/span&gt; w17738. &lt;span&gt;Cambridge, MA&lt;/span&gt;: &lt;span&gt;National Bureau of Economic Research&lt;/span&gt;. &lt;a href=&#34;https://doi.org/10.3386/w17738&#34;&gt;https://doi.org/10.3386/w17738&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-hanushekEducationEconomicGrowth2010&#34; class=&#34;csl-entry&#34;&gt;
+Hanushek, Eric A., and Ludger Woessmann. 2010. &lt;span&gt;“Education and Economic Growth.”&lt;/span&gt; &lt;em&gt;Economics of Education&lt;/em&gt;, 60–67.
+&lt;/div&gt;
+&lt;div id=&#34;ref-oyeGirlsSchoolingGood2016&#34; class=&#34;csl-entry&#34;&gt;
+Oye, Mari, Lant Pritchett, and Justin Sandefur. 2016. &lt;span&gt;“Girls’ &lt;span&gt;Schooling Is Good&lt;/span&gt;, &lt;span&gt;Girls&lt;/span&gt;’ &lt;span&gt;Schooling&lt;/span&gt; with &lt;span&gt;Learning Is Better&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;Education Commission, Center for Global Development, Washington, DC&lt;/em&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-patrinosReturnsEducationDeveloping2020&#34; class=&#34;csl-entry&#34;&gt;
+Patrinos, Harry Anthony, and George Psacharopoulos. 2020. &lt;span&gt;“Returns to Education in Developing Countries.”&lt;/span&gt; In &lt;em&gt;The &lt;span&gt;Economics&lt;/span&gt; of &lt;span&gt;Education&lt;/span&gt;&lt;/em&gt;, 53–64. &lt;span&gt;Elsevier&lt;/span&gt;. &lt;a href=&#34;https://doi.org/10.1016/B978-0-12-815391-8.00004-5&#34;&gt;https://doi.org/10.1016/B978-0-12-815391-8.00004-5&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-perez-alvarezReturnsCognitiveSkills&#34; class=&#34;csl-entry&#34;&gt;
+Perez-Alvarez, Marcello. n.d. &lt;span&gt;“Returns to Cognitive Skills in 7 Developing Countries,”&lt;/span&gt; 55.
+&lt;/div&gt;
+&lt;div id=&#34;ref-pritchettWhereHasAll2001&#34; class=&#34;csl-entry&#34;&gt;
+Pritchett, Lant. 2001. &lt;span&gt;“Where &lt;span&gt;Has All&lt;/span&gt; the &lt;span&gt;Education Gone&lt;/span&gt;?”&lt;/span&gt; &lt;a href=&#34;https://doi.org/10.4337/9781847202888&#34;&gt;https://doi.org/10.4337/9781847202888&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-voglEducationHealthDeveloping2014&#34; class=&#34;csl-entry&#34;&gt;
+Vogl, T. S. 2014. &lt;span&gt;“Education and &lt;span&gt;Health&lt;/span&gt; in &lt;span&gt;Developing Economies&lt;/span&gt;.”&lt;/span&gt; In &lt;em&gt;Encyclopedia of &lt;span&gt;Health Economics&lt;/span&gt;&lt;/em&gt;, 246–49. &lt;span&gt;Elsevier&lt;/span&gt;. &lt;a href=&#34;https://doi.org/10.1016/B978-0-12-375678-7.00109-7&#34;&gt;https://doi.org/10.1016/B978-0-12-375678-7.00109-7&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Need for More Research on Teacher Management</title>
+      <link>https://academic-demo.netlify.app/post/2021-09-21-the-need-for-more-research-on-teacher-management/</link>
+      <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-09-21-the-need-for-more-research-on-teacher-management/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-09-21-the-need-for-more-research-on-teacher-management/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Educationists and economists agree that teachers are extremely important. Studies from around the world show that there is huge variance in teacher effectiveness &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-hanushekTeacherQuality2006&#34; role=&#34;doc-biblioref&#34;&gt;Hanushek and Rivkin 2006&lt;/a&gt;)&lt;/span&gt;. (Unfortunately, that same research shows that there are few observable differences between effective and ineffective teachers which means that improving the teacher workforce is not just a matter of screening for the right candidates.) Educationists seem to interpret this evidence to mean that we should spend more time conducting (and improving) teacher training. Economists on the other hand typically interpret the evidence to mean that we should do a better job measuring performance and rewarding good teachers while punishing (or at least not rewarding) the bad ones.&lt;/p&gt;
+&lt;p&gt;There’s some truth (and some wishful thinking) in both of these positions but what they both ignore is that there is a crucial first step of getting the teacher into the school in the first place. As Ramachandran and her co-authors show in their report “Getting the Right Teachers into the Right Schools” there is a &lt;em&gt;lot&lt;/em&gt; of room for improvement in this area: in many states, initial assignments for new teachers are often opaque and involve politics; similarly, in many states, transfers are paper-based, opaque, and political &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-ramachandranGettingRightTeachers2018&#34; role=&#34;doc-biblioref&#34;&gt;Ramachandran et al. 2018&lt;/a&gt;)&lt;/span&gt;. As the authors show, these arbitrary and opaque rules waste a huge amount of everyone’s time. Teachers spend an inordinate amount of time working their networks for transfers and ed officials spend a ton of time in court fighting transfer disputes.
+In addition, they also have a corrosive effect as teachers perceive the system as unfair.
+“Getting the Right Teachers into the Right Schools” is a fantastic report but only scratches the surface of these issues. For example, it doesn’t look at the quality of the Teacher Eligibility Test, a test which all candidates for teaching positions must pass and which, by most accounts, is about as bad as the boards at testing for relevant knowledge. Similarly, it doesn’t look at recent teacher transfer reforms in Haryana and HP which, at least from what I’ve heard, seem to be on track to be successful.&lt;/p&gt;
+&lt;p&gt;There are a lot of potential policy reforms in this space that probably wouldn’t be all that contentious. For example, changes to the TET probably wouldn’t encounter significant resistance from unions or Teacher Education Institutions, the institutions which train would be teachers. Unions don’t seem to care much about the hurdles candidates have to jump through to become teachers and TEIs wouldn’t lose any revenue from a change in the TET. (By contrast, policymakers have been trying to clean up the mess that is the TEIs for a long time. For a great inside account of Santosh Matthew’s failed crusade against the TEIs check out Anil Swarup’s book “Not Just a Civil Servant” &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-NotJustCivil2019&#34; role=&#34;doc-biblioref&#34;&gt;&lt;em&gt;Not Just a Civil Servant&lt;/em&gt; 2019&lt;/a&gt;)&lt;/span&gt;) Changes to teacher assignment and transfer rules would, on the other hand, be contentious but recent reforms in Haryana and HP show that everyone is so sick of the current system that there is room for a carefully negotiated reform.&lt;/p&gt;
+&lt;p&gt;These reforms probably wouldn’t have large direct effects on learning outcomes. For example,&lt;/p&gt;
+&lt;p&gt;but could serve as a base for other reforms by freeing up ed officials’ time and improving teacher morale and trust in the system.&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-hanushekTeacherQuality2006&#34; class=&#34;csl-entry&#34;&gt;
+Hanushek, Eric A., and Steven G. Rivkin. 2006. &lt;span&gt;“Teacher Quality.”&lt;/span&gt; &lt;em&gt;Handbook of the Economics of Education&lt;/em&gt; 2: 1051–78.
+&lt;/div&gt;
+&lt;div id=&#34;ref-NotJustCivil2019&#34; class=&#34;csl-entry&#34;&gt;
+&lt;em&gt;Not Just a Civil Servant&lt;/em&gt;. 2019.
+&lt;/div&gt;
+&lt;div id=&#34;ref-ramachandranGettingRightTeachers2018&#34; class=&#34;csl-entry&#34;&gt;
+Ramachandran, Vimala, Tara Beteille, Toby Linden, Sangeeta Dey, Sangeeta Goyal, and Prerna Goel Chatterjee. 2018. &lt;span&gt;“Getting the &lt;span&gt;Right Teachers&lt;/span&gt; into the &lt;span&gt;Right Schools&lt;/span&gt;.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Need for More Research on Board Reform</title>
+      <link>https://academic-demo.netlify.app/post/2021-09-20-the-need-for-more-research-on-board-reform/</link>
+      <pubDate>Mon, 20 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-09-20-the-need-for-more-research-on-board-reform/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-09-20-the-need-for-more-research-on-board-reform/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;For as long as high stakes exams have existed, people have hated them. The system of imperial examinations used to select the mandarins of ancient Chinese dynasties (and the first high-stakes exams) is credited with building an empire. It was also nearly universally hated in their specifics which, critics claimed, caused rote learning, teaching to the test, and severe anxiety &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-kellaghanPublicExaminationsExamined2020&#34; role=&#34;doc-biblioref&#34;&gt;Kellaghan and Greaney 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Given the near universal hate of high-stakes exams, it’s no surprise that people don’t like the Indian boards. Still, by any standard, Indian boards are particularly bad. Burdett &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-burdettReviewHighStakes2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt; compares several high-stakes exams including the CBSE and boards in Uganda, Nigeria, Pakistan, and Canada. The high-stakes exams in Uganda, Nigeria, and Canada, while not perfect, at least test some conceptual understanding. Burdett reserves harshest criticism for the CBSE and boards in Pakistan. According to Burdett, “overall the CBSE examination papers are heavily biased to rote-learning, do not test higher-order skills, and actively discourage students who try and display them.” India’s low quality boards cast a massive shadow on its education system, forcing students to memorize entire textbooks rather than spending time on more rewarding, useful, and fun intellectual pursuits.&lt;/p&gt;
+&lt;p&gt;There have been no shortage of official recommendations to reform the boards. NCERT’s National Focus Group on Examination Reforms was no less harsh than Burdett in its assessment of Indian boards and included a bunch of reasonable suggestions for what types of questions should be included in the boards. Similarly, the NEP calls for the boards to be “redesigned to encourage holistic development” and that they should “test primarily core capacities/competencies rather than months of coaching and memorization” &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-mhrdNationalEducationPolicy2020&#34; role=&#34;doc-biblioref&#34;&gt;MHRD 2020&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;If there is such widespread and long held consensus on the need for change, why hasn’t it already happened? A report by EI report on the Gujarat boards provides a clue. (Unfortunately, the link I used to download the report is broken and I can’t find a live link but will update this post once I find one.) The report contains a multitude of rich findings but I found one in particular interesting. EI found that a major impediment to board reform has to do with security. Paper setters (i.e. the people who write the actual exams) are extremely concerned about question errors since any such errors cause massive confusion, institutional embarrassment, and a lot of extra work. Paper setters are also extremely concerned about question leakage since this too can create a lot of confusion and extra work. As a result, paper setters opt for a low-risk strategy of creating questions directly from textbook passages as this almost guarantees that the question won’t contain any errors without the need for additional review (which raises the risk that questions will be leaked).&lt;/p&gt;
+&lt;p&gt;I don’t know enough about the internal processes and politics of boards to say how great an impediment security is to improving the boards is but it seems plausible that it could be a major one. If so, more research on how to solve these security challenges would be vastly more useful than repeating the mantra that the boards must improve their questions. This is also a tractable question. Researchers could look to the paper-setting security practices from other boards around the world or even to security practices more generally.&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-burdettReviewHighStakes2017&#34; class=&#34;csl-entry&#34;&gt;
+Burdett, Newman. 2017. &lt;span&gt;“Review of &lt;span&gt;High Stakes Examination Instruments&lt;/span&gt; in &lt;span&gt;Primary&lt;/span&gt; and &lt;span&gt;Secondary School&lt;/span&gt; in &lt;span&gt;Developing Countries&lt;/span&gt;.”&lt;/span&gt; &lt;span&gt;Research on Improving Systems of Education (RISE)&lt;/span&gt;. &lt;a href=&#34;https://doi.org/10.35489/BSG-RISE-WP_2017/018&#34;&gt;https://doi.org/10.35489/BSG-RISE-WP_2017/018&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-kellaghanPublicExaminationsExamined2020&#34; class=&#34;csl-entry&#34;&gt;
+Kellaghan, Thomas, and Vincent Greaney. 2020. &lt;span&gt;“Public &lt;span&gt;Examinations Examined&lt;/span&gt;.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-mhrdNationalEducationPolicy2020&#34; class=&#34;csl-entry&#34;&gt;
+MHRD. 2020. &lt;span&gt;“National &lt;span&gt;Education Policy&lt;/span&gt; 2020.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>India Ed Stuff I Wish Their Was More Research On</title>
+      <link>https://academic-demo.netlify.app/post/2021-09-19-india-ed-stuff-i-wish-their-was-more-research-on/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-09-19-india-ed-stuff-i-wish-their-was-more-research-on/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-09-19-india-ed-stuff-i-wish-their-was-more-research-on/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;I’ve spent the past year or so reading a &lt;em&gt;lot&lt;/em&gt; of research on education in India. There is obviously a lot of amazing research out there, but there are also a lot of areas where there is far less evidence than I originally expected. For example, there seems to be a long-held consensus that the Indian curriculum is overloaded. The PROBE &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-probeteamPublicReportBasic1998&#34; role=&#34;doc-biblioref&#34;&gt;1998&lt;/a&gt;)&lt;/span&gt; reports states that “children are burdened by an overloaded curriculum,” economists like Lant Pritchett &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-pritchettSlowYouRe2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt; talk about the problem of “over-ambitious curricula” and the official Yashpal report addresses “the problem of curriculum load” &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-mhrdYashpalCommitteeReport1993&#34; role=&#34;doc-biblioref&#34;&gt;MHRD 1993&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Given that, I expected to find a lot of evidence, or at least some arm-chair theorizing, on how best to lighten the curriculum load. Yet, apart from the few recommendations in the Yashpal report (which were pretty limited and obviously didn’t fix the problem), there is almost nothing. Ditto with board reform. Everyone hates the boards. Yet while there is consensus on what better boards would look like (more testing of conceptual understanding and less testing of rote memorization), there is little evidence on how to make these changes. Part of the reason for these gaps may be that these questions are really difficult to answer – setting a curriculum is an intensely political affair after all – but I don’t think that’s the whole story. As I argue in later posts, I think that with some well targeted research we likely could make a lot of progress in answering how to slow down the curriculum and reform the boards. Rather, I think that a big part of the reason for these research gaps is that current education researchers don’t have the tools, professional incentives, or connections to answer these questions.&lt;/p&gt;
+&lt;p&gt;From what I can tell, there seem to be two research “tribes” in international education: the economists and the educationists. Economists are agnostic with regard the type of question they answer but prefer to use quantitative methods. Educationists are agnostic between quantitative and qualitative methods but tend to focus on questions related to interactions between teachers and students (e.g. pedagogy) or, less frequently, between teachers and headmasters, other officials, and parents. Both tribes describe stuff outside of their typical domain as politics or culture. For example, Michael Kremer, Nobel winning economist who has argued forcefully that curricula in many countries are overloaded, states that “there are institutional reasons for [curriculum overload]. There are political economy reasons for [curriculum overload]. &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-ogdenExperimentalConversationsPerspectives2016a&#34; role=&#34;doc-biblioref&#34;&gt;Ogden 2016&lt;/a&gt;)&lt;/span&gt;” (When an economist describes something as “political economy” she typically means you might as well give up.) Similarly, the Yashpal report states that the root of the problem is not curriculum designers, teachers, or administrators, but “a deeper malaise in our society…we continue to value a few elite qualifications far more than real competence for doing useful things in life” and recommends a change to the “culture of writing textbooks.”&lt;/p&gt;
+&lt;p&gt;This is a shame because there are tons of really important questions that don’t involve teacher interactions and can’t be answered quantitatively but can be answered (or least some progress can be made) using qual methods. Over the next few blog posts, I attempt to list of few of these questions and also highlight a few of my favorite papers or reports which look at these topics. In a final blog post, I’ll present some ideas on what can be done to encourage more research on these topics.&lt;/p&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-mhrdYashpalCommitteeReport1993&#34; class=&#34;csl-entry&#34;&gt;
+MHRD. 1993. &lt;span&gt;“Yashpal &lt;span&gt;Committee Report&lt;/span&gt;: Learning Without &lt;span&gt;Burden&lt;/span&gt;.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-ogdenExperimentalConversationsPerspectives2016a&#34; class=&#34;csl-entry&#34;&gt;
+Ogden, Timothy N. 2016. &lt;em&gt;Experimental Conversations: Perspectives on Randomized Trials in Development Economics&lt;/em&gt;. &lt;span&gt;MIT Press&lt;/span&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-pritchettSlowYouRe2015&#34; class=&#34;csl-entry&#34;&gt;
+Pritchett, Lant, and Amanda Beatty. 2015. &lt;span&gt;“Slow down, You’re Going Too Fast: Matching Curricula to Student Skill Levels.”&lt;/span&gt; &lt;em&gt;International Journal of Educational Development&lt;/em&gt; 40 (January): 276–88. &lt;a href=&#34;https://doi.org/10.1016/j.ijedudev.2014.11.013&#34;&gt;https://doi.org/10.1016/j.ijedudev.2014.11.013&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-probeteamPublicReportBasic1998&#34; class=&#34;csl-entry&#34;&gt;
+Team, PROBE. 1998. &lt;span&gt;“Public &lt;span&gt;Report&lt;/span&gt; on &lt;span&gt;Basic Education&lt;/span&gt; in &lt;span&gt;India&lt;/span&gt;.”&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What Share of Students Don&#39;t Show up In Learning Outcomes Surveys in India</title>
+      <link>https://academic-demo.netlify.app/post/2021-09-17-the-share-of-indian-primary-students-attending-unrecognised-private-schools/</link>
+      <pubDate>Fri, 17 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-09-17-the-share-of-indian-primary-students-attending-unrecognised-private-schools/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-09-17-the-share-of-indian-primary-students-attending-unrecognised-private-schools/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Learning outcomes surveys typically use a school-based sampling strategy – i.e. they randomly select schools and then conduct assessments of all or some portion of students at each selected school. The advantage of school-based surveys is that they are far cheaper to conduct than household surveys. The disadvantage of school-based survey is that they potentially exclude students who aren’t enrolled, don’t show up on the day of the exam, or attend “unrecognised” private schools (i.e. private schools which don’t have official recognition and thus are not in UDISE, the official government list of schools),&lt;/p&gt;
+&lt;p&gt;I took a stab at estimating the total share of primary school-age children excluded from school-based sampling surveys. I used data on enrollment for rural 7-10 year olds from ASER, data on enrollment of primary and upper primary children at an unrecognised school from NSSO’s 71st round, and data on attendance of enrolled 7-10 year olds from NFHS 2015-16. The NFHS question asks whether the child &lt;em&gt;ever&lt;/em&gt; attended school in the 2015-16 so these figures estimate the share of children that almost certainly wouldn’t be included in a school-based survey. In addition, a child may be excluded because they don’t show up on the day of the exam. Kremer and Muralidharan, in a national survey of rural schools conducted in 2004, found that student attendance was 75% in private schools and 64% in government schools.&lt;/p&gt;
+&lt;p&gt;The table below gives these figures for the large states in India (excluding Telangana) and for the entire country. Overall, the share of students who would completely excluded from a school-based survey is relatively low at 10%. This surprised me somewhat. In fact, my original motivation for gathering these stats was that I thought they would show that a school-based survey would exclude far more children and thus a household survey would be a better bet. Previous estimates of the share of students attending unrecognised schools have varied between around 46% and 80%. (See footnote 6 in this &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.1080/00220388.2020.1715943&#34;&gt;paper&lt;/a&gt; by Kingdon for a review.) And estimates of the share of enrolled students attending school from previous versions of the NFHS were much lower. While the overall share of excluded students is relatively low, the share varies quite a bit state to state from just over 1% in HP and Sikkim to nearly 20% in Bihar.&lt;/p&gt;
+&lt;p&gt;The upshot for me is that school-based surveys can do a decent job generating representative estimates of school-age children but, for states like Bihar and UP, it will be important to generate estimates of learning levels for children left out of the sampling frame. And, of course, it is also important to make sure that children actually show up on the day of the assessment.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-09-17-the-share-of-indian-primary-students-attending-unrecognised-private-schools/index.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Estimating the Impact of State Education Policies in India Using ASER and Synthetic Controls</title>
+      <link>https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/</link>
+      <pubDate>Mon, 23 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;In a &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0738059321000626&#34;&gt;recent article&lt;/a&gt; Andres Parrado and I take a look at the two main sources of learning outcomes data in India – NAS and ASER – and conclude that a) NAS data is (most likely) completely unreliable and b) ASER data, while reliable, is a bit noisy.&lt;/p&gt;
+&lt;p&gt;The implications for people considering using NAS data are pretty clear – you &lt;strong&gt;shouldn’t&lt;/strong&gt;. For ASER, the implications are a bit murkier. In the paper, we say that analysts should probably avoid using ASER data at the district level (which the ASER Centre already recommended) and that they should be careful about comparing year-on-year changes between states. One topic we didn’t really touch is whether ASER data can be used to evaluate the impact of state-level policies. This is a tough question to answer because it depends not just on the level of noise in the ASER data but also on the methodology used and other aspects of the data.&lt;/p&gt;
+&lt;p&gt;In this blog post, I look at whether it is possible to estimate the impact of state education policies by applying the synthetic control method (SCM) to ASER data. SCM is a popular approach to estimating aggregate policies (i.e. policies which affect an entire state or other large area) when data is only available at the aggregate level (i.e. there is no household-level data) but there is data for several time periods before the policy was implemented – exactly the situation we find ourselves with ASER data. An advantage of SCM is that it is (sometimes) pretty clear when it won’t work. As I show in the post, it is very clear that SCM, or at least all the versions of SCM that I try, won’t work with ASER data. This is not to say that there is no other method out that could use ASER data to estimate the effect of state-level policies on learning outcomes. Perhaps &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.1080/01621459.2021.1891924&#34;&gt;this method&lt;/a&gt; or &lt;a href=&#34;https://www.jmlr.org/papers/volume19/17-777/17-777.pdf&#34;&gt;this one&lt;/a&gt;, which further refine SCM, would perform better. But if a rigorous method well-suited to the data at hand doesn’t work it generally means that either you need more data or more assumptions (and thus less rigour).&lt;/p&gt;
+&lt;p&gt;As with all of my posts, this entire post was written as a reproducible R notebook. Go to the about page for more information on how to access the code.&lt;/p&gt;
+&lt;div id=&#34;how-not-to-use-aser-to-estimate-the-impact-of-a-policy-the-example-of-bcg-in-haryana&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;How Not to Use ASER to Estimate the Impact of a Policy – the example of BCG in Haryana&lt;/h1&gt;
+&lt;p&gt;Before diving into SCM, I first look at an example of how &lt;em&gt;not&lt;/em&gt; to use ASER code to estimate the effect of a state-level policy. My example comes from BCG’s work with Haryana on the Quality Improvement Programme (QIP), an ambitious project to improve learning in the states’ government schools through a variety of measures including monthly student assessments, teacher training, school consolidation, and leadership training. See &lt;a href=&#34;https://www.business-standard.com/article/pti-stories/haryana-to-start-quality-improvement-programme-in-schools-114050800695_1.html&#34;&gt;here&lt;/a&gt; for details. (I apologize for picking on BCG a bit in this post. BCG just did what we all do – paint our own efforts in the best light possible.) In &lt;a href=&#34;https://www.bcg.com/industries/education/transforming-education-on-massive-scale&#34;&gt;two&lt;/a&gt; &lt;a href=&#34;https://www.bcg.com/publications/2017/education-social-impact-breakthrough-education-reform-in-india&#34;&gt;articles&lt;/a&gt; on their website, BCG, the strategic partner on the QIP project, claim that QIP was a “breakthrough reform” that led to “stellar gains” and that “Haryana is now the only state in India—possibly globally—to improve learning outcomes at scale so quickly.” These claims are based largely on ASER data. According to one of the articles:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“The impact of the reforms in Haryana has exceeded expectations. From 2012 through 2014, as the overhaul was being rolled out, the share of fifth graders who could do division increased 5% and the share who could read a standard second-grade text jumped 10%. That was quite a reversal: from 2010 through 2012, the share of fifth graders who could do division had fallen 26%, and the share of children who could read a standard second-grade text had dropped 17%. According to the National Achievements Survey report published in January 2016, Haryana was one of just two states in India that showed improvement in learning outcomes across all subjects, with 28 of the 30 Indian states posting declines or no change.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The first issue with the BCG articles is that they mix data from ASER, NAS, and EI without clearly labeling the data sources. (The first article linked to above mixes data from all three sources in a single figure!) A second issue is that they compare Haryana with 5 other, seemingly arbitarily chosen states. A third more serious issue with the analysis that they claim that learning gains between 2012 and 2014 are due to QIP despite the fact that, by BCG’s own account, QIP started in 2014.&lt;/p&gt;
+&lt;p&gt;If we look at ASER data (for all students) for Haryana from 2006 to 2018, it’s easy to see why they fudged the start date a bit. If we just look at the period between 2012 and 2014, the learning gains in Haryana do indeed look impressive! (Note that these figures are for all students, not just government school students. According to ASER, 42% of rural 6-14 year olds in Haryana attended private school in 2010 and 54% attended private school in 2014. Thus, restricting attention to government school students ignores a very large segment of the student population and makes it more difficult to compare changes over time (since the students exiting government schools are likely to be different from the ones staying).)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Yet, if we compare these gains with gains from other states, it’s unclear whether even with the fudged start date QIP clearly led to learning gains in Haryana. While ASER scores increased between 2012 and 2014 in Haryana, they increased just as much in other states too. Clearly, we need a more rigorous approach to estimating impact.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;using-the-synthetic-control-method-to-estimate-the-impact-of-qip&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Using the Synthetic Control Method to Estimate the Impact of QIP&lt;/h1&gt;
+&lt;p&gt;The problem with eyeballing changes in state outcomes from one period to the next (as BCG does in their articles) is that it is very difficult to say when a change is likely due to a policy rather than noise or other factors. SCM offers a more rigorous approach to estimating the impact of state-level policies. SCM creates a “synthetic control” by looking for a combination of control states that, when summed up, closely matches the outcome trajectory of the treatment state prior to the intervention. (I am skimming over a lot of details here. For example, you can specify that the synthetic control matches the treatment unit on more than just pre-treatment outcomes. See &lt;a href=&#34;https://www.tandfonline.com/doi/pdf/10.1198/jasa.2009.ap08746&#34;&gt;Abadie, Diamond, and Hainmuller (2011)&lt;/a&gt; for a complete technical description of SCM. &lt;a href=&#34;https://economics.mit.edu/files/17847&#34;&gt;Abadie (2019)&lt;/a&gt; provides an excellent overview of the method and &lt;a href=&#34;https://dspace.mit.edu/handle/1721.1/71234&#34;&gt;Abadie et al (2011)&lt;/a&gt; provides clear guidance on how to implement SCM in R.)&lt;/p&gt;
+&lt;p&gt;As mentioned above, an advantage of SCM is that it is often clear if it won’t work: if the synthetic control doesn’t closely match the trend of pre-treatment outcomes for the treatment unit then it clearly won’t provide a good approximation of the treatment unit post-treatment. (The converse is not necessarily true: even if the synthetic control matches the pre-intervention treatment unit trends closely it still may be a poor approximation for post-treatment outcomes.) In the code below, I attempt to estimate the effect of QIP on grade 5 reading levels using SCM, under the assumption that QIP started in 2012 and ended in 2014. (If you are viewing this from by blog, the code is hidden. See the about page for details on how to view the entire code.) The figure below shows grade 5 reading levels for the synthetic control versus Haryana for the entire time period for which we have data. (See code comments for model details such as what exact covariates I use.) Ideally, the lines for Haryana and the synthetic control should be close together until the onset of the “treatment” in 2012. Instead, we see that there are huge gaps prior to treatment – in some years, the gaps between the two lines are much large than the gap post-treatment (which is the estimated effect).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;A second way to test the reliability of an SCM estimate is to calculate “placebo” effects for other states and compare the estimated effect for the treatment unit with the estimated “effect” for these other states. The figures below show the estimated “effect” for all states in 2013 and 2014. While the effect for Haryana is positive for both years the estimated effect in 2013 is smaller than the estimated placebo effect for 3 other states and smaller than the estimated placebo effect for 4 other states in 2014. (Note that this analysis assumes that there were no major education reform efforts in other states. I am not familiar with all of the reform efforts in other states, but I am not aware of any major education reform efforts in the states which have large “placebo” effects.)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+## use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+## use `guide = &amp;quot;none&amp;quot;` instead.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/figure-html/unnamed-chunk-7-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;applying-scm-to-other-states-and-outcomes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Applying SCM to Other States and Outcomes&lt;/h1&gt;
+&lt;p&gt;The figure above shows that the synthetic control created for Haryana grade 5 reading outcomes using the model specification provided in the code gave a poor fit for the data. The figure below shows that this model gives a poor fit for nearly all states. The figure shows the difference between the synthetic control and the “treatment” state for all states for which we have complete ASER data over this time period (i.e. I ran the model just like I did for Haryana for each other state and then calculated the difference between the state’s grade 5 reading levels and the grade 5 reading levels for the synthetic control). Ideally, the lines would all be near 0 for the entire period (unless they launched a major education reform).&lt;/p&gt;
+&lt;p&gt;These results are just for one outcome (grade 5 reading levels) and for one particular model specification but toying around with the model and outcome I couldn’t find any combination of model + outcome for which synthetic control seemed appropriate.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/index.en_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;postscript&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Postscript&lt;/h1&gt;
+&lt;p&gt;In late 2017, Haryana launched “Saksham Ghoshna,” an equally ambitious follow-up project to QIP which also included regular student assessments as well as new dashboards and several other pedagogic interventions. Ironically, one of the officials involved &lt;a href=&#34;https://yourstory.com/socialstory/2019/02/haryana-transformed-student-learning/amp&#34;&gt;claimed&lt;/a&gt; that the program was clearly successful because…learning outcomes had been going down prior to the project! In the officials words:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“If we look at NCERT’s various National Achievement Survey (NAS) and ASER reports, the surveys point out that the quality of school education in the state has been going down for years. Government school teachers in Haryana are well-qualified but somehow the link is missing. Classroom studies have not being meaningful. This was the initiation point.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How India Compares to the World on Learning Outcomes</title>
+      <link>https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Researchers at the World Bank recently released an excellent new dataset on learning outcomes by country.The dataset is &lt;a href=&#34;https://datacatalog.worldbank.org/dataset/harmonized-learning-outcomes-hlo-database&#34;&gt;here&lt;/a&gt; and a journal article describing the dataset is &lt;a href=&#34;https://www.nature.com/articles/s41586-021-03323-7&#34;&gt;here&lt;/a&gt;. This is the first dataset on learning outcomes (rather than educational attainment) which includes most low income countries. (Hanushek and Woesmann created a cross country dataset on learning outcomes some time back but it only included 77 countries.)&lt;/p&gt;
+&lt;div id=&#34;how-well-does-india-do-according-to-the-hlo-dataset&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;How well does India do according to the HLO dataset?&lt;/h1&gt;
+&lt;p&gt;I was curious to see how India does compared to other countries in the HLO dataset. The HLO dataset reports HLOs by subject and year so I first calculated the mean HLO for the most recent year data was available for each country and merged in data on GDP per capita from the World Bank. The figure below plots mean HLO for the most recent year available versus log GDP per capita for each country in the dataset.(I also label several other countries for reasons that will become clear in the next section.) According to the HLO dataset, India does about as well as would be expected given its level of income.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse); library(readxl); library(ggrepel)
+hlo &amp;lt;- read_excel(&amp;quot;C:/Users/dougj/Documents/Data/Education/HLO/hlo_database.xlsx&amp;quot;, sheet = &amp;quot;HLO Database&amp;quot;)
+
+# Take the mean by year, get the latest year
+hlo_latest &amp;lt;- hlo %&amp;gt;% group_by(code, year) %&amp;gt;% 
+  summarise(hlo = mean(hlo)) %&amp;gt;% 
+  ungroup() %&amp;gt;% group_by(code) %&amp;gt;% 
+  slice_max(order_by = year)
+
+# Merge with GDP per capita. I grabbed this dataset from Our World in Data but the source is the World Bank. Link here https://ourworldindata.org/grapher/gdp-per-capita-worldbank
+gdp &amp;lt;- read_csv(&amp;quot;C:/Users/dougj/Documents/Data/gdp-per-capita-worldbank.csv&amp;quot;) %&amp;gt;% rename(gdp = `GDP per capita, PPP (constant 2011 international $)`, code = Code, year = Year)
+
+# generate list of countries for which we have PAL data
+pal_countries &amp;lt;- c(&amp;quot;IND&amp;quot;, &amp;quot;PAK&amp;quot;, &amp;quot;KEN&amp;quot;, &amp;quot;UGA&amp;quot;, &amp;quot;TZA&amp;quot;, &amp;quot;MLI&amp;quot;, &amp;quot;SEN&amp;quot;, &amp;quot;MEX&amp;quot;, &amp;quot;NGA&amp;quot;)
+
+# Data for 7 countries doesn&amp;#39;t merge. I just drop these
+unmerged &amp;lt;- hlo_latest %&amp;gt;% anti_join(gdp, by = c(&amp;quot;code&amp;quot;, &amp;quot;year&amp;quot;))
+hlo_latest &amp;lt;- hlo_latest %&amp;gt;% left_join(gdp, by = c(&amp;quot;code&amp;quot;, &amp;quot;year&amp;quot;)) %&amp;gt;% 
+  mutate(sample = if_else(code %in% pal_countries, &amp;quot;PAL country&amp;quot;, &amp;quot;Others&amp;quot;)) %&amp;gt;% 
+  mutate(log_gdp = log(gdp), code = if_else(code %in% pal_countries, code, &amp;quot;&amp;quot;)) 
+
+
+# Graph HLO versus GDP
+p &amp;lt;- ggplot(hlo_latest, aes(log_gdp, hlo, label = code)) + 
+  geom_point(aes(colour = sample)) + geom_smooth(method = &amp;quot;lm&amp;quot;) +
+  geom_text_repel() +
+  labs(title = &amp;quot;Most recent average HLO versus GDP per capita (PPP)&amp;quot;)
+print(p)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comparing-india-to-other-countries-based-on-aser&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Comparing India to other countries based on ASER&lt;/h1&gt;
+&lt;p&gt;The HLO dataset is fantastic but to generate comparable data for so many countries the creators of the dataset had to make some heroic assumptions. The HLO value for India relies entirely on one assessment: the 2009 PISA conducted in Tamil Nadu and HP. My first thought upon realizing this the 2009 PISA likely substantially over-estimates learning outcomes in India since Tamil Nadu is a relatively wealthy state and HP has a reputation for having a good education system. (HP was cited as an example of a high-performing state in the PROBE report.) Surprisingly, according to the IHDS 2012 survey, students in HP and Tamil Nadu are fairly representative of Indian students overall. The code below shows that the population weighted average of the two states is right around the average for the entire country. (HP does really well but Tamil Nadu does surprisingly poorly. I am using IHDS here rather than ASER because ASER excluded rural areas and a very large share of Tamilians live in cities. Also, I am averaging ASER scores for all children 8-11 in the sample which is not a great idea but should at least give a rough sense of HP and TN’s relative performance.)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(haven); library(gt)
+ihds_ind_dir &amp;lt;- &amp;quot;C:/Users/dougj/Documents/Data/IHDS/IHDS 2012/DS0001&amp;quot;
+ind_file &amp;lt;- file.path(ihds_ind_dir, &amp;quot;36151-0001-Data.dta&amp;quot;)
+
+# read in just those variables that i need
+ihds &amp;lt;- read_dta(ind_file, col_select = c(STATEID, HHID, HHSPLITID, PERSONID, WT, RO3, RO7, RO5, URBAN2011, starts_with(&amp;quot;CS&amp;quot;), starts_with(&amp;quot;TA&amp;quot;), starts_with(&amp;quot;ED&amp;quot;)))
+
+# drop the one row with missing values for weights and convert STATEID to factor
+ihds &amp;lt;- ihds %&amp;gt;% filter(!is.na(WT)) %&amp;gt;% mutate(State = as_factor(STATEID))
+
+# Look at the average of all students in TN and HP versus the rest of the country
+tn_hp &amp;lt;- ihds %&amp;gt;% 
+  mutate(Area = (State == &amp;quot;Tamil Nadu 33&amp;quot; | State == &amp;quot;Himachal Pradesh 02&amp;quot;)) %&amp;gt;% 
+  mutate(Area = if_else(Area, &amp;quot;HP and TN&amp;quot;, &amp;quot;All other states&amp;quot;)) %&amp;gt;% 
+  group_by(Area) %&amp;gt;% 
+  summarize(reading = weighted.mean(TA8B, WT, na.rm = TRUE), 
+            math = weighted.mean(TA9B, WT, na.rm = TRUE)) 
+
+
+gt(tn_hp) %&amp;gt;% 
+  fmt_number(
+    columns = c(&amp;quot;reading&amp;quot;, &amp;quot;math&amp;quot;),
+    decimals = 2
+  )&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;umzcmpqqpk&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;
+&lt;style&gt;html {
+  font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
+}
+
+#umzcmpqqpk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#umzcmpqqpk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#umzcmpqqpk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#umzcmpqqpk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#umzcmpqqpk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#umzcmpqqpk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#umzcmpqqpk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#umzcmpqqpk .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#umzcmpqqpk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#umzcmpqqpk .gt_from_md &gt; :first-child {
+  margin-top: 0;
+}
+
+#umzcmpqqpk .gt_from_md &gt; :last-child {
+  margin-bottom: 0;
+}
+
+#umzcmpqqpk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#umzcmpqqpk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#umzcmpqqpk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umzcmpqqpk .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umzcmpqqpk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#umzcmpqqpk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#umzcmpqqpk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#umzcmpqqpk .gt_left {
+  text-align: left;
+}
+
+#umzcmpqqpk .gt_center {
+  text-align: center;
+}
+
+#umzcmpqqpk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#umzcmpqqpk .gt_font_normal {
+  font-weight: normal;
+}
+
+#umzcmpqqpk .gt_font_bold {
+  font-weight: bold;
+}
+
+#umzcmpqqpk .gt_font_italic {
+  font-style: italic;
+}
+
+#umzcmpqqpk .gt_super {
+  font-size: 65%;
+}
+
+#umzcmpqqpk .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+&lt;/style&gt;
+&lt;table class=&#34;gt_table&#34;&gt;
+  
+  &lt;thead class=&#34;gt_col_headings&#34;&gt;
+    &lt;tr&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_left&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Area&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;reading&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;math&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody class=&#34;gt_table_body&#34;&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_left&#34;&gt;All other states&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;2.45&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;1.44&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td class=&#34;gt_row gt_left&#34;&gt;HP and TN&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;2.45&lt;/td&gt;
+&lt;td class=&#34;gt_row gt_right&#34;&gt;1.59&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  
+  
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;While Tamil Nadu and HP, taken together, are not obvious outliers when it comes to education generating a data point for the country as a whole from a single survey conducted more than a decade ago in only two states is still not ideal.&lt;/p&gt;
+&lt;p&gt;Another, in my opinion better, approach to comparing India to other countries on learning outcomes is to use data from ASER and other assessments inspired by ASER. Several countries around the world have completed assessments very similar to ASER. This &lt;a href=&#34;http://img.asercentre.org/docs/Impact/ASER%20Abroad/PalNetworkMay2017.pdf&#34;&gt;webpage&lt;/a&gt; contains stats from ASER and other ASER-like assessments conducted in Pakistan, Kenya, Uganda, Tanzania, Mali, Senegal, Mexico, and Nigeria in 2015 or 2016 on the share of 5th grade children who can read a grade 2 text. (It also has figures for numeracy, but they aren’t really comparable across countries. For more on this very cool effort, check out the &lt;a href=&#34;https://palnetwork.org/&#34;&gt;People’s Action for Learning Network&lt;/a&gt;). The advantages of using ASER-like assessments to compare countries are that:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;In contrast to PISA and most other learning outcomes assessments, ASER-like assessments use household sampling to select children. For countries like India with high drop-out, low attendance, and incomplete lists of private schools, children selected using household sampling are likely more representative of the total population.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ASER measures foundational literacy and numeracy which is arguably more important than the higher-order skills measured by assessments like PISA.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Because it is so simple, ASER scores are pretty easy to compare across languages and contexts without the use of any opaque statistics. (Tests like PISA vary slightly from country to country so sophisticated IRT methods are required to ensure that scores are comparable. And because countries don’t all participate in one single assessment, the maintainers of the HLO dataset have to use “linking” methods to generate comparable scores from different assessments.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ASER scores, where available, are more recent.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The downside of using these assessments is that we only have data for a few countries and, in India and Pakistan, ASER was only conducted in rural areas. To correct for the fact that the ASER was only conducted in rural areas in India and Pakistan, I add the difference between the share of rural and urban children who could read a class 2 text from the IHDS survey (which is about 10 ppt) to both the India and Pakistan ASER scores. (This is a strong assumption but in order to compare scores across countries some strong assumptions are required.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results-from-comparison-of-aser-scores&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Results from comparison of ASER scores&lt;/h1&gt;
+&lt;p&gt;The first scatterplot below compares ASER scores with HLO scores on reading. For countries with multiple HLO scores, I used the score which was nearest in time to 2015-16 since that is when the ASER scores are from. The second scatterplot plots ASER scores versus log GDP per capita.&lt;/p&gt;
+&lt;p&gt;When we use ASER scores, India does considerably less well when compared to other countries. Pakistan, Kenya, Tanzania, and Uganda all have lower GDP per capita but similar or higher ASER scores. Senegal and Mali do worse on ASER but also have much lower income, Mexico does much better but is also much richer, and Nigeria does a little worse than India.&lt;/p&gt;
+&lt;p&gt;If we compare the figures below with the first figure above (the one with all the HLO scores) we see that the reason for India’s comparatively lower performance is that Nigeria and Pakistan do much better, relatively, on ASER than on the HLO measure. In both figures, Kenya, Tanzania, and Uganda do much better than India (considering their relatively low income levels) but in the first figure this is balanced out by the relatively low performance of Pakistan and Nigeria.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;temp &amp;lt;- ihds %&amp;gt;% 
+  mutate(grade2 = as.numeric(TA8B == 4)) %&amp;gt;% 
+  group_by(URBAN2011) %&amp;gt;% 
+  summarize(reading = weighted.mean(as.numeric(grade2), WT, na.rm = TRUE))
+
+rural_urban_diff &amp;lt;- temp$reading[temp$URBAN2011 == 1]- temp$reading[temp$URBAN2011 == 0]
+
+aser &amp;lt;- tribble(
+  ~code, ~aser_reading,
+  &amp;quot;IND&amp;quot;, .47+rural_urban_diff,
+  &amp;quot;PAK&amp;quot;, .549+rural_urban_diff,
+  &amp;quot;KEN&amp;quot;, .768,
+  &amp;quot;UGA&amp;quot;, .557,
+  &amp;quot;TZA&amp;quot;, .81,
+  &amp;quot;MLI&amp;quot;, .103,
+  &amp;quot;SEN&amp;quot;, .33,
+  &amp;quot;MEX&amp;quot;, .797,
+  &amp;quot;NGA&amp;quot;, .444
+)
+
+hlo_reading &amp;lt;- hlo %&amp;gt;% 
+  filter(subject == &amp;quot;reading&amp;quot; &amp;amp; code %in% pal_countries) %&amp;gt;% 
+  mutate(years_to_15_16 = abs(year - 2015.5)) %&amp;gt;% 
+  group_by(code) %&amp;gt;% 
+  slice_min(years_to_15_16, n =1, with_ties = FALSE) %&amp;gt;% 
+  left_join(aser) %&amp;gt;% 
+  left_join(filter(gdp, year == 2015), by = &amp;quot;code&amp;quot;) %&amp;gt;% mutate(log_gdp = log(gdp))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Joining, by = &amp;quot;code&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(hlo_reading, aes(hlo, aser_reading, label = code, colour = sourcetest)) + 
+  geom_point() + geom_label_repel() +
+  labs(title = &amp;quot;ASER / UWEZO vs HLO (reading)&amp;quot;, x = &amp;quot;HLO reading score&amp;quot;, y = &amp;quot;% 5th graders able to read class 2 text&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(hlo_reading, aes(log_gdp, aser_reading, label = code)) + geom_point() +
+  geom_text_repel()+ 
+  labs(title = &amp;quot;ASER / UWEZO vs log GDP per capita&amp;quot;, x = &amp;quot;log GDP per capita&amp;quot;, y = &amp;quot;% 5th graders able to read class 2 text&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/figure-html/unnamed-chunk-3-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;does-any-of-this-matter&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Does any of this matter?&lt;/h1&gt;
+&lt;p&gt;I ran this analysis because I was curious how India’s education outcomes compared to other countries. That said, I’m not really sure it matters all that much. We know that many countries, India included, could do far better in educating their children. And, in India as in the US, country rankings (as long as they don’t involve cricket) don’t seem to generate much public interest. Better data which allows us to compare learning outcomes in India to other countries would be nice but I think that data which allows us to better track changes in learning outcomes &lt;strong&gt;within&lt;/strong&gt; India is far more important. Andres and I will (hopefully) be writing more on this soon.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Introduction to Two-Phase Sampling and How it Could be Used to Collect Learning Outcomes Data</title>
+      <link>https://academic-demo.netlify.app/post/school-versus-household-based-surveys-for-collecting-learning-outcomes-data/</link>
+      <pubDate>Sun, 12 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/school-versus-household-based-surveys-for-collecting-learning-outcomes-data/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Andres Parrado and I recently wrote an &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0738059321000626&#34;&gt;article&lt;/a&gt; in which we look at the reliability of learning outcomes data in India. The main findings of the paper are a) the government-run survey of learning outcomes (called the NAS) likely contains a lot of noise and b) the main independent survey of learning outcomes (ASER) is a tad bit noisier than the survey’s sample size would lead one to believe.&lt;/p&gt;
+&lt;p&gt;In the process of working on the paper, I spent a bit of time looking at learning outcomes surveys across the world. Something that somewhat surprised me is that most learning outcomes surveys, in both rich countries (e.g. PISA) and developing countries (e.g. SACMEQ), are school-based. That is, the surveyors randomly select a bunch of schools, then randomly select a bunch of students in each selected school, and finally administer the assessment to each student.&lt;/p&gt;
+&lt;p&gt;This makes sense in rich countries where you have a) high enrollment, b) accurate and up to date lists of schools, c) high attendance, d) high rates of basic literacy (and thus high capacity to take a paper and pencil test), and e) low incentives for teachers or other administrators to cheat (in the sense that their potential financial gains are a small fraction of what they stand to lose if they are caught).&lt;/p&gt;
+&lt;p&gt;In developing countries, you often only have (a) – high enrollment. Typically, there is no comprehensive roster of all schools due to the proliferation of low-cost, informal private schools. Attendance on exam day cannot be guaranteed. And a large share of students don’t have sufficient reading skills to take a paper and pencil test.&lt;/p&gt;
+&lt;p&gt;An alternative to the school-based approach which I think makes more sense in developing countries is to instead randomly select households. That is, you would randomly select villages, then randomly select households within each village, and finally administer the assessment to each child in each randomly selected household. This is the approach that ASER uses and seems to work really well.&lt;/p&gt;
+&lt;div id=&#34;using-existing-household-surveys-to-collect-learning-outcomes-data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Using existing household surveys to collect learning outcomes data&lt;/h1&gt;
+&lt;p&gt;I think that the ideal way of collecting learning outcomes data in most developing countries would be to add a short, basic learning outcomes module to an existing large household survey like the DHS or LSMS. ASER has proved that you can get a good measure of a child’s basic literacy and numeracy in very little time so it wouldn’t add much to the total survey time or cost.&lt;/p&gt;
+&lt;p&gt;Of course, getting the org running an existing large household survey to add a module to their survey is never an easy task. Out of curiosity, I decided to look at whether it would be possible to get reasonably precise estimates of learning outcomes by administering a learning outcomes assessment to just a sub-sample of children included in a larger household survey. My motivation was that, at least in theory, administering a learning module to a sub-sample of respondents rather than the full sample is lower cost and hassle and thus it might be easier to convince someone to do this than to administer the module to the full sample. (With tools like SurveyCTO it is pretty easy to randomly select a sub-sample on the spot these days.) In practice, the procedures for adding modules / questions to existing major surveys like the DHS or NSSO rounds are extremely bureaucratic so this might just be wishful thinking on my part.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;estimating-precision-from-estimating-learning-levels-using-a-sub-sample-from-a-larger-survey&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Estimating precision from estimating learning levels using a sub-sample from a larger survey&lt;/h1&gt;
+&lt;p&gt;In theory, you can get reasonably high precision using only a sub-sample of a larger survey because a) you can draw a random sub-sample (i.e. without having to cluster) from the larger sample and b) a household survey like the DHS includes a lot of additional variables which are predictive of learning outcomes. To understand the first reason, suppose that sample size of the the existing household survey is so large that you can effectively consider it the whole population. If you draw a simple random sub-sample of size &lt;span class=&#34;math inline&#34;&gt;\(N_{sub}\)&lt;/span&gt; from the larger sample then your standard errors will be about as large as they would be if you drew a simple random sample from the entire population and much smaller than they would be under the typically sampling approach of two-stage clustering (e.g. selecting villages then hamlets). To understand the second reason, suppose that there is a variable in the larger sample (such as household wealth) that is extremely highly predictive of learning outcomes. You could then use this variable as an auxiliary variable when generating your estimates (or when selecting your sub-sample as a strata variable).&lt;/p&gt;
+&lt;p&gt;This approach, in which you collect some information for a large sample and then collect additional information for a second sub-sample is called &lt;strong&gt;two-phase sampling&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;With a bit of math and data from the IHDS we can provide more formal estimates of the sample size requirements. The description below is a bit informal. For a more formal description, check out chapter 12 in Lohr &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-lohr2019sampling&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt; or chapter 9 in Sarndal et al &lt;span class=&#34;citation&#34;&gt;(&lt;a href=&#34;#ref-sarndal2003model&#34; role=&#34;doc-biblioref&#34;&gt;Särndal, Swensson, and Wretman 2003&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Let &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_f}}\)&lt;/span&gt; be the estimate of average learning outcomes that we would obtain if we administered the learning outcome assessment to all children in the sample (f stands for “full”). Let &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_2}}\)&lt;/span&gt; be the estimate of average learning outcome if we only administer the assessment to a subsample of children (2 = “two phase”). Recall from intro stats that &lt;span class=&#34;math inline&#34;&gt;\(Var(y)=Var(E[y|x])+E[Var(y|x)]\)&lt;/span&gt;. If Z is the vector indicating household inclusion in the full sample (also called the first phase sample) then…&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Var(\widehat{\bar{y_2}})=Var(E[\widehat{\bar{y_2}}|Z])+E[Var(\widehat{\bar{y_2}}|Z)]\approx Var(\widehat{\bar{y_f}})+E[Var(\widehat{\bar{y_2}}|Z)] \]&lt;/span&gt;
+Where the second approximate equality holds as long as the &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_2}}\)&lt;/span&gt; is approximately an unbiased estimator of &lt;span class=&#34;math inline&#34;&gt;\(\widehat{\bar{y_f}}\)&lt;/span&gt;. The second term in the equation is variance of estimator treating the full sample (i.e. the first phase sample) as the full population. Since we have a lot of auxiliary information with which to create that estimator, it’s variance is likely to be quite small.&lt;/p&gt;
+&lt;p&gt;We can estimate both of these terms using IHDS data. We first estimate &lt;span class=&#34;math inline&#34;&gt;\(Var(\widehat{\bar{y_f}})\)&lt;/span&gt; where &lt;span class=&#34;math inline&#34;&gt;\(\bar{y}\)&lt;/span&gt; is the proportion of children 8-11 who are able to read a standard 2 level text in 2011-12. (IHDS only administered the ASER tool to 8-11 year olds.)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load required pacakges
+library(tidyverse); library(survey); library(haven); library(tidymodels)
+
+# Load the Stata version of the individual level IHDS file
+# To get this file go to https://www.icpsr.umich.edu/web/DSDR/studies/36151
+# Then click &amp;quot;download&amp;quot; and &amp;quot;stata&amp;quot;. You will need to create a login and you will get a bunch of other files in addition to this one.
+ihds_ind_dir &amp;lt;- &amp;quot;C:/Users/dougj/Documents/Data/IHDS/IHDS 2012/DS0001&amp;quot;
+ind_file &amp;lt;- file.path(ihds_ind_dir, &amp;quot;36151-0001-Data.dta&amp;quot;)
+ihds &amp;lt;- read_dta(ind_file, col_select = c(STATEID, DISTID, PSUID, URBAN2011, HHID, HHSPLITID, PERSONID, IDPSU, WT, RO3, RO7, RO5, COPC, ASSETS, GROUPS, HHEDUC, HHEDUCM, HHEDUCF, INCOME, NPERSONS,starts_with(&amp;quot;CS&amp;quot;), starts_with(&amp;quot;TA&amp;quot;), starts_with(&amp;quot;ED&amp;quot;)))
+
+# Create variables for full PSU ID, HH ID, ASER score, and state
+ihds &amp;lt;- ihds %&amp;gt;% 
+  mutate(psu_expanded = paste(STATEID, DISTID, PSUID, sep =&amp;quot;-&amp;quot;), 
+         hh_expanded = paste(STATEID, DISTID, PSUID, HHID, HHSPLITID, sep =&amp;quot;-&amp;quot;),
+         ASER4 = (TA8B ==4),
+         State = as_factor(STATEID)) %&amp;gt;% 
+  filter(!is.na(WT))
+
+
+# Specify the survey design
+# note that this and the line after can take a minute or two
+ihds_svy &amp;lt;- svydesign(id =~ psu_expanded + hh_expanded, weights =~ WT, data = ihds)
+
+# Estimate the mean of ASER4 for the full country and get the standard error
+svymean(~ASER4, ihds_svy, na.rm =TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##               mean     SE
+## ASER4FALSE 0.67279 0.0084
+## ASER4TRUE  0.32721 0.0084&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Our standard error for our estimate is a little under one percentage point. This makes sense since our sample size is over 10,000 children so this implies a design effect of around 2.&lt;/p&gt;
+&lt;p&gt;In the following code, I estimate the second term in the equation above – the additional variance due to the two-phase sampling design – assuming the random sub-sample is 1/20th the size or about 590 kids. If we just use the simple mean of our sub-sample as our estimator, the RMSE is about .021. (Just as we would expect for a SRS). If we use some of the other variables as auxiliary information, or RMSE is .0196. So, unfortunately, the auxiliary information didn’t buy us much in the way of improved precision here. (Though I should also point out that I pretty much just ran a regression with the first variables I could think of. A more sophisticated approach could potentially generate far better predictions.)&lt;/p&gt;
+&lt;p&gt;Still, our estimated RMSE for the overall estimator &lt;span class=&#34;math inline&#34;&gt;\(\sqrt{.0084^2+.0196^2} = .0213\)&lt;/span&gt;. Not bad for a total sample size of 590 kids.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a new dataframe with only children 8-11 and all the variables we want to use in our analysis
+kids &amp;lt;- ihds %&amp;gt;% 
+  filter(!is.na(TA8B)) %&amp;gt;% 
+  transmute(ASER4, TA4, RO3, URBAN2011, ASSETS, log_inc = log(INCOME+1), group = as_factor(GROUPS), RO5, HHEDUC, NPERSONS, log_pcc = log(COPC), private = ifelse((CS4 ==4), 1, 0))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in log(INCOME + 1): NaNs produced&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a formula that we will use in our probit regression later
+rx &amp;lt;- as.formula(&amp;quot;ASER4 ~ TA4 + log_pcc + RO3 + RO5 + HHEDUC + private + NPERSONS + URBAN2011 + log_inc + group&amp;quot;)
+
+# 1/rho is the proportion of the main sample that we assume will be sub-sampled
+rho &amp;lt;- 20
+
+# set the seed so this is reproducible
+set.seed(123456789)
+
+# Create a 20-fold split. Note that ideally, I would randomly select households to be included/excluded in each split, but this is a pain and wouldn&amp;#39;t likely make much of a difference. (Since IHDS only surveyed kids 8-11 there are typically max 1 per hh.)
+split_obj &amp;lt;- vfold_cv(kids, v = rho, repeats = 10)
+
+# Calculate the true overall mean
+true &amp;lt;- mean(kids$ASER4)
+
+# Create a function which will take one of the splits from the split_obj and calculate 
+# the error assuming we don&amp;#39;t use an auxiliary info and using auxiliary information.
+# See here for more info https://rsample.tidymodels.org/articles/Working_with_rsets.html
+ggreg_error &amp;lt;- function(splits){
+  # Please note that I use the assessment data as the training data and the analysis test 
+  # as the holdout data.  This is the exact opposite of what a normal ML work flow looks like.
+  # In a normal workflow, you fit your model on the 1-1/rho of the data and 
+  #then test it on the 1/rho portion of the data.  I want to do the exact opposite. 
+  sample &amp;lt;- assessment(splits)
+  other &amp;lt;- analysis(splits)
+  
+  # Fit the model  
+  mod &amp;lt;- glm(rx, data = sample, family = binomial(link = &amp;quot;probit&amp;quot;))
+  
+  # Generate model predictions for both datasets
+  preds_other &amp;lt;- augment(mod, newdata = other, type.predict = &amp;quot;response&amp;quot;)
+  preds_sample &amp;lt;- augment(mod, newdata = sample, type.predict = &amp;quot;response&amp;quot;)
+
+  # Calculate the generalized GREG (see Pfefferman eq 4.8 for details)
+  ggreg &amp;lt;- mean(preds_other$.fitted, na.rm = TRUE)*((rho-1)/rho) + mean(sample$ASER4, na.rm = TRUE)/rho 
+
+  # Return   
+  return(list(true-ggreg, true- mean(sample$ASER4, na.rm=TRUE)))
+}
+
+# Map this function to the split object
+split_obj$error &amp;lt;- map(split_obj$splits, ggreg_error)
+
+# Get the root mean squared error for both the simple mean and the generalized GREG estimator
+ggreg_error_vec &amp;lt;- map_dbl(split_obj$error, 1)
+simple_error_vec &amp;lt;- map_dbl(split_obj$error, 2)
+
+sqrt_mse_ggreg &amp;lt;- (mean(ggreg_error_vec^2))^.5
+sqrt_mse_ggreg&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.01969&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sqrt_mse_simple &amp;lt;- (mean(simple_error_vec^2))^.5
+sqrt_mse_simple&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.02088427&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-lohr2019sampling&#34; class=&#34;csl-entry&#34;&gt;
+Lohr, Sharon L. 2019. &lt;em&gt;Sampling: Design and Analysis: Design and Analysis&lt;/em&gt;. CRC Press.
+&lt;/div&gt;
+&lt;div id=&#34;ref-sarndal2003model&#34; class=&#34;csl-entry&#34;&gt;
+Särndal, Carl-Erik, Bengt Swensson, and Jan Wretman. 2003. &lt;em&gt;Model Assisted Survey Sampling&lt;/em&gt;. Springer Science &amp;amp; Business Media.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why India Should Focus on Educational TV rather than EdTech</title>
+      <link>https://academic-demo.netlify.app/post/why-india-should-focus-on-educational-tv-rather-than-edtech/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/why-india-should-focus-on-educational-tv-rather-than-edtech/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;A couple of weeks ago, &lt;a href=&#34;https://www.linkedin.com/in/rob-sampson/?originalSubdomain=in&#34;&gt;Rob Sampson&lt;/a&gt; and I published an op-ed in Quartz India arguing that the central and state governments in India should use Educational TV rather than smartphone-based EdTech to reach students out of school due to the covid crisis. We use survey data to show that smartphone penetration in India is much lower than sales figures would lead you to believe. By contrast, TV ownership is relatively high even among the poor.&lt;/p&gt;
+&lt;p&gt;The full article is &lt;a href=&#34;https://scroll.in/article/961937/small-screen-big-impact-educational-tv-could-be-indias-next-frontier-in-remote-learning&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As always with an op-ed, we ended up cutting several points due to space constraints. The great thing about a blog is that space constraints are not really an issue, so in this post I’ll flesh out some of those points that got cut.&lt;/p&gt;
+&lt;p&gt;First, even if parents own a smartphone they often are reluctant to let their children use it for extended periods of time.&lt;/p&gt;
+&lt;p&gt;Second, we believe TV is a better channel for instruction than radio due to relatively low radio ownership. During the Charcha2020 conference, Ashish Dhawan, founder of CSF, pointed out that the evidence for interactive radio is stronger than the evidence for educational TV. This is true, but, according to the most recent NFHS survey, only about 8% of Indian households own a radio. In addition, I think that the stronger evidence for interactive radio is most likely due to its longer history. Interactive radio has been around (and studied) since the mid-1970s. By contrast, if you exclude “edutainment” programs like Sesame Street, there are relatively few studies of ETV in developing countries. In terms of format, ETV can mimic interactive radio by including pauses for students to digest and react to content.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

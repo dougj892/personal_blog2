@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/tag/python/</link>
+      <atom:link href="https://academic-demo.netlify.app/tag/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>Python</title>
+      <link>https://academic-demo.netlify.app/tag/python/</link>
+    </image>
+    
+    <item>
+      <title>Web Scraping 101</title>
+      <link>https://academic-demo.netlify.app/post/web-scraping/</link>
+      <pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/web-scraping/</guid>
+      <description>&lt;p&gt;More and more organizations are publishing their data on the web. This is great, but often websites don’t offer an option to download a clean and complete dataset from the site.  In this situation, you have two options.  First, you (or some unlucky intern) can hunker down and spend a week wearing out the ‘c’ and ‘v’ keys on your keyboard as you cut and paste ad nauseum from the website to an Excel spreadsheet.  Second, you can use a tool like python to automatically “scrape” the data from the website. In this blog post, I’ll demonstrate how to use python to “scrape” the names of all IDinsight staff from our website.&lt;/p&gt;
+&lt;h2 id=&#34;step-one--check-out-the-raw-html&#34;&gt;Step one — Check out the raw html&lt;/h2&gt;
+&lt;p&gt;Often, the first step in scraping a website is to get familiar with the raw html code for the site.  Let’s do this for the IDinsight staff webpage.  Open “http://idinsight.org/about/team/staff/“ in a browser and then view the raw html for this webpage.  (To do this in Safari, select “show page source” from the “develop” menu.  If you don’t see the “develop” menu, follow &lt;a href=&#34;%22http://osxdaily.com/2011/11/03/enable-the-develop-menu-in-safari/%22&#34;&gt;these steps&lt;/a&gt; to add the &amp;ldquo;develop&amp;rdquo; menu.)&lt;/p&gt;
+&lt;p&gt;When you look through the html, you will see that details for each staff member is coded in an html block similar to the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;bio-info&amp;quot;&amp;gt;
+  &amp;lt;h3&amp;gt;Abhinav Gupta&amp;lt;/h3&amp;gt;
+  &amp;lt;h4&amp;gt;Senior Finance and Operations Manager&amp;lt;/h4&amp;gt;
+  &amp;lt;div class=&amp;quot;bio-details&amp;quot; class=&amp;quot;hide&amp;quot;&amp;gt;
+    &amp;lt;h3&amp;gt;Abhinav Gupta&amp;lt;/h3&amp;gt;
+    &amp;lt;p&amp;gt;
+      &amp;lt;p&amp;gt;&amp;lt;a href=&amp;quot;mailto:abhinav.gupta@idinsight.org&amp;quot;&amp;gt;abhinav.gupta@IDinsight.org&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+      &amp;lt;p&amp;gt;Abhinav is a Senior Finance and Operations Manager at IDinsight’s India office. He brings more than eight years of financial advisory and consulting experience in India and U.K.&amp;lt;/p&amp;gt;
+      &amp;lt;p&amp;gt;Prior to joining IDinsight, Abhinav was a Manager with the M&amp;amp;amp;A Transaction Services department of Deloitte in India. As a consultant, he advised clients across several sectors in infrastructure, telecommunications, retail and e-commerce.&amp;lt;/p&amp;gt;
+      &amp;lt;p&amp;gt;Abhinav holds a master&amp;amp;#8217;s degree in Economics from University of Cambridge, UK and is a qualified Chartered Accountant from Institute of Chartered Accountants of England and Wales.&amp;lt;/p&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This suggests that if we want to get the names of each staff member, one strategy would be to search through the html code for each block of code starting with “&amp;lt;div class=&amp;ldquo;bio-info”&amp;gt;” and then search inside these code blocks for the text inside the html tags &lt;h3&gt; and &lt;/h3&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;step-2---use-beautifulsoup-to-parse-the-html&#34;&gt;Step 2 - Use BeautifulSoup to parse the html&lt;/h2&gt;
+&lt;p&gt;The python package “requests” allows you to download the html code from a webpage and the python package “BeautifulSoup” parses the html from a webpage so that you can easily find specific code blocks.  The following python code downloads and parses the html for the IDinsight staff page.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# import the packages that we will need to scrape the website.
+# The BeautifulSoup package helps parse html
+from bs4 import BeautifulSoup
+# The requests package just downloads the html
+import requests
+
+# download the html for the idinsight staff webpage
+response = requests.get(&amp;quot;http://idinsight.org/about/team/staff/&amp;quot;)
+# parse the html using the BeautifulSoup function
+soup = BeautifulSoup(response.content, &amp;quot;lxml&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;step-3---use-beautifulsoup-to-search-the-parsed-html&#34;&gt;Step 3 - Use BeautifulSoup to search the parsed html&lt;/h2&gt;
+&lt;p&gt;Now, we want to search the parsed code for code blocks starting with “&amp;lt;div class=&amp;ldquo;bio-info”&amp;gt;” and search inside these code blocks for the text inside the html tags &lt;h3&gt; and &lt;/h3&gt;.  The following python code performs these operations.  BeautifulSoup is a little tricky, so I’m not going to explain this code in detail, but as you can see it is quite powerful.  For more on the BeautifulSoup package see &lt;a href=&#34;%22https://www.crummy.com/software/BeautifulSoup/bs4/doc/%22&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# use the BeautifulSoup function &#39;findall&#39; to get a collection of div tags with the class &#39;bio-info&#39;
+bios = soup.findAll(&#39;div&#39;, {&#39;class&#39;:&amp;quot;bio-info&amp;quot;})
+# for each of the div tags with class &#39;bio-info&#39;, search for the h3 tag and get the contents of this tag
+names = [bio.find(&#39;h3&#39;).contents[0] for bio in bios]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Lastly, we can use the following python code to check that we successfully scraped all staff names.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# print names of all staff
+for person in names:
+  print(person)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Voila!  We&amp;rsquo;re done.  For a more advanced example of web scraping, this &lt;a href=&#34;%22https://github.com/dougj892/Jupyter-notebooks/blob/master/Scraping%203ie_v3.ipynb%22&#34;&gt;link&lt;/a&gt; includes code that downloads all the metadata for all of the studies in the 3ie impact evaluation repository.  (If you just want the full dataset of all the metadata, let me know and I can share it with you.)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

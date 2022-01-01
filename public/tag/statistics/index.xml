@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics | Doug Johnson</title>
+    <link>https://academic-demo.netlify.app/tag/statistics/</link>
+      <atom:link href="https://academic-demo.netlify.app/tag/statistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Statistics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
+      <title>Statistics</title>
+      <link>https://academic-demo.netlify.app/tag/statistics/</link>
+    </image>
+    
+    <item>
+      <title>Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</title>
+      <link>https://academic-demo.netlify.app/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;A while back, I was involved in an education RCT that had pretty high (40% or so) attrition. What’s worse, the remaining treatment and control students appeared to be quite different from each other. We ended taking a series of steps which seems quite common for researchers in this situation:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;First, we explored whether it would be feasible to track down a random sample of attritors. In our case (as in most cases I think), this would have been really hard and expensive to do so we gave up on that.&lt;/li&gt;
+&lt;li&gt;Next, we tried Lee bounds. Unfortunately, these were really wide so we gave up on this idea as well.&lt;/li&gt;
+&lt;li&gt;Without any better option, we argued that attrition was no big deal since we performed three standard tests attrition tests and the results were more or less Ok.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I don’t think any of us really believed in the attrition tests we performed but, without any clear way to adjust our estimates to account for attrition, we were kind of backed into a corner. In this blog post, I explain why we didn’t believe in those tests and what (I think) would be a more reasonable way to test for attrition. In a future blog post, I will describe what I think is a more reasonable way to adjust for attrition if your Lee bounds are too wide.&lt;/p&gt;
+&lt;div id=&#34;typical-tests-for-attrition-dont-make-sense&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Typical Tests for Attrition Don’t Make Sense&lt;/h1&gt;
+&lt;p&gt;We performed three different standard tests for attrition. First, we compared the overall attrition rates (i.e. the share of the sample which had dropped out between baseline and end line) between treatment and control. Second, we tested the covariate balance between treatment and control for the remaining students. Third, we tested the covariate balance between the attritors and remaining students. These seemed to be the standard tests at the time. (I confess that I haven’t paid enough attention to know if the situation has changed.)&lt;/p&gt;
+&lt;p&gt;There are a few issues with these tests. First, comparing attritors and those who remain in the sample usually serves little purpose. If attritors are different from those who remain in the sample this limits the extent to which we can generalize results from the RCT but the initial sample of schools was already somewhat unrepresentative. Second, it is inefficient to test for differences in covariates by just looking at the remaining students.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-better-test-for-attrition&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;A Better Test for Attrition&lt;/h1&gt;
+&lt;p&gt;It would make more sense to test whether attrition caused an imbalance in your sample by also looking at attritors, i.e for a individual RCT with a single covariate you would regress&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ D_i=α+X_i\beta_1+X_iT_i\beta_2+\varepsilon_i \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where D is inclusion in sample, X is the baseline variable, and T is your treatment variable. You would then look at parameter &lt;span class=&#34;math inline&#34;&gt;\(\beta_2\)&lt;/span&gt;. (With a grouped RCT, you should cluster your standard errors and with more than one variable you would look at an overall F test of all the interaction terms or use something like &lt;a href=&#34;https://www.jstor.org/stable/27645895&#34;&gt;this&lt;/a&gt;.) You might argue that it doesn’t make sense to look at the attritors because all you care about is whether there is balance between the remaining observations but I think this argument misses the point of why we do balance tests. The reason we perform balance test is not because we particularly care about balance along the particular covariates included in the test (we can always adjust for these) but rather because we want to know if there was anything fishy in the randomization (or the attrition process).&lt;/p&gt;
+&lt;p&gt;Lastly, it doesn’t really make sense to say that everything is Ok as long as your p-value is greater than .05 or so. This means that you are saying that unless there is really strong proof that attrition is affecting your results you are going to ignore it. Instead, it would make a lot more sense to use some sort of equivalence test (e.g. a TOST) or at least set a very, very high threshold for your p-value.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Index Variable Weirdness</title>
+      <link>https://academic-demo.netlify.app/post/2021-07-19-index-variable-weirdness/</link>
+      <pubDate>Mon, 19 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/2021-07-19-index-variable-weirdness/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/2021-07-19-index-variable-weirdness/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+&lt;div id=&#34;TOC&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;There are many instances where you have a bunch of variables and you need to boil them down to one or just a few. For example, you may be testing the effect of an education program on students’ confidence, self-efficacy, and learning levels. You will likely have at least one measure (likely more) for each of those core outcome variables and want to combine them into one to avoid having to do any multiple hypothesis corrections.&lt;/p&gt;
+&lt;p&gt;Within economics, people tend to use a few different approaches to constructing such “index” variables. The simplest method, which I’ve seen attributed to Katz, is to standardize each variable, add them all up, and then standardize again. Another common approach is to apply principal components analysis and use the first component. Lastly, people often use the approach by &lt;a href=&#34;https://www.tandfonline.com/doi/abs/10.1198/016214508000000841&#34;&gt;Anderson&lt;/a&gt; which assigns weights based on the variance-covariance of the variables.&lt;/p&gt;
+&lt;p&gt;The weird thing about these methods is that the PCA and Anderson methods are, in some ways, almost complete opposites, with the Katz method somewhere in between the two. With PCA, highly correlated variables tend to be assigned higher weights. With the Anderson method, highly correlated variables tend to be assigned lower weights. Both of these approaches have a certain logic to them and seem appropriate in certain circumstances. The code below demonstrates this for the case where you have have three vars: x1 which is independent of others and z1 and z2 which are highly correlated. All have mean 0 and variance of 1. The Katz method weights each var equally. PCA assigns 0 weight to x1 and half weight to z1 and z2. And the Anderson method assigns higher weight to x1 and lower weights to z1 and z2.&lt;/p&gt;
+&lt;p&gt;Each of these approaches make sense in the appropriate context. If you are trying to measure some latent, unmeasurable quantity such as intelligence then it probably makes sense to take a bunch of measures and weight those which are highly correlated more highly (i.e. use PCA). On the other hand, if you have a bunch of variables and some subset may of variables may be more or less measuring the same thing you should probably weight those variables lower than the others so that you don’t double count the thing you are measuring. If you are just aggregating a bunch of different measures, then the Katz method seems pretty reasonable.&lt;/p&gt;
+&lt;p&gt;The odd thing is that people rarely justify their choice in constructing an index.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse); library(MASS)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## v ggplot2 3.3.5     v purrr   0.3.4
+## v tibble  3.1.5     v dplyr   1.0.7
+## v tidyr   1.1.4     v stringr 1.4.0
+## v readr   2.0.2     v forcats 0.5.1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;MASS&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:dplyr&amp;#39;:
+## 
+##     select&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# generate random variable
+n &amp;lt;- 100000
+x1 &amp;lt;- rnorm(n)
+
+# Generate two correlated random variables
+rho &amp;lt;- .6
+Sigma &amp;lt;- matrix(data = c(1,rho,rho, 1), nrow = 2)
+z &amp;lt;- mvrnorm(n, mu = c(0,0), Sigma = Sigma)
+z1 &amp;lt;- z[,1]
+z2 &amp;lt;- z[,2]
+
+# Create a dataframe from the three variables
+df &amp;lt;- tibble(x1 = x1, z1 = z1, z2 = z2)
+
+# Test that all means are 0, variances are 1, and covariance of z1 and z2 is roughly equal to rho
+vars &amp;lt;- list(x1, z1, z2)
+map_dbl(vars, mean)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  0.005211541  0.003045969 -0.001404589&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;map_dbl(vars, var)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.9981877 0.9984357 1.0017675&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cov(z1, z2)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 0.5991689&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Weights from PCA
+pca_weights &amp;lt;- prcomp(~ x1 + z1 + z2, data = df, rank = 1)
+pca_weights&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Standard deviations (1, .., p=3):
+## [1] 1.2646238 0.9990934 0.6331904
+## 
+## Rotation (n x k) = (3 x 1):
+##            PC1
+## x1 0.000895669
+## z1 0.706123073
+## z2 0.708088556&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Weights from Anderson method
+Sigma_inv &amp;lt;- solve(cov(df))
+anderson_weights &amp;lt;- colSums(Sigma_inv)
+anderson_weights&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        x1        z1        z2 
+## 1.0013371 0.6268521 0.6232446&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Estimating seroprevalence with data from an imperfect test on a convenience sample</title>
+      <link>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself.&lt;/p&gt;
+&lt;p&gt;Addressing either of these challenges on their own is relatively straightforward to do using existing tools. The R package “epiR” allows users to estimate true prevalence and confidence intervals for prevalence using the method developed by Rogan and Gladen (1978) and Reiczigel et al (2010). (See the function “epi.prev” in this package.) Similarly, the R page “survey” (and the Stata “svy:” commands) allow users to generate inference from convenience samples using post-stratification. Addressing both at the same time is kind of tricky though.&lt;/p&gt;
+&lt;p&gt;In this blog post, I look at two different ways of taking into account both test imperfections and the non-random nature of the sample: a simple approach which combines poststratification with a Rogan-Gladen adjustment and a Bayesian approach based on multi-level regression and poststratification. I also report results from a quick Monte Carlo expirement I used to assess both approaches. A companion git &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;repo&lt;/a&gt; includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.&lt;/p&gt;
+&lt;div id=&#34;the-naive-approach-simple-poststratification-and-adjustment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The naive approach: simple poststratification and adjustment&lt;/h2&gt;
+&lt;p&gt;One option is to combine these approaches. In other words, we first calculate &lt;span class=&#34;math inline&#34;&gt;\(\hat{pa}\)&lt;/span&gt;, our estimate of the overall “apparent” seroprevalence rate (i.e. the rate not taking into account test imperfection) using the typical poststratification formula and then calculate our estimate of the true seroprevalence, &lt;span class=&#34;math inline&#34;&gt;\(\hat{pt}\)&lt;/span&gt; by using the adjustment from Rogan and Gladen approach.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pa} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]&lt;/span&gt;
+Where h indexes strata, &lt;span class=&#34;math inline&#34;&gt;\(N_h\)&lt;/span&gt; is the number of people in the total population in stratum h, N is the total number of people in the population and &lt;span class=&#34;math inline&#34;&gt;\(\bar{y_h}\)&lt;/span&gt; is the sample mean within stratum h.&lt;/p&gt;
+&lt;p&gt;We then calculate true seroprevalence by adjusting this figure using the formula below:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pt} = \frac{\widehat{pa}+sp-1}{se+sp-1} \]&lt;/span&gt;
+Where se and sp are our estimates for the sensitivity and specificity of the test respectively.&lt;/p&gt;
+&lt;p&gt;There are several options for calculating standard errors, but the simplest approach is to use a quick formula for the standard error of a proportion&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]&lt;/span&gt;
+If you want to be more exact and take into account the uncertainty in the estimates of se and sp, you can use the more complicated formula from Rogan and Gladen which uses the Taylor Linearization approach.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;issues-with-the-naive-approach&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Issues with the naive approach&lt;/h2&gt;
+&lt;p&gt;In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the poulation than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-bayesian-approach-using-modified-mrp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A Bayesian Approach using Modified MRP&lt;/h2&gt;
+&lt;p&gt;Theoretically, we should be able to improve on this approach by more carefully taking into account potential test imperfections. To use the example from above, if we saw that there was one positive test in the highly weighted stratum and 0 positive tests in the other stratum, we should adjust downward our overall estimate of the prevalence.&lt;/p&gt;
+&lt;div id=&#34;quick-overview-of-mrp&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Quick overview of MRP&lt;/h3&gt;
+&lt;p&gt;One way to do this is using a fully Bayesian approach built on multi-level regression and post-stratification (MRP). (For another Bayesian approach to this problem which doesn’t use MRP, see &lt;a href=&#34;https://www.medrxiv.org/content/10.1101/2020.04.15.20067066v1&#34;&gt;Larremore et al (2020)&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;MRP is an approach to small area estimation in which the analyst first estimates the mean of each strata using a multi-level model and then weights up these estimates using the poststratification weights. For example, to estimate the overall proportion &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; in a population using data &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; for each individual, you might use a simple model as follows to first estimate, &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt;, the proportion in each stratum j using stratum variables &lt;span class=&#34;math inline&#34;&gt;\(X_j\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \theta_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I); y_i \sim bernoulli(\theta_{j[i]}) \]&lt;/span&gt;
+To derive your estimates of the total population, you just weight up. i.e. you calculate&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{\theta} = \sum_{h=1}^H{\frac{N_h*\widehat{\theta_j}}{N}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;MRP is especially useful when you have a lot of different strata (which is often the case) since it allows you to more effectively “borrow strength” between strata compared to the approach where you simply model a different intercept for each stratum. (If you are simply modeling a separate intercept for each stratum, then there is no way for the model to know, for example, that a stratum for white men between 41 and 45 in Georgia and a stratum for white men between 46 and 50 are likely to be similar.) It is also, believe it or not, relatively straightforward compared to other approaches to small area estimate. For a more thorough overview of MRP, I highly recommend this &lt;a href=&#34;https://mc-stan.org/rstanarm/articles/mrp.html&#34;&gt;vignette&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;modified-mrp-to-account-for-test-imperfections&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Modified MRP to account for test imperfections&lt;/h3&gt;
+&lt;p&gt;If implementing MRP using a Bayesian approach, it is fairly straightforward to modify the MRP model to take into account test error. As before, we use a multilevel model for the likelihood of the true prevalence. But in our likelihood of the test data, we use the apparent prevalence rate, which is the probability of a test being positive taking into account both prevalence and test imperfections, rather than the true prevalence. Lastly, we also model uncertainty in our estimates of the sensitivity and specificity using data on the number of true positives (tp), true negatives (tn), false positives (fp), and false negatives (fn) from a validation study of the antibody test.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ pt_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ pa_j = se*pt_j+(1-sp)*(1-pt_j) \]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ se \sim binom(tp, tp+fn); sp \sim binom(tn, tn+fp)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ y_i \sim bern(pa_{j[i]}) \]&lt;/span&gt;
+For a complete Bayesian model, we also need to add priors for sensitivity and specificity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results-from-a-monte-carlo-simulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results from a Monte Carlo Simulation&lt;/h2&gt;
+&lt;p&gt;Theory is all well and good, but how do the two approaches compare when using data? To test this, I ran a simple Monte Carlo simulation using code borrowed from Kennedy and Gabry’s &lt;a href=&#34;https://cran.r-project.org/web/packages/rstanarm/vignettes/mrp.html&#34;&gt;MRP tutorial&lt;/a&gt;. (And big thanks to them for letting me copy their code!)&lt;/p&gt;
+&lt;p&gt;Surprisingly, the naive approach actually did slightly better (in terms of average absolute deviation from the true seroprevalence) when it came to estimating overall seroprevalence. This is especially surprising since the data generating process used for the simulations is almost identical to my MRP model. The modified MRP process does much better when estimating subgroups (the Rogan and Gladen estimates for subgruops are often negative, which happens sometimes) but clearly, given the additional hassle of generating the code, the modified MRP approach is only worth it if you really want to estimate subgroup effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;for-people-interested-in-using-this-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;For people interested in using this code&lt;/h2&gt;
+&lt;p&gt;All code for this analysis can be found &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;here&lt;/a&gt;.
+If you looking to copy and adapt the code, start with the R notebook “Estimate seroprevalence” in the above repo. In that notebook, I fit the modified MRP approach in two different ways: using raw Stan code and using the brms package (with some custom code to extend the package). If you would like to use the more complicated modified MRP approach, I strongly recommend you use the brms package. If you use the brms package, you should be able to copy and paste the code I created to define a “custom family” for the brms package and then modify the code in the main call to brm to suite your data. Since brms uses the lme4 syntax for defining multi-level models, customizing this code hopefully shouldn’t be too hard. By contrast, I find that modifying raw Stan code always takes quite a bit of time.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Alternative Approach to Power Calculations</title>
+      <link>https://academic-demo.netlify.app/post/an-alternative-approach-to-power-calculations/</link>
+      <pubDate>Tue, 28 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/an-alternative-approach-to-power-calculations/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;The typical approach to power calculations goes something like this: first, the evaluator estimates the smallest MDE for which the intervention would be cost-effective. Second, the evaluator calculates the sample required to detect that MDE. Third, the evaluator throws out the calculations from step two after realizing the evaluation would be way too expensive and instead estimates the MDE she can detect given her budget constraints.
+The problem with this approach is that it doesn’t take into account the cost of the evaluation itself. In this blog post, I’ll show one way to design evaluations which takes into account the cost of the evaluation itself through the use of a simple toy example&lt;/p&gt;
+&lt;div id=&#34;simple-example-with-a-perfectly-accurate-study&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Simple example with a perfectly accurate study&lt;/h1&gt;
+&lt;p&gt;Suppose a funder has USD 1 million to spend and two options for how it can spend the money: it can either invest in a tried and true intervention which it knows will save 1,000 lives or it can invest in a new intervention. The funder believes that there is a 10% chance that the new intervention is significantly more effective than the tried and true intervention and that USD 1 million invested in the new intervention would save 5,000 lives. Unfortunately, they also believe that there is a 90% probability that the new intervention is less effective than the tried and true intervention and would only save 500 lives.
+If the funder seeks to maximize expected lives saved, they would invest the entire USD 1 million in the tried in true intervention since the expected number of lives saved by investing in the new intervention is only $ .1&lt;em&gt;5000+.9&lt;/em&gt;500=950 $&lt;/p&gt;
+&lt;p&gt;Now suppose the funder has the option of first funding a study which would reveal, with perfect accuracy, whether the new intervention is a block-bluster or a dud. To calculate the value of the study, we may estimate the “value of information” for the study defined as:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ VOI(I)=\sum_i P(i)EU(i)-EU \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where I is the new information which we may obtain and EU(i) is the expected utility when I=i, P(i) is probability I=I, and EU is the expected utility without I (Kochenderfer, 2015). In other words, the value of information for a variable I is the increase in expected utility if that variable is observed.
+In our case:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ VOI(study)=.1*5000+.9*1000-1000 = 400 \]&lt;/span&gt; lives&lt;/p&gt;
+&lt;p&gt;If we additionally assume that the cost per life saved is constant for the two interventions (i.e. if you spent Y on the first intervention you would save Y/1,000,000*1000 lives), we may calculate the exact amount the funder would be willing to spend on the study. Assuming constant cost per life saved, the funder would be willing to spend up to $285,714 on this study. Note that up until this point we have not used Bayes’ theorem at all – just some simple algebra.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;removing-the-assumption-of-perfect-accuracy&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Removing the Assumption of Perfect Accuracy&lt;/h1&gt;
+&lt;p&gt;Unfortunately, studies are never perfectly accurate. Suppose that if the intervention is a blockbuster there is a 95% probability that the study will say that it is a block buster. But if the intervention is a dud, there is still a 5% probability that the study will say that it is a blockbuster.&lt;br /&gt;
+To calculate VOI for this new noisy study, we first calculate the probability that the study result is “blockbuster”. This probability is .9&lt;em&gt;.05+.1&lt;/em&gt;.95=.14. Next, we need to calculate the expected utility if the study result is positive and the expected utility if the result is negative. Here’s where things get a little trickier and where Bayes’ rule comes in handy. If we get a “blockbuster” result, our post-facto estimate of the probability that the intervention is really a blockbuster would be:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ P(bb|bb result)=(P(bb result |bb)*P(bb))/(P(bb result |bb)P(bb)+P(bb result|dud)P(dud))=.68 \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Therefore, if the funder gets a “blockbuster” result from the study it would invest in the new intervention since the expected lives saved would be &lt;span class=&#34;math inline&#34;&gt;\(.68*5000+.32*500=3560\)&lt;/span&gt;.
+I won’t calculate p(bb | dud result) since intuitively it seems fairly obvious that the funder would not invest in the new intervention if the study gave a “dud” result and all we care about for the VOI formula is the expected utility for each study result.
+The value of information (in terms of lives saved) is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ VOI(noisy study)=P(bb result)*EU(bb result)+P(dud result)*EU(dud result)-1000=1358.4 \]&lt;/span&gt;
+Thus, the noise in the study results reduces the value of the study information by 41.6 lives.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-complicated-effects-and-studies&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;More Complicated Effects and Studies&lt;/h1&gt;
+&lt;p&gt;In the real world things are rarely binary: intervention effects and study estimates are typically continuous. For example, suppose we are investigating an intervention which seeks to reduce infant mortality. The funder probably doesn’t believe that the intervention is either a blockbuster or a dud. Rather, they probably believe that there is a small chance the intervention works great, a small chance is works well but not great, etc. Similarly, any potential study we perform on the intervention will spit out an estimated effect size and standard error rather than a simple up/down result. To calculate the value of information with continuous effect sizes / study results, we still apply the same formula as above but the calculations will get complicated very quickly so we will no longer be able to calculate things by hand. More on this later.&lt;/p&gt;
+&lt;p&gt;[1]Kochenderfer, Mykel J. Decision making under uncertainty: theory and application. MIT press, 2015.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Three Stage Sampling</title>
+      <link>https://academic-demo.netlify.app/post/3-stage/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/3-stage/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Caveat emptor: This blog post has not been thoroughly checked for errors.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;One of IDinsight&amp;rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&amp;rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.&lt;/p&gt;
+&lt;p&gt;In this post, I&amp;rsquo;ll try to answer four questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;When do you need to take into account both stages of clustering in a survey or evaluation?&lt;/li&gt;
+&lt;li&gt;How do you properly account for a three stage design when performing sample size / power calculations?&lt;/li&gt;
+&lt;li&gt;How should you estimate the inputs required for these calculations?&lt;/li&gt;
+&lt;li&gt;How do you properly account for a three stage design when analyzing data?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;when-you-do-you-need-to-take-into-both-stages&#34;&gt;When you do you need to take into both stages?&lt;/h1&gt;
+&lt;p&gt;With an RCT, it&amp;rsquo;s pretty rare that you really need to take into account two stages of clustering. Remember that just because units exhibit some sort of clustering doesn&amp;rsquo;t mean that you need to adjust for clustering in your analysis.  For example, if you randomize at the student level it doesn&amp;rsquo;t matter that student learning outcomes exhibit clustering at the classroom level.  An example of when you might want to take into account two stages of clustering is when you randomize large clusters (e.g. schools) and then only collect data from units in a randomly sampled set of smaller clusters (e.g. kids in classrooms).  With surveys, anytime you have a three stage design you should theoretically take into account the clustering at both levels.&lt;/p&gt;
+&lt;p&gt;Even when it makes sense in theory to take into account both stages of clustering, you can usually get by with just considering the most aggregate (highest) level of clustering.  We&amp;rsquo;ll see below why that makes sense.  In some cases, e.g. when you are trying to find the optimal survey design for a given budget, you do really need to take into account both stages of clustering.&lt;/p&gt;
+&lt;h1 id=&#34;how-do-you-account-for-a-three-stage-design&#34;&gt;How do you account for a three stage design?&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;(The advice given below is tailored to someone performing sampling size calcs for a survey with a three stage design.  All of the advice holds true for power calcs as well.  You just need to multiply the final variance by 2 (since you have 2 groups &amp;ndash; treatment and control) and then use the standard adjustment to the standard error for power calcs &amp;ndash; i.e. instead of multiplying the standard error by +/-1.96 to create a 95% confidence interval you multiply by ~2.8 to calculate an MDE for alpha .05 and power .8.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s first recap how one stage of clustering affects the variance of your estimator.  Let&amp;rsquo;s say that you will use a two stage sampling strategy in which you will first randomly sample J clusters and then randomly sample K units from each cluster to estimate the mean of some variable y.  Further assume that the total number of units per cluster does not vary and is pretty large.  If values of y are correlated within each cluster, we can think of the values for y as being made up of a cluster component and an independent within-cluster component, i.e.&lt;/p&gt;
+&lt;p&gt;$$y_{j,k}=\eta_j+\phi_{j,k}$$&lt;/p&gt;
+&lt;p&gt;This allows us to calculate the variance the of y as:&lt;/p&gt;
+&lt;p&gt;$$\sigma^2_y=\sigma^2_{\eta}+\sigma^2_{\phi}$$&lt;/p&gt;
+&lt;p&gt;And the variance of the mean as:&lt;/p&gt;
+&lt;p&gt;$$Var(\bar{y})=\frac{\sigma^2_{\eta}}{J}+\frac{\sigma^2_{\phi}}{JK}=\sigma^2_y\left(\frac{\rho}{J}+\frac{(1-\rho)}{JK}\right)$$&lt;/p&gt;
+&lt;p&gt;Where \( \rho=\frac{\sigma^2_{\eta}}{\sigma^2_y} \).  It&amp;rsquo;s also useful to calculate the design effect, or the ratio of the variance of this estimator to the ratio of the estimator if the sample had been collected using simple random sampling (SRS). Since the variance under SRS would be \( \frac{\sigma^2_y}{JK} \) the design effect\(=1+(K-1)\rho\).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s now suppose that we have a higher level sampling stage. We first pick Q mega-clusters, then J clusters from each mega-cluster, and then K households from each cluster.  Similarly, we can think of the values y as made of three components:&lt;/p&gt;
+&lt;p&gt;$$y_{q,j,k}=\gamma_q+\eta_{q,j}+\phi_{q,j,k}$$&lt;/p&gt;
+&lt;p&gt;The variance of y is then:&lt;/p&gt;
+&lt;p&gt;$$\sigma^2_y=\sigma^2_{\gamma}+\sigma^2_{\eta}+\sigma^2_{\phi}$$&lt;/p&gt;
+&lt;p&gt;And the variance of the mean is:&lt;/p&gt;
+&lt;p&gt;$$Var(\bar{y})=\frac{\sigma^2_{\gamma}}{Q}+\frac{\sigma^2_{\eta}}{QJ}+\frac{\sigma^2_{\phi}}{QJK}=\sigma^2_y\left(  \frac{\rho_{\gamma}}{Q}+\frac{\rho_{\eta}}{QJ}+\frac{(1-\rho_{\gamma}-\rho_{\eta})}{QJK} \right)$$&lt;/p&gt;
+&lt;p&gt;Where \(\rho_{\eta}=\frac{\sigma^2_{\eta}}{\sigma^2_y}\) and \(\rho_{\gamma}=\frac{\sigma^2_{\gamma}}{\sigma^2_y}\).  For our three stage sampling design, the design effect is:&lt;/p&gt;
+&lt;p&gt;$$DEFF=1+(K-1)\rho_{\eta}+(JK-1)\rho_{\gamma}$$&lt;/p&gt;
+&lt;p&gt;This also shows why just looking at the most aggregate level of clustering is usually pretty reasonable &amp;ndash; assuming the two ICCs are relatively similar in size, the adjustment to the variance will be driven primarily by the most aggregate level of clustering.&lt;/p&gt;
+&lt;h1 id=&#34;how-should-you-estimate-the-inputs-required-for-these-calculations&#34;&gt;How should you estimate the inputs required for these calculations?&lt;/h1&gt;
+&lt;p&gt;Now that we know how to adjust our estimate of the variance using the ICC at both levels, the next obvious questions is where to find the different values for the ICC.&lt;/p&gt;
+&lt;p&gt;If you are lucky, you might find a dataset which includes both levels of clustering and the variable you are interested (or some similiar variable).  If so, then you can use Stata&amp;rsquo;s anova command to estimate the two ICCs.  I&amp;rsquo;m not really sure how to do this is Stata, but I think that it should be relatively straightforward if you search the help file for &amp;ldquo;nested anova.&amp;rdquo;  (And if you figure out how to do it please let me know!)&lt;/p&gt;
+&lt;p&gt;Alternatively, you can resort to the typical hack of using a design effect calculated from another survey with a similar three stage design.  &lt;a href=&#34;https://unstats.un.org/unsd/hhsurveys/pdf/Chapter_7.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here&lt;/a&gt; are a few design effects from which to draw from. (As an aside, it would also be useful for us to start recording the design effects for key variables from our own surveys.  To get the design effect for a survey dataset in Stata first &amp;ldquo;svyset&amp;rdquo; your dataset, then estimate the population mean of a variable using &amp;ldquo;svy: mean &lt;variable&gt;&amp;rdquo;, and then run &amp;ldquo;estat effects&amp;rdquo; to get the design effect for the estimate.)&lt;/p&gt;
+&lt;h1 id=&#34;how-do-you-properly-account-for-a-three-stage-design-when-analyzing-data&#34;&gt;How do you properly account for a three stage design when analyzing data?&lt;/h1&gt;
+&lt;p&gt;Unfortunately, most Stata commands only allow for a single stage of clustering.  To account for two or more stages of clustering, you need to first &amp;ldquo;svyset&amp;rdquo; your data and then use the &amp;ldquo;svy&amp;rdquo; prefix before running any command.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple Random Sampling vs. PPS Sampling</title>
+      <link>https://academic-demo.netlify.app/post/srs-v-pps/</link>
+      <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/srs-v-pps/</guid>
+      <description>&lt;p&gt;A question came up on one of our evaluations on whether we should use simple random sampling (SRS) or probability proportional to size (PPS) sampling when selecting villages (our primary sampling units) for a matching study.  Under SRS, you randomly select primary sampling units (PSUs) until you reach your desired sample size.  With PPS sampling, you select your PSUs using some measure of size.  PPS is often used in a first stage of a two-stage sampling design because if you use PPS to select PSUs and then select a fixed number of units (households in our case) per PSU in the second stage of sampling, the probability of selection will be identical for all units.  (To see this, note that  the probability of selecting each PSU is \( n_1*w_i\)) where \( n_1\) is the number of PSUs you select and the probability of selecting a household in a village conditional on selecting the village in the first stage is \(\frac{n_2}{w_i}\) where \(n_2\) is the number of households sampled per village.  Note that this depends on your estimate of size being 100% accurate.  More details &lt;a href=&#34;https://en.wikipedia.org/wiki/Sampling_%28statistics%29#Probability-proportional-to-size_sampling&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.  Code to perform PPS without replacement &lt;a href=&#34;https://ideas.repec.org/c/boc/bocode/s454101.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A quick way to answer this question is to use something called the &amp;ldquo;design effect.&amp;rdquo;  The design effect is defined as the ratio of the variance of your estimate under a given sampling scheme to the variance of your estimate under SRS of final units.  (Note that performing SRS on your final units, here households, is not the same as performing SRS of PSUs and then selecting a fixed number of units per PSU.) Design effects are typically used to estimate sample size requirements for population-based surveys that don&amp;rsquo;t use SRS.  For example, you may know that for a household survey in India looking at consumption expenditure and using a certain sampling strategy, the design effect is likely to be around 2. To estimate the required sample size for this survey, you first estimate the sample size required under SRS and then double it. (Remember that the variance of a mean of a sample drawn using SRS is \(\frac{\sigma^2}{N}\) so if you multiple the variance by X you also need to multiply the sample size by X to get the same variance.)&lt;/p&gt;
+&lt;p&gt;If we used SRS to select villages and then selected a fixed number of households per village, we might want to weight each household by the number of households in the village, or \( \frac{w_i}{\sum{w_i}}  \), when performing our final analysis so that our estimates are representative of the entire population.  (I say &amp;ldquo;might&amp;rdquo; because there are differing opinions on this.  Stay tuned for a book club discussion on this topic.)  If we do use weights in our analysis, and  if we assume constant variance \( \sigma_y^2 \) per village and do a little hand waving, the variance of our estimate of the mean of a variable in the treatment group would be roughly:&lt;/p&gt;
+&lt;p&gt;$$Var(\bar{y}_{w})=Var\left(\sum{\frac{w_iy_i}{\sum{w_i}}}\right)=\frac{\sum{w_i^2}}{\left(\sum{w_i}\right)^2}\sigma_y^2$$&lt;/p&gt;
+&lt;p&gt;Where \( w_i \) is the size of village i.&lt;/p&gt;
+&lt;p&gt;If we sample using PPS, our variance would be roughly the variance for an estimate under SRS of final units (which, again, is different from SRS of PSUs) which would just be \( \frac{\sigma_y^2}{N} \).  Thus, our design effect is&amp;hellip;&lt;/p&gt;
+&lt;p&gt;$$\frac{\sum{w_i^2}}{\left(\sum{w_i}\right)^2}N$$&lt;/p&gt;
+&lt;p&gt;To estimate the final sample size required if using weights, we first calculate the sample size required using standard power calculations and then multiply this by our estimate of the design effect. Note that this is a pretty rough calculation (for example, I&amp;rsquo;m not taking into account the fact that both sampling schemes involve two stages), but it gives you an approximate idea of how the sampling scheme will affect power.&lt;/p&gt;
+&lt;p&gt;Another consideration in choosing between the two sampling schemes for this evaluation is that we have to do a full household listing in each village.  On average, the villages selected using PPS will be significantly larger than under simple random sampling (where the expected value of the village sizes would be equal to the average village size).  The formula for the expected size of the PSU under PPS (assuming we are just selecting one PSU or selecting with replacement) is&amp;hellip;&lt;/p&gt;
+&lt;p&gt;$$E[w_i]=\frac{\sum{w_i^2}}{\sum{w_i}}$$&lt;/p&gt;
+&lt;p&gt;To derive this, note that the expected value of a variable is the sum of the probability of selecting each value of the variable times the value.  Under PPS, the probability of selecting each village is \(\frac{w_i}{\sum{w_i}} \).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fixed Effects vs Difference-in-Differences</title>
+      <link>https://academic-demo.netlify.app/post/fe-did/</link>
+      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/fe-did/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;em&gt;TL;DR: When you have longitudinal data, you should use fixed effects or ANCOVA rather than difference-in-differences since a difference-in-difference specification will spit out incorrect variance estimates. If the data is from a randomized trial, ANCOVA is probably a better bet.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Trying to understand when to use fixed effects and when to use difference-in-differences (DiD), in the past, always made me feel like an idiot. It seemed like I was missing something really obvious that everyone else was getting.&lt;/p&gt;
+&lt;p&gt;After trying, and failing, to find a clear description of the difference between the two in textbooks and online, I finally decided to test out the differences by creating some mock data and applying DiD and fixed effects to the mock data and deriving the variance estimates for the two specifications. I have included a summary of those results below (the full details are &lt;a href=&#34;https://github.com/dougj892/Jupyter-notebooks/blob/master/Fixed%20Effects%20vs%20Diffs%20in%20Diffs.ipynb&#34;&gt;here&lt;/a&gt;) but first, if the distinction between fixed effects and DiD has you feeling stupid, take heart in knowing that a lot of other people get this confused as well. A lot of the candidates I interviewed for the tech team got this wrong. I have even seen it come up in published articles. (e.g. this &lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S030438781200003X&#34;&gt;paper&lt;/a&gt; published in the Journal of Development Economics which focused on the variance of DiD versus ANCOVA. Equation one in the article incorrectly suggests a DiD specification.)&lt;/p&gt;
+&lt;div id=&#34;review-of-diffs-in-diffs-and-fixed-effects-specifications&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Review of Diffs-in-diffs and Fixed Effects Specifications&lt;/h3&gt;
+&lt;p&gt;To jog everyone’s memory, if you have one baseline and one end line observation for a set of units, the standard DiD specification is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Y_{i,t}=\alpha+\beta*EVERTREAT_i + \gamma*POST_t + \tau*TREAT_{i,t} + \varepsilon_{i,t}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where i indexes units, t indexes time, EVERTREAT is a binary variable for whether the unit was ever exposed to treatment, POST is a binary variable for whether the observation is from end line, and TREAT is a binary variable equal to 1 if the observation is from the end line and is for a treated unit.&lt;/p&gt;
+&lt;p&gt;For the case of one baseline and one end line, the fixed effects specification is equivalent to:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta Y_i=\alpha+ \delta*TREAT_{i} + \varepsilon_{i}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where&lt;span class=&#34;math inline&#34;&gt;\(\Delta Y_i\)&lt;/span&gt;is the change from baseline to end line for unit i. This is also known at the “first differences” estimator.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-you-should-never-use-did-with-longitudinal-data&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Why you should never use DiD with longitudinal data&lt;/h3&gt;
+&lt;p&gt;In the simple case with no covariates, both of the above specifications will give you the same point estimates which is equal to:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\hat{\delta} = (\bar{Y}^T_{post}-\bar{Y}^T_{pre})-(\bar{Y}^C_{post}-\bar{Y}^C_{pre})\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where T indicates the subgroup of units that ever received treatment and C indicates those that never received treatment. The fact that the point estimates are the same in this case is probably the source of much of the confusion around these two specifications. My hunch is that people often call the fixed effects specificiation a “difference-in-difference” estimator since the point estimate can be obtained from this twiced difference equation.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The problem with the DiD specification is that, while it will give you the correct point estimates, the variance estimates will be way off.&lt;/em&gt; The reason for this is that the variance estimates treat the baseline and end line as independent observations and thus don’t take into account autocorrelation between baseline and end line. If we assume that each observation has the same variance &lt;span class=&#34;math inline&#34;&gt;\(\sigma^2\)&lt;/span&gt;, that the correlation between baseline and endline is &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;, and that there are n treatment and n control units, the true variance of both estimators is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Var(\hat{\delta}) = \frac{4\sigma^2}{n}(1-\rho)\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;To arrive at this result, note that the fixed effects estimator with one baseline and one end line can be written as&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\hat{\delta} = \bar{\Delta Y^T} - \bar{\Delta Y^C}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;And note that the variance of each of these components is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Var(\bar{\Delta Y^K}) = Var \left \{ \frac{1}{n}\sum{(Y_{i,post}-Y_{i,pre})} \right \} = \frac{1}{n^2}  \sum{(\sigma^2+\sigma^2-2cov(Y_{i,post},Y_{i,pre}))}  = \frac{1}{n^2} \sum{(2\sigma^2-2\rho\sigma^2)} = \frac{2\sigma^2}{n}(1-\rho)\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;To follow the derivation above, recall that &lt;span class=&#34;math inline&#34;&gt;\(var(a+b)=var(a)+var(b)+2cov(a,b)\)&lt;/span&gt; and that &lt;span class=&#34;math inline&#34;&gt;\(\rho_{i,j}=\sigma_{i,j}/(\sigma_i*\sigma_j)\)&lt;/span&gt;. Note that this is the true variance of both the FE estimator and the DiD. (Since they always produce the same point estimates, their true variance must be equal).&lt;/p&gt;
+&lt;p&gt;If you run the FE specification above, the estimate of the variance of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\delta}\)&lt;/span&gt; will be similar to the formula above. If you run the DiD specification, the estimate of the variance will be &lt;span class=&#34;math inline&#34;&gt;\(\frac{4\sigma^2}{n}\)&lt;/span&gt; though. Thus, that means that if the correlation between baseline and end line is .5, your estimated variance will be about twice as large as the true variance!&lt;/p&gt;
+&lt;p&gt;One way to see that the DiD variance estimator is &lt;span class=&#34;math inline&#34;&gt;\(\frac{4\sigma^2}{n}\)&lt;/span&gt; is just to see that the DiD estimate is computed by adding or subtracting four terms each of which have variance &lt;span class=&#34;math inline&#34;&gt;\(\frac{\sigma^2}{n}\)&lt;/span&gt;. Alternatively, if you have too much free time on your hands you can derive the full variance estimate from the DiD regression. To derive this yourself, first note that the variance estimator for OLS (assuming homoskedasticity) is &lt;span class=&#34;math inline&#34;&gt;\((X&amp;#39;X)^{-1}\hat{\sigma^2}\)&lt;/span&gt; where X is your matrix of variables (including a column of 1s for the constant) and &lt;span class=&#34;math inline&#34;&gt;\(\hat{\sigma^2}\)&lt;/span&gt; is the sum of squared residuals divided by n-k where k is the number of regressors. In most cases, deriving &lt;span class=&#34;math inline&#34;&gt;\((X&amp;#39;X)^{-1}\)&lt;/span&gt; is really tricky but in the case of DiD with no covariates it’s relatively straightforward since all of the variables are columns of 1s and 0s.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multiple Hypothesis Testing</title>
+      <link>https://academic-demo.netlify.app/post/mult-hypothesis/</link>
+      <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/mult-hypothesis/</guid>
+      <description>&lt;p&gt;This week, I volunteered to read and summarize one of the articles for IDinsigh&amp;rsquo;s tech team&amp;rsquo;s book club. The topic for this week is multiple hypothesis testing and the article I volunteered to summarize is &amp;ldquo;Multiple Inference and Gender Differences in the Effects of Early Intervention: A Reevaluation of the Abecedarian, Perry Preschool, and Early Training Projects&amp;rdquo; by Michael Anderson.  You can find an ungated version of the article &lt;a href=&#34;http://ist-socrates.berkeley.edu/~raphael/IGERT/Workshop/Anderson%20Preschool.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Since not everyone at IDinsight has time to participate in these calls and I tend to forget anything that I don&amp;rsquo;t write down I thought I&amp;rsquo;d do a blog post on the article.  I&amp;rsquo;m not going to summarize the article itself, but rather just the key takeaways.&lt;/p&gt;
+&lt;h1 id=&#34;the-problem-with-multiple-hypothesis-testing&#34;&gt;The problem with multiple hypothesis testing&lt;/h1&gt;
+&lt;p&gt;The problem with conducting multiple hypothesis tests is simple: if you test conduct 100 hypothesis tests at the 5% level, even if all of the null hypotheses are true you would expect to reject around 5 hypotheses. This isn&amp;rsquo;t necessarily an issue if you keep in mind that you &lt;em&gt;should&lt;/em&gt; expect to see around 5 rejections, but it definitely is a problem if you go cherry picking for results like this&amp;hellip;&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;http://imgs.xkcd.com/comics/significant.png&#34; alt=&#34;XKCD on p hacking&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;There are two main approaches to dealing with this problem.  I&amp;rsquo;ll first talk about the most obvious way to deal with it which is to reduce the number of tests by aggregating your outcome variables.  Next, I&amp;rsquo;ll talk about an alternate approach which instead adjusts the p-values of each test to account for the multiple testing.  In addition to these two main approaches to the problem, I&amp;rsquo;ll also talk about my favorite approach: ignoring the problem.  (But we warned, you can only get away with this under certain conditions! Read below for more.)&lt;/p&gt;
+&lt;h1 id=&#34;approach-1---reduce-the-number-of-tests&#34;&gt;Approach 1 - Reduce the number of tests&lt;/h1&gt;
+&lt;p&gt;The most straightforward approach to dealing with the problem of multiple hypothesis tests is to reduce the number of tests by aggregating your outcome variables into an index.  In principle, you could aggregate your outcome variables into a single index however you wanted but some ways make more sense than others.  For example, it probably isn&amp;rsquo;t a good idea to take a simple average of different outcomes because the relative weighting of each variable would depend greatly on the scale on which each variable is measured.&lt;/p&gt;
+&lt;p&gt;The approach Anderson uses is as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Normalize each outcome variable by subtracting the mean and dividing by the standard deviation of the control group. In symbols, calculate:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$\tilde{y}&lt;em&gt;{ik}=\frac{y&lt;/em&gt;{ik}-\bar{y}&lt;em&gt;k}{\sigma&lt;/em&gt;{k,c}}$$&lt;/p&gt;
+&lt;p&gt;Where i indexes observations and k indexes outcomes.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Calculate \( \hat{\Sigma} \), the sample variance covariance matrix for this vector of transformed outcomes&lt;/li&gt;
+&lt;li&gt;Calculate \( \mathbf{s_i}=\hat{\Sigma}^{-1}\cdot \mathbf{\tilde{y_i}} \) the dot product of the inverse of the sample variance covariance matrix and the vector of outcomes for each observation&lt;/li&gt;
+&lt;li&gt;Add up the elements of  \( \mathbf{s_i} \) to get your final index&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Unfortunately, I am unable to find code in Stata to do this. &lt;a href=&#34;http://nbviewer.jupyter.org/github/dougj892/Jupyter-notebooks/blob/master/Anderson%20summary%20index.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here&lt;/a&gt; is some sample code showing how to do this in Python.  If anyone finds / writes code to do this, please let the rest of us know.&lt;/p&gt;
+&lt;p&gt;Anderson&amp;rsquo;s approach seems like a good approach if there is no alternative principled way to aggregate the outcome variables.  As Anderson points out, this approach increases power by weighting those outcome variables that are not highly correlated with other outcome variables more. In some cases there might be a more natural theory based way of aggregating the outcome variables.  For example, if you think the various outcome variables all measure some latent variable you might use item response theory or something else to estimate the latent variable.&lt;/p&gt;
+&lt;p&gt;As a sidenote, as great way to test for balance at baseline in an RCT is to use randomization inference on a single index constructed using basically the same approach.  See &lt;a href=&#34;http://projecteuclid.org/download/pdfview_1/euclid.ss/1219339114&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; for more info.&lt;/p&gt;
+&lt;h1 id=&#34;approach-2---adjust-your-p-values&#34;&gt;Approach 2 - Adjust your p-values&lt;/h1&gt;
+&lt;p&gt;A second approach to dealing with multiple tests is to adjust your p-values to take into account the fact that you are conducting multiple tests at the same time.  The typical way to do this is to control the Family-Wise Error Rate (FWER), defined as the probability of making a single type 1 error (i.e. rejecting the null when the null is true).  (This isn&amp;rsquo;t the only thing you could control for though.  See &lt;a href=&#34;https://normaldeviate.wordpress.com/2012/10/04/testing-millions-of-hypotheses-fdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt; for an alternative.) The easiest, but most conservative, way to control the FWER is to simply multiply your p-values by the number of tests you are conducting.  This method, called the Bonferroni method, works because the probability of making any type 1 error can&amp;rsquo;t be larger than the sum of the probabilities of making a type 1 error when all the nulls are true.  Due to its simplicity, the Bonferonni method is useful for performing power calculations.&lt;/p&gt;
+&lt;p&gt;The Bonferroni method works, but, as I mentioned, it&amp;rsquo;s &lt;em&gt;really&lt;/em&gt; conservative.  There a couple of ways we can do better: by using a step-down method and by taking into account the correlation between test statistics.  Step down is a nifty trick in which you first order p-values smallest to largest and then sequentially reject null hypotheses using the smallest p-value first until you encounter a p-value that is too large after which you fail to reject all further hypotheses.  This &lt;a href=&#34;https://en.m.wikipedia.org/wiki/Holm%e2%80%93Bonferroni_method&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page&lt;/a&gt; has a good explanation of why this works for the step down equivalent of the Bonferroni method, the Holm-Bonferroni.&lt;/p&gt;
+&lt;p&gt;The other way you can get more power is by taking into account the correlation between test statistics.  The basic idea here is that if your test statistics are all perfectly correlated you shouldn&amp;rsquo;t be adjusting your p-values at all because you should either reject all of the hypotheses or fail to reject all of them.&lt;/p&gt;
+&lt;p&gt;Anderson uses a combination of these two tools to increase the power.  If you want more details of the intuition behind this technique, I found this &lt;a href=&#34;http://statistics.berkeley.edu/sites/default/files/tech-reports/633.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;article&lt;/a&gt; helpful.&lt;/p&gt;
+&lt;p&gt;Again, we were unable to find code in Stata to do this. If anyone has any suggestions, please let us know.&lt;/p&gt;
+&lt;h1 id=&#34;approach-3---ignore-the-problem-see-disclaimer-below&#34;&gt;Approach 3 - Ignore the problem (see disclaimer below)&lt;/h1&gt;
+&lt;p&gt;Now we come to my personal favorite approach &amp;ndash; ignoring the problem. But first, I should offer a strong disclaimer: this is only a reasonable option in certain circumstances.  To see why you sometimes might want to ignore the multiple hypothesis testing problem, consider a situation in which you happen to run 10 completely independent RCTs for a single client at the same time which eack look at completely different interventions targeting different outcomes. In this case, you almost certainly wouldn&amp;rsquo;t want to correct the p-value for one RCT to take into account the fact that you happen to be running another RCT at the same time.  Often the decision of whether one should correct for multiple hypothesis testing or not is subtle and depends on your perspective.  I don&amp;rsquo;t want to go into the full debate here, but I think that a useful approach for determining whether ignoring the problem is to first answer the following two questions.  First, are each of the hypothesis tests informing a separate independent decision or are they informing a single decision?  For example, is the purpose of the hypothesis tests to determine whether to individually continue each of ten programs or is the purpose to determine whether any of the ten programs?  Second, will the results from the evaluation be shared with the outside world or just with the client?  If the answer to the first question is &amp;ldquo;independent decisions&amp;rdquo; and the answer to the second is &amp;ldquo;just the client,&amp;rdquo; you might consider ignoring the problem.  (But make sure to run this by your TT point person first!)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

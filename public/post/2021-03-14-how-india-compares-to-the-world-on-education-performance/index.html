@@ -1,0 +1,1605 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Doug Johnson" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Researchers at the World Bank recently released an excellent new dataset on learning outcomes by country.The dataset is here and a journal article describing the dataset is here. This is the first dataset on learning outcomes (rather than educational attainment) which includes most low income countries." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.4d3fddba2b325f129185bb42290fa344.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Doug Johnson" />
+  <meta property="og:url" content="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/" />
+  <meta property="og:title" content="How India Compares to the World on Learning Outcomes | Doug Johnson" />
+  <meta property="og:description" content="Researchers at the World Bank recently released an excellent new dataset on learning outcomes by country.The dataset is here and a journal article describing the dataset is here. This is the first dataset on learning outcomes (rather than educational attainment) which includes most low income countries." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-03-14T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-03-14T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/"
+  },
+  "headline": "How India Compares to the World on Learning Outcomes",
+  
+  "datePublished": "2021-03-14T00:00:00Z",
+  "dateModified": "2021-03-14T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Doug Johnson"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doug Johnson",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Researchers at the World Bank recently released an excellent new dataset on learning outcomes by country.The dataset is here and a journal article describing the dataset is here. This is the first dataset on learning outcomes (rather than educational attainment) which includes most low income countries."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>How India Compares to the World on Learning Outcomes | Doug Johnson</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="2f3f59c282bdb2929e4a77c663bd439b" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Publications</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/#journal_articles"><span>Journal articles</span></a>
+            
+              <a class="dropdown-item" href="/#working_papers"><span>Working papers</span></a>
+            
+              <a class="dropdown-item" href="/#op_eds"><span>Op-eds</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/dougj8921" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>How India Compares to the World on Learning Outcomes</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 14, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Researchers at the World Bank recently released an excellent new dataset on learning outcomes by country.The dataset is <a href="https://datacatalog.worldbank.org/dataset/harmonized-learning-outcomes-hlo-database">here</a> and a journal article describing the dataset is <a href="https://www.nature.com/articles/s41586-021-03323-7">here</a>. This is the first dataset on learning outcomes (rather than educational attainment) which includes most low income countries. (Hanushek and Woesmann created a cross country dataset on learning outcomes some time back but it only included 77 countries.)</p>
+<div id="how-well-does-india-do-according-to-the-hlo-dataset" class="section level1">
+<h1>How well does India do according to the HLO dataset?</h1>
+<p>I was curious to see how India does compared to other countries in the HLO dataset. The HLO dataset reports HLOs by subject and year so I first calculated the mean HLO for the most recent year data was available for each country and merged in data on GDP per capita from the World Bank. The figure below plots mean HLO for the most recent year available versus log GDP per capita for each country in the dataset.(I also label several other countries for reasons that will become clear in the next section.) According to the HLO dataset, India does about as well as would be expected given its level of income.</p>
+<pre class="r"><code>library(tidyverse); library(readxl); library(ggrepel)
+hlo &lt;- read_excel(&quot;C:/Users/dougj/Documents/Data/Education/HLO/hlo_database.xlsx&quot;, sheet = &quot;HLO Database&quot;)
+
+# Take the mean by year, get the latest year
+hlo_latest &lt;- hlo %&gt;% group_by(code, year) %&gt;% 
+  summarise(hlo = mean(hlo)) %&gt;% 
+  ungroup() %&gt;% group_by(code) %&gt;% 
+  slice_max(order_by = year)
+
+# Merge with GDP per capita. I grabbed this dataset from Our World in Data but the source is the World Bank. Link here https://ourworldindata.org/grapher/gdp-per-capita-worldbank
+gdp &lt;- read_csv(&quot;C:/Users/dougj/Documents/Data/gdp-per-capita-worldbank.csv&quot;) %&gt;% rename(gdp = `GDP per capita, PPP (constant 2011 international $)`, code = Code, year = Year)
+
+# generate list of countries for which we have PAL data
+pal_countries &lt;- c(&quot;IND&quot;, &quot;PAK&quot;, &quot;KEN&quot;, &quot;UGA&quot;, &quot;TZA&quot;, &quot;MLI&quot;, &quot;SEN&quot;, &quot;MEX&quot;, &quot;NGA&quot;)
+
+# Data for 7 countries doesn&#39;t merge. I just drop these
+unmerged &lt;- hlo_latest %&gt;% anti_join(gdp, by = c(&quot;code&quot;, &quot;year&quot;))
+hlo_latest &lt;- hlo_latest %&gt;% left_join(gdp, by = c(&quot;code&quot;, &quot;year&quot;)) %&gt;% 
+  mutate(sample = if_else(code %in% pal_countries, &quot;PAL country&quot;, &quot;Others&quot;)) %&gt;% 
+  mutate(log_gdp = log(gdp), code = if_else(code %in% pal_countries, code, &quot;&quot;)) 
+
+
+# Graph HLO versus GDP
+p &lt;- ggplot(hlo_latest, aes(log_gdp, hlo, label = code)) + 
+  geom_point(aes(colour = sample)) + geom_smooth(method = &quot;lm&quot;) +
+  geom_text_repel() +
+  labs(title = &quot;Most recent average HLO versus GDP per capita (PPP)&quot;)
+print(p)</code></pre>
+<p><img src="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+<div id="comparing-india-to-other-countries-based-on-aser" class="section level1">
+<h1>Comparing India to other countries based on ASER</h1>
+<p>The HLO dataset is fantastic but to generate comparable data for so many countries the creators of the dataset had to make some heroic assumptions. The HLO value for India relies entirely on one assessment: the 2009 PISA conducted in Tamil Nadu and HP. My first thought upon realizing this the 2009 PISA likely substantially over-estimates learning outcomes in India since Tamil Nadu is a relatively wealthy state and HP has a reputation for having a good education system. (HP was cited as an example of a high-performing state in the PROBE report.) Surprisingly, according to the IHDS 2012 survey, students in HP and Tamil Nadu are fairly representative of Indian students overall. The code below shows that the population weighted average of the two states is right around the average for the entire country. (HP does really well but Tamil Nadu does surprisingly poorly. I am using IHDS here rather than ASER because ASER excluded rural areas and a very large share of Tamilians live in cities. Also, I am averaging ASER scores for all children 8-11 in the sample which is not a great idea but should at least give a rough sense of HP and TN’s relative performance.)</p>
+<pre class="r"><code>library(haven); library(gt)
+ihds_ind_dir &lt;- &quot;C:/Users/dougj/Documents/Data/IHDS/IHDS 2012/DS0001&quot;
+ind_file &lt;- file.path(ihds_ind_dir, &quot;36151-0001-Data.dta&quot;)
+
+# read in just those variables that i need
+ihds &lt;- read_dta(ind_file, col_select = c(STATEID, HHID, HHSPLITID, PERSONID, WT, RO3, RO7, RO5, URBAN2011, starts_with(&quot;CS&quot;), starts_with(&quot;TA&quot;), starts_with(&quot;ED&quot;)))
+
+# drop the one row with missing values for weights and convert STATEID to factor
+ihds &lt;- ihds %&gt;% filter(!is.na(WT)) %&gt;% mutate(State = as_factor(STATEID))
+
+# Look at the average of all students in TN and HP versus the rest of the country
+tn_hp &lt;- ihds %&gt;% 
+  mutate(Area = (State == &quot;Tamil Nadu 33&quot; | State == &quot;Himachal Pradesh 02&quot;)) %&gt;% 
+  mutate(Area = if_else(Area, &quot;HP and TN&quot;, &quot;All other states&quot;)) %&gt;% 
+  group_by(Area) %&gt;% 
+  summarize(reading = weighted.mean(TA8B, WT, na.rm = TRUE), 
+            math = weighted.mean(TA9B, WT, na.rm = TRUE)) 
+
+
+gt(tn_hp) %&gt;% 
+  fmt_number(
+    columns = c(&quot;reading&quot;, &quot;math&quot;),
+    decimals = 2
+  )</code></pre>
+<div id="umzcmpqqpk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#umzcmpqqpk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#umzcmpqqpk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#umzcmpqqpk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#umzcmpqqpk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#umzcmpqqpk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#umzcmpqqpk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#umzcmpqqpk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#umzcmpqqpk .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#umzcmpqqpk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#umzcmpqqpk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#umzcmpqqpk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#umzcmpqqpk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#umzcmpqqpk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#umzcmpqqpk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umzcmpqqpk .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#umzcmpqqpk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#umzcmpqqpk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#umzcmpqqpk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#umzcmpqqpk .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#umzcmpqqpk .gt_left {
+  text-align: left;
+}
+
+#umzcmpqqpk .gt_center {
+  text-align: center;
+}
+
+#umzcmpqqpk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#umzcmpqqpk .gt_font_normal {
+  font-weight: normal;
+}
+
+#umzcmpqqpk .gt_font_bold {
+  font-weight: bold;
+}
+
+#umzcmpqqpk .gt_font_italic {
+  font-style: italic;
+}
+
+#umzcmpqqpk .gt_super {
+  font-size: 65%;
+}
+
+#umzcmpqqpk .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Area</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">reading</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">math</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">All other states</td>
+<td class="gt_row gt_right">2.45</td>
+<td class="gt_row gt_right">1.44</td></tr>
+    <tr><td class="gt_row gt_left">HP and TN</td>
+<td class="gt_row gt_right">2.45</td>
+<td class="gt_row gt_right">1.59</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<p>While Tamil Nadu and HP, taken together, are not obvious outliers when it comes to education generating a data point for the country as a whole from a single survey conducted more than a decade ago in only two states is still not ideal.</p>
+<p>Another, in my opinion better, approach to comparing India to other countries on learning outcomes is to use data from ASER and other assessments inspired by ASER. Several countries around the world have completed assessments very similar to ASER. This <a href="http://img.asercentre.org/docs/Impact/ASER%20Abroad/PalNetworkMay2017.pdf">webpage</a> contains stats from ASER and other ASER-like assessments conducted in Pakistan, Kenya, Uganda, Tanzania, Mali, Senegal, Mexico, and Nigeria in 2015 or 2016 on the share of 5th grade children who can read a grade 2 text. (It also has figures for numeracy, but they aren’t really comparable across countries. For more on this very cool effort, check out the <a href="https://palnetwork.org/">People’s Action for Learning Network</a>). The advantages of using ASER-like assessments to compare countries are that:</p>
+<ol style="list-style-type: decimal">
+<li><p>In contrast to PISA and most other learning outcomes assessments, ASER-like assessments use household sampling to select children. For countries like India with high drop-out, low attendance, and incomplete lists of private schools, children selected using household sampling are likely more representative of the total population.</p></li>
+<li><p>ASER measures foundational literacy and numeracy which is arguably more important than the higher-order skills measured by assessments like PISA.</p></li>
+<li><p>Because it is so simple, ASER scores are pretty easy to compare across languages and contexts without the use of any opaque statistics. (Tests like PISA vary slightly from country to country so sophisticated IRT methods are required to ensure that scores are comparable. And because countries don’t all participate in one single assessment, the maintainers of the HLO dataset have to use “linking” methods to generate comparable scores from different assessments.)</p></li>
+<li><p>ASER scores, where available, are more recent.</p></li>
+</ol>
+<p>The downside of using these assessments is that we only have data for a few countries and, in India and Pakistan, ASER was only conducted in rural areas. To correct for the fact that the ASER was only conducted in rural areas in India and Pakistan, I add the difference between the share of rural and urban children who could read a class 2 text from the IHDS survey (which is about 10 ppt) to both the India and Pakistan ASER scores. (This is a strong assumption but in order to compare scores across countries some strong assumptions are required.)</p>
+</div>
+<div id="results-from-comparison-of-aser-scores" class="section level1">
+<h1>Results from comparison of ASER scores</h1>
+<p>The first scatterplot below compares ASER scores with HLO scores on reading. For countries with multiple HLO scores, I used the score which was nearest in time to 2015-16 since that is when the ASER scores are from. The second scatterplot plots ASER scores versus log GDP per capita.</p>
+<p>When we use ASER scores, India does considerably less well when compared to other countries. Pakistan, Kenya, Tanzania, and Uganda all have lower GDP per capita but similar or higher ASER scores. Senegal and Mali do worse on ASER but also have much lower income, Mexico does much better but is also much richer, and Nigeria does a little worse than India.</p>
+<p>If we compare the figures below with the first figure above (the one with all the HLO scores) we see that the reason for India’s comparatively lower performance is that Nigeria and Pakistan do much better, relatively, on ASER than on the HLO measure. In both figures, Kenya, Tanzania, and Uganda do much better than India (considering their relatively low income levels) but in the first figure this is balanced out by the relatively low performance of Pakistan and Nigeria.</p>
+<pre class="r"><code>temp &lt;- ihds %&gt;% 
+  mutate(grade2 = as.numeric(TA8B == 4)) %&gt;% 
+  group_by(URBAN2011) %&gt;% 
+  summarize(reading = weighted.mean(as.numeric(grade2), WT, na.rm = TRUE))
+
+rural_urban_diff &lt;- temp$reading[temp$URBAN2011 == 1]- temp$reading[temp$URBAN2011 == 0]
+
+aser &lt;- tribble(
+  ~code, ~aser_reading,
+  &quot;IND&quot;, .47+rural_urban_diff,
+  &quot;PAK&quot;, .549+rural_urban_diff,
+  &quot;KEN&quot;, .768,
+  &quot;UGA&quot;, .557,
+  &quot;TZA&quot;, .81,
+  &quot;MLI&quot;, .103,
+  &quot;SEN&quot;, .33,
+  &quot;MEX&quot;, .797,
+  &quot;NGA&quot;, .444
+)
+
+hlo_reading &lt;- hlo %&gt;% 
+  filter(subject == &quot;reading&quot; &amp; code %in% pal_countries) %&gt;% 
+  mutate(years_to_15_16 = abs(year - 2015.5)) %&gt;% 
+  group_by(code) %&gt;% 
+  slice_min(years_to_15_16, n =1, with_ties = FALSE) %&gt;% 
+  left_join(aser) %&gt;% 
+  left_join(filter(gdp, year == 2015), by = &quot;code&quot;) %&gt;% mutate(log_gdp = log(gdp))</code></pre>
+<pre><code>## Joining, by = &quot;code&quot;</code></pre>
+<pre class="r"><code>ggplot(hlo_reading, aes(hlo, aser_reading, label = code, colour = sourcetest)) + 
+  geom_point() + geom_label_repel() +
+  labs(title = &quot;ASER / UWEZO vs HLO (reading)&quot;, x = &quot;HLO reading score&quot;, y = &quot;% 5th graders able to read class 2 text&quot;)</code></pre>
+<p><img src="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(hlo_reading, aes(log_gdp, aser_reading, label = code)) + geom_point() +
+  geom_text_repel()+ 
+  labs(title = &quot;ASER / UWEZO vs log GDP per capita&quot;, x = &quot;log GDP per capita&quot;, y = &quot;% 5th graders able to read class 2 text&quot;)</code></pre>
+<p><img src="https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/index_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+</div>
+<div id="does-any-of-this-matter" class="section level1">
+<h1>Does any of this matter?</h1>
+<p>I ran this analysis because I was curious how India’s education outcomes compared to other countries. That said, I’m not really sure it matters all that much. We know that many countries, India included, could do far better in educating their children. And, in India as in the US, country rankings (as long as they don’t involve cricket) don’t seem to generate much public interest. Better data which allows us to compare learning outcomes in India to other countries would be nice but I think that data which allows us to better track changes in learning outcomes <strong>within</strong> India is far more important. Andres and I will (hopefully) be writing more on this soon.</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/education/">Education</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/&amp;text=How%20India%20Compares%20to%20the%20World%20on%20Learning%20Outcomes" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/&amp;t=How%20India%20Compares%20to%20the%20World%20on%20Learning%20Outcomes" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=How%20India%20Compares%20to%20the%20World%20on%20Learning%20Outcomes&amp;body=https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/&amp;title=How%20India%20Compares%20to%20the%20World%20on%20Learning%20Outcomes" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=How%20India%20Compares%20to%20the%20World%20on%20Learning%20Outcomes%20https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/post/2021-03-14-how-india-compares-to-the-world-on-education-performance/&amp;title=How%20India%20Compares%20to%20the%20World%20on%20Learning%20Outcomes" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_huf6f6babe4aabc1aacfaac28a06cdfd3a_456366_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://academic-demo.netlify.app/">Doug Johnson</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:dougj892@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/dougj8921" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=WuJ6zh8AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/2021-10-16-the-effective-altruism-case-for-education/">Is GiveWell Right that Health Interventions Should Prioritized over Education Interventions?</a></li>
+      
+      <li><a href="/post/2021-09-21-the-need-for-more-research-on-teacher-management/">The Need for More Research on Teacher Management</a></li>
+      
+      <li><a href="/post/2021-09-20-the-need-for-more-research-on-board-reform/">The Need for More Research on Board Reform</a></li>
+      
+      <li><a href="/post/2021-09-19-india-ed-stuff-i-wish-their-was-more-research-on/">India Ed Stuff I Wish Their Was More Research On</a></li>
+      
+      <li><a href="/post/2021-09-17-the-share-of-indian-primary-students-attending-unrecognised-private-schools/">What Share of Students Don&#39;t Show up In Learning Outcomes Surveys in India</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.7cd6ec29d281a73c92a2958a1584aadc.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>
