@@ -8,6 +8,7 @@ categories: []
 tags:
   - Bayesian analysis
   - Statistics
+  - Sampling
 ---
 
 Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population.  Estimating seroprevalence from this data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias.  Second, the analyst must take into account imperfections in the test itself.  

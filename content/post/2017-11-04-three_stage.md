@@ -6,10 +6,8 @@ slug: 3-stage
 categories: []
 tags:
   - Statistics
+  - Sampling
 ---
-
-
-*Caveat emptor: This blog post has not been thoroughly checked for errors.*
 
 One of IDinsight's project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can't seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.  
 
