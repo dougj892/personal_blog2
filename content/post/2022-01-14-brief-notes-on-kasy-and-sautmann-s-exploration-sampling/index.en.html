@@ -7,7 +7,6 @@ categories: []
 tags: []
 subtitle: ''
 summary: ''
-draft: True
 authors: []
 lastmod: '2022-01-14T11:37:18+13:00'
 featured: no
@@ -46,9 +45,10 @@ There are a lot of contexts where this isn’t really your goal though and, to a
 ggplot() +  xlim(0, 1) + 
   geom_function(fun = function(x) x*(1-x)) +
   labs(x = &quot;p&quot;, y = &quot;q&quot;)</code></pre>
-<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+The other slight difference between exploration sampling and Thompson sampling is that they allow for treatment assignment in batches. Their motivation here is logistical rather than statistical – in most RCTs it would be extremely challenging to randomly assign individual units to arms.</p>
 </div>
-<div id="results-from-a-quick-simulation" class="section level2">
-<h2>Results from a Quick Simulation</h2>
-<p>I was curious how much of a difference there is in practice between regular treatment assignment, Thompson sampling, and</p>
+<div id="results-from-a-simulation" class="section level2">
+<h2>Results from a Simulation</h2>
+<p>In addition to showing that exploration sampling has nice theoretical properties, they show that it seems to work well in practice by comparing the performance of regular one-off treatment asssignment, Thompson sampling, and exploration sampling using a Monte Carlo simulation in which the data generating process is based on the estimated parameters for a few well known multi-arm RCTs.</p>
 </div>
