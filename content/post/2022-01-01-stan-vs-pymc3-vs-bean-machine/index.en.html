@@ -30,7 +30,7 @@ projects: []
 <li><strong>Debugging is tough</strong> - In some ways, a Stan model is a bit of a black box – you define your model, feed it some data, and out pops samples from the posterior (or the MAP or whatever). This makes it a bit tough to debug models, especially complicated ones.</li>
 <li><strong>The documentation is comprehensive but dense</strong> – The Stan documentation (the user manual, reference guide, and tutorials) are very comprehensive but not great for learning the language. Now that I have mastered the basics, this is less of a concern, but it still takes me quite a bit of time to find answers to my Stan questions.</li>
 </ol>
-<p>With the release of Bean Machine a couple of weeks ago I figured it is high time I checked out other probabilistic programming languages (PPLs) so I attempted to fit a simple item response theory model in all 3 languages. I have included the raw code for all three languages at the end (you can find a Google colab notebook for the PyMC3 model <a href="https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a#scrollTo=4B0Ysp1u794A">here</a> and a Google colab notebook for the Bean Machine model <a href="https://colab.research.google.com/drive/1clOIXN5pgKtkzRIt2WvQ6s9q2FSbX6-g#scrollTo=TeXAYIBZa1Aw">here</a>) and some quick thoughts about what I liked and disliked about PyMC3 and Bean Machine below. Despite the click-baity title, this isn’t intended to be a comprehensive comparison of the strengths and weaknesses of each language – that is a job for someone with a far better understanding of each language’s capabilities than me – but rather a quick summary of my impressions from trying to fit a simple model in each language.</p>
+<p>With the release of Bean Machine a couple of weeks ago I figured it is high time I checked out other probabilistic programming languages (PPLs) so I attempted to fit a simple item response theory model in all 3 languages. I have included the raw code for all three languages at the end (you can find a Google colab notebook for the PyMC3 model <a href="https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing">here</a> and a Google colab notebook for the Bean Machine model <a href="https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing">here</a> and some quick thoughts about what I liked and disliked about PyMC3 and Bean Machine below. Despite the click-baity title, this isn’t intended to be a comprehensive comparison of the strengths and weaknesses of each language – that is a job for someone with a far better understanding of each language’s capabilities than me – but rather a quick summary of my impressions from trying to fit a simple model in each language.</p>
 <div id="what-i-liked-and-disliked-about-pymc3" class="section level2">
 <h2>What I Liked and Disliked about PyMC3</h2>
 <p>Overall, I really liked PyMC3. In fact, I liked it so much that in the future I think I will likely use PyMC3 rather than Stan for my modelling needs. Some of the things I really liked about the language include:</p>
@@ -43,12 +43,13 @@ projects: []
 </div>
 <div id="what-i-liked-and-disliked-about-bean-machine" class="section level2">
 <h2>What I Liked and Disliked about Bean Machine</h2>
+<p><em>Update: After posting an issue on the Bean Machine Github repo, the Bean Machine team graciously took the time to figure out what was wrong with my implementation of the 3PL model in Bean Machine. The issue was that the dtype of the data that I was passing to the Bean Machine sampler was incorrect. I was passing a torch tensor of type int when Bean Machine was expecting a torch tensor of type float (since that is the output generated from the torch Bernoulli distribution). In the code below, I have commented out the incorrect line and replaced it with the new correct line.</em></p>
 <p>I started this exercise thinking that I would probably like Bean Machine more than the other two languages. While it seems like Bean Machine has a lot of potential, I found it very hard to use despite spending far more time trying to learn Bean Machine than PyMC3. Some of the things I found challenging/disliked when using Bean Machine include:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Sampling each of the random variables separately is not possible (or, at least, I couldn’t figure out how to do it).</strong> One of the reasons I was excited about Bean Machine at first is that, in Bean Machine, models are not monolothic black boxes but rather a set of collection of separately defined variables. Thus, I thought it would be really easy to first sample from the priors one by one and then sample from the likelihood – something I would find really useful for debugging. Unfortunately, I couldn’t figure out how to do this easily.</p></li>
+<li><p><strong>Sampling each of the random variables separately is not possible (or, at least, I couldn’t figure out how to do it).</strong> One of the reasons I was excited about Bean Machine at first is that, in Bean Machine, models are not monolithic black boxes but rather a set of collection of separately defined variables. Thus, I thought it would be really easy to first sample from the priors one by one and then sample from the likelihood – something I would find really useful for debugging. Unfortunately, I couldn’t figure out how to do this easily.</p></li>
 <li><p><strong>The syntax is a bit verbose.</strong> In Bean Machine, each model variable requires a full function definition which means that there is a lot of cruft to sift through when looking at code. You also have to know a bit of Pytorch though with pytorch’s increasing popularity that is probably not a barrier for most people.</p></li>
-<li><p><strong>Inference seems to be a bit buggy.</strong> I couldn’t get the NUTS or HMC samplers to work for my simple reference model despite the fact that, in theory, these should be well suited to the model and thus used plain old MH sampling instead.</p></li>
 </ol>
+<p><del>3. <strong>Inference seems to be a bit buggy.</strong> I couldn’t get the NUTS or HMC samplers to work for my simple reference model despite the fact that, in theory, these should be well suited to the model and thus used plain old MH sampling instead.</del> (See update above.)</p>
 <p>On the plus side, installation was super easy and I really liked the basic tutorials.</p>
 </div>
 <div id="the-reference-model-the-3-paramater-logistic-item-response-theory-model" class="section level2">
@@ -123,7 +124,7 @@ theta_mean &lt;- colMeans(samples$theta)</code></pre>
 </div>
 <div id="pymc3-python-code" class="section level2">
 <h2>PyMC3 + Python Code</h2>
-<p>Code to fit the 3PL model in PyMC3 is included below. You can find a Google Colab notebook with this code <a href="https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a#scrollTo=aLMsORReNNov">here</a></p>
+<p>Code to fit the 3PL model in PyMC3 is included below. You can find a Google Colab notebook with this code <a href="https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing">here</a></p>
 <pre class="python"><code>import pymc3 as pm
 import numpy as np
 import pandas as pd
@@ -160,7 +161,7 @@ theta_means = posterior.posterior[&#39;theta&#39;].mean(axis =1).mean(axis= 0)</
 </div>
 <div id="bean-machine-python-code" class="section level2">
 <h2>Bean Machine + Python Code</h2>
-<p>My attempt to fit the 3PL model in Bean Machine is below. You can find a Colab notebook with this code <a href="https://colab.research.google.com/drive/1clOIXN5pgKtkzRIt2WvQ6s9q2FSbX6-g#scrollTo=TeXAYIBZa1Aw">here</a>. <strong>WARNING:</strong> The estimates from this model are quite different from those from Stata, Stan, and PyMC3 so I don’t think that I fit this model correctly so use this code with care.</p>
+<p>My attempt to fit the 3PL model in Bean Machine is below. You can find a Colab notebook with this code <a href="https://colab.research.google.com/drive/1clOIXN5pgKtkzRIt2WvQ6s9q2FSbX6-g?usp=sharing">here</a>.</p>
 <pre class="python"><code>import beanmachine.ppl as bm
 from beanmachine.ppl.model import RVIdentifier
 import numpy as np
@@ -208,7 +209,10 @@ def y() -&gt; RVIdentifier:
 # Run the inference.
 samples = bm.SingleSiteHamiltonianMonteCarlo(trajectory_length = 1).infer(
     queries=[theta()],
-    observations={y(): torch.tensor(df[&quot;response&quot;].values)},
+    # Old incorrect code
+    # observations={y(): torch.tensor(df[&quot;response&quot;].values)},
+    # New correct code
+    observations={y(): torch.tensor(df[&quot;response&quot;].astype(&#39;float&#39;).values)},
     num_samples=2000,
     num_chains=4,
     num_adaptive_samples=2000
