@@ -7,6 +7,7 @@ categories: []
 tags: []
 subtitle: ''
 summary: ''
+bibliography: ../references.bib
 authors: []
 lastmod: '2022-01-14T11:37:18+13:00'
 featured: no
@@ -19,7 +20,7 @@ projects: []
 
 I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something. I typically take quick notes in Zotero when I read papers or books but when I go back to the notes a month or two later often find that they aren’t that useful. For the next month or so, I’m going to instead share quick notes on stuff I’ve read through blog posts to see if that is a more effective way of making sure I don’t forget everything I’ve read. 
 
-In the first post in this series, I discuss Kasy and Sautmann’s paper “Adaptive Treatment Assignment in Experiments for Policy.” In their paper, Kasy and Sautmann analyze treatment assignment rules for experiments with adaptive treatment assignments and come up with a new adaptive treatment assignment rule, which they call “exploration sampling,” which performs a lot better the most commonly used rule in some contexts. That’s a lot of jargon for one sentence so let me elaborate on each of those points. 
+In the first post in this series, I discuss Kasy and Sautmann’s paper “Adaptive Treatment Assignment in Experiments for Policy.” In their paper, [@kasyAdaptiveTreatmentAssignment2021] analyze treatment assignment rules for experiments with adaptive treatment assignments and come up with a new adaptive treatment assignment rule, which they call “exploration sampling,” which performs a lot better the most commonly used rule in some contexts. That’s a lot of jargon for one sentence so let me elaborate on each of those points. 
 
 
 ## Adaptive Treatment Assignment 
@@ -32,7 +33,8 @@ The most commonly used approach to adaptive treatment assignment is Thompson sam
  
 ## Thompson Sampling Works Well In Sample but Not Out of Sample
 
-Thompson sampling works reasonably well when your goal is to maximize the welfare of the study participants. If that is your goal, you face a classic “exploration-exploitation” tradeoff – i.e. when randomly assigning a study participant you must weigh the benefit of exploring the treatment space by assigning the participant to a treatment arm that looks less effective but which *could* be more effective than your current best bet and exploiting your current information by assigning the participant to your current best bet. There are a lot of contexts where maximizing the welfare of study participants is more of less your real goal and Thompson sampling works great. [ russo et al ] provide a lot of great examples (and also a great more detailed intro to Thompson sampling).
+Thompson sampling works reasonably well when your goal is to maximize the welfare of the study participants. If that is your goal, you face a classic “exploration-exploitation” tradeoff – i.e. when randomly assigning a study participant you must weigh the benefit of exploring the treatment space by assigning the participant to a treatment arm that looks less effective but which *could* be more effective than your current best bet and exploiting your current information by assigning the participant to your current best bet. There are a lot of contexts where maximizing the welfare of study participants is more of less your real goal and Thompson sampling works great. [@russoTutorialThompsonSampling2020a] provide a lot of great examples (and also a great more detailed intro to Thompson sampling).
+
 There are a lot of contexts where this isn’t really your goal though and, to a first approximation, you don’t really care about the welfare of the study participants. Bio-ethicists would probably disagree, but I think that the recent COVID-19 vaccine and therapeutic trials (at least two of which used adaptive treatment assignment btw) are good examples of this. These trials were conducted on relatively small samples of healthy young adults with the goal of identifying the best vaccine/treatments for COVID-19 for pretty much the entire population of the world. With those trials, you care far more about selecting the best treatments than about whether the study participants themselves were assigned the best treatment. Thompson sampling doesn’t work great in those contexts because it assigns far too large a share of study participants to the treatment arm that appears the best rather than exploring other potential arms.
 
 ## Exploration Sampling for Policy Selection
