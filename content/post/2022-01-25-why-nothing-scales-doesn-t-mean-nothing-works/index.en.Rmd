@@ -1,0 +1,35 @@
+---
+title: Why "Nothing Scales" Doesn't Mean "Nothing Works"
+author: ''
+date: '2022-01-25'
+slug: why-nothing-scales-doesn-t-mean-nothing-works
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2022-01-25T09:50:56+13:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Jason Kerwin, a development economist at the University of Minnesota, wrote an interesting blog post some time back in which he argued that [nothing scales]( https://jasonkerwin.com/nonparibus/2021/11/03/nothing-scales/). Kerwin’s point was that we (i.e. the international development community) often get really excited about new, innovative interventions after some small pilot, scale them up, and then find that they don’t work nearly as well at a larger scale. Kerwin cited the examples of growth mindset training, warning young women about “sugar daddies” (see the blog post for more info), and the “Jamaican” model of early child home visitations.  
+
+Lee Crawfurd, a researcher at the Center for Global Development, had a couple of great tweet threads in response to the Kerwin post. In the first thread, he added a bunch more examples of interventions which seemed really promising when implemented at a small scale but weren’t that impressive when scaled up.
+
+```{r echo=FALSE}
+blogdown::shortcode('tweet', '1461664274116452352')
+```
+
+In a later, far less lengthy, thread he cited a few examples of things which do seem to scale well. I can’t seem to find the second thread but, from what I recall, the overall gist of the two threads combined was that “*almost* nothing scales.”'
+
+This is definitely a huge bummer. At the same time, I don’t think it is as big a bummer as many other commenters seemed to think. Judging by some of the reactions I saw on twitter, it seemed like many people were quick to jump from “nothing scales” to “nothing works.”  Yes, interventions which seem promising at a small scale often have disappointing effects at a larger scale but the model of development which goes from innovation to piloting + evaluation to scale is just one model of development. We’re so trained to think in terms of this innovation -> test -> scale cycle that it’s easy to forget that there are many other paths to change. Rather than coming up with some new program we can try to do a better job of implementing existing programs. Or we can lobby for better laws or regulations. Or perhaps the sum total of many scall scale efforts can lead to large scale impact. You could argue that if you increase government capacity or adopt some new policy you are, in some ways, taking *something* to scale (e.g. a policy) but I think that is glossing over substantial differences with a bit of semantics. A lot of new policies aren’t fundamentally innovative or even tested and increases in government capacity, at least in my experience, are often the result of a bunch of small, hard to measure actions taken by inspired leaders. 
+
+The problem is that all of this stuff is really, really hard to do especially if you are a foreign funder / multilateral. Most funders are reluctant to engage in policy advocacy much less activism. And increasing government capacity from the outside is kind of like building Ikea furniture – i.e. there is a correct way to do it but no one seems to know how. I think this is why many of us have been so drawn to the innovate -> test -> scale model: even as outsiders, we can usually come up with an test some new program and, if we use rigorous impact evaluation methods, we can get some certainty of whether it works at a small scale.
+
+I don’t have great ideas on how to overcome these challenges. That said, I think it is time that funders, especially smaller funders with more flexibility, paid more attention to these other potential paths to change. The development sector as a whole has spent an enormous amount of effort and resources on the innovate -> test -> scale model – e.g. conducting thousands of RCTs and refining the methodological toolbox for impact evaluations. It would be great to see more money go to local think tanks working on policy issues or even activist organizations pushing for social change.   
+
