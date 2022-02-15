@@ -73,8 +73,6 @@ email: ""
 highlight_name: true
 ---
 
-I am an independent consultant specializing in impact evaluations of development programs. In my free time I like climbing things.
-
-This blog is maintained in R and RStudio using the blogdown package. If you would like to access the source code for any post (without cutting and pasting from the html output), you can find the raw code at the [github repo](https://github.com/dougj892/personal_blog2) for this blog.
+I am an independent consultant specializing in impact evaluations of development interventions, especially health and education interventions. I use this space mainly as a place to organize my own thoughts and try out new code but if you find any of this content useful you are welcome to copy it. This blog is maintained in R and RStudio using the blogdown package so if you would like to access the code for any post (without cutting and pasting from the html output), you can find the raw code at the [github repo](https://github.com/dougj892/personal_blog2).
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.

@@ -1,5 +1,5 @@
 ---
-title: Why Nothing Scales Doesn't Mean Nothing Works
+title: Nothing Scales. But That Doesn't Mean Nothing Works.
 author: ''
 date: '2022-01-25'
 slug: why-nothing-scales-doesn-t-mean-nothing-works
