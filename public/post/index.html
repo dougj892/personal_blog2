@@ -257,6 +257,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1723694-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-1723694-2', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -310,7 +349,7 @@
     <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-10-25T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2022-01-25T00:00:00&#43;00:00" />
     
   
 
@@ -591,6 +630,285 @@
   
 
   
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/why-nothing-scales-doesn-t-mean-nothing-works/" >Why Nothing Scales Doesn&#39;t Mean Nothing Works</a>
+    </div>
+
+    
+    <a href="/post/why-nothing-scales-doesn-t-mean-nothing-works/"  class="summary-link">
+      <div class="article-style">
+        Jason Kerwin, a development economist at the University of Minnesota, wrote an interesting blog post some time back in which he argued that nothing scales. Kerwin’s point was that we (i.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 25, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" >Brief Notes on Kasy and Sautmann&#39;s Exploration Sampling</a>
+    </div>
+
+    
+    <a href="/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/"  class="summary-link">
+      <div class="article-style">
+        I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 14, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/stan-vs-pymc3-vs-bean-machine/" >Stan vs PyMC3 vs Bean Machine</a>
+    </div>
+
+    
+    <a href="/post/stan-vs-pymc3-vs-bean-machine/"  class="summary-link">
+      <div class="article-style">
+        I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 1, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
   
     
       
@@ -1218,283 +1536,6 @@
   <span class="middot-divider"></span>
   <span class="article-reading-time">
     3 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2021-09-07-new-aser-data-on-covid-learning-loss/" >New ASER Data on COVID Learning Loss</a>
-    </div>
-
-    
-    <a href="/post/2021-09-07-new-aser-data-on-covid-learning-loss/"  class="summary-link">
-      <div class="article-style">
-        ASER Centre recently released results from a survey of learning levels in Karnataka conducted earlier this year. To my knowledge this is the first rigorous, sample-based survey of learning levels in India during COVID which is representative of a larger population.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    Sep 7, 2021
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/" >Estimating the Impact of State Education Policies in India Using ASER and Synthetic Controls</a>
-    </div>
-
-    
-    <a href="/post/2021-08-23-estimating-the-impact-of-state-education-policies-in-india/"  class="summary-link">
-      <div class="article-style">
-        In a recent article Andres Parrado and I take a look at the two main sources of learning outcomes data in India – NAS and ASER – and conclude that a) NAS data is (most likely) completely unreliable and b) ASER data, while reliable, is a bit noisy.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Aug 23, 2021
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    9 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2021-07-19-index-variable-weirdness/" >Index Variable Weirdness</a>
-    </div>
-
-    
-    <a href="/post/2021-07-19-index-variable-weirdness/"  class="summary-link">
-      <div class="article-style">
-        There are many instances where you have a bunch of variables and you need to boil them down to one or just a few. For example, you may be testing the effect of an education program on students’ confidence, self-efficacy, and learning levels.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    Jul 19, 2021
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
   </span>
   
 

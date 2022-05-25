@@ -8,8 +8,6 @@ tags:
   - Statistics
 ---
 
-
-
 *TL;DR: When you have longitudinal data, you should use fixed effects or ANCOVA rather than difference-in-differences since a difference-in-difference specification will spit out incorrect variance estimates. If the data is from a randomized trial, ANCOVA is probably a better bet.*
 
 Trying to understand when to use fixed effects and when to use difference-in-differences (DiD), in the past, always made me feel like an idiot.  It seemed like I was missing something really obvious that everyone else was getting.    
@@ -48,7 +46,9 @@ $$\hat{\delta} = \bar{\Delta Y^T} - \bar{\Delta Y^C}$$
 
 And note that the variance of each of these components is:
 
-$$Var(\bar{\Delta Y^K}) = Var \left \{ \frac{1}{n}\sum{(Y_{i,post}-Y_{i,pre})} \right \} = \frac{1}{n^2}  \sum{(\sigma^2+\sigma^2-2cov(Y_{i,post},Y_{i,pre}))}  = \frac{1}{n^2} \sum{(2\sigma^2-2\rho\sigma^2)} = \frac{2\sigma^2}{n}(1-\rho)$$
+$$Var(\bar{\Delta Y^K}) = Var \left \{ \frac{1}{n}\sum{(Y_{i,post}-Y_{i,pre})} \right \} = $$
+$$ \frac{1}{n^2}  \sum{(\sigma^2+\sigma^2-2cov(Y_{i,post},Y_{i,pre}))}  =$$
+$$\frac{1}{n^2} \sum{(2\sigma^2-2\rho\sigma^2)} = \frac{2\sigma^2}{n}(1-\rho)$$
 
 To follow the derivation above, recall that $var(a+b)=var(a)+var(b)+2cov(a,b)$ and that $\rho_{i,j}=\sigma_{i,j}/(\sigma_i*\sigma_j)$. Note that this is the true variance of both the FE estimator and the DiD.  (Since they always produce the same point estimates, their true variance must be equal). 
 

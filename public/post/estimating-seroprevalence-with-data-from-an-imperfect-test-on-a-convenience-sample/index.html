@@ -60,7 +60,7 @@
   
     
   
-  <meta name="description" content="Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges." />
+  <meta name="description" content="Update Jan, 2022: Since this post was published in May 2020, Gelman and Carpenter (2020) have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/" />
@@ -257,6 +257,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1723694-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-1723694-2', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -304,7 +343,7 @@
   <meta property="og:site_name" content="Doug Johnson" />
   <meta property="og:url" content="https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/" />
   <meta property="og:title" content="Estimating seroprevalence with data from an imperfect test on a convenience sample | Doug Johnson" />
-  <meta property="og:description" content="Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:description" content="Update Jan, 2022: Since this post was published in May 2020, Gelman and Carpenter (2020) have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
@@ -357,7 +396,7 @@
       "url": "https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges."
+  "description": "Update Jan, 2022: Since this post was published in May 2020, Gelman and Carpenter (2020) have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here."
 }
 </script>
 
@@ -652,7 +691,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    7 min read
+    8 min read
   </span>
   
 
@@ -686,24 +725,33 @@
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<p>Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself.</p>
-<p>Addressing either of these challenges on their own is relatively straightforward to do using existing tools. The R package “epiR” allows users to estimate true prevalence and confidence intervals for prevalence using the method developed by Rogan and Gladen (1978) and Reiczigel et al (2010). (See the function “epi.prev” in this package.) Similarly, the R page “survey” (and the Stata “svy:” commands) allow users to generate inference from convenience samples using post-stratification. Addressing both at the same time is kind of tricky though.</p>
-<p>In this blog post, I look at two different ways of taking into account both test imperfections and the non-random nature of the sample: a simple approach which combines poststratification with a Rogan-Gladen adjustment and a Bayesian approach based on multi-level regression and poststratification. I also report results from a quick Monte Carlo expirement I used to assess both approaches. A companion git <a href="https://github.com/dougj892/sero_prevalence2">repo</a> includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.</p>
-<div id="the-naive-approach-simple-poststratification-and-adjustment" class="section level2">
-<h2>The naive approach: simple poststratification and adjustment</h2>
-<p>One option is to combine these approaches. In other words, we first calculate <span class="math inline">\(\hat{pa}\)</span>, our estimate of the overall “apparent” seroprevalence rate (i.e. the rate not taking into account test imperfection) using the typical poststratification formula and then calculate our estimate of the true seroprevalence, <span class="math inline">\(\hat{pt}\)</span> by using the adjustment from Rogan and Gladen approach.</p>
-<p><span class="math display">\[ \widehat{pa} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]</span>
-Where h indexes strata, <span class="math inline">\(N_h\)</span> is the number of people in the total population in stratum h, N is the total number of people in the population and <span class="math inline">\(\bar{y_h}\)</span> is the sample mean within stratum h.</p>
-<p>We then calculate true seroprevalence by adjusting this figure using the formula below:</p>
-<p><span class="math display">\[ \widehat{pt} = \frac{\widehat{pa}+sp-1}{se+sp-1} \]</span>
-Where se and sp are our estimates for the sensitivity and specificity of the test respectively.</p>
-<p>There are several options for calculating standard errors, but the simplest approach is to use a quick formula for the standard error of a proportion</p>
-<p><span class="math display">\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]</span>
-If you want to be more exact and take into account the uncertainty in the estimates of se and sp, you can use the more complicated formula from Rogan and Gladen which uses the Taylor Linearization approach.</p>
+<p><em>Update Jan, 2022: Since this post was published in May 2020, <span class="citation"><a href="#ref-gelmanBayesianAnalysisTests2020" role="doc-biblioref">Gelman and Carpenter</a> (<a href="#ref-gelmanBayesianAnalysisTests2020" role="doc-biblioref">2020</a>)</span> have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here. I recommend checking out their article.</em></p>
+<p>Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of COVID-19 in a population. Estimating seroprevalence from this type of data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself. Addressing either of these challenges on their own is relatively straightforward to do using existing tools but addressing both at the same time is pretty tricky.</p>
+<p>In this blog post, I first describe the most commonly used tools for adjusting for test imperfections and performing inference on a convenience sample. I then describe two different ways of tackling both of these issues at once: a simple approach which sequentially applies the two simple approaches and a more complicated, but also more theoretically sound, Bayesian approach. I also report results from a quick Monte Carlo experiment I used to assess both approaches. A companion git <a href="https://github.com/dougj892/sero_prevalence2">repo</a> includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.</p>
+<p>The TLDR version of the results is that the naive approach seems to work fine for estimating overall population prevalence but that you should use the more sophisticated approach when generating estimates for subgroups.</p>
+<div id="the-rogan-and-gladen-adjustment-to-account-for-test-imperfections" class="section level2">
+<h2>The Rogan and Gladen Adjustment to Account for Test Imperfections</h2>
+<p><span class="citation"><a href="#ref-roganEstimatingPrevalenceResults1978" role="doc-biblioref">Rogan and Gladen</a> (<a href="#ref-roganEstimatingPrevalenceResults1978" role="doc-biblioref">1978</a>)</span> developed a simple approach to adjust estimates of prevalence that takes into account test imperfections. If we define <span class="math inline">\(pt\)</span> to be the true positive rate, <span class="math inline">\(se\)</span> to be the test sensitivity (i.e. true positive rate), and <span class="math inline">\(sp\)</span> to be the test specificity (i.e. the true negative rate), then the share of a population that will test positive is:</p>
+<p><span class="math display">\[ pa = se*pt+(1-sp)(1-pt) \]</span></p>
+<p>The Rogan and Gladen approach to adjusting for test imperfections solves for <span class="math inline">\(pt\)</span> in this equation and replaces the true values of each parameter with their estimated values.</p>
+<p><span class="math display">\[ \widehat{pt} = \frac{\widehat{pa}+\widehat{sp}-1}{\widehat{se}+\widehat{sp}-1} \]</span></p>
+<p>Rogan and Gladen developed a few options for calculating standard errors of these estimates (and <span class="citation"><a href="#ref-reiczigelExactConfidenceLimits2010" role="doc-biblioref">Reiczigel, Földi, and Ózsvári</a> (<a href="#ref-reiczigelExactConfidenceLimits2010" role="doc-biblioref">2010</a>)</span> developed more sophisticated confidence intervals). Rogan and Gladen’s simplest approach to estimating the standard errors (which I will use later) is to calculate the variance of <span class="math inline">\(\widehat{pt}\)</span> using the formula for the variance of a proportion.</p>
+<p><span class="math display">\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]</span></p>
+<p>The R package “epiR” allows users to apply the Rogan and Gladen adjustment and calculate confidence intervals using a variety of approaches. (See the function “epi.prev” in this package.)</p>
+</div>
+<div id="adjusting-a-convenience-sample-using-post-stratification" class="section level2">
+<h2>Adjusting a Convenience Sample Using Post-Stratification</h2>
+<p>There are a lot of different ways to account for potential sample selection bias when analyzing data from a convenience sample but the simplest, and most commonly used, method is post-stratification. To apply post-stratification, we first divide up our samples into groups based on whatever demographic info we collected and calculate estimates for each group. We then weight the estimates for each of these groups according to the share of the total population that they represent. For example, if we sought to estimate the mean of some variable <span class="math inline">\(y\)</span> for the total population our estimate would be:</p>
+<p><span class="math display">\[ \widehat{\bar{y}} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]</span>
+where <span class="math inline">\(\bar{y_h}\)</span> is the estimate for group h, and <span class="math inline">\(\frac{N_h}{N}\)</span> is the share of group h in the total population from, for example, census data.</p>
+</div>
+<div id="the-naive-approach-simple-poststratification-followed-by-a-rogan-gladen-adjustment" class="section level2">
+<h2>The naive approach: simple poststratification followed by a Rogan Gladen adjustment</h2>
+<p>The simplest approach to adjusting for both test imperfections and potential sample selection bias arising from convenience sampling is to first estimate the apparent prevalence rate (without accounting for test imperfections) using poststratification and then apply the Rogan and Gladen adjustment.</p>
 </div>
 <div id="issues-with-the-naive-approach" class="section level2">
 <h2>Issues with the naive approach</h2>
-<p>In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the poulation than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)</p>
+<p>In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the population than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)</p>
 </div>
 <div id="a-bayesian-approach-using-modified-mrp" class="section level2">
 <h2>A Bayesian Approach using Modified MRP</h2>
@@ -737,6 +785,20 @@ For a complete Bayesian model, we also need to add priors for sensitivity and sp
 <p>All code for this analysis can be found <a href="https://github.com/dougj892/sero_prevalence2">here</a>.
 If you looking to copy and adapt the code, start with the R notebook “Estimate seroprevalence” in the above repo. In that notebook, I fit the modified MRP approach in two different ways: using raw Stan code and using the brms package (with some custom code to extend the package). If you would like to use the more complicated modified MRP approach, I strongly recommend you use the brms package. If you use the brms package, you should be able to copy and paste the code I created to define a “custom family” for the brms package and then modify the code in the main call to brm to suite your data. Since brms uses the lme4 syntax for defining multi-level models, customizing this code hopefully shouldn’t be too hard. By contrast, I find that modifying raw Stan code always takes quite a bit of time.</p>
 </div>
+<div id="references" class="section level2 unnumbered">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-gelmanBayesianAnalysisTests2020" class="csl-entry">
+Gelman, Andrew, and Bob Carpenter. 2020. <span>“Bayesian Analysis of Tests with Unknown Specificity and Sensitivity.”</span> <em>Journal of the Royal Statistical Society: Series C (Applied Statistics)</em> 69 (5): 1269–83. <a href="https://doi.org/10.1111/rssc.12435">https://doi.org/10.1111/rssc.12435</a>.
+</div>
+<div id="ref-reiczigelExactConfidenceLimits2010" class="csl-entry">
+Reiczigel, J., J. Földi, and L. Ózsvári. 2010. <span>“Exact Confidence Limits for Prevalence of a Disease with an Imperfect Diagnostic Test.”</span> <em>Epidemiology and Infection</em> 138 (11): 1674–78. <a href="https://doi.org/10.1017/S0950268810000385">https://doi.org/10.1017/S0950268810000385</a>.
+</div>
+<div id="ref-roganEstimatingPrevalenceResults1978" class="csl-entry">
+Rogan, Walter, and Beth Gladen. 1978. <span>“Estimating <span>Prevalence</span> from the <span>Results</span> of a <span>Screening Test</span>.”</span> <em>American Journal of Epidemiology</em> 107 (1): 71–76. <a href="https://doi.org/10.1093/oxfordjournals.aje.a112510">https://doi.org/10.1093/oxfordjournals.aje.a112510</a>.
+</div>
+</div>
+</div>
 
     </div>
 
@@ -752,6 +814,8 @@ If you looking to copy and adapt the code, start with the R notebook “Estimate
   <a class="badge badge-light" href="/tag/bayesian-analysis/">Bayesian analysis</a>
   
   <a class="badge badge-light" href="/tag/statistics/">Statistics</a>
+  
+  <a class="badge badge-light" href="/tag/sampling/">Sampling</a>
   
 </div>
 
@@ -866,7 +930,7 @@ If you looking to copy and adapt the code, start with the R notebook “Estimate
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_huf6f6babe4aabc1aacfaac28a06cdfd3a_456366_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
+      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_hubeee41357ce0ec62568280eca45b510b_257888_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
     
 
     <div class="media-body">
@@ -984,15 +1048,15 @@ If you looking to copy and adapt the code, start with the R notebook “Estimate
     <h3>Related</h3>
     <ul>
       
+      <li><a href="/post/stan-vs-pymc3-vs-bean-machine/">Stan vs PyMC3 vs Bean Machine</a></li>
+      
       <li><a href="/post/an-alternative-approach-to-power-calculations/">An Alternative Approach to Power Calculations</a></li>
-      
-      <li><a href="/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/">Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</a></li>
-      
-      <li><a href="/post/2021-07-19-index-variable-weirdness/">Index Variable Weirdness</a></li>
       
       <li><a href="/post/3-stage/">Three Stage Sampling</a></li>
       
       <li><a href="/post/srs-v-pps/">Simple Random Sampling vs. PPS Sampling</a></li>
+      
+      <li><a href="/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/">Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</a></li>
       
     </ul>
   </div>

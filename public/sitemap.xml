@@ -16,13 +16,23 @@
   <url>
     <loc>https://academic-demo.netlify.app/event/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
   <url>
+    <loc>https://academic-demo.netlify.app/post/</loc><lastmod>2022-01-25T09:50:56+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/post/why-nothing-scales-doesn-t-mean-nothing-works/</loc><lastmod>2022-01-25T09:50:56+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/</loc><lastmod>2022-01-14T11:37:18+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/tag/bayesian-analysis/</loc><lastmod>2022-01-01T09:18:09+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/tag/python/</loc><lastmod>2022-01-01T09:18:09+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/</loc><lastmod>2022-01-01T09:18:09+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/tag/statistics/</loc><lastmod>2022-01-01T09:18:09+13:00</lastmod></url>
+  <url>
+    <loc>https://academic-demo.netlify.app/tags/</loc><lastmod>2022-01-01T09:18:09+13:00</lastmod></url>
+  <url>
     <loc>https://academic-demo.netlify.app/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/</loc><lastmod>2021-10-25T12:04:45+13:00</lastmod></url>
-  <url>
-    <loc>https://academic-demo.netlify.app/post/</loc><lastmod>2021-10-25T12:04:45+13:00</lastmod></url>
-  <url>
-    <loc>https://academic-demo.netlify.app/tag/statistics/</loc><lastmod>2021-10-25T12:04:45+13:00</lastmod></url>
-  <url>
-    <loc>https://academic-demo.netlify.app/tags/</loc><lastmod>2021-10-25T12:04:45+13:00</lastmod></url>
   <url>
     <loc>https://academic-demo.netlify.app/tag/education/</loc><lastmod>2021-10-16T12:08:41+13:00</lastmod></url>
   <url>
@@ -74,8 +84,6 @@
   <url>
     <loc>https://academic-demo.netlify.app/post/why-india-should-focus-on-educational-tv-rather-than-edtech/</loc><lastmod>2020-05-26T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://academic-demo.netlify.app/tag/bayesian-analysis/</loc><lastmod>2020-05-06T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</loc><lastmod>2020-05-06T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://academic-demo.netlify.app/post/an-alternative-approach-to-power-calculations/</loc><lastmod>2020-04-28T00:00:00+00:00</lastmod></url>
@@ -87,10 +95,6 @@
     <loc>https://academic-demo.netlify.app/post/3-stage/</loc><lastmod>2017-10-04T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://academic-demo.netlify.app/post/srs-v-pps/</loc><lastmod>2017-04-21T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://academic-demo.netlify.app/post/fe-did/</loc><lastmod>2017-02-15T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://academic-demo.netlify.app/tag/python/</loc><lastmod>2016-08-31T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://academic-demo.netlify.app/post/web-scraping/</loc><lastmod>2016-08-31T00:00:00+00:00</lastmod></url>
   <url>

@@ -257,6 +257,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1723694-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-1723694-2', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -310,7 +349,7 @@
     <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-10-25T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2022-01-01T00:00:00&#43;00:00" />
     
   
 
@@ -613,6 +652,99 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/stan-vs-pymc3-vs-bean-machine/" >Stan vs PyMC3 vs Bean Machine</a>
+    </div>
+
+    
+    <a href="/post/stan-vs-pymc3-vs-bean-machine/"  class="summary-link">
+      <div class="article-style">
+        I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 1, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/" >Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</a>
     </div>
 
@@ -805,7 +937,7 @@
     
     <a href="/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/"  class="summary-link">
       <div class="article-style">
-        Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges.
+        Update Jan, 2022: Since this post was published in May 2020, Gelman and Carpenter (2020) have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here.
       </div>
     </a>
     
@@ -838,7 +970,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    7 min read
+    8 min read
   </span>
   
 
@@ -987,8 +1119,7 @@
     
     <a href="/post/3-stage/"  class="summary-link">
       <div class="article-style">
-        Caveat emptor: This blog post has not been thoroughly checked for errors.
-One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.
+        One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.
       </div>
     </a>
     
@@ -1113,97 +1244,6 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
   <span class="middot-divider"></span>
   <span class="article-reading-time">
     4 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/fe-did/" >Fixed Effects vs Difference-in-Differences</a>
-    </div>
-
-    
-    <a href="/post/fe-did/"  class="summary-link">
-      <div class="article-style">
-        TL;DR: When you have longitudinal data, you should use fixed effects or ANCOVA rather than difference-in-differences since a difference-in-difference specification will spit out incorrect variance estimates. If the data is from a randomized trial, ANCOVA is probably a better bet.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Feb 15, 2017
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
   </span>
   
 

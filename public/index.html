@@ -297,6 +297,45 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1723694-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-1723694-2', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -721,7 +760,7 @@
       
       <img class="avatar avatar-circle"
            width="270" height="270"
-           src="/author/doug-johnson/avatar_huf6f6babe4aabc1aacfaac28a06cdfd3a_456366_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson">
+           src="/author/doug-johnson/avatar_hubeee41357ce0ec62568280eca45b510b_257888_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson">
       
 
       <div class="portrait-title">
@@ -826,8 +865,7 @@
     <h1>About me</h1>
 
     <div class="article-style">
-      <p>I am an independent consultant specializing in impact evaluations of development programs. In my free time I like climbing things.</p>
-<p>This blog is maintained in R and RStudio using the blogdown package. If you would like to access the source code for any post (without cutting and pasting from the html output), you can find the raw code at the <a href="https://github.com/dougj892/personal_blog2" target="_blank" rel="noopener">github repo</a> for this blog.</p>
+      <p>I am an independent consultant specializing in impact evaluations of development interventions, especially health and education interventions. I use this space mainly as a place to organize my own thoughts and try out new code but if you find any of this content useful you are welcome to copy it. This blog is maintained in R and RStudio using the blogdown package so if you would like to access the code for any post (without cutting and pasting from the html output), you can find the raw code at the <a href="https://github.com/dougj892/personal_blog2" target="_blank" rel="noopener">github repo</a>.</p>
 <p>
   <i class="fas fa-download  pr-1 fa-fw"></i> Download my <a href="/uploads/resume.pdf" target="_blank">resumé</a>.</p>
 
@@ -952,7 +990,7 @@
         
         
         
-        <a href="/tag/bayesian-analysis/" style="font-size:1.0913389943631755rem">Bayesian analysis</a>
+        <a href="/tag/bayesian-analysis/" style="font-size:1.320257631135561rem">Bayesian analysis</a>
       
         
         
@@ -967,7 +1005,7 @@
         
         
         
-        <a href="/tag/python/" style="font-size:0.7rem">Python</a>
+        <a href="/tag/python/" style="font-size:1.0913389943631755rem">Python</a>
       
         
         
@@ -977,7 +1015,7 @@
         
         
         
-        <a href="/tag/sampling/" style="font-size:1.0913389943631755rem">Sampling</a>
+        <a href="/tag/sampling/" style="font-size:1.4826779887263508rem">Sampling</a>
       
         
         
@@ -1137,6 +1175,285 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/why-nothing-scales-doesn-t-mean-nothing-works/" >Why Nothing Scales Doesn&#39;t Mean Nothing Works</a>
+    </div>
+
+    
+    <a href="/post/why-nothing-scales-doesn-t-mean-nothing-works/"  class="summary-link">
+      <div class="article-style">
+        Jason Kerwin, a development economist at the University of Minnesota, wrote an interesting blog post some time back in which he argued that nothing scales. Kerwin’s point was that we (i.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 25, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" >Brief Notes on Kasy and Sautmann&#39;s Exploration Sampling</a>
+    </div>
+
+    
+    <a href="/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/"  class="summary-link">
+      <div class="article-style">
+        I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 14, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/post/stan-vs-pymc3-vs-bean-machine/" >Stan vs PyMC3 vs Bean Machine</a>
+    </div>
+
+    
+    <a href="/post/stan-vs-pymc3-vs-bean-machine/"  class="summary-link">
+      <div class="article-style">
+        I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating.
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 1, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+      
+    </div>
+
+    
+
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
+
+    
+  
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/" >Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</a>
     </div>
 
@@ -1272,289 +1589,6 @@
   <span class="middot-divider"></span>
   <span class="article-reading-time">
     11 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2021-09-21-the-need-for-more-research-on-teacher-management/" >The Need for More Research on Teacher Management</a>
-    </div>
-
-    
-    <a href="/post/2021-09-21-the-need-for-more-research-on-teacher-management/"  class="summary-link">
-      <div class="article-style">
-        Educationists and economists agree that teachers are extremely important. Studies from around the world show that there is huge variance in teacher effectiveness (Hanushek and Rivkin 2006). (Unfortunately, that same research shows that there are few observable differences between effective and ineffective teachers which means that improving the teacher workforce is not just a matter of screening for the right candidates.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    Sep 21, 2021
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2021-09-20-the-need-for-more-research-on-board-reform/" >The Need for More Research on Board Reform</a>
-    </div>
-
-    
-    <a href="/post/2021-09-20-the-need-for-more-research-on-board-reform/"  class="summary-link">
-      <div class="article-style">
-        For as long as high stakes exams have existed, people have hated them. The system of imperial examinations used to select the mandarins of ancient Chinese dynasties (and the first high-stakes exams) is credited with building an empire.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    Sep 20, 2021
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/education/">education</a></span>
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-    
-  
-    
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/post/2021-09-19-india-ed-stuff-i-wish-their-was-more-research-on/" >India Ed Stuff I Wish Their Was More Research On</a>
-    </div>
-
-    
-    <a href="/post/2021-09-19-india-ed-stuff-i-wish-their-was-more-research-on/"  class="summary-link">
-      <div class="article-style">
-        I’ve spent the past year or so reading a lot of research on education in India. There is obviously a lot of amazing research out there, but there are also a lot of areas where there is far less evidence than I originally expected.
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-          Last updated on
-      
-    
-    Sep 19, 2021
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
   </span>
   
 

@@ -60,8 +60,7 @@
   
     
   
-  <meta name="description" content="Caveat emptor: This blog post has not been thoroughly checked for errors.
-One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households." />
+  <meta name="description" content="One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/post/3-stage/" />
@@ -258,6 +257,45 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1723694-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-1723694-2', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
   
@@ -305,8 +343,7 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
   <meta property="og:site_name" content="Doug Johnson" />
   <meta property="og:url" content="https://academic-demo.netlify.app/post/3-stage/" />
   <meta property="og:title" content="Three Stage Sampling | Doug Johnson" />
-  <meta property="og:description" content="Caveat emptor: This blog post has not been thoroughly checked for errors.
-One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:description" content="One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
@@ -359,7 +396,7 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
       "url": "https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Caveat emptor: This blog post has not been thoroughly checked for errors.\nOne of IDinsight\u0026rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households."
+  "description": "One of IDinsight\u0026rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households."
 }
 </script>
 
@@ -684,8 +721,7 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
   <div class="article-container">
 
     <div class="article-style">
-      <p><em>Caveat emptor: This blog post has not been thoroughly checked for errors.</em></p>
-<p>One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.</p>
+      <p>One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.</p>
 <p>In this post, I&rsquo;ll try to answer four questions:</p>
 <ol>
 <li>When do you need to take into account both stages of clustering in a survey or evaluation?</li>
@@ -733,6 +769,8 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
 <div class="article-tags">
   
   <a class="badge badge-light" href="/tag/statistics/">Statistics</a>
+  
+  <a class="badge badge-light" href="/tag/sampling/">Sampling</a>
   
 </div>
 
@@ -847,7 +885,7 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_huf6f6babe4aabc1aacfaac28a06cdfd3a_456366_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
+      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_hubeee41357ce0ec62568280eca45b510b_257888_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
     
 
     <div class="media-body">
@@ -965,15 +1003,15 @@ One of IDinsight&rsquo;s project teams is in the process of designing the sampli
     <h3>Related</h3>
     <ul>
       
+      <li><a href="/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/">Estimating seroprevalence with data from an imperfect test on a convenience sample</a></li>
+      
+      <li><a href="/post/srs-v-pps/">Simple Random Sampling vs. PPS Sampling</a></li>
+      
+      <li><a href="/post/stan-vs-pymc3-vs-bean-machine/">Stan vs PyMC3 vs Bean Machine</a></li>
+      
       <li><a href="/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/">Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</a></li>
       
       <li><a href="/post/2021-07-19-index-variable-weirdness/">Index Variable Weirdness</a></li>
-      
-      <li><a href="/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/">Estimating seroprevalence with data from an imperfect test on a convenience sample</a></li>
-      
-      <li><a href="/post/an-alternative-approach-to-power-calculations/">An Alternative Approach to Power Calculations</a></li>
-      
-      <li><a href="/post/srs-v-pps/">Simple Random Sampling vs. PPS Sampling</a></li>
       
     </ul>
   </div>

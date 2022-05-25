@@ -1,0 +1,1179 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Doug Johnson" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.4d3fddba2b325f129185bb42290fa344.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1723694-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-1723694-2', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Doug Johnson" />
+  <meta property="og:url" content="https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" />
+  <meta property="og:title" content="Brief Notes on Kasy and Sautmann&#39;s Exploration Sampling | Doug Johnson" />
+  <meta property="og:description" content="I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something." /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2022-01-14T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2022-01-14T11:37:18&#43;13:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/"
+  },
+  "headline": "Brief Notes on Kasy and Sautmann's Exploration Sampling",
+  
+  "datePublished": "2022-01-14T00:00:00Z",
+  "dateModified": "2022-01-14T11:37:18+13:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Doug Johnson"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Doug Johnson",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Brief Notes on Kasy and Sautmann&#39;s Exploration Sampling | Doug Johnson</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="179e2ddb4d350612735556d284b2612a" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Doug Johnson</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>Publications</span><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu">
+            
+              <a class="dropdown-item" href="/#journal_articles"><span>Journal articles</span></a>
+            
+              <a class="dropdown-item" href="/#working_papers"><span>Working papers</span></a>
+            
+              <a class="dropdown-item" href="/#op_eds"><span>Op-eds</span></a>
+            
+          </div>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/uploads/resume.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="https://twitter.com/dougj8921" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
+              <i class="fab fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Brief Notes on Kasy and Sautmann&#39;s Exploration Sampling</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 14, 2022
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+<script src="https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/index.en_files/header-attrs/header-attrs.js"></script>
+
+
+<p>I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something. I typically take quick notes in Zotero when I read papers or books but when I go back to the notes a month or two later often find that they aren’t that useful. For the next month or so, I’m going to instead share quick notes on stuff I’ve read through blog posts to see if that is a more effective way of making sure I don’t forget everything I’ve read.</p>
+<p>In the first post in this series, I discuss Kasy and Sautmann’s paper “Adaptive Treatment Assignment in Experiments for Policy.” In their paper, Kasy and Sautmann analyze treatment assignment rules for experiments with adaptive treatment assignments and come up with a new adaptive treatment assignment rule, which they call “exploration sampling,” which performs a lot better the most commonly used rule in some contexts. That’s a lot of jargon for one sentence so let me elaborate on each of those points.</p>
+<div id="adaptive-treatment-assignment" class="section level2">
+<h2>Adaptive Treatment Assignment</h2>
+<p>“Adaptive treatment assignment” refers to the practice of adjusting the probability of treatment assignment over the course of an experiment. In a typical experiment, all study participants are assigned all at once to one of several treatment arms (or a control) at the start of the study. This practice works fine if you are just comparing one treatment to a control but isn’t really optimal if you are trying to compare several different treatments and are able to observe study outcomes relatively quickly. For example, let’s say you are running an experiment with 10 different treatment arms and notice halfway through that 5 of the arms are doing well and 5 are doing really poorly. Intuitively, it seems like it would make sense to drop the 5 that are doing really poorly and distribute the remaining sample between the 5 that are doing really well.</p>
+</div>
+<div id="thompson-sampling" class="section level2">
+<h2>Thompson Sampling</h2>
+<p>The most commonly used approach to adaptive treatment assignment is Thompson sampling. With Thompson sampling, study participants are randomly assigned to each arm one at a time according to the posterior probability that that arm is the best. For example, let’s say you are in the situation described above and halfway through a study comparing 10 different treatment arms you estimate that there is a 15% probability that each of the first 5 treatment arms is the best and a 5% probability that each of the remaining arms is the best you would assign the next study participant to each of the first 5 arms with 15% probability and to each of the next 5 arms with 5% probability.</p>
+</div>
+<div id="thompson-sampling-works-well-in-sample-but-not-out-of-sample" class="section level2">
+<h2>Thompson Sampling Works Well In Sample but Not Out of Sample</h2>
+<p>Thompson sampling works reasonably well when your goal is to maximize the welfare of the study participants. If that is your goal, you face a classic “exploration-exploitation” tradeoff – i.e. when randomly assigning a study participant you must weigh the benefit of exploring the treatment space by assigning the participant to a treatment arm that looks less effective but which <em>could</em> be more effective than your current best bet and exploiting your current information by assigning the participant to your current best bet. There are a lot of contexts where maximizing the welfare of study participants is more of less your real goal and Thompson sampling works great. [ russo et al ] provide a lot of great examples (and also a great more detailed intro to Thompson sampling).
+There are a lot of contexts where this isn’t really your goal though and, to a first approximation, you don’t really care about the welfare of the study participants. Bio-ethicists would probably disagree, but I think that the recent COVID-19 vaccine and therapeutic trials (at least two of which used adaptive treatment assignment btw) are good examples of this. These trials were conducted on relatively small samples of healthy young adults with the goal of identifying the best vaccine/treatments for COVID-19 for pretty much the entire population of the world. With those trials, you care far more about selecting the best treatments than about whether the study participants themselves were assigned the best treatment. Thompson sampling doesn’t work great in those contexts because it assigns far too large a share of study participants to the treatment arm that appears the best rather than exploring other potential arms.</p>
+</div>
+<div id="exploration-sampling-for-policy-selection" class="section level2">
+<h2>Exploration Sampling for Policy Selection</h2>
+<p>In theory, given any specific experiment and the objective of selecting the treatment arm at the end of the experiment, you could figure out an optimal treatment assignment strategy using dynamic stochastic programming. The basic idea behind this technique is that you map out each and every possible treatment assignment and outcome over time kind of like if you were trying to find the optimal strategy for chess by mapping out each potential move and response. This quickly becomes computationally infeasible though.</p>
+<p>Kasy and Sautmann’s contribution is to define a general rule for treatment assignment which seems to do much better than Thompson sampling when the goal of an experiment is to select the best treatment arm. They call their rule “exploration sampling” (to emphasize the lack of a exploitation motive) and it is really simple. Rather than assigning units to treatment arm d according to the posterior probability at time t that arm d is the best arm (<span class="math inline">\(p^d_t\)</span>) as in Thompson sampling you instead assign participants with probability:</p>
+<p><span class="math display">\[ q^d_t = \frac{p^d_t*(1-p^d_t)}{\sum_d{p^d_t*(1-p^d_t)}} \]</span></p>
+<p>The graph below shows how q varies with p. Unlike with Thompson sampling, once a treatment arm appears to be the best (i.e. p &gt; .5), treatment assignment probability gradually goes does to give space to learn about other treatment arms.</p>
+<pre class="r"><code>library(ggplot2)
+ggplot() +  xlim(0, 1) + 
+  geom_function(fun = function(x) x*(1-x)) +
+  labs(x = &quot;p&quot;, y = &quot;q&quot;)</code></pre>
+<p><img src="https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+The other slight difference between exploration sampling and Thompson sampling is that they allow for treatment assignment in batches. Their motivation here is logistical rather than statistical – in most RCTs it would be extremely challenging to randomly assign individual units to arms.</p>
+</div>
+<div id="results-from-a-simulation" class="section level2">
+<h2>Results from a Simulation</h2>
+<p>In addition to showing that exploration sampling has nice theoretical properties, they show that it seems to work well in practice by comparing the performance of regular one-off treatment asssignment, Thompson sampling, and exploration sampling using a Monte Carlo simulation in which the data generating process is based on the estimated parameters for a few well known multi-arm RCTs.</p>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/&amp;text=Brief%20Notes%20on%20Kasy%20and%20Sautmann&amp;#39;s%20Exploration%20Sampling" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/&amp;t=Brief%20Notes%20on%20Kasy%20and%20Sautmann&amp;#39;s%20Exploration%20Sampling" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Brief%20Notes%20on%20Kasy%20and%20Sautmann&amp;#39;s%20Exploration%20Sampling&amp;body=https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/&amp;title=Brief%20Notes%20on%20Kasy%20and%20Sautmann&amp;#39;s%20Exploration%20Sampling" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Brief%20Notes%20on%20Kasy%20and%20Sautmann&amp;#39;s%20Exploration%20Sampling%20https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/&amp;title=Brief%20Notes%20on%20Kasy%20and%20Sautmann&amp;#39;s%20Exploration%20Sampling" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://academic-demo.netlify.app/"><img class="avatar mr-3 avatar-circle" src="/author/doug-johnson/avatar_hubeee41357ce0ec62568280eca45b510b_257888_270x270_fill_q75_lanczos_center.jpg" alt="Doug Johnson"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://academic-demo.netlify.app/">Doug Johnson</a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:dougj892@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/dougj8921" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=WuJ6zh8AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/dougj892" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.7cd6ec29d281a73c92a2958a1584aadc.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

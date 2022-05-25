@@ -145,6 +145,135 @@ Särndal, Carl-Erik, Bengt Swensson, and Jan Wretman. 2003. &lt;em&gt;Model Assi
     </item>
     
     <item>
+      <title>Estimating seroprevalence with data from an imperfect test on a convenience sample</title>
+      <link>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;em&gt;Update Jan, 2022: Since this post was published in May 2020, &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-gelmanBayesianAnalysisTests2020&#34; role=&#34;doc-biblioref&#34;&gt;Gelman and Carpenter&lt;/a&gt; (&lt;a href=&#34;#ref-gelmanBayesianAnalysisTests2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here. I recommend checking out their article.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of COVID-19 in a population. Estimating seroprevalence from this type of data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself. Addressing either of these challenges on their own is relatively straightforward to do using existing tools but addressing both at the same time is pretty tricky.&lt;/p&gt;
+&lt;p&gt;In this blog post, I first describe the most commonly used tools for adjusting for test imperfections and performing inference on a convenience sample. I then describe two different ways of tackling both of these issues at once: a simple approach which sequentially applies the two simple approaches and a more complicated, but also more theoretically sound, Bayesian approach. I also report results from a quick Monte Carlo experiment I used to assess both approaches. A companion git &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;repo&lt;/a&gt; includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.&lt;/p&gt;
+&lt;p&gt;The TLDR version of the results is that the naive approach seems to work fine for estimating overall population prevalence but that you should use the more sophisticated approach when generating estimates for subgroups.&lt;/p&gt;
+&lt;div id=&#34;the-rogan-and-gladen-adjustment-to-account-for-test-imperfections&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Rogan and Gladen Adjustment to Account for Test Imperfections&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-roganEstimatingPrevalenceResults1978&#34; role=&#34;doc-biblioref&#34;&gt;Rogan and Gladen&lt;/a&gt; (&lt;a href=&#34;#ref-roganEstimatingPrevalenceResults1978&#34; role=&#34;doc-biblioref&#34;&gt;1978&lt;/a&gt;)&lt;/span&gt; developed a simple approach to adjust estimates of prevalence that takes into account test imperfections. If we define &lt;span class=&#34;math inline&#34;&gt;\(pt\)&lt;/span&gt; to be the true positive rate, &lt;span class=&#34;math inline&#34;&gt;\(se\)&lt;/span&gt; to be the test sensitivity (i.e. true positive rate), and &lt;span class=&#34;math inline&#34;&gt;\(sp\)&lt;/span&gt; to be the test specificity (i.e. the true negative rate), then the share of a population that will test positive is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ pa = se*pt+(1-sp)(1-pt) \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The Rogan and Gladen approach to adjusting for test imperfections solves for &lt;span class=&#34;math inline&#34;&gt;\(pt\)&lt;/span&gt; in this equation and replaces the true values of each parameter with their estimated values.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pt} = \frac{\widehat{pa}+\widehat{sp}-1}{\widehat{se}+\widehat{sp}-1} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Rogan and Gladen developed a few options for calculating standard errors of these estimates (and &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-reiczigelExactConfidenceLimits2010&#34; role=&#34;doc-biblioref&#34;&gt;Reiczigel, Földi, and Ózsvári&lt;/a&gt; (&lt;a href=&#34;#ref-reiczigelExactConfidenceLimits2010&#34; role=&#34;doc-biblioref&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt; developed more sophisticated confidence intervals). Rogan and Gladen’s simplest approach to estimating the standard errors (which I will use later) is to calculate the variance of &lt;span class=&#34;math inline&#34;&gt;\(\widehat{pt}\)&lt;/span&gt; using the formula for the variance of a proportion.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The R package “epiR” allows users to apply the Rogan and Gladen adjustment and calculate confidence intervals using a variety of approaches. (See the function “epi.prev” in this package.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;adjusting-a-convenience-sample-using-post-stratification&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Adjusting a Convenience Sample Using Post-Stratification&lt;/h2&gt;
+&lt;p&gt;There are a lot of different ways to account for potential sample selection bias when analyzing data from a convenience sample but the simplest, and most commonly used, method is post-stratification. To apply post-stratification, we first divide up our samples into groups based on whatever demographic info we collected and calculate estimates for each group. We then weight the estimates for each of these groups according to the share of the total population that they represent. For example, if we sought to estimate the mean of some variable &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; for the total population our estimate would be:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{\bar{y}} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\bar{y_h}\)&lt;/span&gt; is the estimate for group h, and &lt;span class=&#34;math inline&#34;&gt;\(\frac{N_h}{N}\)&lt;/span&gt; is the share of group h in the total population from, for example, census data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-naive-approach-simple-poststratification-followed-by-a-rogan-gladen-adjustment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The naive approach: simple poststratification followed by a Rogan Gladen adjustment&lt;/h2&gt;
+&lt;p&gt;The simplest approach to adjusting for both test imperfections and potential sample selection bias arising from convenience sampling is to first estimate the apparent prevalence rate (without accounting for test imperfections) using poststratification and then apply the Rogan and Gladen adjustment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;issues-with-the-naive-approach&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Issues with the naive approach&lt;/h2&gt;
+&lt;p&gt;In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the population than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-bayesian-approach-using-modified-mrp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A Bayesian Approach using Modified MRP&lt;/h2&gt;
+&lt;p&gt;Theoretically, we should be able to improve on this approach by more carefully taking into account potential test imperfections. To use the example from above, if we saw that there was one positive test in the highly weighted stratum and 0 positive tests in the other stratum, we should adjust downward our overall estimate of the prevalence.&lt;/p&gt;
+&lt;div id=&#34;quick-overview-of-mrp&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Quick overview of MRP&lt;/h3&gt;
+&lt;p&gt;One way to do this is using a fully Bayesian approach built on multi-level regression and post-stratification (MRP). (For another Bayesian approach to this problem which doesn’t use MRP, see &lt;a href=&#34;https://www.medrxiv.org/content/10.1101/2020.04.15.20067066v1&#34;&gt;Larremore et al (2020)&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;MRP is an approach to small area estimation in which the analyst first estimates the mean of each strata using a multi-level model and then weights up these estimates using the poststratification weights. For example, to estimate the overall proportion &lt;span class=&#34;math inline&#34;&gt;\(\theta\)&lt;/span&gt; in a population using data &lt;span class=&#34;math inline&#34;&gt;\(y_i\)&lt;/span&gt; for each individual, you might use a simple model as follows to first estimate, &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt;, the proportion in each stratum j using stratum variables &lt;span class=&#34;math inline&#34;&gt;\(X_j\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \theta_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I); y_i \sim bernoulli(\theta_{j[i]}) \]&lt;/span&gt;
+To derive your estimates of the total population, you just weight up. i.e. you calculate&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{\theta} = \sum_{h=1}^H{\frac{N_h*\widehat{\theta_j}}{N}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;MRP is especially useful when you have a lot of different strata (which is often the case) since it allows you to more effectively “borrow strength” between strata compared to the approach where you simply model a different intercept for each stratum. (If you are simply modeling a separate intercept for each stratum, then there is no way for the model to know, for example, that a stratum for white men between 41 and 45 in Georgia and a stratum for white men between 46 and 50 are likely to be similar.) It is also, believe it or not, relatively straightforward compared to other approaches to small area estimate. For a more thorough overview of MRP, I highly recommend this &lt;a href=&#34;https://mc-stan.org/rstanarm/articles/mrp.html&#34;&gt;vignette&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;modified-mrp-to-account-for-test-imperfections&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Modified MRP to account for test imperfections&lt;/h3&gt;
+&lt;p&gt;If implementing MRP using a Bayesian approach, it is fairly straightforward to modify the MRP model to take into account test error. As before, we use a multilevel model for the likelihood of the true prevalence. But in our likelihood of the test data, we use the apparent prevalence rate, which is the probability of a test being positive taking into account both prevalence and test imperfections, rather than the true prevalence. Lastly, we also model uncertainty in our estimates of the sensitivity and specificity using data on the number of true positives (tp), true negatives (tn), false positives (fp), and false negatives (fn) from a validation study of the antibody test.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ pt_j =logit^{-1}(X_j\beta); \beta\sim MVN(0,\sigma I)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ pa_j = se*pt_j+(1-sp)*(1-pt_j) \]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ se \sim binom(tp, tp+fn); sp \sim binom(tn, tn+fp)\]&lt;/span&gt;
+&lt;span class=&#34;math display&#34;&gt;\[ y_i \sim bern(pa_{j[i]}) \]&lt;/span&gt;
+For a complete Bayesian model, we also need to add priors for sensitivity and specificity.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results-from-a-monte-carlo-simulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results from a Monte Carlo Simulation&lt;/h2&gt;
+&lt;p&gt;Theory is all well and good, but how do the two approaches compare when using data? To test this, I ran a simple Monte Carlo simulation using code borrowed from Kennedy and Gabry’s &lt;a href=&#34;https://cran.r-project.org/web/packages/rstanarm/vignettes/mrp.html&#34;&gt;MRP tutorial&lt;/a&gt;. (And big thanks to them for letting me copy their code!)&lt;/p&gt;
+&lt;p&gt;Surprisingly, the naive approach actually did slightly better (in terms of average absolute deviation from the true seroprevalence) when it came to estimating overall seroprevalence. This is especially surprising since the data generating process used for the simulations is almost identical to my MRP model. The modified MRP process does much better when estimating subgroups (the Rogan and Gladen estimates for subgruops are often negative, which happens sometimes) but clearly, given the additional hassle of generating the code, the modified MRP approach is only worth it if you really want to estimate subgroup effects.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;for-people-interested-in-using-this-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;For people interested in using this code&lt;/h2&gt;
+&lt;p&gt;All code for this analysis can be found &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;here&lt;/a&gt;.
+If you looking to copy and adapt the code, start with the R notebook “Estimate seroprevalence” in the above repo. In that notebook, I fit the modified MRP approach in two different ways: using raw Stan code and using the brms package (with some custom code to extend the package). If you would like to use the more complicated modified MRP approach, I strongly recommend you use the brms package. If you use the brms package, you should be able to copy and paste the code I created to define a “custom family” for the brms package and then modify the code in the main call to brm to suite your data. Since brms uses the lme4 syntax for defining multi-level models, customizing this code hopefully shouldn’t be too hard. By contrast, I find that modifying raw Stan code always takes quite a bit of time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-gelmanBayesianAnalysisTests2020&#34; class=&#34;csl-entry&#34;&gt;
+Gelman, Andrew, and Bob Carpenter. 2020. &lt;span&gt;“Bayesian Analysis of Tests with Unknown Specificity and Sensitivity.”&lt;/span&gt; &lt;em&gt;Journal of the Royal Statistical Society: Series C (Applied Statistics)&lt;/em&gt; 69 (5): 1269–83. &lt;a href=&#34;https://doi.org/10.1111/rssc.12435&#34;&gt;https://doi.org/10.1111/rssc.12435&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-reiczigelExactConfidenceLimits2010&#34; class=&#34;csl-entry&#34;&gt;
+Reiczigel, J., J. Földi, and L. Ózsvári. 2010. &lt;span&gt;“Exact Confidence Limits for Prevalence of a Disease with an Imperfect Diagnostic Test.”&lt;/span&gt; &lt;em&gt;Epidemiology and Infection&lt;/em&gt; 138 (11): 1674–78. &lt;a href=&#34;https://doi.org/10.1017/S0950268810000385&#34;&gt;https://doi.org/10.1017/S0950268810000385&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-roganEstimatingPrevalenceResults1978&#34; class=&#34;csl-entry&#34;&gt;
+Rogan, Walter, and Beth Gladen. 1978. &lt;span&gt;“Estimating &lt;span&gt;Prevalence&lt;/span&gt; from the &lt;span&gt;Results&lt;/span&gt; of a &lt;span&gt;Screening Test&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;American Journal of Epidemiology&lt;/em&gt; 107 (1): 71–76. &lt;a href=&#34;https://doi.org/10.1093/oxfordjournals.aje.a112510&#34;&gt;https://doi.org/10.1093/oxfordjournals.aje.a112510&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Three Stage Sampling</title>
+      <link>https://academic-demo.netlify.app/post/3-stage/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/3-stage/</guid>
+      <description>&lt;p&gt;One of IDinsight&amp;rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&amp;rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.&lt;/p&gt;
+&lt;p&gt;In this post, I&amp;rsquo;ll try to answer four questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;When do you need to take into account both stages of clustering in a survey or evaluation?&lt;/li&gt;
+&lt;li&gt;How do you properly account for a three stage design when performing sample size / power calculations?&lt;/li&gt;
+&lt;li&gt;How should you estimate the inputs required for these calculations?&lt;/li&gt;
+&lt;li&gt;How do you properly account for a three stage design when analyzing data?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;when-you-do-you-need-to-take-into-both-stages&#34;&gt;When you do you need to take into both stages?&lt;/h1&gt;
+&lt;p&gt;With an RCT, it&amp;rsquo;s pretty rare that you really need to take into account two stages of clustering. Remember that just because units exhibit some sort of clustering doesn&amp;rsquo;t mean that you need to adjust for clustering in your analysis.  For example, if you randomize at the student level it doesn&amp;rsquo;t matter that student learning outcomes exhibit clustering at the classroom level.  An example of when you might want to take into account two stages of clustering is when you randomize large clusters (e.g. schools) and then only collect data from units in a randomly sampled set of smaller clusters (e.g. kids in classrooms).  With surveys, anytime you have a three stage design you should theoretically take into account the clustering at both levels.&lt;/p&gt;
+&lt;p&gt;Even when it makes sense in theory to take into account both stages of clustering, you can usually get by with just considering the most aggregate (highest) level of clustering.  We&amp;rsquo;ll see below why that makes sense.  In some cases, e.g. when you are trying to find the optimal survey design for a given budget, you do really need to take into account both stages of clustering.&lt;/p&gt;
+&lt;h1 id=&#34;how-do-you-account-for-a-three-stage-design&#34;&gt;How do you account for a three stage design?&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;(The advice given below is tailored to someone performing sampling size calcs for a survey with a three stage design.  All of the advice holds true for power calcs as well.  You just need to multiply the final variance by 2 (since you have 2 groups &amp;ndash; treatment and control) and then use the standard adjustment to the standard error for power calcs &amp;ndash; i.e. instead of multiplying the standard error by +/-1.96 to create a 95% confidence interval you multiply by ~2.8 to calculate an MDE for alpha .05 and power .8.)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s first recap how one stage of clustering affects the variance of your estimator.  Let&amp;rsquo;s say that you will use a two stage sampling strategy in which you will first randomly sample J clusters and then randomly sample K units from each cluster to estimate the mean of some variable y.  Further assume that the total number of units per cluster does not vary and is pretty large.  If values of y are correlated within each cluster, we can think of the values for y as being made up of a cluster component and an independent within-cluster component, i.e.&lt;/p&gt;
+&lt;p&gt;$$y_{j,k}=\eta_j+\phi_{j,k}$$&lt;/p&gt;
+&lt;p&gt;This allows us to calculate the variance the of y as:&lt;/p&gt;
+&lt;p&gt;$$\sigma^2_y=\sigma^2_{\eta}+\sigma^2_{\phi}$$&lt;/p&gt;
+&lt;p&gt;And the variance of the mean as:&lt;/p&gt;
+&lt;p&gt;$$Var(\bar{y})=\frac{\sigma^2_{\eta}}{J}+\frac{\sigma^2_{\phi}}{JK}=\sigma^2_y\left(\frac{\rho}{J}+\frac{(1-\rho)}{JK}\right)$$&lt;/p&gt;
+&lt;p&gt;Where \( \rho=\frac{\sigma^2_{\eta}}{\sigma^2_y} \).  It&amp;rsquo;s also useful to calculate the design effect, or the ratio of the variance of this estimator to the ratio of the estimator if the sample had been collected using simple random sampling (SRS). Since the variance under SRS would be \( \frac{\sigma^2_y}{JK} \) the design effect\(=1+(K-1)\rho\).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s now suppose that we have a higher level sampling stage. We first pick Q mega-clusters, then J clusters from each mega-cluster, and then K households from each cluster.  Similarly, we can think of the values y as made of three components:&lt;/p&gt;
+&lt;p&gt;$$y_{q,j,k}=\gamma_q+\eta_{q,j}+\phi_{q,j,k}$$&lt;/p&gt;
+&lt;p&gt;The variance of y is then:&lt;/p&gt;
+&lt;p&gt;$$\sigma^2_y=\sigma^2_{\gamma}+\sigma^2_{\eta}+\sigma^2_{\phi}$$&lt;/p&gt;
+&lt;p&gt;And the variance of the mean is:&lt;/p&gt;
+&lt;p&gt;$$Var(\bar{y})=\frac{\sigma^2_{\gamma}}{Q}+\frac{\sigma^2_{\eta}}{QJ}+\frac{\sigma^2_{\phi}}{QJK}=\sigma^2_y\left(  \frac{\rho_{\gamma}}{Q}+\frac{\rho_{\eta}}{QJ}+\frac{(1-\rho_{\gamma}-\rho_{\eta})}{QJK} \right)$$&lt;/p&gt;
+&lt;p&gt;Where \(\rho_{\eta}=\frac{\sigma^2_{\eta}}{\sigma^2_y}\) and \(\rho_{\gamma}=\frac{\sigma^2_{\gamma}}{\sigma^2_y}\).  For our three stage sampling design, the design effect is:&lt;/p&gt;
+&lt;p&gt;$$DEFF=1+(K-1)\rho_{\eta}+(JK-1)\rho_{\gamma}$$&lt;/p&gt;
+&lt;p&gt;This also shows why just looking at the most aggregate level of clustering is usually pretty reasonable &amp;ndash; assuming the two ICCs are relatively similar in size, the adjustment to the variance will be driven primarily by the most aggregate level of clustering.&lt;/p&gt;
+&lt;h1 id=&#34;how-should-you-estimate-the-inputs-required-for-these-calculations&#34;&gt;How should you estimate the inputs required for these calculations?&lt;/h1&gt;
+&lt;p&gt;Now that we know how to adjust our estimate of the variance using the ICC at both levels, the next obvious questions is where to find the different values for the ICC.&lt;/p&gt;
+&lt;p&gt;If you are lucky, you might find a dataset which includes both levels of clustering and the variable you are interested (or some similiar variable).  If so, then you can use Stata&amp;rsquo;s anova command to estimate the two ICCs.  I&amp;rsquo;m not really sure how to do this is Stata, but I think that it should be relatively straightforward if you search the help file for &amp;ldquo;nested anova.&amp;rdquo;  (And if you figure out how to do it please let me know!)&lt;/p&gt;
+&lt;p&gt;Alternatively, you can resort to the typical hack of using a design effect calculated from another survey with a similar three stage design.  &lt;a href=&#34;https://unstats.un.org/unsd/hhsurveys/pdf/Chapter_7.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Here&lt;/a&gt; are a few design effects from which to draw from. (As an aside, it would also be useful for us to start recording the design effects for key variables from our own surveys.  To get the design effect for a survey dataset in Stata first &amp;ldquo;svyset&amp;rdquo; your dataset, then estimate the population mean of a variable using &amp;ldquo;svy: mean &lt;variable&gt;&amp;rdquo;, and then run &amp;ldquo;estat effects&amp;rdquo; to get the design effect for the estimate.)&lt;/p&gt;
+&lt;h1 id=&#34;how-do-you-properly-account-for-a-three-stage-design-when-analyzing-data&#34;&gt;How do you properly account for a three stage design when analyzing data?&lt;/h1&gt;
+&lt;p&gt;Unfortunately, most Stata commands only allow for a single stage of clustering.  To account for two or more stages of clustering, you need to first &amp;ldquo;svyset&amp;rdquo; your data and then use the &amp;ldquo;svy&amp;rdquo; prefix before running any command.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Simple Random Sampling vs. PPS Sampling</title>
       <link>https://academic-demo.netlify.app/post/srs-v-pps/</link>
       <pubDate>Fri, 21 Apr 2017 00:00:00 +0000</pubDate>

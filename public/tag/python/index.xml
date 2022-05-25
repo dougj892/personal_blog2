@@ -5,12 +5,219 @@
     <link>https://academic-demo.netlify.app/tag/python/</link>
       <atom:link href="https://academic-demo.netlify.app/tag/python/index.xml" rel="self" type="application/rss+xml" />
     <description>Python</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 31 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png</url>
       <title>Python</title>
       <link>https://academic-demo.netlify.app/tag/python/</link>
     </image>
+    
+    <item>
+      <title>Stan vs PyMC3 vs Bean Machine</title>
+      <link>https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating. My biggest gripes with Stan are…&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Installation can be buggy&lt;/strong&gt; – I think that every time I have installed RStan I have encountered some weird installation error. In some cases, the fix was an easy google search away but in other cases it took a lot more time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Model compilation is frustratingly slow&lt;/strong&gt; – It generally takes quite a while (a few minutes) to compile a model in Stan. I find this frustrating because I often make really stupid mistakes that only get caught when a model is compiled or run.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debugging is tough&lt;/strong&gt; - In some ways, a Stan model is a bit of a black box – you define your model, feed it some data, and out pops samples from the posterior (or the MAP or whatever). This makes it a bit tough to debug models, especially complicated ones.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The documentation is comprehensive but dense&lt;/strong&gt; – The Stan documentation (the user manual, reference guide, and tutorials) are very comprehensive but not great for learning the language. Now that I have mastered the basics, this is less of a concern, but it still takes me quite a bit of time to find answers to my Stan questions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With the release of Bean Machine a couple of weeks ago I figured it is high time I checked out other probabilistic programming languages (PPLs) so I attempted to fit a simple item response theory model in all 3 languages. I have included the raw code for all three languages at the end (you can find a Google colab notebook for the PyMC3 model &lt;a href=&#34;https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing&#34;&gt;here&lt;/a&gt; and a Google colab notebook for the Bean Machine model &lt;a href=&#34;https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing&#34;&gt;here&lt;/a&gt; and some quick thoughts about what I liked and disliked about PyMC3 and Bean Machine below. Despite the click-baity title, this isn’t intended to be a comprehensive comparison of the strengths and weaknesses of each language – that is a job for someone with a far better understanding of each language’s capabilities than me – but rather a quick summary of my impressions from trying to fit a simple model in each language.&lt;/p&gt;
+&lt;div id=&#34;what-i-liked-and-disliked-about-pymc3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I Liked and Disliked about PyMC3&lt;/h2&gt;
+&lt;p&gt;Overall, I really liked PyMC3. In fact, I liked it so much that in the future I think I will likely use PyMC3 rather than Stan for my modelling needs. Some of the things I really liked about the language include:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installation was extremely easy and no installation is required on Google Colab.&lt;/strong&gt; Installation of PyMC3 was very easy and I didn’t encounter any weird errors. Even better, it comes preinstalled on Google Colab!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sampling from the prior predictive is quick and easy which is really helpful for model checking.&lt;/strong&gt; In PyMC3, to sample from the prior predictive (i.e. the distribution you get if you sample from the priors and likelihood without considering the data) you simply add one line of code at the end of your model. I found this really useful for checking that there are no basic errors in my model code and that my priors pass a basic sniff test. By contrast, in Stan, sampling from the prior predictive requires more or less duplicating your model in the generated quantities block and, for reasons I don’t understand, is super slow.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The syntax is concise and intuitive.&lt;/strong&gt; PyMC3’s syntax is very similar to Stan except that you don’t have to declare your variables (variable types are inferred from their distributions) or your data (since the data comes from the python environment). I really like this since I often make stupid mistakes in the data and parameters blocks of Stan (e.g. confusing indices).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I haven’t spent enough time with PyMC3 to say much about the documentation but based on a quick glance it seemed kind of similar to that for Stan – i.e. very comprehensive but not great for those new to the language. Sampling speed was also very similar to Stan’s (though the fact that this can be done easily on Google Colab effectively saves me some time since I can’t do much else on my laptop while Stan is running and running Stan in the cloud is more of a pain that it is worth.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-i-liked-and-disliked-about-bean-machine&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I Liked and Disliked about Bean Machine&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Update: After posting an issue on the Bean Machine Github repo, the Bean Machine team graciously took the time to figure out what was wrong with my implementation of the 3PL model in Bean Machine. The issue was that the dtype of the data that I was passing to the Bean Machine sampler was incorrect. I was passing a torch tensor of type int when Bean Machine was expecting a torch tensor of type float (since that is the output generated from the torch Bernoulli distribution). In the code below, I have commented out the incorrect line and replaced it with the new correct line.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I started this exercise thinking that I would probably like Bean Machine more than the other two languages. While it seems like Bean Machine has a lot of potential, I found it very hard to use despite spending far more time trying to learn Bean Machine than PyMC3. Some of the things I found challenging/disliked when using Bean Machine include:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sampling each of the random variables separately is not possible (or, at least, I couldn’t figure out how to do it).&lt;/strong&gt; One of the reasons I was excited about Bean Machine at first is that, in Bean Machine, models are not monolithic black boxes but rather a set of collection of separately defined variables. Thus, I thought it would be really easy to first sample from the priors one by one and then sample from the likelihood – something I would find really useful for debugging. Unfortunately, I couldn’t figure out how to do this easily.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The syntax is a bit verbose.&lt;/strong&gt; In Bean Machine, each model variable requires a full function definition which means that there is a lot of cruft to sift through when looking at code. You also have to know a bit of Pytorch though with pytorch’s increasing popularity that is probably not a barrier for most people.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;del&gt;3. &lt;strong&gt;Inference seems to be a bit buggy.&lt;/strong&gt; I couldn’t get the NUTS or HMC samplers to work for my simple reference model despite the fact that, in theory, these should be well suited to the model and thus used plain old MH sampling instead.&lt;/del&gt; (See update above.)&lt;/p&gt;
+&lt;p&gt;On the plus side, installation was super easy and I really liked the basic tutorials.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-reference-model-the-3-paramater-logistic-item-response-theory-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Reference Model – The 3 Paramater Logistic Item Response Theory Model&lt;/h2&gt;
+&lt;p&gt;Since I have been playing around a lot with learning assessment data, I used a 3 parameter logistic item response theory model (3PL) as . The 3PL model is often used when you have dichotomous response data for a set of students – i.e. for each student and question combination you have an indicator for whether the student got the question right. I use a sample dataset provided by Stata. The 3PL model assumes that the probability that student j gets answer k correct is&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Pr(y_{kj}=1 |\theta_j)= c+(1-c)\frac{1}{1+e^{-(a_k(\theta_j-b_k))}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where c is a parameter which accounts for the fact that even if a student guesses there is some probability that they will get the answer right, &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt; is the ability level for student j, &lt;span class=&#34;math inline&#34;&gt;\(b_k\)&lt;/span&gt; is the difficulty of question k, and &lt;span class=&#34;math inline&#34;&gt;\(a_k\)&lt;/span&gt; is a parameter for how well question k discriminates between low and high ability students.&lt;/p&gt;
+&lt;p&gt;I first fit this model in Stata using maximum likelihood (which I think uses some sort of EM algorithm under the hood) and generate predicted abilities for each student in the dataset. I use the estimates from Stata to inform the priors for the full Bayesian model and as a sanity check on the model output.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use http://www.stata-press.com/data/r14/masc1.dta
+irt 3pl q1-q9
+predict theta_hat, latent&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As an aside, you might be wondering why you would want to bother with a PPL given that using Stata and an ML approach is so easy. IMO, you probably don’t. There are a few situations where using a PPL for IRT might be useful though. First, you might want to fit a model for which there is no existing software package (e.g. some fancy new model which incorporates student response time). Second, there are some instances where you might want to use a Bayesian rather than frequentist approach. For example, Zajonc and Das use a Bayesian approach to IRT to compare the full distribution of student learning outcomes in India versus other countries. The authors couldn’t have done this using a maximum likelihood approach.&lt;/p&gt;
+&lt;p&gt;When fitting the model using the PPLs, I use the following priors:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \theta_j \sim N(0,1);  a_k \sim Lognormal(.5,1);  b_k \sim N(0,10); c \sim Beta(3,30) \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The prior on &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt; is standard for most IRT models. The prior on a is borrowed from the EdStan R package The prior on b is very diffuse and may be considered more or less an uninformative prior. The prior on c is tightly centered around the ML estimate of c from the Stata output (which helps ensure that the models fit quickly).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stan-r-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stan + R Code&lt;/h2&gt;
+&lt;p&gt;Stan code for the 3PL model is included below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse); library(rstan)
+df &amp;lt;- haven::read_dta(&amp;quot;http://www.stata-press.com/data/r14/masc1.dta&amp;quot;)
+
+# add column for student number
+df[&amp;quot;student&amp;quot;] &amp;lt;- 1:nrow(df)
+
+# reshape to long format
+df &amp;lt;- df %&amp;gt;% pivot_longer(cols = -student, names_to = &amp;quot;question&amp;quot;, values_to = &amp;quot;y&amp;quot;) %&amp;gt;% 
+  mutate(question = as.numeric(str_remove(question, &amp;quot;q&amp;quot;)))
+
+stan_code &amp;lt;- &amp;quot;
+data {
+  int&amp;lt;lower=1&amp;gt; J;             // number of respondents
+  int&amp;lt;lower=1&amp;gt; K;             // number of items
+  int&amp;lt;lower=1&amp;gt; N;             // number of observations
+  int&amp;lt;lower=1,upper=J&amp;gt; jj[N]; // respondent for observation n
+  int&amp;lt;lower=1,upper=K&amp;gt; kk[N]; // item for observation n
+  int&amp;lt;lower=0,upper=1&amp;gt; y[N];  // score for observation n
+}
+parameters {
+  vector[J] theta;             // ability for student j
+  vector[K] b;                 // difficulty of question k
+  vector&amp;lt;lower=0&amp;gt;[K] a;        // discriminating param for question k
+  real&amp;lt;lower=0,upper=1&amp;gt; c; // guessing param
+}
+model {
+  vector[N] eta;
+  
+  // priors
+  theta ~ normal(0, 1); // Typical assumption for theta.
+  b ~ normal(0, 10); // Diffuse prior for b. Same as that used by edstan
+  a ~ lognormal(0.5, 1); // Diffuse prior. Same as that used by edstan
+  c ~ beta(3, 30); // Tight prior around the estimated value from Stata output
+  
+  // model
+  for (n in 1:N) {
+    eta[n] = c + (1 - c) * inv_logit(a[kk[n]] * (theta[jj[n]] - b[kk[n]]));
+  }
+  y ~ bernoulli(eta);
+}
+&amp;quot;
+stan_dat &amp;lt;- list(J = max(df$student), 
+                 K = max(df$question), 
+                 N = nrow(df),
+                 jj = df$student,
+                 kk = df$question,
+                 y = df$y)
+
+fit_stan &amp;lt;- stan(model_code = stan_code, data = stan_dat)
+print(fit_stan)
+samples &amp;lt;- extract(fit_stan)
+theta_mean &amp;lt;- colMeans(samples$theta)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pymc3-python-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;PyMC3 + Python Code&lt;/h2&gt;
+&lt;p&gt;Code to fit the 3PL model in PyMC3 is included below. You can find a Google Colab notebook with this code &lt;a href=&#34;https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import pymc3 as pm
+import numpy as np
+import pandas as pd
+
+# import and reshape the data
+df= pd.read_stata(&amp;quot;http://www.stata-press.com/data/r14/masc1.dta&amp;quot;)
+df[&amp;#39;student&amp;#39;] = np.arange(len(df))
+df = df.melt(id_vars = &amp;#39;student&amp;#39;, value_name = &amp;#39;response&amp;#39;)
+df[&amp;#39;question&amp;#39;] = df[&amp;#39;variable&amp;#39;].str[1:].astype(int) - 1
+
+# Generate lists to use as indices
+num_students = df[&amp;quot;student&amp;quot;].unique().shape[0]
+num_items = df[&amp;quot;question&amp;quot;].unique().shape[0]
+item_index = df[&amp;quot;question&amp;quot;].tolist()
+student_index = df[&amp;quot;student&amp;quot;].tolist()
+
+# Fit the model in python
+with pm.Model() as irt_model:
+  # Priors
+  theta = pm.Normal(&amp;quot;theta&amp;quot;, mu = 0, sigma = 1, shape = num_students)
+  a = pm.Lognormal(&amp;quot;a&amp;quot;, mu = 0.5, sigma = 1, shape = num_items)
+  b = pm.Normal(&amp;quot;b&amp;quot;, mu = 0, sigma = 10, shape = num_items)
+  c = pm.Beta(&amp;quot;c&amp;quot;, alpha = 3, beta = 30)
+
+  # Likelihood
+  eta = c + (1-c)*pm.invlogit(a[item_index]*(theta[student_index]-b[item_index]))
+  response = pm.Bernoulli(&amp;quot;response&amp;quot;, p = eta, observed = df[&amp;#39;response&amp;#39;].values)
+
+  # Inference
+  posterior = pm.sample(draws = 1000, tune = 1000, return_inferencedata=True)
+
+# Get EAP estimates for each theta_j by taking the mean of the posterior draws. 
+theta_means = posterior.posterior[&amp;#39;theta&amp;#39;].mean(axis =1).mean(axis= 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bean-machine-python-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bean Machine + Python Code&lt;/h2&gt;
+&lt;p&gt;My attempt to fit the 3PL model in Bean Machine is below. You can find a Colab notebook with this code &lt;a href=&#34;https://colab.research.google.com/drive/1clOIXN5pgKtkzRIt2WvQ6s9q2FSbX6-g?usp=sharing&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import beanmachine.ppl as bm
+from beanmachine.ppl.model import RVIdentifier
+import numpy as np
+import pandas as pd
+import torch
+import torch.distributions as dist
+
+# Download and reshape the dataset
+df= pd.read_stata(&amp;quot;http://www.stata-press.com/data/r14/masc1.dta&amp;quot;)
+df[&amp;#39;student&amp;#39;] = np.arange(len(df))
+df = df.melt(id_vars = &amp;#39;student&amp;#39;, value_name = &amp;#39;response&amp;#39;)
+df[&amp;#39;question&amp;#39;] = df[&amp;#39;variable&amp;#39;].str[1:].astype(int) - 1
+
+# Create lists to use as indices
+num_students = df[&amp;quot;student&amp;quot;].unique().shape[0]
+num_items = df[&amp;quot;question&amp;quot;].unique().shape[0]
+item_index = df[&amp;quot;question&amp;quot;].tolist()
+student_index = df[&amp;quot;student&amp;quot;].tolist()
+
+# Fit the model
+@bm.random_variable
+def theta() -&amp;gt; RVIdentifier:
+    return dist.Normal(0, 1).expand((num_students,))
+
+@bm.random_variable
+def a() -&amp;gt; RVIdentifier:
+    return dist.LogNormal(0.5, 1).expand((num_items,))
+
+@bm.random_variable
+def b() -&amp;gt; RVIdentifier:
+    return dist.Normal(0, 10).expand((num_items,))
+
+@bm.random_variable
+def c() -&amp;gt; RVIdentifier:
+    return dist.Beta(3, 30)
+
+@bm.functional
+def p():
+    return c()+ (1-c())*torch.sigmoid(a()[item_index]*(theta()[student_index]-b()[item_index]))
+
+@bm.random_variable
+def y() -&amp;gt; RVIdentifier:
+    return dist.Bernoulli(p())
+  
+# Run the inference.
+samples = bm.SingleSiteHamiltonianMonteCarlo(trajectory_length = 1).infer(
+    queries=[theta()],
+    # Old incorrect code
+    # observations={y(): torch.tensor(df[&amp;quot;response&amp;quot;].values)},
+    # New correct code
+    observations={y(): torch.tensor(df[&amp;quot;response&amp;quot;].astype(&amp;#39;float&amp;#39;).values)},
+    num_samples=2000,
+    num_chains=4,
+    num_adaptive_samples=2000
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Web Scraping 101</title>

@@ -128,6 +128,278 @@ The variance of the distribution is $\sigma^{2}$.
     </item>
     
     <item>
+      <title>Why Nothing Scales Doesn&#39;t Mean Nothing Works</title>
+      <link>https://academic-demo.netlify.app/post/why-nothing-scales-doesn-t-mean-nothing-works/</link>
+      <pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/why-nothing-scales-doesn-t-mean-nothing-works/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/why-nothing-scales-doesn-t-mean-nothing-works/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Jason Kerwin, a development economist at the University of Minnesota, wrote an interesting blog post some time back in which he argued that &lt;a href=&#34;https://jasonkerwin.com/nonparibus/2021/11/03/nothing-scales/&#34;&gt;nothing scales&lt;/a&gt;. Kerwin’s point was that we (i.e. the international development community) often get really excited about new, innovative interventions after some small pilot, scale them up, and then find that they don’t work nearly as well at a larger scale. Kerwin cited the examples of growth mindset training, warning young women about “sugar daddies” (see the blog post for more info), and the “Jamaican” model of early child home visitations.&lt;/p&gt;
+&lt;p&gt;Lee Crawfurd, a researcher at the Center for Global Development, had a couple of great tweet threads in response to the Kerwin post. In the first thread, he added a bunch more examples of interventions which seemed really promising when implemented at a small scale but weren’t that impressive when scaled up.&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;I enjoyed this blog by &lt;a href=&#34;https://twitter.com/jt_kerwin?ref_src=twsrc%5Etfw&#34;&gt;@jt_kerwin&lt;/a&gt; about how &amp;quot;nothing scales&amp;quot;. &lt;br&gt;&lt;br&gt;What other examples are there?&lt;a href=&#34;https://t.co/suD5WQPCIn&#34;&gt;https://t.co/suD5WQPCIn&lt;/a&gt;&lt;/p&gt;&amp;mdash; Lee Crawfurd (@leecrawfurd) &lt;a href=&#34;https://twitter.com/leecrawfurd/status/1461664274116452352?ref_src=twsrc%5Etfw&#34;&gt;November 19, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;In a later, far less lengthy, thread he cited a few examples of things which do seem to scale well. I can’t seem to find the second thread but, from what I recall, the overall gist of the two threads combined was that “&lt;em&gt;almost&lt;/em&gt; nothing scales.”’&lt;/p&gt;
+&lt;p&gt;This is definitely a huge bummer. At the same time, I don’t think it is as big a bummer as many other commenters seemed to think. Judging by some of the reactions I saw on twitter, it seemed like many people were quick to jump from “nothing scales” to “nothing works.” Yes, interventions which seem promising at a small scale often have disappointing effects at a larger scale but the model of development which goes from innovation to piloting + evaluation to scale is just one model of development. We’re so trained to think in terms of this innovation -&amp;gt; test -&amp;gt; scale cycle that it’s easy to forget that there are many other paths to change. Rather than coming up with some new program we can try to do a better job of implementing existing programs. Or we can lobby for better laws or regulations. Or perhaps the sum total of many scall scale efforts can lead to large scale impact. You could argue that if you increase government capacity or adopt some new policy you are, in some ways, taking &lt;em&gt;something&lt;/em&gt; to scale (e.g. a policy) but I think that is glossing over substantial differences with a bit of semantics. A lot of new policies aren’t fundamentally innovative or even tested and increases in government capacity, at least in my experience, are often the result of a bunch of small, hard to measure actions taken by inspired leaders.&lt;/p&gt;
+&lt;p&gt;The problem is that all of this stuff is really, really hard to do especially if you are a foreign funder / multilateral. Most funders are reluctant to engage in policy advocacy much less activism. And increasing government capacity from the outside is kind of like building Ikea furniture – i.e. there is a correct way to do it but no one seems to know how. I think this is why many of us have been so drawn to the innovate -&amp;gt; test -&amp;gt; scale model: even as outsiders, we can usually come up with an test some new program and, if we use rigorous impact evaluation methods, we can get some certainty of whether it works at a small scale.&lt;/p&gt;
+&lt;p&gt;I don’t have great ideas on how to overcome these challenges. That said, I think it is time that funders, especially smaller funders with more flexibility, paid more attention to these other potential paths to change. The development sector as a whole has spent an enormous amount of effort and resources on the innovate -&amp;gt; test -&amp;gt; scale model – e.g. conducting thousands of RCTs and refining the methodological toolbox for impact evaluations. It would be great to see more money go to local think tanks working on policy issues or even activist organizations pushing for social change.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Brief Notes on Kasy and Sautmann&#39;s Exploration Sampling</title>
+      <link>https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/</link>
+      <pubDate>Fri, 14 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I’ve been spending a fair bit of time digging through the literature on the cognitive science of learning and one consistent result from the literature is that taking notes (ideally good notes) is really helpful for making sure that you learn and remember something. I typically take quick notes in Zotero when I read papers or books but when I go back to the notes a month or two later often find that they aren’t that useful. For the next month or so, I’m going to instead share quick notes on stuff I’ve read through blog posts to see if that is a more effective way of making sure I don’t forget everything I’ve read.&lt;/p&gt;
+&lt;p&gt;In the first post in this series, I discuss Kasy and Sautmann’s paper “Adaptive Treatment Assignment in Experiments for Policy.” In their paper, Kasy and Sautmann analyze treatment assignment rules for experiments with adaptive treatment assignments and come up with a new adaptive treatment assignment rule, which they call “exploration sampling,” which performs a lot better the most commonly used rule in some contexts. That’s a lot of jargon for one sentence so let me elaborate on each of those points.&lt;/p&gt;
+&lt;div id=&#34;adaptive-treatment-assignment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Adaptive Treatment Assignment&lt;/h2&gt;
+&lt;p&gt;“Adaptive treatment assignment” refers to the practice of adjusting the probability of treatment assignment over the course of an experiment. In a typical experiment, all study participants are assigned all at once to one of several treatment arms (or a control) at the start of the study. This practice works fine if you are just comparing one treatment to a control but isn’t really optimal if you are trying to compare several different treatments and are able to observe study outcomes relatively quickly. For example, let’s say you are running an experiment with 10 different treatment arms and notice halfway through that 5 of the arms are doing well and 5 are doing really poorly. Intuitively, it seems like it would make sense to drop the 5 that are doing really poorly and distribute the remaining sample between the 5 that are doing really well.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thompson-sampling&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thompson Sampling&lt;/h2&gt;
+&lt;p&gt;The most commonly used approach to adaptive treatment assignment is Thompson sampling. With Thompson sampling, study participants are randomly assigned to each arm one at a time according to the posterior probability that that arm is the best. For example, let’s say you are in the situation described above and halfway through a study comparing 10 different treatment arms you estimate that there is a 15% probability that each of the first 5 treatment arms is the best and a 5% probability that each of the remaining arms is the best you would assign the next study participant to each of the first 5 arms with 15% probability and to each of the next 5 arms with 5% probability.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;thompson-sampling-works-well-in-sample-but-not-out-of-sample&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Thompson Sampling Works Well In Sample but Not Out of Sample&lt;/h2&gt;
+&lt;p&gt;Thompson sampling works reasonably well when your goal is to maximize the welfare of the study participants. If that is your goal, you face a classic “exploration-exploitation” tradeoff – i.e. when randomly assigning a study participant you must weigh the benefit of exploring the treatment space by assigning the participant to a treatment arm that looks less effective but which &lt;em&gt;could&lt;/em&gt; be more effective than your current best bet and exploiting your current information by assigning the participant to your current best bet. There are a lot of contexts where maximizing the welfare of study participants is more of less your real goal and Thompson sampling works great. [ russo et al ] provide a lot of great examples (and also a great more detailed intro to Thompson sampling).
+There are a lot of contexts where this isn’t really your goal though and, to a first approximation, you don’t really care about the welfare of the study participants. Bio-ethicists would probably disagree, but I think that the recent COVID-19 vaccine and therapeutic trials (at least two of which used adaptive treatment assignment btw) are good examples of this. These trials were conducted on relatively small samples of healthy young adults with the goal of identifying the best vaccine/treatments for COVID-19 for pretty much the entire population of the world. With those trials, you care far more about selecting the best treatments than about whether the study participants themselves were assigned the best treatment. Thompson sampling doesn’t work great in those contexts because it assigns far too large a share of study participants to the treatment arm that appears the best rather than exploring other potential arms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exploration-sampling-for-policy-selection&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exploration Sampling for Policy Selection&lt;/h2&gt;
+&lt;p&gt;In theory, given any specific experiment and the objective of selecting the treatment arm at the end of the experiment, you could figure out an optimal treatment assignment strategy using dynamic stochastic programming. The basic idea behind this technique is that you map out each and every possible treatment assignment and outcome over time kind of like if you were trying to find the optimal strategy for chess by mapping out each potential move and response. This quickly becomes computationally infeasible though.&lt;/p&gt;
+&lt;p&gt;Kasy and Sautmann’s contribution is to define a general rule for treatment assignment which seems to do much better than Thompson sampling when the goal of an experiment is to select the best treatment arm. They call their rule “exploration sampling” (to emphasize the lack of a exploitation motive) and it is really simple. Rather than assigning units to treatment arm d according to the posterior probability at time t that arm d is the best arm (&lt;span class=&#34;math inline&#34;&gt;\(p^d_t\)&lt;/span&gt;) as in Thompson sampling you instead assign participants with probability:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ q^d_t = \frac{p^d_t*(1-p^d_t)}{\sum_d{p^d_t*(1-p^d_t)}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The graph below shows how q varies with p. Unlike with Thompson sampling, once a treatment arm appears to be the best (i.e. p &amp;gt; .5), treatment assignment probability gradually goes does to give space to learn about other treatment arms.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ggplot2)
+ggplot() +  xlim(0, 1) + 
+  geom_function(fun = function(x) x*(1-x)) +
+  labs(x = &amp;quot;p&amp;quot;, y = &amp;quot;q&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://academic-demo.netlify.app/post/brief-notes-on-kasy-and-sautmann-s-exploration-sampling/index.en_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;
+The other slight difference between exploration sampling and Thompson sampling is that they allow for treatment assignment in batches. Their motivation here is logistical rather than statistical – in most RCTs it would be extremely challenging to randomly assign individual units to arms.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results-from-a-simulation&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results from a Simulation&lt;/h2&gt;
+&lt;p&gt;In addition to showing that exploration sampling has nice theoretical properties, they show that it seems to work well in practice by comparing the performance of regular one-off treatment asssignment, Thompson sampling, and exploration sampling using a Monte Carlo simulation in which the data generating process is based on the estimated parameters for a few well known multi-arm RCTs.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stan vs PyMC3 vs Bean Machine</title>
+      <link>https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/</guid>
+      <description>
+&lt;script src=&#34;https://academic-demo.netlify.app/post/stan-vs-pymc3-vs-bean-machine/index.en_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating. My biggest gripes with Stan are…&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Installation can be buggy&lt;/strong&gt; – I think that every time I have installed RStan I have encountered some weird installation error. In some cases, the fix was an easy google search away but in other cases it took a lot more time.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Model compilation is frustratingly slow&lt;/strong&gt; – It generally takes quite a while (a few minutes) to compile a model in Stan. I find this frustrating because I often make really stupid mistakes that only get caught when a model is compiled or run.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Debugging is tough&lt;/strong&gt; - In some ways, a Stan model is a bit of a black box – you define your model, feed it some data, and out pops samples from the posterior (or the MAP or whatever). This makes it a bit tough to debug models, especially complicated ones.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The documentation is comprehensive but dense&lt;/strong&gt; – The Stan documentation (the user manual, reference guide, and tutorials) are very comprehensive but not great for learning the language. Now that I have mastered the basics, this is less of a concern, but it still takes me quite a bit of time to find answers to my Stan questions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With the release of Bean Machine a couple of weeks ago I figured it is high time I checked out other probabilistic programming languages (PPLs) so I attempted to fit a simple item response theory model in all 3 languages. I have included the raw code for all three languages at the end (you can find a Google colab notebook for the PyMC3 model &lt;a href=&#34;https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing&#34;&gt;here&lt;/a&gt; and a Google colab notebook for the Bean Machine model &lt;a href=&#34;https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing&#34;&gt;here&lt;/a&gt; and some quick thoughts about what I liked and disliked about PyMC3 and Bean Machine below. Despite the click-baity title, this isn’t intended to be a comprehensive comparison of the strengths and weaknesses of each language – that is a job for someone with a far better understanding of each language’s capabilities than me – but rather a quick summary of my impressions from trying to fit a simple model in each language.&lt;/p&gt;
+&lt;div id=&#34;what-i-liked-and-disliked-about-pymc3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I Liked and Disliked about PyMC3&lt;/h2&gt;
+&lt;p&gt;Overall, I really liked PyMC3. In fact, I liked it so much that in the future I think I will likely use PyMC3 rather than Stan for my modelling needs. Some of the things I really liked about the language include:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Installation was extremely easy and no installation is required on Google Colab.&lt;/strong&gt; Installation of PyMC3 was very easy and I didn’t encounter any weird errors. Even better, it comes preinstalled on Google Colab!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sampling from the prior predictive is quick and easy which is really helpful for model checking.&lt;/strong&gt; In PyMC3, to sample from the prior predictive (i.e. the distribution you get if you sample from the priors and likelihood without considering the data) you simply add one line of code at the end of your model. I found this really useful for checking that there are no basic errors in my model code and that my priors pass a basic sniff test. By contrast, in Stan, sampling from the prior predictive requires more or less duplicating your model in the generated quantities block and, for reasons I don’t understand, is super slow.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The syntax is concise and intuitive.&lt;/strong&gt; PyMC3’s syntax is very similar to Stan except that you don’t have to declare your variables (variable types are inferred from their distributions) or your data (since the data comes from the python environment). I really like this since I often make stupid mistakes in the data and parameters blocks of Stan (e.g. confusing indices).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I haven’t spent enough time with PyMC3 to say much about the documentation but based on a quick glance it seemed kind of similar to that for Stan – i.e. very comprehensive but not great for those new to the language. Sampling speed was also very similar to Stan’s (though the fact that this can be done easily on Google Colab effectively saves me some time since I can’t do much else on my laptop while Stan is running and running Stan in the cloud is more of a pain that it is worth.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-i-liked-and-disliked-about-bean-machine&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;What I Liked and Disliked about Bean Machine&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Update: After posting an issue on the Bean Machine Github repo, the Bean Machine team graciously took the time to figure out what was wrong with my implementation of the 3PL model in Bean Machine. The issue was that the dtype of the data that I was passing to the Bean Machine sampler was incorrect. I was passing a torch tensor of type int when Bean Machine was expecting a torch tensor of type float (since that is the output generated from the torch Bernoulli distribution). In the code below, I have commented out the incorrect line and replaced it with the new correct line.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I started this exercise thinking that I would probably like Bean Machine more than the other two languages. While it seems like Bean Machine has a lot of potential, I found it very hard to use despite spending far more time trying to learn Bean Machine than PyMC3. Some of the things I found challenging/disliked when using Bean Machine include:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sampling each of the random variables separately is not possible (or, at least, I couldn’t figure out how to do it).&lt;/strong&gt; One of the reasons I was excited about Bean Machine at first is that, in Bean Machine, models are not monolithic black boxes but rather a set of collection of separately defined variables. Thus, I thought it would be really easy to first sample from the priors one by one and then sample from the likelihood – something I would find really useful for debugging. Unfortunately, I couldn’t figure out how to do this easily.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The syntax is a bit verbose.&lt;/strong&gt; In Bean Machine, each model variable requires a full function definition which means that there is a lot of cruft to sift through when looking at code. You also have to know a bit of Pytorch though with pytorch’s increasing popularity that is probably not a barrier for most people.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;del&gt;3. &lt;strong&gt;Inference seems to be a bit buggy.&lt;/strong&gt; I couldn’t get the NUTS or HMC samplers to work for my simple reference model despite the fact that, in theory, these should be well suited to the model and thus used plain old MH sampling instead.&lt;/del&gt; (See update above.)&lt;/p&gt;
+&lt;p&gt;On the plus side, installation was super easy and I really liked the basic tutorials.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-reference-model-the-3-paramater-logistic-item-response-theory-model&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Reference Model – The 3 Paramater Logistic Item Response Theory Model&lt;/h2&gt;
+&lt;p&gt;Since I have been playing around a lot with learning assessment data, I used a 3 parameter logistic item response theory model (3PL) as . The 3PL model is often used when you have dichotomous response data for a set of students – i.e. for each student and question combination you have an indicator for whether the student got the question right. I use a sample dataset provided by Stata. The 3PL model assumes that the probability that student j gets answer k correct is&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ Pr(y_{kj}=1 |\theta_j)= c+(1-c)\frac{1}{1+e^{-(a_k(\theta_j-b_k))}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where c is a parameter which accounts for the fact that even if a student guesses there is some probability that they will get the answer right, &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt; is the ability level for student j, &lt;span class=&#34;math inline&#34;&gt;\(b_k\)&lt;/span&gt; is the difficulty of question k, and &lt;span class=&#34;math inline&#34;&gt;\(a_k\)&lt;/span&gt; is a parameter for how well question k discriminates between low and high ability students.&lt;/p&gt;
+&lt;p&gt;I first fit this model in Stata using maximum likelihood (which I think uses some sort of EM algorithm under the hood) and generate predicted abilities for each student in the dataset. I use the estimates from Stata to inform the priors for the full Bayesian model and as a sanity check on the model output.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use http://www.stata-press.com/data/r14/masc1.dta
+irt 3pl q1-q9
+predict theta_hat, latent&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As an aside, you might be wondering why you would want to bother with a PPL given that using Stata and an ML approach is so easy. IMO, you probably don’t. There are a few situations where using a PPL for IRT might be useful though. First, you might want to fit a model for which there is no existing software package (e.g. some fancy new model which incorporates student response time). Second, there are some instances where you might want to use a Bayesian rather than frequentist approach. For example, Zajonc and Das use a Bayesian approach to IRT to compare the full distribution of student learning outcomes in India versus other countries. The authors couldn’t have done this using a maximum likelihood approach.&lt;/p&gt;
+&lt;p&gt;When fitting the model using the PPLs, I use the following priors:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \theta_j \sim N(0,1);  a_k \sim Lognormal(.5,1);  b_k \sim N(0,10); c \sim Beta(3,30) \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The prior on &lt;span class=&#34;math inline&#34;&gt;\(\theta_j\)&lt;/span&gt; is standard for most IRT models. The prior on a is borrowed from the EdStan R package The prior on b is very diffuse and may be considered more or less an uninformative prior. The prior on c is tightly centered around the ML estimate of c from the Stata output (which helps ensure that the models fit quickly).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;stan-r-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Stan + R Code&lt;/h2&gt;
+&lt;p&gt;Stan code for the 3PL model is included below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse); library(rstan)
+df &amp;lt;- haven::read_dta(&amp;quot;http://www.stata-press.com/data/r14/masc1.dta&amp;quot;)
+
+# add column for student number
+df[&amp;quot;student&amp;quot;] &amp;lt;- 1:nrow(df)
+
+# reshape to long format
+df &amp;lt;- df %&amp;gt;% pivot_longer(cols = -student, names_to = &amp;quot;question&amp;quot;, values_to = &amp;quot;y&amp;quot;) %&amp;gt;% 
+  mutate(question = as.numeric(str_remove(question, &amp;quot;q&amp;quot;)))
+
+stan_code &amp;lt;- &amp;quot;
+data {
+  int&amp;lt;lower=1&amp;gt; J;             // number of respondents
+  int&amp;lt;lower=1&amp;gt; K;             // number of items
+  int&amp;lt;lower=1&amp;gt; N;             // number of observations
+  int&amp;lt;lower=1,upper=J&amp;gt; jj[N]; // respondent for observation n
+  int&amp;lt;lower=1,upper=K&amp;gt; kk[N]; // item for observation n
+  int&amp;lt;lower=0,upper=1&amp;gt; y[N];  // score for observation n
+}
+parameters {
+  vector[J] theta;             // ability for student j
+  vector[K] b;                 // difficulty of question k
+  vector&amp;lt;lower=0&amp;gt;[K] a;        // discriminating param for question k
+  real&amp;lt;lower=0,upper=1&amp;gt; c; // guessing param
+}
+model {
+  vector[N] eta;
+  
+  // priors
+  theta ~ normal(0, 1); // Typical assumption for theta.
+  b ~ normal(0, 10); // Diffuse prior for b. Same as that used by edstan
+  a ~ lognormal(0.5, 1); // Diffuse prior. Same as that used by edstan
+  c ~ beta(3, 30); // Tight prior around the estimated value from Stata output
+  
+  // model
+  for (n in 1:N) {
+    eta[n] = c + (1 - c) * inv_logit(a[kk[n]] * (theta[jj[n]] - b[kk[n]]));
+  }
+  y ~ bernoulli(eta);
+}
+&amp;quot;
+stan_dat &amp;lt;- list(J = max(df$student), 
+                 K = max(df$question), 
+                 N = nrow(df),
+                 jj = df$student,
+                 kk = df$question,
+                 y = df$y)
+
+fit_stan &amp;lt;- stan(model_code = stan_code, data = stan_dat)
+print(fit_stan)
+samples &amp;lt;- extract(fit_stan)
+theta_mean &amp;lt;- colMeans(samples$theta)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pymc3-python-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;PyMC3 + Python Code&lt;/h2&gt;
+&lt;p&gt;Code to fit the 3PL model in PyMC3 is included below. You can find a Google Colab notebook with this code &lt;a href=&#34;https://colab.research.google.com/drive/15SvGVsplzp_mGub84J8ttS2k8HF0Q94a?usp=sharing&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import pymc3 as pm
+import numpy as np
+import pandas as pd
+
+# import and reshape the data
+df= pd.read_stata(&amp;quot;http://www.stata-press.com/data/r14/masc1.dta&amp;quot;)
+df[&amp;#39;student&amp;#39;] = np.arange(len(df))
+df = df.melt(id_vars = &amp;#39;student&amp;#39;, value_name = &amp;#39;response&amp;#39;)
+df[&amp;#39;question&amp;#39;] = df[&amp;#39;variable&amp;#39;].str[1:].astype(int) - 1
+
+# Generate lists to use as indices
+num_students = df[&amp;quot;student&amp;quot;].unique().shape[0]
+num_items = df[&amp;quot;question&amp;quot;].unique().shape[0]
+item_index = df[&amp;quot;question&amp;quot;].tolist()
+student_index = df[&amp;quot;student&amp;quot;].tolist()
+
+# Fit the model in python
+with pm.Model() as irt_model:
+  # Priors
+  theta = pm.Normal(&amp;quot;theta&amp;quot;, mu = 0, sigma = 1, shape = num_students)
+  a = pm.Lognormal(&amp;quot;a&amp;quot;, mu = 0.5, sigma = 1, shape = num_items)
+  b = pm.Normal(&amp;quot;b&amp;quot;, mu = 0, sigma = 10, shape = num_items)
+  c = pm.Beta(&amp;quot;c&amp;quot;, alpha = 3, beta = 30)
+
+  # Likelihood
+  eta = c + (1-c)*pm.invlogit(a[item_index]*(theta[student_index]-b[item_index]))
+  response = pm.Bernoulli(&amp;quot;response&amp;quot;, p = eta, observed = df[&amp;#39;response&amp;#39;].values)
+
+  # Inference
+  posterior = pm.sample(draws = 1000, tune = 1000, return_inferencedata=True)
+
+# Get EAP estimates for each theta_j by taking the mean of the posterior draws. 
+theta_means = posterior.posterior[&amp;#39;theta&amp;#39;].mean(axis =1).mean(axis= 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bean-machine-python-code&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Bean Machine + Python Code&lt;/h2&gt;
+&lt;p&gt;My attempt to fit the 3PL model in Bean Machine is below. You can find a Colab notebook with this code &lt;a href=&#34;https://colab.research.google.com/drive/1clOIXN5pgKtkzRIt2WvQ6s9q2FSbX6-g?usp=sharing&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import beanmachine.ppl as bm
+from beanmachine.ppl.model import RVIdentifier
+import numpy as np
+import pandas as pd
+import torch
+import torch.distributions as dist
+
+# Download and reshape the dataset
+df= pd.read_stata(&amp;quot;http://www.stata-press.com/data/r14/masc1.dta&amp;quot;)
+df[&amp;#39;student&amp;#39;] = np.arange(len(df))
+df = df.melt(id_vars = &amp;#39;student&amp;#39;, value_name = &amp;#39;response&amp;#39;)
+df[&amp;#39;question&amp;#39;] = df[&amp;#39;variable&amp;#39;].str[1:].astype(int) - 1
+
+# Create lists to use as indices
+num_students = df[&amp;quot;student&amp;quot;].unique().shape[0]
+num_items = df[&amp;quot;question&amp;quot;].unique().shape[0]
+item_index = df[&amp;quot;question&amp;quot;].tolist()
+student_index = df[&amp;quot;student&amp;quot;].tolist()
+
+# Fit the model
+@bm.random_variable
+def theta() -&amp;gt; RVIdentifier:
+    return dist.Normal(0, 1).expand((num_students,))
+
+@bm.random_variable
+def a() -&amp;gt; RVIdentifier:
+    return dist.LogNormal(0.5, 1).expand((num_items,))
+
+@bm.random_variable
+def b() -&amp;gt; RVIdentifier:
+    return dist.Normal(0, 10).expand((num_items,))
+
+@bm.random_variable
+def c() -&amp;gt; RVIdentifier:
+    return dist.Beta(3, 30)
+
+@bm.functional
+def p():
+    return c()+ (1-c())*torch.sigmoid(a()[item_index]*(theta()[student_index]-b()[item_index]))
+
+@bm.random_variable
+def y() -&amp;gt; RVIdentifier:
+    return dist.Bernoulli(p())
+  
+# Run the inference.
+samples = bm.SingleSiteHamiltonianMonteCarlo(trajectory_length = 1).infer(
+    queries=[theta()],
+    # Old incorrect code
+    # observations={y(): torch.tensor(df[&amp;quot;response&amp;quot;].values)},
+    # New correct code
+    observations={y(): torch.tensor(df[&amp;quot;response&amp;quot;].astype(&amp;#39;float&amp;#39;).values)},
+    num_samples=2000,
+    num_chains=4,
+    num_adaptive_samples=2000
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Conventional Attrition Tests Don&#39;t Make Much Sense - Here&#39;s a Better Way</title>
       <link>https://academic-demo.netlify.app/post/2021-10-25-conventional-attrition-tests-don-t-make-much-sense-here-s-a-better-way/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
@@ -1824,24 +2096,33 @@ Särndal, Carl-Erik, Bengt Swensson, and Jan Wretman. 2003. &lt;em&gt;Model Assi
 &lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of covid 19 in a population. Estimating seroprevalence from this data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself.&lt;/p&gt;
-&lt;p&gt;Addressing either of these challenges on their own is relatively straightforward to do using existing tools. The R package “epiR” allows users to estimate true prevalence and confidence intervals for prevalence using the method developed by Rogan and Gladen (1978) and Reiczigel et al (2010). (See the function “epi.prev” in this package.) Similarly, the R page “survey” (and the Stata “svy:” commands) allow users to generate inference from convenience samples using post-stratification. Addressing both at the same time is kind of tricky though.&lt;/p&gt;
-&lt;p&gt;In this blog post, I look at two different ways of taking into account both test imperfections and the non-random nature of the sample: a simple approach which combines poststratification with a Rogan-Gladen adjustment and a Bayesian approach based on multi-level regression and poststratification. I also report results from a quick Monte Carlo expirement I used to assess both approaches. A companion git &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;repo&lt;/a&gt; includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.&lt;/p&gt;
-&lt;div id=&#34;the-naive-approach-simple-poststratification-and-adjustment&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The naive approach: simple poststratification and adjustment&lt;/h2&gt;
-&lt;p&gt;One option is to combine these approaches. In other words, we first calculate &lt;span class=&#34;math inline&#34;&gt;\(\hat{pa}\)&lt;/span&gt;, our estimate of the overall “apparent” seroprevalence rate (i.e. the rate not taking into account test imperfection) using the typical poststratification formula and then calculate our estimate of the true seroprevalence, &lt;span class=&#34;math inline&#34;&gt;\(\hat{pt}\)&lt;/span&gt; by using the adjustment from Rogan and Gladen approach.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pa} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]&lt;/span&gt;
-Where h indexes strata, &lt;span class=&#34;math inline&#34;&gt;\(N_h\)&lt;/span&gt; is the number of people in the total population in stratum h, N is the total number of people in the population and &lt;span class=&#34;math inline&#34;&gt;\(\bar{y_h}\)&lt;/span&gt; is the sample mean within stratum h.&lt;/p&gt;
-&lt;p&gt;We then calculate true seroprevalence by adjusting this figure using the formula below:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pt} = \frac{\widehat{pa}+sp-1}{se+sp-1} \]&lt;/span&gt;
-Where se and sp are our estimates for the sensitivity and specificity of the test respectively.&lt;/p&gt;
-&lt;p&gt;There are several options for calculating standard errors, but the simplest approach is to use a quick formula for the standard error of a proportion&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]&lt;/span&gt;
-If you want to be more exact and take into account the uncertainty in the estimates of se and sp, you can use the more complicated formula from Rogan and Gladen which uses the Taylor Linearization approach.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update Jan, 2022: Since this post was published in May 2020, &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-gelmanBayesianAnalysisTests2020&#34; role=&#34;doc-biblioref&#34;&gt;Gelman and Carpenter&lt;/a&gt; (&lt;a href=&#34;#ref-gelmanBayesianAnalysisTests2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt; have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here. I recommend checking out their article.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Several recent studies have used data from antibody tests performed on a convenience sample to estimate seroprevalence of COVID-19 in a population. Estimating seroprevalence from this type of data presents two challenges. First, the analyst must take steps, through weighting or other measures, to deal with likely sample selection bias. Second, the analyst must take into account imperfections in the test itself. Addressing either of these challenges on their own is relatively straightforward to do using existing tools but addressing both at the same time is pretty tricky.&lt;/p&gt;
+&lt;p&gt;In this blog post, I first describe the most commonly used tools for adjusting for test imperfections and performing inference on a convenience sample. I then describe two different ways of tackling both of these issues at once: a simple approach which sequentially applies the two simple approaches and a more complicated, but also more theoretically sound, Bayesian approach. I also report results from a quick Monte Carlo experiment I used to assess both approaches. A companion git &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;repo&lt;/a&gt; includes code that (hopefully) can be relatively easily adapted to estimate seroprevalence from other studies using these approaches.&lt;/p&gt;
+&lt;p&gt;The TLDR version of the results is that the naive approach seems to work fine for estimating overall population prevalence but that you should use the more sophisticated approach when generating estimates for subgroups.&lt;/p&gt;
+&lt;div id=&#34;the-rogan-and-gladen-adjustment-to-account-for-test-imperfections&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Rogan and Gladen Adjustment to Account for Test Imperfections&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-roganEstimatingPrevalenceResults1978&#34; role=&#34;doc-biblioref&#34;&gt;Rogan and Gladen&lt;/a&gt; (&lt;a href=&#34;#ref-roganEstimatingPrevalenceResults1978&#34; role=&#34;doc-biblioref&#34;&gt;1978&lt;/a&gt;)&lt;/span&gt; developed a simple approach to adjust estimates of prevalence that takes into account test imperfections. If we define &lt;span class=&#34;math inline&#34;&gt;\(pt\)&lt;/span&gt; to be the true positive rate, &lt;span class=&#34;math inline&#34;&gt;\(se\)&lt;/span&gt; to be the test sensitivity (i.e. true positive rate), and &lt;span class=&#34;math inline&#34;&gt;\(sp\)&lt;/span&gt; to be the test specificity (i.e. the true negative rate), then the share of a population that will test positive is:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ pa = se*pt+(1-sp)(1-pt) \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The Rogan and Gladen approach to adjusting for test imperfections solves for &lt;span class=&#34;math inline&#34;&gt;\(pt\)&lt;/span&gt; in this equation and replaces the true values of each parameter with their estimated values.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{pt} = \frac{\widehat{pa}+\widehat{sp}-1}{\widehat{se}+\widehat{sp}-1} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Rogan and Gladen developed a few options for calculating standard errors of these estimates (and &lt;span class=&#34;citation&#34;&gt;&lt;a href=&#34;#ref-reiczigelExactConfidenceLimits2010&#34; role=&#34;doc-biblioref&#34;&gt;Reiczigel, Földi, and Ózsvári&lt;/a&gt; (&lt;a href=&#34;#ref-reiczigelExactConfidenceLimits2010&#34; role=&#34;doc-biblioref&#34;&gt;2010&lt;/a&gt;)&lt;/span&gt; developed more sophisticated confidence intervals). Rogan and Gladen’s simplest approach to estimating the standard errors (which I will use later) is to calculate the variance of &lt;span class=&#34;math inline&#34;&gt;\(\widehat{pt}\)&lt;/span&gt; using the formula for the variance of a proportion.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{Var({\widehat{pt}})}= \frac{\widehat{pa}(1-\widehat{pa})}{N(se+sp-1)^2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The R package “epiR” allows users to apply the Rogan and Gladen adjustment and calculate confidence intervals using a variety of approaches. (See the function “epi.prev” in this package.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;adjusting-a-convenience-sample-using-post-stratification&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Adjusting a Convenience Sample Using Post-Stratification&lt;/h2&gt;
+&lt;p&gt;There are a lot of different ways to account for potential sample selection bias when analyzing data from a convenience sample but the simplest, and most commonly used, method is post-stratification. To apply post-stratification, we first divide up our samples into groups based on whatever demographic info we collected and calculate estimates for each group. We then weight the estimates for each of these groups according to the share of the total population that they represent. For example, if we sought to estimate the mean of some variable &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; for the total population our estimate would be:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ \widehat{\bar{y}} = \sum_{h=1}^H{\frac{N_h*\bar{y_h}}{N}} \]&lt;/span&gt;
+where &lt;span class=&#34;math inline&#34;&gt;\(\bar{y_h}\)&lt;/span&gt; is the estimate for group h, and &lt;span class=&#34;math inline&#34;&gt;\(\frac{N_h}{N}\)&lt;/span&gt; is the share of group h in the total population from, for example, census data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-naive-approach-simple-poststratification-followed-by-a-rogan-gladen-adjustment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The naive approach: simple poststratification followed by a Rogan Gladen adjustment&lt;/h2&gt;
+&lt;p&gt;The simplest approach to adjusting for both test imperfections and potential sample selection bias arising from convenience sampling is to first estimate the apparent prevalence rate (without accounting for test imperfections) using poststratification and then apply the Rogan and Gladen adjustment.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;issues-with-the-naive-approach&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Issues with the naive approach&lt;/h2&gt;
-&lt;p&gt;In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the poulation than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)&lt;/p&gt;
+&lt;p&gt;In theory, the naive approach shouldn’t work too well. To see why this is the case, suppose you have two strata of equal sample size but one stratum represents a much larger portion of the population than the other strata (i.e. if you were to use weights, the weights for observations from this stratum would be much higher than observations from other strata). Suppose also that true prevalence is very low. Due to random test error, you will likely have some false positives in your sample. If you happen to get a false positive in the stratum with high weights, then the naive approach will lead you to overestimate the overall true prevalence. On average, your estimate of the true prevalence will be Ok but it (in theory) will have pretty high variance. (I caveat these claims with the phrase “in theory” since, as we will see below, for the simulated data I create it isn’t actually that much of a problem.)&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;a-bayesian-approach-using-modified-mrp&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;A Bayesian Approach using Modified MRP&lt;/h2&gt;
@@ -1874,6 +2155,20 @@ For a complete Bayesian model, we also need to add priors for sensitivity and sp
 &lt;h2&gt;For people interested in using this code&lt;/h2&gt;
 &lt;p&gt;All code for this analysis can be found &lt;a href=&#34;https://github.com/dougj892/sero_prevalence2&#34;&gt;here&lt;/a&gt;.
 If you looking to copy and adapt the code, start with the R notebook “Estimate seroprevalence” in the above repo. In that notebook, I fit the modified MRP approach in two different ways: using raw Stan code and using the brms package (with some custom code to extend the package). If you would like to use the more complicated modified MRP approach, I strongly recommend you use the brms package. If you use the brms package, you should be able to copy and paste the code I created to define a “custom family” for the brms package and then modify the code in the main call to brm to suite your data. Since brms uses the lme4 syntax for defining multi-level models, customizing this code hopefully shouldn’t be too hard. By contrast, I find that modifying raw Stan code always takes quite a bit of time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level2 unnumbered&#34;&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references csl-bib-body hanging-indent&#34;&gt;
+&lt;div id=&#34;ref-gelmanBayesianAnalysisTests2020&#34; class=&#34;csl-entry&#34;&gt;
+Gelman, Andrew, and Bob Carpenter. 2020. &lt;span&gt;“Bayesian Analysis of Tests with Unknown Specificity and Sensitivity.”&lt;/span&gt; &lt;em&gt;Journal of the Royal Statistical Society: Series C (Applied Statistics)&lt;/em&gt; 69 (5): 1269–83. &lt;a href=&#34;https://doi.org/10.1111/rssc.12435&#34;&gt;https://doi.org/10.1111/rssc.12435&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-reiczigelExactConfidenceLimits2010&#34; class=&#34;csl-entry&#34;&gt;
+Reiczigel, J., J. Földi, and L. Ózsvári. 2010. &lt;span&gt;“Exact Confidence Limits for Prevalence of a Disease with an Imperfect Diagnostic Test.”&lt;/span&gt; &lt;em&gt;Epidemiology and Infection&lt;/em&gt; 138 (11): 1674–78. &lt;a href=&#34;https://doi.org/10.1017/S0950268810000385&#34;&gt;https://doi.org/10.1017/S0950268810000385&lt;/a&gt;.
+&lt;/div&gt;
+&lt;div id=&#34;ref-roganEstimatingPrevalenceResults1978&#34; class=&#34;csl-entry&#34;&gt;
+Rogan, Walter, and Beth Gladen. 1978. &lt;span&gt;“Estimating &lt;span&gt;Prevalence&lt;/span&gt; from the &lt;span&gt;Results&lt;/span&gt; of a &lt;span&gt;Screening Test&lt;/span&gt;.”&lt;/span&gt; &lt;em&gt;American Journal of Epidemiology&lt;/em&gt; 107 (1): 71–76. &lt;a href=&#34;https://doi.org/10.1093/oxfordjournals.aje.a112510&#34;&gt;https://doi.org/10.1093/oxfordjournals.aje.a112510&lt;/a&gt;.
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 </description>
     </item>
@@ -2053,8 +2348,7 @@ $$&lt;/p&gt;
       <link>https://academic-demo.netlify.app/post/3-stage/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       <guid>https://academic-demo.netlify.app/post/3-stage/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Caveat emptor: This blog post has not been thoroughly checked for errors.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;One of IDinsight&amp;rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&amp;rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.&lt;/p&gt;
+      <description>&lt;p&gt;One of IDinsight&amp;rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.  In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&amp;rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.&lt;/p&gt;
 &lt;p&gt;In this post, I&amp;rsquo;ll try to answer four questions:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;When do you need to take into account both stages of clustering in a survey or evaluation?&lt;/li&gt;
@@ -2108,45 +2402,6 @@ $$&lt;/p&gt;
 &lt;p&gt;Another consideration in choosing between the two sampling schemes for this evaluation is that we have to do a full household listing in each village.  On average, the villages selected using PPS will be significantly larger than under simple random sampling (where the expected value of the village sizes would be equal to the average village size).  The formula for the expected size of the PSU under PPS (assuming we are just selecting one PSU or selecting with replacement) is&amp;hellip;&lt;/p&gt;
 &lt;p&gt;$$E[w_i]=\frac{\sum{w_i^2}}{\sum{w_i}}$$&lt;/p&gt;
 &lt;p&gt;To derive this, note that the expected value of a variable is the sum of the probability of selecting each value of the variable times the value.  Under PPS, the probability of selecting each village is \(\frac{w_i}{\sum{w_i}} \).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fixed Effects vs Difference-in-Differences</title>
-      <link>https://academic-demo.netlify.app/post/fe-did/</link>
-      <pubDate>Wed, 15 Feb 2017 00:00:00 +0000</pubDate>
-      <guid>https://academic-demo.netlify.app/post/fe-did/</guid>
-      <description>
-&lt;script src=&#34;https://academic-demo.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;em&gt;TL;DR: When you have longitudinal data, you should use fixed effects or ANCOVA rather than difference-in-differences since a difference-in-difference specification will spit out incorrect variance estimates. If the data is from a randomized trial, ANCOVA is probably a better bet.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Trying to understand when to use fixed effects and when to use difference-in-differences (DiD), in the past, always made me feel like an idiot. It seemed like I was missing something really obvious that everyone else was getting.&lt;/p&gt;
-&lt;p&gt;After trying, and failing, to find a clear description of the difference between the two in textbooks and online, I finally decided to test out the differences by creating some mock data and applying DiD and fixed effects to the mock data and deriving the variance estimates for the two specifications. I have included a summary of those results below (the full details are &lt;a href=&#34;https://github.com/dougj892/Jupyter-notebooks/blob/master/Fixed%20Effects%20vs%20Diffs%20in%20Diffs.ipynb&#34;&gt;here&lt;/a&gt;) but first, if the distinction between fixed effects and DiD has you feeling stupid, take heart in knowing that a lot of other people get this confused as well. A lot of the candidates I interviewed for the tech team got this wrong. I have even seen it come up in published articles. (e.g. this &lt;a href=&#34;http://www.sciencedirect.com/science/article/pii/S030438781200003X&#34;&gt;paper&lt;/a&gt; published in the Journal of Development Economics which focused on the variance of DiD versus ANCOVA. Equation one in the article incorrectly suggests a DiD specification.)&lt;/p&gt;
-&lt;div id=&#34;review-of-diffs-in-diffs-and-fixed-effects-specifications&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Review of Diffs-in-diffs and Fixed Effects Specifications&lt;/h3&gt;
-&lt;p&gt;To jog everyone’s memory, if you have one baseline and one end line observation for a set of units, the standard DiD specification is:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Y_{i,t}=\alpha+\beta*EVERTREAT_i + \gamma*POST_t + \tau*TREAT_{i,t} + \varepsilon_{i,t}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Where i indexes units, t indexes time, EVERTREAT is a binary variable for whether the unit was ever exposed to treatment, POST is a binary variable for whether the observation is from end line, and TREAT is a binary variable equal to 1 if the observation is from the end line and is for a treated unit.&lt;/p&gt;
-&lt;p&gt;For the case of one baseline and one end line, the fixed effects specification is equivalent to:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta Y_i=\alpha+ \delta*TREAT_{i} + \varepsilon_{i}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Where&lt;span class=&#34;math inline&#34;&gt;\(\Delta Y_i\)&lt;/span&gt;is the change from baseline to end line for unit i. This is also known at the “first differences” estimator.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;why-you-should-never-use-did-with-longitudinal-data&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Why you should never use DiD with longitudinal data&lt;/h3&gt;
-&lt;p&gt;In the simple case with no covariates, both of the above specifications will give you the same point estimates which is equal to:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\hat{\delta} = (\bar{Y}^T_{post}-\bar{Y}^T_{pre})-(\bar{Y}^C_{post}-\bar{Y}^C_{pre})\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Where T indicates the subgroup of units that ever received treatment and C indicates those that never received treatment. The fact that the point estimates are the same in this case is probably the source of much of the confusion around these two specifications. My hunch is that people often call the fixed effects specificiation a “difference-in-difference” estimator since the point estimate can be obtained from this twiced difference equation.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The problem with the DiD specification is that, while it will give you the correct point estimates, the variance estimates will be way off.&lt;/em&gt; The reason for this is that the variance estimates treat the baseline and end line as independent observations and thus don’t take into account autocorrelation between baseline and end line. If we assume that each observation has the same variance &lt;span class=&#34;math inline&#34;&gt;\(\sigma^2\)&lt;/span&gt;, that the correlation between baseline and endline is &lt;span class=&#34;math inline&#34;&gt;\(\rho\)&lt;/span&gt;, and that there are n treatment and n control units, the true variance of both estimators is:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Var(\hat{\delta}) = \frac{4\sigma^2}{n}(1-\rho)\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;To arrive at this result, note that the fixed effects estimator with one baseline and one end line can be written as&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\hat{\delta} = \bar{\Delta Y^T} - \bar{\Delta Y^C}\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;And note that the variance of each of these components is:&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Var(\bar{\Delta Y^K}) = Var \left \{ \frac{1}{n}\sum{(Y_{i,post}-Y_{i,pre})} \right \} = \frac{1}{n^2}  \sum{(\sigma^2+\sigma^2-2cov(Y_{i,post},Y_{i,pre}))}  = \frac{1}{n^2} \sum{(2\sigma^2-2\rho\sigma^2)} = \frac{2\sigma^2}{n}(1-\rho)\]&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;To follow the derivation above, recall that &lt;span class=&#34;math inline&#34;&gt;\(var(a+b)=var(a)+var(b)+2cov(a,b)\)&lt;/span&gt; and that &lt;span class=&#34;math inline&#34;&gt;\(\rho_{i,j}=\sigma_{i,j}/(\sigma_i*\sigma_j)\)&lt;/span&gt;. Note that this is the true variance of both the FE estimator and the DiD. (Since they always produce the same point estimates, their true variance must be equal).&lt;/p&gt;
-&lt;p&gt;If you run the FE specification above, the estimate of the variance of &lt;span class=&#34;math inline&#34;&gt;\(\hat{\delta}\)&lt;/span&gt; will be similar to the formula above. If you run the DiD specification, the estimate of the variance will be &lt;span class=&#34;math inline&#34;&gt;\(\frac{4\sigma^2}{n}\)&lt;/span&gt; though. Thus, that means that if the correlation between baseline and end line is .5, your estimated variance will be about twice as large as the true variance!&lt;/p&gt;
-&lt;p&gt;One way to see that the DiD variance estimator is &lt;span class=&#34;math inline&#34;&gt;\(\frac{4\sigma^2}{n}\)&lt;/span&gt; is just to see that the DiD estimate is computed by adding or subtracting four terms each of which have variance &lt;span class=&#34;math inline&#34;&gt;\(\frac{\sigma^2}{n}\)&lt;/span&gt;. Alternatively, if you have too much free time on your hands you can derive the full variance estimate from the DiD regression. To derive this yourself, first note that the variance estimator for OLS (assuming homoskedasticity) is &lt;span class=&#34;math inline&#34;&gt;\((X&amp;#39;X)^{-1}\hat{\sigma^2}\)&lt;/span&gt; where X is your matrix of variables (including a column of 1s for the constant) and &lt;span class=&#34;math inline&#34;&gt;\(\hat{\sigma^2}\)&lt;/span&gt; is the sum of squared residuals divided by n-k where k is the number of regressors. In most cases, deriving &lt;span class=&#34;math inline&#34;&gt;\((X&amp;#39;X)^{-1}\)&lt;/span&gt; is really tricky but in the case of DiD with no covariates it’s relatively straightforward since all of the variables are columns of 1s and 0s.&lt;/p&gt;
-&lt;/div&gt;
 </description>
     </item>
     
