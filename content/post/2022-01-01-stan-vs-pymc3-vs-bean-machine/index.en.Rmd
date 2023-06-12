@@ -21,7 +21,7 @@ projects: []
 ---
 
 
-I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating. My biggest gripes with Stan are…
+I have been a light user of Stan and RStan for some time and while there are a lot of things I really like about the language (such as the awesome community you can turn to for support and ShinyStan for inspecting Stan output) there are also a few things that I find frustrating. My biggest gripes with Stan are that…
 
 1.	**Installation can be buggy** – I think that every time I have installed RStan I have encountered some weird installation error. In some cases, the fix was an easy google search away but in other cases it took a lot more time. 
 2.	**Model compilation is frustratingly slow** – It generally takes quite a while (a few minutes) to compile a model in Stan. I find this frustrating because I often make really stupid mistakes that only get caught when a model is compiled or run. 
