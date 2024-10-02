@@ -1,12 +1,16 @@
 ---
-title: Three Stage Sampling
-author: Doug
-date: '2017-10-04'
-slug: 3-stage
+title: "Three Stage Sampling"
+author: "Doug"
+date: "2017-10-04"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 categories: []
 tags:
-  - Statistics
-  - Sampling
+- Statistics
+- Sampling
+slug: "3-stage"
 ---
 
 One of IDinsight's project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households. In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can't seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.
@@ -35,7 +39,7 @@ And the variance of the mean as:
 
 $$Var(\bar{y})=\frac{\sigma^2_{\eta}}{J}+\frac{\sigma^2_{\phi}}{JK}=\sigma^2_y\left(\frac{\rho}{J}+\frac{(1-\rho)}{JK}\right)$$
 
-Where \\( \rho=\frac{\sigma^2_{\eta}}{\sigma^2_y} \\). It's also useful to calculate the design effect, or the ratio of the variance of this estimator to the ratio of the estimator if the sample had been collected using simple random sampling (SRS). Since the variance under SRS would be \\( \frac{\sigma^2_y}{JK} \\) the design effect\\(=1+(K-1)\rho\\).
+Where $\rho=\frac{\sigma^2_{\eta}}{\sigma^2_y}$. It's also useful to calculate the design effect, or the ratio of the variance of this estimator to the ratio of the estimator if the sample had been collected using simple random sampling (SRS). Since the variance under SRS would be  $\frac{\sigma^2_y}{JK}$ the design effect=$1+(K-1)\rho$.
 
 Let's now suppose that we have a higher level sampling stage. We first pick Q mega-clusters, then J clusters from each mega-cluster, and then K households from each cluster. Similarly, we can think of the values y as made of three components:
 
@@ -49,7 +53,7 @@ And the variance of the mean is:
 
 $$Var(\bar{y})=\frac{\sigma^2_{\gamma}}{Q}+\frac{\sigma^2_{\eta}}{QJ}+\frac{\sigma^2_{\phi}}{QJK}=\sigma^2_y\left(  \frac{\rho_{\gamma}}{Q}+\frac{\rho_{\eta}}{QJ}+\frac{(1-\rho_{\gamma}-\rho_{\eta})}{QJK} \right)$$
 
-Where \\(\rho\*{\*\\eta}=\frac{\sigma^2_{\eta}}{\sigma^2_y}\\) and \\(\rho{\gamma}=\frac{\sigma^2_{\gamma}}{\sigma^2_y}\\). For our three stage sampling design, the design effect is:
+Where $\rho_{\eta}=\frac{\sigma^2_{\eta}}{\sigma^2_y}$ and $\rho_{\gamma}=\frac{\sigma^2_{\gamma}}{\sigma^2_y}$. For our three stage sampling design, the design effect is:
 
 $$DEFF=1+(JK-1)\rho_{\gamma}+(K-1)\rho_{\eta}$$
 

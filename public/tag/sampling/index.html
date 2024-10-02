@@ -317,8 +317,8 @@
     <link rel="manifest" href="/manifest.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua7e188933fe49dd53608be3028a25685_18646_180x180_fill_lanczos_center_3.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu13392423972185649665.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu4002274594186352422.png" />
 
   <link rel="canonical" href="https://academic-demo.netlify.app/tag/sampling/" />
 
@@ -345,8 +345,8 @@
   <meta property="og:site_name" content="Doug Johnson" />
   <meta property="og:url" content="https://academic-demo.netlify.app/tag/sampling/" />
   <meta property="og:title" content="Sampling | Doug Johnson" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hua7e188933fe49dd53608be3028a25685_18646_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="" /><meta property="og:image" content="https://academic-demo.netlify.app/media/icon_hu16269138445519755281.png" />
+    <meta property="twitter:image" content="https://academic-demo.netlify.app/media/icon_hu16269138445519755281.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta property="og:updated_time" content="2020-07-12T00:00:00&#43;00:00" />
@@ -380,7 +380,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js"></script>
+  <script src="/js/wowchemy-init.min.b1dcd22c5a611a3730970383f67a81e5.js"></script>
 
   
 
@@ -658,7 +658,10 @@
     
     <a href="/post/school-versus-household-based-surveys-for-collecting-learning-outcomes-data/"  class="summary-link">
       <div class="article-style">
-        Andres Parrado and I recently wrote an article in which we look at the reliability of learning outcomes data in India. The main findings of the paper are a) the government-run survey of learning outcomes (called the NAS) likely contains a lot of noise and b) the main independent survey of learning outcomes (ASER) is a tad bit noisier than the survey’s sample size would lead one to believe.
+        <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Andres Parrado and I recently wrote an <a href="https://www.sciencedirect.com/science/article/pii/S0738059321000626">article</a> in which we look at the reliability of learning outcomes data in India. The main findings of the paper are a) the government-run survey of learning outcomes (called the NAS) likely contains a lot of noise and b) the main independent survey of learning outcomes (ASER) is a tad bit noisier than the survey’s sample size would lead one to believe.</p>
       </div>
     </a>
     
@@ -749,7 +752,10 @@
     
     <a href="/post/estimating-seroprevalence-with-data-from-an-imperfect-test-on-a-convenience-sample/"  class="summary-link">
       <div class="article-style">
-        Update Jan, 2022: Since this post was published in May 2020, Gelman and Carpenter (2020) have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here.
+        <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p><em>Update Jan, 2022: Since this post was published in May 2020, <span class="citation"><a href="#ref-gelmanBayesianAnalysisTests2020" role="doc-biblioref">Gelman and Carpenter</a> (<a href="#ref-gelmanBayesianAnalysisTests2020" role="doc-biblioref">2020</a>)</span> have published a more comprehensive analysis on how to adjust for test imperfections using a Bayesian approach which goes beyond many of the ideas here. I recommend checking out their article.</em></p>
       </div>
     </a>
     
@@ -840,7 +846,7 @@
     
     <a href="/post/3-stage/"  class="summary-link">
       <div class="article-style">
-        One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households.
+        <p>One of IDinsight&rsquo;s project teams is in the process of designing the sampling strategy for a large scale household survey and is considering using a three stage sampling design in which they would first select districts, then villages (or urban wards), and then households. In addition, someone was asking about three stage clustering for an RCT somewhere on Slack (I can&rsquo;t seem to find the slack post now) so I thought it might be useful to write a short post on three stage designs.</p>
       </div>
     </a>
     
@@ -873,7 +879,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    5 min read
+    6 min read
   </span>
   
 
@@ -931,7 +937,7 @@
     
     <a href="/post/srs-v-pps/"  class="summary-link">
       <div class="article-style">
-        A question came up on one of our evaluations on whether we should use simple random sampling (SRS) or probability proportional to size (PPS) sampling when selecting villages (our primary sampling units) for a matching study.
+        <p>A question came up on one of our evaluations on whether we should use simple random sampling (SRS) or probability proportional to size (PPS) sampling when selecting villages (our primary sampling units) for a matching study.  Under SRS, you randomly select primary sampling units (PSUs) until you reach your desired sample size.  With PPS sampling, you select your PSUs using some measure of size.  PPS is often used in a first stage of a two-stage sampling design because if you use PPS to select PSUs and then select a fixed number of units (households in our case) per PSU in the second stage of sampling, the probability of selection will be identical for all units.  (To see this, note that  the probability of selecting each PSU is \( n_1*w_i\)) where \( n_1\) is the number of PSUs you select and the probability of selecting a household in a village conditional on selecting the village in the first stage is \(\frac{n_2}{w_i}\) where \(n_2\) is the number of households sampled per village.  Note that this depends on your estimate of size being 100% accurate.  More details <a href="https://en.wikipedia.org/wiki/Sampling_%28statistics%29#Probability-proportional-to-size_sampling" target="_blank" rel="noopener">here</a>.  Code to perform PPS without replacement <a href="https://ideas.repec.org/c/boc/bocode/s454101.html" target="_blank" rel="noopener">here</a>.</p>
       </div>
     </a>
     
@@ -1072,7 +1078,7 @@
       
 
     
-    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+    <script src="/js/vendor-bundle.min.8e09daa601459f1768414cc0569ad616.js"></script>
 
     
     
@@ -1164,7 +1170,7 @@
       
     
     
-    <script src="/en/js/wowchemy.min.7cd6ec29d281a73c92a2958a1584aadc.js"></script>
+    <script src="/en/js/wowchemy.min.d7fa83e61091721dd35e2a809b9e01e5.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>
