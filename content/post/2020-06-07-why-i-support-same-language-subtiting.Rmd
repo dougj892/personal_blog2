@@ -1,12 +1,12 @@
 ---
-title: Why I support same language subtiting
+title: "Why I support same language subtiting"
 author: ''
-date: '2020-06-07'
-draft: true
-slug: why-i-support-same-language-subtiting
+date: "2020-06-07"
+output: pdf_document
+slug: "why-i-support-same-language-subtiting"
 categories: []
-tags:
-  - Education
+tags: Education
+draft: true
 ---
 
 In the fall, India’s ministry of information and broadcasting announced that it would require all major TV channels to add “same language subtitles” (SLS) – i.e. subtitles in the same language as the content to the programming.  The rules stipulate that channels must have at least one program with subtitles in 2019 and ramp up to 50% of programming with subtitles by 2025.   
